@@ -1,0 +1,5 @@
+PHP é uma linguagem de programação utilizada por programadores e desenvolvedores para construir sites dinâmicos,
+ extensões de integração de aplicações e agilizar no desenvolvimento de um sistema.
+
+Essa linguagem é mundialmente conhecida e uma das mais utilizadas pela facilidade em aprendê-la, manuseá-la, além de ser compatível com quase todos os sistemas operacionais que existem
+ o que torna seu custo menor. Neste artigo nós vamos mostrar a importância dessa sigla, além da estrutura e vantagens dessa linguagem.
