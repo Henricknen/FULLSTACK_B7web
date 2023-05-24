@@ -1,0 +1,8 @@
+{
+    "require": {
+        "monolog/monolog": "^3.3"
+    },
+    "autoload": {
+        "prs-4": {"arquivos_de_classes\\": "composer/"}
+    }
+}
