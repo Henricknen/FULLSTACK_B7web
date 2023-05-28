@@ -32,7 +32,8 @@ class Usuario {     // classe tem mesma estrutura de dados da tabela 'usuarios' 
 interface UsuarioDAO {      // classe que irá manipular o banco de dados
     public function add(Usuario $u);    // 'add' reçebe um objeto da classe 'usuario', [CREATE]
     public function findAll();      // 'findAll' retorna uma lista com varios objetos da classe 'Usuario', [READ]
-    public function findById($id);         // encontra um usúario através do 'id', [READ]
+    public function findByEmail($email);
+    public function findById($id);         // encontra um usuário através do 'id', [READ]
     public function update(Usuario $u);     // 'update' reçebe um objeto de 'Usuario' com os dados atualizados, [UPDATE]
     public function delete($id);        // 'delete' reçebe o 'id', [DELETE]
 }
