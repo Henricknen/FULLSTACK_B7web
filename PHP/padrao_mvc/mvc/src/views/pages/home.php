@@ -1,3 +1,3 @@
-<?php $render('header'); ?>
+<?php $render('header'); ?>      <!-- '$render' pucha um arquivo parçial -->
 
-Opa, <?=$nome;?>
+Algum conteudo

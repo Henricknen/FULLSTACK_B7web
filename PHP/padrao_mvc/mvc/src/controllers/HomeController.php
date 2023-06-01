@@ -2,11 +2,16 @@
 namespace src\controllers;
 
 use \core\Controller;
+use \src\ models\ Test;
 
 class HomeController extends Controller {
 
-    public function index() {
-        $this->render('home', ['nome' => 'Bonieky']);
+    public function index() {       // método 'index'
+        $this->render('home');        // 'render' redenriza e carrega um view 'home' que está dentro daos parentezes 
+    }
+
+    public function fotos() {
+        echo 'Fotos';
     }
 
     public function sobre() {
