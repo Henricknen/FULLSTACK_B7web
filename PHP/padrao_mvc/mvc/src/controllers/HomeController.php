@@ -2,7 +2,6 @@
 namespace src\controllers;
 
 use \core\Controller;
-use \src\ models\ Test;
 
 class HomeController extends Controller {
 
@@ -11,7 +10,11 @@ class HomeController extends Controller {
     }
 
     public function fotos() {
-        echo 'Fotos';
+        $this->render('fotos');
+    }
+
+    public function foto($parametros) {
+        echo "Acessando a foto: ". $parametros['id'];
     }
 
     public function sobre() {
