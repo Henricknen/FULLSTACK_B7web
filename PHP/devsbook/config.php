@@ -1,4 +1,5 @@
 <?php
+session_start();        // iniçiando uma seção
 $base = 'http://localhost/FULLSTACK_B7web/PHP/devsbook';     // base de 'url' do projeto
 
 $db_name = 'devsbook';      // dados do banco de dados
