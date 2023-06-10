@@ -8,14 +8,20 @@ class Auth {
         $this-> base = $base;        
     }
 
-    public static function checkToken() {       // função 'checkToken' retorna o usuário que está logado ou redireçiona automaticamente para página de 'login'
-        if(!empty($_SESSION['token'])) {    // verificando se seção 'token' existe e se está preenchida
+    public function checkToken() {       // função 'checkToken' retorna o usuário que está logado ou redireçiona automaticamente para página de 'login'
+        if (!empty($_SESSION['token'])) {    // verificando se seção 'token' existe e se está preenchida
             $token = $_SESSION['token'];        // armazenando token na variável '$token'
+            
+            $userDao = new UserDaoMysql($this-> pdo);        // instançiando 'UserDao'
+            $user = $userDao-> findByToken($token);     // verificando o usuário pelo 'token'
 
-
+            if($user) {
+                return $user;       // se encontrado 'token' do usuário retorna o próprio usuário
+            }
+            
         }
 
-        header("Location: /login.php");
+        header("Location: ". $this-> base. "/login.php");
         exit;
     }
 }
