@@ -1,4 +1,6 @@
 <?php
+require 'dao/UserDaoMysql.php';
+
 class Auth {
     private $pdo;
     private $base;
@@ -26,8 +28,24 @@ class Auth {
 
     }
 
-        public function validatelogin($email, $password) {
+        public function validateLogin($email, $password) {
+            $userDao = new UserDaoMysql($this-> pdo);
 
+            $user = $userDao-> findByEmail($email);     // verificando se 'email' existe
+            if($user) {     // se 'email' existir será verificado 'password'
+
+                if(password_verify($password, $user-> password)) {      // verificando se 'password' que usuário mandou está batendo com o 'password' que está no banco de dados
+                    $token = md5(time(). rand(0, 9999));     // gerando o 'token'
+
+                    $_SESSION['token']= $token;     // salvando o 'token' na seção
+                    $user-> token = $token;
+                    $userDao-> update($user);       // salvando o 'token' no banco de dados
+
+                    return true;
+                }
+            }
+
+            return false;
         }
     
 }

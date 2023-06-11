@@ -18,6 +18,11 @@ require 'config.php';       // puchando 'config.php' que tem a conexão com banc
     </header>
     <section class="container main">
         <form method="POST" action="<?=$base;?>/login_action.php">
+            <?php if(!empty($_SESSION['flash'])): ?>        <!-- verificando se seção tem conteúdo -->
+                <?= $_SESSION['flash'];?>       <!-- exibe a menssagem de erro 'flash' -->
+                <?= $_SESSION['flash'] = ''; ?>     <!-- limpa a menssagem -->
+            <?php endif; ?>
+
             <input placeholder="Digite seu e-mail" class="input" type="email" name="email" />
 
             <input placeholder="Digite sua senha" class="input" type="password" name="password" />
