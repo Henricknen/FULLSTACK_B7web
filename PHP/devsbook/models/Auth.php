@@ -8,7 +8,7 @@ class Auth {
         $this-> base = $base;        
     }
 
-    public function checkToken() {       // função 'checkToken' retorna o usuário que está logado ou redireçiona automaticamente para página de 'login'
+    public function checkToken() {       // método 'checkToken' retorna o usuário que está logado ou redireçiona automaticamente para página de 'login'
         if (!empty($_SESSION['token'])) {    // verificando se seção 'token' existe e se está preenchida
             $token = $_SESSION['token'];        // armazenando token na variável '$token'
             
@@ -23,5 +23,11 @@ class Auth {
 
         header("Location: ". $this-> base. "/login.php");
         exit;
+
     }
+
+        public function validatelogin($email, $password) {
+
+        }
+    
 }
