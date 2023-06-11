@@ -29,7 +29,7 @@ require 'config.php';       // puchando 'config.php' que tem a conexão com banc
 
             <input class="button" type="submit" value="Acessar o sistema" />
 
-            <a href="<?=$base;?>/sinup.php">Ainda não tem conta? Cadastre-se</a>
+            <a href="<?=$base;?>/signup.php">Ainda não tem conta? Cadastre-se</a>
         </form>
     </section>
 </body>
