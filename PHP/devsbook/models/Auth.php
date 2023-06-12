@@ -47,5 +47,9 @@ class Auth {
 
             return false;
         }
-    
+
+    public function emailExists($email) {     // função verifica se 'email' existe no banco de dados
+        $userDao = new UserDaoMysql($this-> pdo);
+        return $userDao-> findByEmail($email) ? true : false;       // ultilizando operador ternariona verificação
+    }
 }
