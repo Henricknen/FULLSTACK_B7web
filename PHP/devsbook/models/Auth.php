@@ -28,12 +28,12 @@ class Auth {
 
     }
 
-        public function validateLogin($email, $password) {
+        public function validateLogin($email, $password) {      // reçebendo '$email' e '$password'
             $userDao = new UserDaoMysql($this-> pdo);
 
             $user = $userDao-> findByEmail($email);     // verificando se 'email' existe
             if($user) {     // se 'email' existir será verificado 'password'
-
+                
                 if(password_verify($password, $user-> password)) {      // verificando se 'password' que usuário mandou está batendo com o 'password' que está no banco de dados
                     $token = md5(time(). rand(0, 9999));     // gerando o 'token'
 

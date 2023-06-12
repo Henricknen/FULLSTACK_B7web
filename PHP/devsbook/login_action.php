@@ -10,7 +10,7 @@ if($email && $password) {       // verificado se '$email' e '$password' foram en
     $auth = new Auth($pdo, $base);
 
     if($auth-> validatelogin($email, $password)) {
-        header("Location: ". $base);        // se foram enviado vai para 'index'
+        header("Location: ". $base);        // se '$mail' e '$password' foram enviado vai para 'index'
         exit;
     }
 }
