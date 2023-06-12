@@ -58,7 +58,7 @@ class UserDaoMysql implements UserDAO {
         return false;
     }
 
-    public function update(User $u) {
+    public function update(User $u) {       // função de 'atualização' de usuário
         $sql = $this-> pdo-> prepare("UPDATE users SET
             email = :email,
             password = :password,
@@ -81,6 +81,23 @@ class UserDaoMysql implements UserDAO {
         $sql-> bindValue(':cover', $u-> cover);
         $sql-> bindValue(':token', $u-> token);
         $sql-> bindValue(':id', $u-> id);
+        $sql-> execute();
+
+        return true;
+    }
+
+    public function insert(User $u) {       // função de 'inserir' novo usuário
+        $sql = $this-> pdo-> prepare("INSERT INTO users (
+            email, password, name, birthdate, token 
+        ) VALUES (
+            :email, :password, :name, :birthdate, :token
+        )");       // 'query de inserir usuário no banco de dados'
+
+        $sql-> bindValue(':email', $u-> email);     // '$u-> email' está obtendo o valor da propriedade email do objeto $u. 
+        $sql-> bindValue(':password', $u-> password);
+        $sql-> bindValue(':name', $u-> name);
+        $sql-> bindValue(':birthdate', $u-> birthdate);
+        $sql-> bindValue(':token', $u-> token);
         $sql-> execute();
 
         return true;

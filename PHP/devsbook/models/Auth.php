@@ -52,4 +52,22 @@ class Auth {
         $userDao = new UserDaoMysql($this-> pdo);
         return $userDao-> findByEmail($email) ? true : false;       // ultilizando operador ternariona verificação
     }
+
+    public function registerUser($name, $email, $password, $birthdate) {
+        $userDao = new UserDaoMysql($this-> pdo);
+
+        $hash = password_hash($password, PASSWORD_DEFAULT);     // gerando um 'hash' ultilizando o 'password' que usuário mandar
+        $token = md5(time(). rand(0, 9999));     // gerando o 'token'
+
+        $newUser = new User();      // criando um usuário
+        $newUser-> name = $name;        // preenchendo os dados do usuário com dados mandados pelo usuário
+        $newUser-> email = $email;
+        $newUser-> password = $hash;
+        $newUser-> birthdate = $birthdate;
+        $newUser-> token = $token;
+
+        $userDao-> insert($newUser);        // dando um 'insert' e mandando um objeto  da classe 'User' que está sendo atribuido  à variável '$newUser'
+
+        $SESSION['token'] = $token;
+    }
 }

@@ -19,7 +19,7 @@ require 'config.php';       // puchando 'config.php' que tem a conexão com banc
     <section class="container main">
         <form method="POST" action="<?=$base;?>/signup_action.php">
             <?php if(!empty($_SESSION['flash'])): ?>
-                <?= $_SESSION['flash'];?>
+                <?= $_SESSION['flash'] = 'E-mail cadastrado.';?>
                 <?= $_SESSION['flash'] = ''; ?>
             <?php endif; ?>
 
