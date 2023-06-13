@@ -4,18 +4,20 @@ require 'dao/UserDaoMysql.php';
 class Auth {
     private $pdo;
     private $base;
+    private $dao;
 
     public function __construct(PDO $pdo, $base) {     // contrutor salvará os dados de '$pdo' e '$base'
         $this-> pdo = $pdo;
         $this-> base = $base;        
+        $this-> dao = new UserDaoMysql($this-> $base);
+
     }
 
     public function checkToken() {       // método 'checkToken' retorna o usuário que está logado ou redireçiona automaticamente para página de 'login'
         if (!empty($_SESSION['token'])) {    // verificando se seção 'token' existe e se está preenchida
             $token = $_SESSION['token'];        // armazenando token na variável '$token'
             
-            $userDao = new UserDaoMysql($this-> pdo);        // instançiando 'UserDao'
-            $user = $userDao-> findByToken($token);     // verificando o usuário pelo 'token'
+            $user = $this-> dao-> findByToken($token);     // verificando o usuário pelo 'token'
 
             if($user) {
                 return $user;       // se encontrado 'token' do usuário retorna o próprio usuário
@@ -29,9 +31,8 @@ class Auth {
     }
 
         public function validateLogin($email, $password) {      // reçebendo '$email' e '$password'
-            $userDao = new UserDaoMysql($this-> pdo);
 
-            $user = $userDao-> findByEmail($email);     // verificando se 'email' existe
+            $user = $this-> dao-> findByEmail($email);     // verificando se 'email' existe
             if($user) {     // se 'email' existir será verificado 'password'
                 
                 if(password_verify($password, $user-> password)) {      // verificando se 'password' que usuário mandou está batendo com o 'password' que está no banco de dados
@@ -39,7 +40,7 @@ class Auth {
 
                     $_SESSION['token']= $token;     // salvando o 'token' na seção
                     $user-> token = $token;
-                    $userDao-> update($user);       // salvando o 'token' no banco de dados
+                    $this-> dao-> update($user);       // salvando o 'token' no banco de dados
 
                     return true;
                 }
@@ -49,12 +50,10 @@ class Auth {
         }
 
     public function emailExists($email) {     // função verifica se 'email' existe no banco de dados
-        $userDao = new UserDaoMysql($this-> pdo);
-        return $userDao-> findByEmail($email) ? true : false;       // ultilizando operador ternariona verificação
+        return $this-> dao-> findByEmail($email) ? true : false;       // ultilizando operador ternariona verificação
     }
 
     public function registerUser($name, $email, $password, $birthdate) {
-        $userDao = new UserDaoMysql($this-> pdo);
 
         $hash = password_hash($password, PASSWORD_DEFAULT);     // gerando um 'hash' ultilizando o 'password' que usuário mandar
         $token = md5(time(). rand(0, 9999));     // gerando o 'token'
@@ -66,7 +65,7 @@ class Auth {
         $newUser-> birthdate = $birthdate;
         $newUser-> token = $token;
 
-        $userDao-> insert($newUser);        // dando um 'insert' e mandando um objeto  da classe 'User' que está sendo atribuido  à variável '$newUser'
+        $this-> dao-> insert($newUser);        // dando um 'insert' e mandando um objeto  da classe 'User' que está sendo atribuido  à variável '$newUser'
 
         $SESSION['token'] = $token;
     }
