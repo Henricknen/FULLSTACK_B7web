@@ -1,3 +1,7 @@
+<?php
+$firstName = current(explode(' ', $userInfo-> name));       // sepando o nome, 'current' pega o primeiro nome
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,16 +19,17 @@
             <div class="head-side">
                 <div class="head-side-left">
                     <div class="search-area">
-                        <form method="GET">
+                        <form method="GET" action=" <?=$base;?>/search.php">        <!-- busca que o usuário fizer será enviado para o arquivo 'search.php' -->
                             <input type="search" placeholder="Pesquisar" name="s" />
                         </form>
                     </div>
                 </div>
                 <div class="head-side-right">
                     <a href="<?=$base;?>/perfil.php" class="user-area">
-                        <div class="user-area-text">Luis Henrique S F</div>
+                        <div class="user-area-text"><?=$firstName;?></div>        <!--- '$userInfo-> name;' ultilizando nome do usuario cadastrado no banco de dadados -->
                         <div class="user-area-icon">
-                            <img src="media/avatars/avatar.jpg" />
+                            <!-- <img src="<?=$base;?>/media/avatars/<?=$userInfo-> avatar;?>" /> -->
+                            <img src="<?=$base;?>/media/avatars/avatar.jpg" />
                         </div>
                     </a>
                     <a href="<?=$base;?>/logout.php" class="user-logout">

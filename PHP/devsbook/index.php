@@ -4,6 +4,7 @@ require 'models/Auth.php';
 
 $auth = new Auth($pdo, $base);     // instançiando 'Auth'
 $userInfo = $auth-> checkToken();       // 'checkToken' retorna as informações do usuário
+$activeMenu = 'home';
 
 require 'partials/header.php';      //puxando arquivo 'header.php' que se encontra na pasta 'partials'
 require 'partials/menu.php';
