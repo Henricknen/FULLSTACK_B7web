@@ -9,7 +9,7 @@ class Auth {
     public function __construct(PDO $pdo, $base) {     // contrutor salvará os dados de '$pdo' e '$base'
         $this-> pdo = $pdo;
         $this-> base = $base;        
-        $this-> dao = new UserDaoMysql($this-> $base);
+        $this-> dao = new UserDaoMysql($this-> pdo);
 
     }
 
@@ -67,6 +67,6 @@ class Auth {
 
         $this-> dao-> insert($newUser);        // dando um 'insert' e mandando um objeto  da classe 'User' que está sendo atribuido  à variável '$newUser'
 
-        $SESSION['token'] = $token;
+        $_SESSION['token'] = $token;
     }
 }
