@@ -29,7 +29,7 @@ $firstName = current(explode(' ', $userInfo-> name));       // sepando o nome, '
                         <div class="user-area-text"><?=$firstName;?></div>        <!--- '$userInfo-> name;' ultilizando nome do usuario cadastrado no banco de dadados -->
                         <div class="user-area-icon">
                             
-                            <img src="media/avatars/defult.jpg" />
+                            <img src="media/avatars/avatar.jpg" />
                             
                         </div>
                     </a>
