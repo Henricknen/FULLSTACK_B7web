@@ -28,8 +28,9 @@ $firstName = current(explode(' ', $userInfo-> name));       // sepando o nome, '
                     <a href="<?=$base;?>/perfil.php" class="user-area">
                         <div class="user-area-text"><?=$firstName;?></div>        <!--- '$userInfo-> name;' ultilizando nome do usuario cadastrado no banco de dadados -->
                         <div class="user-area-icon">
-                            <!-- <img src="<?=$base;?>/media/avatars/<?=$userInfo-> avatar;?>" /> -->
-                            <img src="<?=$base;?>/media/avatars/avatar.jpg" />
+                            
+                            <img src="media/avatars/defult.jpg" />
+                            
                         </div>
                     </a>
                     <a href="<?=$base;?>/logout.php" class="user-logout">
