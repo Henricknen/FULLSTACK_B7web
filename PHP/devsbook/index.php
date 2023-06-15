@@ -1,10 +1,17 @@
 <?php
 require 'config.php';
-require 'models/Auth.php';
+require 'dao/UserRelationDaoMysql.php';
 
 $auth = new Auth($pdo, $base);     // instançiando 'Auth'
 $userInfo = $auth->checkToken();       // 'checkToken' retorna as informações do usuário
 $activeMenu = 'home';
+
+$ur = new UserRelationDaoMysql($pdo);
+$serList = $urDao-> RelationsFrom($userInfo-> id);
+
+print_r($userList);
+exit;
+
 
 require 'partials/header.php';      //puxando arquivo 'header.php' que se encontra na pasta 'partials'
 require 'partials/menu.php';
@@ -14,6 +21,7 @@ require 'partials/menu.php';
         <div class="column pr-5">
 
             <?php require 'partials/feed-editor.php'; ?>
+
             
         </div>
         <div class="column side pl-5">
