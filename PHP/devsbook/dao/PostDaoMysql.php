@@ -1,5 +1,5 @@
 <?php
-require_once 'models/Post.php';     // puchando a 'classe' e a 'interfaçe'
+require_once 'models/Post.php';     // puxando a 'classe' e a 'interfaçe'
 
 class PostDaoMysql implements PostDAO {
     private $pdo;
@@ -9,7 +9,7 @@ class PostDaoMysql implements PostDAO {
     }
     
     public function insert(Post $p) {
-        $sql = $this-> pdo-> prepare('INSERT INTO posts (
+        $sql = $this-> pdo-> prepare('INSERT INTO posts (       <!-- fazendo inserção na tabela post do banco de dados -->
             id_user, type, created_at, body
         ) VALUES(
             id_user, type, created_at, body

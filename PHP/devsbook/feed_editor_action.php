@@ -1,6 +1,6 @@
 <?php
 
-use DeepCopy\Filter\Filter;
+// use DeepCopy\Filter\Filter;
 
 require 'config.php';
 require 'models/Auth.php';
@@ -14,7 +14,7 @@ $body = filter_input(INPUT_POST, 'body');       // pegando o 'body'
 if($body) {
     $postDao = new PostDaoMysql($pdo);      // instançiando o 'dao'
 
-    $newPost = new Post();        // criando novo 'post'
+    $newPost = new Post();        // criando novo objeto 'post'
     $newPost-> id_user = $userInfo-> id;
     $newPost-> type = 'text';
     $newPost-> created_at = date('Y-m-d H:i:s');
