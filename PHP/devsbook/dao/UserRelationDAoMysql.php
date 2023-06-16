@@ -13,17 +13,17 @@ class UserRelationDaoMysql implements UserRelationDAO {
     }
 
     public function getRelationsFrom($id) {
-        $users =[$id];
+        $users = [$id];     // criando um array com o proprio 'id'
 
-        $sql = $this-> pdo-> prepare("SELECT user_to FROM userrelations
+        $sql = $this-> pdo-> prepare("SELECT user_to FROM userrelations     
         WHERE user_from = :userfrom");
 
-        $sql-> bindValue(':user_from', $id);
+        $sql-> bindValue(':userfrom', $id);
         $sql-> execute();
 
         if($sql-> rowCount() > 0) {
             $data = $sql-> fetchAll();
-            foreach($data as $item) {
+            foreach($data as $item) {       // inseinro os 'id' na lista
                 $users[] = $item['user_to'];
             }
         }
