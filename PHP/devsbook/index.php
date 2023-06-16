@@ -35,7 +35,7 @@ require 'partials/menu.php';
         </div>
         <div class="box">
             <div class="box-body m-10">
-                Criado com ❤️ por B7Web
+                Criado com ❤️ por Luis Henriqur S F
             </div>
         </div>
         </div>

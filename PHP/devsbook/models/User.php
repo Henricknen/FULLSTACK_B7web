@@ -15,6 +15,7 @@ class User {        // classe 'User' trata tudo relaçionado ao usuário
 interface UserDAO {
     public function findByToken($token);        // encontrando o usuário pelo 'token'
     public function findByEmail($email);
+    public function findById($id);
     public function update(User $u);
     public function insert(User $u);
 }
