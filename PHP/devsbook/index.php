@@ -19,6 +19,12 @@ require 'partials/menu.php';
 
             <?php require 'partials/feed-editor.php'; ?>
             
+            <?php require 'partials/feed-item.php'; ?>      <!-- exibe o 'feed' -->
+
+        <!--    <?php foreach($feed as $item): ?>       <!-- mostra varios 'feed' --
+                <?php require 'partials/feed-item.php'; ?>      <!-- exibe o 'feed' --
+            <?php endforeach; ?> -->
+            
         </div>
         <div class="column side pl-5">
             <div class="box banners">
