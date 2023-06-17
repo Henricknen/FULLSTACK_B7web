@@ -26,18 +26,18 @@ if (isset($item)) {
 
             <div class="feed-item-head-info">
                 <a href="<?= $base; ?>/perfil.php?id=<?= isset($item->user->id) ? $item->user->name : ''; ?>">
-                    <span class="fidi-name"><?= isset($item->user->name) ? $item->user->name : ''; ?></span>
+                    <span class="fidi-name"><?= isset($item->user->name) ? $item->user->name : ''; ?></span>        <!-- mostra o nome do usuário logado -->
                 </a>
-                <span class="fidi-action"><?= $actionPhrase; ?></span>
+                <span class="fidi-action"><?= $actionPhrase; ?></span>      <!-- mostra uma frase que depende do tipo do 'post' -->
                 <br />
-                <span class="fidi-date"><?= isset($item->created_at) ? date('d/m/Y', strtotime($item->created_at)) : ''; ?></span>
+                <span class="fidi-date"><?= isset($item->created_at) ? date('d/m/Y', strtotime($item->created_at)) : ''; ?></span>      <!-- gerando a data -->
             </div>
             <div class="feed-item-head-btn">
                 <img src="<?= isset($base) ? $base : ''; ?>assets/images/more.png" />
             </div>
         </div>
         <div class="feed-item-body mt-10 m-width-20">
-            <?= isset($item->body) ? nl2br($item->body) : ''; ?>
+            <?= isset($item->body) ? nl2br($item->body) : ''; ?>        <!-- 'nl2br' pula linha -->
         </div>
         <div class="feed-item-buttons row mt-20 m-width-20">
             <div class="like-btn <?= isset($item->liked) && $item->liked ? 'on' : ''; ?>">

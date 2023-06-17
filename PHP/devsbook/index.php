@@ -19,7 +19,7 @@ require 'partials/menu.php';
 
             <?php require 'partials/feed-editor.php'; ?>
 
-            <?php foreach ($feed as $item) : ?>
+            <?php foreach ($feed as $item) : ?>     <!-- loop mostra os 'feed' existentes -->
                 <?php include 'partials/feed-item.php'; ?>
             <?php endforeach; ?>
 
