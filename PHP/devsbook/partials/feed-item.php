@@ -19,7 +19,7 @@ if (isset($item)) {
                 <?php if ($item !== null && $item->user !== null && $item->user->avatar !== null) : ?>
                     <a href="<?= $base; ?>/perfil.php?id=<?= $item->user->id; ?>"><img src="<?= $base; ?>/media/avatars/<?= $item->user->avatar; ?>" /></a>
                 <?php else : ?>
-                    <img src="../assets/images/user.png" />        <!-- Caso a variável $item, $item->user ou a propriedade avatar sejam nulas entra uma imagem padrão -->
+                    <img src="/assets/images/user.png" />        <!-- Caso a variável $item, $item->user ou a propriedade avatar sejam nulas entra uma imagem padrão -->
                 <?php endif; ?>
             </div>
 
@@ -33,7 +33,7 @@ if (isset($item)) {
                 <span class="fidi-date"><?= isset($item->created_at) ? date('d/m/Y', strtotime($item->created_at)) : ''; ?></span>      <!-- gerando a data -->
             </div>
             <div class="feed-item-head-btn">
-                <img src="<?= isset($base) ? $base : ''; ?>assets/images/more.png" />
+                <img src="<?= isset($base) ? $base : ''; ?>/assets/images/more.png" />
             </div>
         </div>
         <div class="feed-item-body mt-10 m-width-20">

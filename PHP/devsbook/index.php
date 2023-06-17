@@ -42,7 +42,7 @@ require 'partials/menu.php';
             </div>
             <div class="box">
                 <div class="box-body m-10">
-                    Criado com ❤️ por Luis Henriqur S F
+                    Criado com ❤️ por Luis HenriquE S F
                 </div>
             </div>
         </div>
