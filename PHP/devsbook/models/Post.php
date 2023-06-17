@@ -5,6 +5,11 @@ class Post {
     public $type;// reçebe 'Text' ou 'Photo'
     public $created_at;
     public $body;
+    public $mine;
+    public $user;
+    public $likeCount;
+    public $liked;
+    public $comments;
     }
 
 interface PostDAO {
