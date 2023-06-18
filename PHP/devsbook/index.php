@@ -2,6 +2,7 @@
 require 'config.php';
 require 'models/Auth.php';
 require 'dao/PostDaoMysql.php';
+require 'dao/UserDaoMysql.php';
 
 $auth = new Auth($pdo, $base);     // instançiando 'Auth'
 $userInfo = $auth->checkToken();       // 'checkToken' retorna as informações do usuário
