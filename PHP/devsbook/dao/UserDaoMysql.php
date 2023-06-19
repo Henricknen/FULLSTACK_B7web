@@ -1,6 +1,6 @@
 <?php
 require_once 'models/User.php';
-require_once 'dao/UserRelatioDaoMysql.php';
+require_once 'dao/UserRelationDaoMysql.php';
 
 
 
@@ -24,7 +24,7 @@ class UserDaoMysql implements UserDAO {
         $u-> cover = $array['cover'] ?? '';
         $u-> token = $array['token'] ?? '';
 
-        if($full) {
+        if($full) {     // pegando informações completas
             $urDaoMysql = new UserRelationDaoMysql($this-> pdo);
 
             $u-> followers = $urDaoMysql-> getFollowers($u-> id);       // 'followers' pega quem o segue
@@ -80,7 +80,7 @@ class UserDaoMysql implements UserDAO {
 
             if($sql-> rowCount() > 0) {
                 $data = $sql-> fetch(PDO:: FETCH_ASSOC);
-                $user = $this-> generateUser($data,$full);
+                $user = $this-> generateUser($data, $full);
                 return $user;
             }
 

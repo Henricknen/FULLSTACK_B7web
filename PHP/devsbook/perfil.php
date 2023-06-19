@@ -25,12 +25,6 @@ if (!$user) {        // se '$user' der false
     exit;
 }
 
-$user = $userDao->findById($id);       // pegando informações do usuário
-if (!$user) {        // se '$user' der false
-    header("Location: " . $base);    // volta para a página inicial
-    exit;
-}
-
 $dateFrom = new DateTime($user->birthdate);
 $dateTo = new DateTime('today');        // data atual
 $age = $dateFrom->diff($dateTo);
@@ -109,7 +103,7 @@ require 'partials/menu.php';
                 <div class="box-header m-10">
                     <div class="box-header-text">
                         Seguindo
-                        <span><?= count($user->following); ?></span>
+                        <span>(<?= count($user->following); ?>)</span>
                     </div>
                     <div class="box-header-buttons">
                         <a href="<? $base; ?>/amigos.php?id=<?= $user->id; ?>">ver todos</a>

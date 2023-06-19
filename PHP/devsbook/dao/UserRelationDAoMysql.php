@@ -17,9 +17,9 @@ class UserRelationDaoMysql implements UserRelationDAO {
         $users = [];
 
         $sql = $this-> pdo-> prepare("SELECT user_to FROM userrelations     
-        WHERE user_from = :userfrom");
+        WHERE user_from = :user_from");
 
-        $sql-> bindValue(':userfrom', $id);
+        $sql-> bindValue(':user_from', $id);
         $sql-> execute();
 
         if($sql-> rowCount() > 0) {
@@ -35,10 +35,10 @@ class UserRelationDaoMysql implements UserRelationDAO {
     public function getFollowers($id) {     // lista de que segue este usuário
         $users = [];
 
-        $sql = $this-> pdo-> prepare("SELECT user_tfrom FROM userrelations     
-        WHERE user_to = :userto");
+        $sql = $this-> pdo-> prepare("SELECT user_from FROM userrelations     
+        WHERE user_to = :user_to");
 
-        $sql-> bindValue(':userfrom', $id);
+        $sql-> bindValue(':user_to', $id);
         $sql-> execute();
 
         if($sql-> rowCount() > 0) {
