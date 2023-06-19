@@ -27,15 +27,32 @@ class PostDaoMysql implements PostDAO
         $sql->execute();
     }
 
-    public function getHomeFeed($id_user)
-    {
+    public function getUserFeed($id_user) {
+        $array = [];
+
+
+        $sql = $this->pdo->prepare("SELECT * FROM posts
+        WHERE id_user = :id_user
+        ORDER BY created_at DESC");
+        $sql-> bindValue(':id_user', $id_user);
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $data = $sql->fetchAll(PDO::FETCH_ASSOC);
+            $array = $this->_postListToObject($data, $id_user);
+        }
+
+        return $array;
+    }
+
+    public function getHomeFeed($id_user) {
         $array = [];
 
         $urDao = new UserRelationDaoMysql($this->pdo);       // pegando a lista os usuário que forem seguidos
         $userList = $urDao->getFollowing($id_user);
         $userList[] = $id_user;
 
-        $sql = $this->pdo->prepare("SELECT * FROM posts
+        $sql = $this->pdo->query("SELECT * FROM posts
         WHERE id_user IN (" . implode(',', $userList) . ")
         ORDER BY created_at DESC");
         $sql->execute();
