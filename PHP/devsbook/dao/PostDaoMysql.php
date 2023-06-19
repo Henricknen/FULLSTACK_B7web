@@ -30,8 +30,7 @@ class PostDaoMysql implements PostDAO
     public function getUserFeed($id_user) {
         $array = [];
 
-
-        $sql = $this->pdo->prepare("SELECT * FROM posts
+        $sql = $this->pdo-> prepare("SELECT * FROM posts
         WHERE id_user = :id_user
         ORDER BY created_at DESC");
         $sql-> bindValue(':id_user', $id_user);
@@ -52,7 +51,7 @@ class PostDaoMysql implements PostDAO
         $userList = $urDao->getFollowing($id_user);
         $userList[] = $id_user;
 
-        $sql = $this->pdo->query("SELECT * FROM posts
+        $sql = $this->pdo-> query("SELECT * FROM posts
         WHERE id_user IN (" . implode(',', $userList) . ")
         ORDER BY created_at DESC");
         $sql->execute();

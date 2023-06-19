@@ -6,34 +6,39 @@ require 'config.php';
 require 'models/Auth.php';
 require 'dao/PostDaoMysql.php';
 
-
-$auth = new Auth($pdo, $base);     // instanciando 'Auth'
-$userInfo = $auth->checkToken();       // 'checkToken' retorna as informações do usuário
+$auth = new Auth($pdo, $base);
+$userInfo = $auth->checkToken();
 $activeMenu = 'profile';
 
+$user = [];
+$feed = [];
+
 $id = filter_input(INPUT_GET, 'id');
-if (!$id) {      // verificando se o 'id' foi enviado
-    $id = $userInfo->id;       // preenchendo o 'id'
+if (!$id) {
+    $id = $userInfo->id;
+}
+
+if ($id != $userInfo->id) {     // diz que está acessando o usuário logado
+    $activeMenu = '';
 }
 
 $postDao = new PostDaoMysql($pdo);
 $userDao = new UserDaoMysql($pdo);
 
-$user = $userDao->findById($id, true);       // pegando informações do usuário
-if (!$user) {        // se '$user' der false
-    header("Location: " . $base);    // volta para a página inicial
+$user = $userDao->findById($id, true);
+if (!$user) {
+    header("Location: " . $base);
     exit;
 }
 
 $dateFrom = new DateTime($user->birthdate);
-$dateTo = new DateTime('today');        // data atual
+$dateTo = new DateTime('today');
 $age = $dateFrom->diff($dateTo);
-$user->ageYears = $age->y;       // 'diff' pega a diferença das datas e 'y' mostra a quantidade em anos
+$user->ageYears = $age->y;
 
 $feed = $postDao->getUserFeed($id);
 
-
-require 'partials/header.php';      // puxando arquivo 'header.php' que se encontra na pasta 'partials'
+require 'partials/header.php';
 require 'partials/menu.php';
 ?>
 
@@ -93,7 +98,7 @@ require 'partials/menu.php';
 
                     <?php if (!empty($user->work)) : ?>
                         <div class="user-info-mini">
-                            <img src="<?= $base; ?>assets/images/work.png" />
+                            <img src="<?= $base; ?>/assets/images/work.png" />
                             FullStack
                             <?= $user->work; ?>
                         </div>
@@ -108,7 +113,7 @@ require 'partials/menu.php';
                         <span>(<?= count($user->following); ?>)</span>
                     </div>
                     <div class="box-header-buttons">
-                        <a href="<? $base; ?>/amigos.php?id=<?= $user->id; ?>">ver todos</a>
+                        <a href="<?= $base; ?>/amigos.php?id=<?= $user->id; ?>">ver todos</a>
                     </div>
                 </div>
                 <div class="box-body friend-list">
@@ -126,8 +131,6 @@ require 'partials/menu.php';
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
-
-
                 </div>
             </div>
 
@@ -141,7 +144,7 @@ require 'partials/menu.php';
                         <span>(<?= count($user->photos); ?>)</span>
                     </div>
                     <div class="box-header-buttons">
-                        <a href="<? $base; ?>fotos.php?id<? $user->id; ?>">ver todos</a>
+                        <a href="<?= $base; ?>/fotos.php?id=<?= $user->id; ?>">ver todos</a>
                     </div>
                 </div>
                 <div class="box-body row m-20">
@@ -150,29 +153,29 @@ require 'partials/menu.php';
                         <?php foreach ($user->photos as $item) : ?>
                             <div class="user-photo-item">
                                 <a href="#modal-1" rel="modal:open">
-                                    <img src="media/uploads/1.jpg" />
+                                    <img src="<?= $base; ?>/media/uploads/1.jpg" />
                                 </a>
-                                <div id="modal-1" style="display:none">
-                                    <img src="media/uploads/1.jpg" />
-                                </div>
                             </div>
-
                         <?php endforeach; ?>
                     <?php endif; ?>
-
                 </div>
             </div>
 
-        <?php if(count($feed) > 0): ?>
+            <?php if($id == $userInfo-> id): ?>
+                <?php require 'partials/feed-editor.php'; ?>
+            <?php endif; ?>
 
-        <?php else: ?>
-            Não ha posatgem deste usuário
-        <?php endif; ?>
+            <?php if (count($feed) > 0) : ?>
+                <?php foreach ($feed as $item) : ?>
+                    <?php require 'partials/feed-item.php'; ?>
+                <?php endforeach; ?>
+            <?php else : ?>
+                Não há postagens deste usuário
+            <?php endif; ?>
 
         </div>
     </div>
 
 </section>
-<?php
-require 'partials/footer.php';
-?>
+
+<?php require 'partials/footer.php'; ?>

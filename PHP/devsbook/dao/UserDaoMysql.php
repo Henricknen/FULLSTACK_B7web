@@ -1,4 +1,5 @@
 <?php
+
 require_once 'models/User.php';
 require_once 'dao/UserRelationDaoMysql.php';
 
@@ -32,7 +33,7 @@ class UserDaoMysql implements UserDAO {
                 $newUser = $this-> findById($follower_id);
                 $u-> followers[$key] = $newUser;
             }
-
+        }
             $u-> following = $urDaoMysql-> getFollowing($u-> id);           // 'following' pega que o usuário segue
             foreach($u-> following as $key=> $follower_id) {
                 $newUser = $this-> findById($follower_id);
@@ -46,17 +47,16 @@ class UserDaoMysql implements UserDAO {
     }
 
     public function findByToken($token) {
-        if(!empty($token)) {
-            $sql = $this-> pdo-> prepare("SELECT * FROM users WHERE token = :token");       // fazendo consulta do 'token' na tabela 'users'
-            $sql-> bindValue(":token", $token);
-            $sql-> execute();
+        if (!empty($token)) {
+            $sql = $this->pdo->prepare("SELECT * FROM users WHERE token = :token");
+            $sql->bindValue(":token", $token);
+            $sql->execute();
 
-            if($sql-> rowCount() > 0) {      // verificando se encontrou alguma coisa
-                $data = $sql-> fetch(PDO:: FETCH_ASSOC);
-                $user = $this-> generateUser($data);
-                return $user;       // se o usuário for encontrado seá retornado o próprio usuário
+            if ($sql->rowCount() > 0) {
+                $data = $sql->fetch(PDO::FETCH_ASSOC);
+                $user = $this->generateUser($data);
+                return $user;
             }
-
         }
 
         return false;
