@@ -1,10 +1,7 @@
 <?php
-
-use PhpParser\Node\Expr\Empty_;
-
-require 'config.php';
-require 'models/Auth.php';
-require 'dao/PostDaoMysql.php';
+require_once 'config.php';
+require_once 'models/Auth.php';
+require_once 'dao/PostDaoMysql.php';
 
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
@@ -153,15 +150,18 @@ require 'partials/menu.php';
                         <?php foreach ($user->photos as $item) : ?>
                             <div class="user-photo-item">
                                 <a href="#modal-1" rel="modal:open">
-                                    <img src="<?= $base; ?>/media/uploads/1.jpg" />
+                                    <img src="<?= $base; ?>/media/uploads/<?= $item->body; ?>" />
                                 </a>
+                                <div id="modal" style="display:none">
+                                <img src="<?=$base?>/media/uploads/<?= $item->body; ?>">
+                                </div>
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </div>
             </div>
 
-            <?php if($id == $userInfo-> id): ?>
+            <?php if ($id == $userInfo->id) : ?>
                 <?php require 'partials/feed-editor.php'; ?>
             <?php endif; ?>
 

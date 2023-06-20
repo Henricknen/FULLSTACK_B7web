@@ -1,8 +1,7 @@
 <?php
-
 require_once 'models/User.php';
 require_once 'dao/UserRelationDaoMysql.php';
-
+require_once 'dao/PostDaoMysql.php';
 
 
 class UserDaoMysql implements UserDAO {
@@ -27,6 +26,7 @@ class UserDaoMysql implements UserDAO {
 
         if($full) {     // pegando informações completas
             $urDaoMysql = new UserRelationDaoMysql($this-> pdo);
+            $postDaoMysql = new PostDaoMysql($this-> pdo);
 
             $u-> followers = $urDaoMysql-> getFollowers($u-> id);       // 'followers' pega quem o segue
             foreach($u-> followers as $key=> $follower_id) {
@@ -39,7 +39,7 @@ class UserDaoMysql implements UserDAO {
                 $newUser = $this-> findById($follower_id);
                 $u-> following[$key] = $newUser;
 
-            $u-> photos = [];       // array de fotos
+            $u-> photos = $postDaoMysql-> getPhotosFrom($u-> id);
         }
 
         return $u;
