@@ -70,7 +70,7 @@ class PostDaoMysql implements PostDAO
     {
         $array = [];
 
-        $sql = $this->pdo->prepare("SELECT * FROM posts       <!-- pegando foto de determinado usuário --> 
+        $sql = $this->pdo->prepare("SELECT * FROM posts        
         WHERE id_user = :id_user AND  type = 'photo'
         ORDER BY created_at DESC");
         $sql->bindValue(':id_user', $id_user);
