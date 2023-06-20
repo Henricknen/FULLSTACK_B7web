@@ -6,7 +6,6 @@ require_once 'dao/PostDaoMysql.php';
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
 $activeMenu = 'profile';
-
 $user = [];
 $feed = [];
 
@@ -114,8 +113,8 @@ require 'partials/menu.php';
                     </div>
                 </div>
                 <div class="box-body friend-list">
-                    <?php if (count($user->following) > 0) : ?>
-                        <?php foreach ($user->following as $item) : ?>
+                    <?php if (count($user->following) > 0): ?>
+                        <?php foreach ($user->following as $item): ?>
                             <div class="friend-icon">
                                 <a href="<?= $base; ?>/perfil.php?id=<?= $item->id; ?>">
                                     <div class="friend-icon-avatar">
