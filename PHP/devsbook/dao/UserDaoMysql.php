@@ -3,61 +3,60 @@ require_once 'models/User.php';
 require_once 'dao/UserRelationDaoMysql.php';
 require_once 'dao/PostDaoMysql.php';
 
-class UserDaoMysql implements UserDAO
-{
+class UserDaoMysql implements UserDAO {
     private $pdo;
     private $urDaoMysql;
 
-    public function __construct(PDO $driver)
-    {
-        $this->pdo = $driver;
-        $this->urDaoMysql = new UserRelationDaoMysql($this->pdo);
+    public function __construct(PDO $driver) {
+        $this-> pdo = $driver;
+        $this-> urDaoMysql = new UserRelationDaoMysql($this-> pdo);
     }
 
-    private function generateUser($array, $full = false)
-    {
+    private function generateUser($array, $full = false) {
         $u = new User();
-        $u->id = $array['id'] ?? 0;
-        $u->email = $array['email'] ?? '';
-        $u->password = $array['password'] ?? '';
-        $u->name = $array['name'] ?? '';
-        $u->birthdate = $array['birthdate'] ?? '';
-        $u->city = $array['city'] ?? '';
-        $u->work = $array['work'] ?? '';
-        $u->avatar = $array['avatar'] ?? '';
-        $u->cover = $array['cover'] ?? '';
-        $u->token = $array['token'] ?? '';
+        $u-> id = $array['id'] ?? 0;
+        $u-> email = $array['email'] ?? 0;
+        $u-> password = $array['password'] ?? '';
+        $u-> name = $array['name'] ?? '';
+        $u-> birthdate = $array['birthdate'] ?? '';
+        $u-> city = $array['city'] ?? '';
+        $u-> work = $array['work'] ?? '';
+        $u-> avatar = $array['avatar'] ?? '';
+        $u-> cover = $array['cover'] ?? '';
+        $u-> token = $array['token'] ?? '';
 
         if ($full) {
-            $u->followers = $this->urDaoMysql->getFollowers($u->id);
-            foreach ($u->followers as $key => $follower_id) {
-                $newUser = $this->findById($follower_id);
-                $u->followers[$key] = $newUser;
+            $urDaoMysql = new UserRelationDaoMysql($this-> pdo);
+            $postDaoMysql = new PostDaoMysql($this->  pdo);
+
+            $u-> followers = $this-> urDaoMysql-> getFollowers($u-> id);
+            foreach ($u-> followers as $key => $follower_id) {
+                $newUser = $this-> findById($follower_id);
+                $u-> followers[$key] = $newUser;
             }
         }
 
-        $u->following = $this->urDaoMysql->getFollowing($u->id);
-        foreach ($u->following as $key => $follower_id) {
-            $newUser = $this->findById($follower_id);
-            $u->following[$key] = $newUser;
+        $u-> following = $this-> urDaoMysql-> getFollowing($u-> id);
+        foreach ($u-> following as $key => $follower_id) {
+            $newUser = $this-> findById($follower_id);
+            $u-> following[$key] = $newUser;
         }
 
-        $postDaoMysql = new PostDaoMysql($this->pdo);
-        $u->photos = $postDaoMysql->getPhotosFrom($u->id);
+        $postDaoMysql = new PostDaoMysql($this-> pdo);
+        $u-> photos = $postDaoMysql-> getPhotosFrom($u-> id);
 
         return $u;
     }
 
-    public function findByToken($token)
-    {
+    public function findByToken($token) {
         if (!empty($token)) {
-            $sql = $this->pdo->prepare("SELECT * FROM users WHERE token = :token");
-            $sql->bindValue(":token", $token);
-            $sql->execute();
+            $sql = $this-> pdo-> prepare("SELECT * FROM users WHERE token = :token");
+            $sql-> bindValue(":token", $token);
+            $sql-> execute();
 
-            if ($sql->rowCount() > 0) {
-                $data = $sql->fetch(PDO::FETCH_ASSOC);
-                $user = $this->generateUser($data);
+            if ($sql-> rowCount() > 0) {
+                $data = $sql-> fetch(PDO::FETCH_ASSOC);
+                $user = $this-> generateUser($data);
                 return $user;
             }
         }
@@ -65,16 +64,15 @@ class UserDaoMysql implements UserDAO
         return false;
     }
 
-    public function findByEmail($email)
-    {
+    public function findByEmail($email) {
         if (!empty($email)) {
-            $sql = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
-            $sql->bindValue(":email", $email);
-            $sql->execute();
+            $sql = $this-> pdo-> prepare("SELECT * FROM users WHERE email = :email");
+            $sql-> bindValue(":email", $email);
+            $sql-> execute();
 
-            if ($sql->rowCount() > 0) {
-                $data = $sql->fetch(PDO::FETCH_ASSOC);
-                $user = $this->generateUser($data);
+            if ($sql-> rowCount() > 0) {
+                $data = $sql-> fetch(PDO::FETCH_ASSOC);
+                $user = $this-> generateUser($data);
                 return $user;
             }
         }
@@ -82,16 +80,15 @@ class UserDaoMysql implements UserDAO
         return false;
     }
 
-    public function findById($id, $full = false)
-    {
+    public function findById($id, $full = false) {
         if (!empty($id)) {
-            $sql = $this->pdo->prepare("SELECT * FROM users WHERE id = :id");
-            $sql->bindValue(":id", $id);
-            $sql->execute();
+            $sql = $this-> pdo-> prepare("SELECT * FROM users WHERE id = :id");
+            $sql-> bindValue(":id", $id);
+            $sql-> execute();
 
-            if ($sql->rowCount() > 0) {
-                $data = $sql->fetch(PDO::FETCH_ASSOC);
-                $user = $this->generateUser($data, $full);
+            if ($sql-> rowCount() > 0) {
+                $data = $sql-> fetch(PDO::FETCH_ASSOC);
+                $user = $this-> generateUser($data, $full);
                 return $user;
             }
         }
@@ -99,9 +96,28 @@ class UserDaoMysql implements UserDAO
         return false;
     }
 
-    public function update(User $u)
-    {
-        $sql = $this->pdo->prepare("UPDATE users SET
+    public function findByName($name) {      // fazendo a busca pelo nome do usuário
+        $array = [];
+
+        if (!empty($name)) {
+            $sql = $this-> pdo-> prepare("SELECT * FROM users WHERE name LIKE :name");      // fazendo busca específica por 'name'
+            $sql-> bindValue(":name", '%'. $name. '%');
+            $sql-> execute();
+
+            if ($sql-> rowCount() > 0) {
+                $data = $sql-> fetchAll(PDO::FETCH_ASSOC);      // 'fetchAll' pega todos os usuários
+
+                foreach($data as $item) {       // 'foreach' preenche o array com os usuários
+                    $array[] = $this-> generateUser($item);
+                }                
+            }
+        }
+
+        return $array;
+    }
+
+    public function update(User $u) {
+        $sql = $this-> pdo-> prepare("UPDATE users SET
             email = :email,
             password = :password,
             name = :name,
@@ -113,35 +129,34 @@ class UserDaoMysql implements UserDAO
             token = :token
             WHERE id = :id");
 
-        $sql->bindValue(':email', $u->email);
-        $sql->bindValue(':password', $u->password);
-        $sql->bindValue(':name', $u->name);
-        $sql->bindValue(':birthdate', $u->birthdate);
-        $sql->bindValue(':city', $u->city);
-        $sql->bindValue(':work', $u->work);
-        $sql->bindValue(':avatar', $u->avatar);
-        $sql->bindValue(':cover', $u->cover);
-        $sql->bindValue(':token', $u->token);
-        $sql->bindValue(':id', $u->id);
-        $sql->execute();
+        $sql-> bindValue(':email', $u-> email);
+        $sql-> bindValue(':password', $u-> password);
+        $sql-> bindValue(':name', $u-> name);
+        $sql-> bindValue(':birthdate', $u-> birthdate);
+        $sql-> bindValue(':city', $u-> city);
+        $sql-> bindValue(':work', $u-> work);
+        $sql-> bindValue(':avatar', $u-> avatar);
+        $sql-> bindValue(':cover', $u-> cover);
+        $sql-> bindValue(':token', $u-> token);
+        $sql-> bindValue(':id', $u-> id);
+        $sql-> execute();
 
         return true;
     }
 
-    public function insert(User $u)
-    {
-        $sql = $this->pdo->prepare("INSERT INTO users (
+    public function insert(User $u) {
+        $sql = $this-> pdo-> prepare("INSERT INTO users (
             email, password, name, birthdate, token
         ) VALUES (
             :email, :password, :name, :birthdate, :token
         )");
 
-        $sql->bindValue(':email', $u->email);
-        $sql->bindValue(':password', $u->password);
-        $sql->bindValue(':name', $u->name);
-        $sql->bindValue(':birthdate', $u->birthdate);
-        $sql->bindValue(':token', $u->token);
-        $sql->execute();
+        $sql-> bindValue(':email', $u-> email);
+        $sql-> bindValue(':password', $u-> password);
+        $sql-> bindValue(':name', $u-> name);
+        $sql-> bindValue(':birthdate', $u-> birthdate);
+        $sql-> bindValue(':token', $u-> token);
+        $sql-> execute();
 
         return true;
     }

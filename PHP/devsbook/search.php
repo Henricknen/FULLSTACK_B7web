@@ -16,6 +16,8 @@ if(empty($searchTerm)) {        // Se não foi digitado algo na barra de pesquis
     exit;
 }
 
+$userList = $userDao-> findByName($searchTerm);
+
 require 'partials/header.php';      //puxando arquivo 'header.php' que se encontra na pasta 'partials'
 require 'partials/menu.php';
 ?>
@@ -25,8 +27,20 @@ require 'partials/menu.php';
 
         <h2>Pesquisa por: <?=$searchTerm; ?></h2>
 
-
-
+            <div class="full-friend-list">
+                <?php foreach($userList as $item): ?>
+                    <div class="friend-icon">
+                        <a href="<?= $base; ?>/perfil.php?id=<?= $item->id; ?>">
+                            <div class="friend-icon-avatar">
+                                <img src="<?= $base; ?>/media/avatars/<?= $item->avatar; ?>" />
+                            </div>
+                            <div class="friend-icon-name">
+                                <?= $item->name; ?>
+                            </div>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
         <div class="column side pl-5">
             <div class="box banners">
