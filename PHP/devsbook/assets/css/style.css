@@ -391,6 +391,32 @@ header .head-side {
     margin:0;
 }
 
+.config-form {
+    margin-top: 10px;
+}
+
+.config-form label {
+    display: block;
+    padding: 10px 0;
+}
+
+.config-form input {
+    font-size: 14px;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 15px;
+}
+
+.button {
+    border: 0;
+    padding: 10px 20px;
+    background-color: #4a76a8;
+    border-radius: 10px;
+    color: #FFF;
+    font-size: 15px;
+    box-shadow: 0 0 3px #999;
+}
+
 @media (max-width: 992px) {
     header .head-side-right {
         display:none !important;
