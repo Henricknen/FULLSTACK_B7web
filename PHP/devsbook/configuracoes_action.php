@@ -59,6 +59,33 @@ if($name && $email) {       // verificando se usuário tem nome e email válido
         }
     }
 
+    echo '<pre';
+    print_r($_FILES);
+
+    if(isset($_FILES['avatar']) && !empty($_FILES['avatar']['tmp_name'])) {      // verificando se existe avatar e se está preenchido
+        $newAvatar = $_FILES['avatar'];
+
+        if(in_array($newAvatar['type'], ['image/jpeg', 'image/jpg', 'image/png'])) {
+            $avatarWidth = 200;
+            $avatarHeight = 150;
+            
+            list($widthOrig, $heightOrig) = getimagesize($newAvatar["tmp_name"]);
+            $ratio = $widthOrig / $heightOrig;
+
+            $newWidth = $avatarWidth;       // nova largura da imagem
+            $newHeight = $newWidth / $ratio;        // calculo da nova altura da imagem
+
+            if($newHeight < $avatarHeight) {    // verificando se a imagem não ficou menor do que o tamanho desejado
+                $newHeight = $avatarHeight;
+                $newWidth = $newHeight * $ratio;
+            }
+
+            echo $newWidth. 'x'. $newHeight;
+        }
+    }
+
+    exit;
+
     $userDao-> update($userInfo);
 }
 
