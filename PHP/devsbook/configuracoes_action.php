@@ -60,6 +60,7 @@ if ($name && $email) {       // verificando se usuário tem nome e email válido
         }
     }
 
+    // avatar
     if (isset($_FILES['avatar']) && !empty($_FILES['avatar']['tmp_name'])) {      // verificando se o avatar existe e está preenchido
         $newAvatar = $_FILES['avatar'];
 
@@ -73,7 +74,7 @@ if ($name && $email) {       // verificando se usuário tem nome e email válido
             $newWidth = $avatarWidth;       // nova largura da imagem
             $newHeight = $newWidth / $ratio;        // cálculo da nova altura da imagem
 
-            if ($newHeight < $avatarHeight) {    // verificando se a imagem não ficou menor do que o tamanho desejado
+            if ($newHeight < $avatarHeight) {    // verificando se a imagem não ficou menor do que o tamanho desejado 
                 $newHeight = $avatarHeight;
                 $newWidth = $newHeight * $ratio;
             }
@@ -83,7 +84,7 @@ if ($name && $email) {       // verificando se usuário tem nome e email válido
             $x = $x < 0 ? $x / 2 : $x;      // cálculo do espaço de corte
             $y = $y < 0 ? $y / 2 : $y;
 
-            $finalImage = imagecreatetruecolor($avatarWidth, $avatarHeight);        // carregando as imagens finais
+            $finalImage = imagecreatetruecolor($avatarWidth, $avatarHeight);        // gerando a imagem
             switch ($newAvatar['type']) {
                 case 'image/jpeg':
                 case 'image/jpg':
@@ -95,7 +96,7 @@ if ($name && $email) {       // verificando se usuário tem nome e email válido
                     break;
             }
 
-            imagecopyresampled(        // copiando uma imagem dentro da outra
+            imagecopyresampled(        // copiando uma imagem dentro da outra fazendo os devidos cortes
                 $finalImage, $image,
                 $x, $y, 0, 0,
                 $newWidth, $newHeight, $widthOrig, $heightOrig
@@ -110,8 +111,58 @@ if ($name && $email) {       // verificando se usuário tem nome e email válido
         }
     }
 
+    // cover
+    if (isset($_FILES['cover']) && !empty($_FILES['cover']['tmp_name'])) {      // verificando se o cover existe e está preenchido
+        $newCover = $_FILES['cover'];
+
+        if (in_array($newCover['type'], ['image/jpeg', 'image/jpg', 'image/png'])) {
+            $coverWidth = 850;
+            $coverHeight = 310;
+
+            list($widthOrig, $heightOrig) = getimagesize($newCover["tmp_name"]);
+            $ratio = $widthOrig / $heightOrig;
+
+            $newWidth = $coverWidth;       // nova largura da imagem
+            $newHeight = $newWidth / $ratio;        // cálculo da nova altura da imagem
+
+            if ($newHeight < $coverHeight) {    // verificando se a imagem não ficou menor do que o tamanho desejado 
+                $newHeight = $coverHeight;
+                $newWidth = $newHeight * $ratio;
+            }
+
+            $x = $coverWidth - $newWidth;        // cálculo da nova altura e largura
+            $y = $coverHeight - $newHeight;
+            $x = $x < 0 ? $x / 2 : $x;      // cálculo do espaço de corte
+            $y = $y < 0 ? $y / 2 : $y;
+
+            $finalImage = imagecreatetruecolor($coverWidth, $coverHeight);        // gerando a imagem
+            switch ($newCover['type']) {
+                case 'image/jpeg':
+                case 'image/jpg':
+                    $image = imagecreatefromjpeg($newCover['tmp_name']);
+                    break;
+
+                case 'image/png':
+                    $image = imagecreatefrompng($newCover['tmp_name']);
+                    break;
+            }
+
+            imagecopyresampled(        // copiando uma imagem dentro da outra fazendo os devidos cortes
+                $finalImage, $image,
+                $x, $y, 0, 0,
+                $newWidth, $newHeight, $widthOrig, $heightOrig
+            );
+
+            $coverName = md5(time() . rand(0, 9999)) . '.jpg';
+
+            imagejpeg($finalImage, './media/covers/' . $coverName, 100);       // salvando a imagem
+
+            $userInfo-> cover = $coverName;          // inserindo a imagem em '$userInfo'
+
+        }
+    }
+
     $userDao->update($userInfo);
-    exit;
 }
 
 header("Location: " . $base . "/configuracoes.php");
