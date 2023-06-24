@@ -1,29 +1,40 @@
 <?php
 require_once 'models/PostLike.php';
 
-class PostLikeDaoMysql implements PostLikeDAO {     // implementando a interfaçe 'PostLikeDAO' de PostLike.php
+class PostLikeDaoMysql implements PostLikeDAO {
     private $pdo;
  
     public function __construct(PDO $driver) {
-        $this-> pdo = $driver;
+        $this->pdo = $driver;
     }
 
     public function getLikeCount($id_post) {
-        $sql = $this-> pdo-> prepare("SELECT COUNT(*) as c FROM postlikes       <!-- pegando a quantidade de likes que determinado 'post' tem -->
+        $sql = $this->pdo->prepare("SELECT COUNT(*) as c FROM postlikes
         WHERE id_post = :id_post");
 
-        $sql-> bindValue(':id_post', $id_post);
-        $sql-> execute();
+        $sql->bindValue(':id_post', $id_post);
+        $sql->execute();
 
-        $data = $sql-> fetch();
-        return $data['c'];
+        $data = $sql->fetch();
+        return $data['c']; // Retorna a contagem de curtidas
     }
 
     public function isLiked($id_post, $id_user) {
+        $sql = $this->pdo->prepare("SELECT * FROM postlikes
+        WHERE id_post = :id_post AND id_user = :id_user");
 
+        $sql->bindValue(':id_post', $id_post);
+        $sql->bindValue(':id_user', $id_user);
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            return true; // Se houver algum resultado, significa que o usuário curtiu o post
+        } else {
+            return false; // Se não houver resultado, significa que o usuário não curtiu o post
+        }
     }
 
     public function liketoggle($id_post, $id_user) {
-
+        
     }
 }
