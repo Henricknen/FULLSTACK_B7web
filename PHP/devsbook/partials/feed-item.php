@@ -48,6 +48,10 @@ if (isset($item)) {
             <div class="msg-btn"><?= isset($item->comments) ? count($item->comments) : ''; ?></div>
         </div>
         <div class="feed-item-comments">
+            <div class = "feed-item-comments-area">
+
+            </div>
+            
             <div class="fic-answer row m-height-10 m-width-20">
                 <div class="fic-item-photo">
                     <a href="<?= $base; ?>/perfil.php">

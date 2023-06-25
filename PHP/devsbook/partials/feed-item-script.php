@@ -15,5 +15,38 @@ window.onload = function() {
             fetch('ajax_like.php?id='+id);
         });
     });
+
+    document.querySelectorAll('.fic-item-field').forEach(item=>{        // codigo responsavel pelos comentarios
+        item.addEventListener('keyup', async (e)=>{
+            if(e.keyCode == 13) {
+                let id = item.closest('.feed-item').getAttribute('data-id');
+                let txt = item.value;
+                item.value = '';
+
+                let req = await fetch('ajax_comment.php', {
+                    method: 'POST',
+                    body: JSON.stringify({id, txt})
+                });
+                let json = await req.json();
+
+                if(json.error == '') {
+                    let html = '<div class="fic-item row m-height-10 m-width-20">';
+                    html += '<div class="fic-item-photo">';
+                    html += '<a href="'+json.link+'"><img src="'+json.avatar+'" /></a>';
+                    html += '</div>';
+                    html += '<div class="fic-item-info">';
+                    html += '<a href="'+json.link+'">'+json.name+'</a>';
+                    html += json.body;
+                    html += '</div>';
+                    html += '</div>';
+
+                    item.closest('.feed-item')
+                        .querySelector('.feed-item-comments-area')
+                        .innerHTML += html;
+                }
+
+            }
+        });
+    });
 };
 </script>

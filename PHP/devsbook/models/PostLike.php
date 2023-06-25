@@ -1,5 +1,5 @@
 <?php
-class PosltLike {
+class PostLike {
     public $id;     // colunas
     public $id_post;
     public $id_user;
