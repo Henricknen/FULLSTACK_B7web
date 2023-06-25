@@ -1,4 +1,6 @@
 <?php
+require_once 'feed-item-script.php';        // puxando o arquico 'feed-item-script.php'
+
 $actionPhrase = '';
 if (isset($item)) {
     switch ($item->type) {
@@ -12,7 +14,7 @@ if (isset($item)) {
 }
 ?>
 
-<div class="box feed-item">
+<div class="box feed-item" data-id = "<?=$item-> id; ?>">
     <div class="box-body">
         <div class="feed-item-head row mt-20 m-width-20">
             <div class="feed-item-head-photo">
