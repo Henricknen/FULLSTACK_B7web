@@ -23,11 +23,15 @@ window.onload = function() {
                 let txt = item.value;
                 item.value = '';
 
+                let data = new FormData();
+                data.append('id', id);
+                data.append('txt', txt);
+
                 let req = await fetch('ajax_comment.php', {
                     method: 'POST',
-                    body: JSON.stringify({id, txt})
+                    body: data
                 });
-                let json = await req.json();
+                let json = await req.json();        // transforma o resultado em 'json'
 
                 if(json.error == '') {
                     let html = '<div class="fic-item row m-height-10 m-width-20">';

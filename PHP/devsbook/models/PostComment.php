@@ -3,7 +3,7 @@ class PostComment {
     public $id;
     public $id_post;
     public $id_user;
-    public $create_at;
+    public $created_at;
     public $body;
 }
 

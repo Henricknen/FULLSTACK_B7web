@@ -51,11 +51,11 @@ if (isset($item)) {
                 <?php foreach ($item->comments as $comment) : ?>
                     <div class="fic-item row m-height-10 m-width-20">
                         <div class="fic-item-photo">
-                            <a href="<?= $base; ?>/perfil.php?id=<?= $comment->id_user; ?>"><img src="<?= $base; ?>/media/avatars/<?= $comment->user->avatar; ?>" /></a>
+                            <a href="<?= $base; ?>/perfil.php?id=<?= $comment-> id_user; ?>"><img src="<?= $base; ?>/media/avatars/<?= $comment-> user-> avatar; ?>" /></a>
                         </div>
                         <div class="fic-item-info">
-                            <a href="<?= $base; ?>/perfil.php?id=<?= $comment->id_user; ?>"><?= $comment->user->name; ?></a>
-                            <?= $comment-> body; ?>
+                            <a href="<?= $base; ?>/perfil.php?id=<?= $comment-> id_user; ?>"><?= $comment-> user-> name; ?></a>
+                            <?= $comment-> body; ?>     <!-- comentário -->
                         </div>
                     </div>
                 <?php endforeach; ?>

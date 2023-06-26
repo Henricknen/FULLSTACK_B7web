@@ -89,8 +89,8 @@ class PostDaoMysql implements PostDAO
     private function _postListToObject($post_list, $id_user)
     {
         $posts = [];
-        $userDao = new UserDaoMysql($this->pdo);
-        $postLikeDao = new PostLikeDaoMysql($this->pdo);
+        $userDao = new UserDaoMysql($this-> pdo);
+        $postLikeDao = new PostLikeDaoMysql($this-> pdo);
         $PostCommentDao = new PostCommentDaoMysql($this-> pdo);
 
         foreach ($post_list as $post_item) {
