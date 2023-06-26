@@ -1,5 +1,5 @@
 <?php
-require_once 'feed-item-script.php';        // puxando o arquico 'feed-item-script.php'
+require_once 'feed-item-script.php';        // puxando o arquivo 'feed-item-script.php'
 
 $actionPhrase = '';
 if (isset($item)) {
@@ -14,20 +14,19 @@ if (isset($item)) {
 }
 ?>
 
-<div class="box feed-item" data-id = "<?=$item-> id; ?>">
+<div class="box feed-item" data-id="<?=$item->id; ?>">
     <div class="box-body">
         <div class="feed-item-head row mt-20 m-width-20">
             <div class="feed-item-head-photo">
                 <?php if ($item !== null && $item->user !== null && $item->user->avatar !== null) : ?>
                     <a href="<?= $base; ?>/perfil.php?id=<?= $item->user->id; ?>"><img src="<?= $base; ?>/media/avatars/<?= $item->user->avatar; ?>" /></a>
                 <?php else : ?>
-                    <img src="/assets/images/user.png" />        <!-- Caso a variável $item, $item->user ou a propriedade avatar sejam nulas entra uma imagem padrão -->
+                    <img src="/assets/images/user.png" />        <!-- Caso a variável $item, $item->user ou a propriedade avatar sejam nulas, insere uma imagem padrão -->
                 <?php endif; ?>
             </div>
 
-
             <div class="feed-item-head-info">
-                <a href="<?= $base; ?>/perfil.php?id=<?= isset($item->user->id) ? $item->user->name : ''; ?>">
+                <a href="<?= $base; ?>/perfil.php?id=<?= isset($item->user->id) ? $item->user->id : ''; ?>">
                     <span class="fidi-name"><?= isset($item->user->name) ? $item->user->name : ''; ?></span>        <!-- mostra o nome do usuário logado -->
                 </a>
                 <span class="fidi-action"><?= $actionPhrase; ?></span>      <!-- mostra uma frase que depende do tipo do 'post' -->
@@ -48,10 +47,20 @@ if (isset($item)) {
             <div class="msg-btn"><?= isset($item->comments) ? count($item->comments) : ''; ?></div>
         </div>
         <div class="feed-item-comments">
-            <div class = "feed-item-comments-area">
-
+            <div class="feed-item-comments-area">
+                <?php foreach ($item->comments as $comment) : ?>
+                    <div class="fic-item row m-height-10 m-width-20">
+                        <div class="fic-item-photo">
+                            <a href="<?= $base; ?>/perfil.php?id=<?= $comment->id_user; ?>"><img src="<?= $base; ?>/media/avatars/<?= $comment->user->avatar; ?>" /></a>
+                        </div>
+                        <div class="fic-item-info">
+                            <a href="<?= $base; ?>/perfil.php?id=<?= $comment->id_user; ?>"><?= $comment->user->name; ?></a>
+                            <?= $comment-> body; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
-            
+
             <div class="fic-answer row m-height-10 m-width-20">
                 <div class="fic-item-photo">
                     <a href="<?= $base; ?>/perfil.php">
