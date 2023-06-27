@@ -2,6 +2,7 @@
 require_once 'config.php';
 require_once 'models/Auth.php';
 require_once 'dao/PostDaoMysql.php';
+require_once 'dao/UserRelationDaoMysql.php';
 
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
@@ -14,12 +15,13 @@ if (!$id) {
     $id = $userInfo->id;
 }
 
-if ($id != $userInfo->id) {     // diz que está acessando o usuário logado
+if ($id != $userInfo->id) {
     $activeMenu = '';
 }
 
 $postDao = new PostDaoMysql($pdo);
 $userDao = new UserDaoMysql($pdo);
+$userRelationDao = new UserRelationDaoMysql($pdo);
 
 $user = $userDao->findById($id, true);
 if (!$user) {
@@ -32,7 +34,9 @@ $dateTo = new DateTime('today');
 $age = $dateFrom->diff($dateTo);
 $user->ageYears = $age->y;
 
-$feed = $postDao->getUserFeed($id);
+$feed = $postDao->getUserFeed($id);     // pegando o 'feed' do usuário
+
+$isFollowing = $userRelationDao-> isFollowing($userInfo-> id, $id);       // verifica se usuário esá seguido
 
 require 'partials/header.php';
 require 'partials/menu.php';
@@ -55,6 +59,11 @@ require 'partials/menu.php';
                         <?php endif; ?>
                     </div>
                     <div class="profile-info-data row">
+                        <?php if ($id != $userInfo->id): ?>     <!-- botão será mostrado quando o perfil visualizado não seja do usuário logado -->
+                            <div class="profile-info-item m-width-20">
+                                <a href="follow_action.php?id= <?= $id; ?>" class="button"><?= (!$isFollowing) ? 'Seguir' : 'Deixar de Seguir' ?></a>
+                            </div>
+                        <?php endif; ?>
                         <div class="profile-info-item m-width-20">
                             <div class="profile-info-item-n"><?= count($user->followers); ?></div>
                             <div class="profile-info-item-s">Seguidores</div>
@@ -116,10 +125,13 @@ require 'partials/menu.php';
                     <?php if (count($user->following) > 0): ?>
                         <?php foreach ($user->following as $item): ?>
                             <div class="friend-icon">
-                                <a href="<?= $base; ?>/perfil.php?id=<?= $item->id; ?>">
-                                    <div class="friend-icon-avatar">
-                                        <img src="<?= $base; ?>/media/avatars/<?= $item->avatar; ?>" />
-                                    </div>
+                                <!-- <a href="<?= $base; ?>/perfil.php?id=<?= $item->id; ?>"> -->
+
+                                    <?php if (!empty($item->avatar)): ?>
+                                        <div class="friend-icon-avatar">
+                                            <img src="<?= $base; ?>/media/avatars/<?= $item->avatar; ?>" />
+                                        </div>
+                                    <?php endif; ?>
                                     <div class="friend-icon-name">
                                         <?= $item->name; ?>
                                     </div>
@@ -146,13 +158,13 @@ require 'partials/menu.php';
                 <div class="box-body row m-20">
 
                     <?php if (count($user->photos) > 0) : ?>
-                        <?php foreach ($user->photos as $key=> $item) : ?>
+                        <?php foreach ($user->photos as $key => $item) : ?>
                             <div class="user-photo-item">
-                                <a href="#modal-<?=$key;?>" rel="modal:open">
+                                <a href="#modal-<?= $key; ?>" rel="modal:open">
                                     <img src="<?= $base; ?>/media/uploads/<?= $item->body; ?>" />
                                 </a>
-                                <div id="modal-<?=$key;?>" style="display:none">
-                                <img src="<?=$base;?>/media/uploads/<?= $item->body; ?>">
+                                <div id="modal-<?= $key; ?>" style="display:none">
+                                    <img src="<?= $base; ?>/media/uploads/<?= $item->body; ?>">
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -169,7 +181,7 @@ require 'partials/menu.php';
                     <?php require 'partials/feed-item.php'; ?>
                 <?php endforeach; ?>
             <?php else : ?>
-                Não há postagens deste usuário
+                <p>Não há postagens deste usuário</p>
             <?php endif; ?>
 
         </div>

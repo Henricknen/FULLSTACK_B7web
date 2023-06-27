@@ -50,4 +50,19 @@ class UserRelationDaoMysql implements UserRelationDAO {
 
         return $users;
     }
+
+    public function isFollowing($id1, $id2) {     // parâmetro id '$id1' do usuário logado e id do usuário que usuário logado segue '$id2'
+        $sql = $this-> pdo-> prepare("SELECT * FROM userrelations WHERE
+        user_from = :user_from AND user_to = :user_to");        // verificação se um usuário segue o outro
+
+        $sql-> bindValue('user_from', $id1);
+        $sql-> bindValue('user_to', $id2);
+        $sql-> execute();
+
+        if($sql-> rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
