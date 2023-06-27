@@ -9,6 +9,10 @@ $firstName = current(explode(' ', $userInfo->name));       // sepando o nome, 'c
             </div>
             <div class="feed-new-input-placeholder">O que você está pensando, <?= $firstName; ?>?</div>
             <div class="feed-new-input" contenteditable="true"></div>
+            <div class="feed-new-photo">
+                <img src="<?= $base; ?>/assets/images/photo.png" />
+                <input type = "file" name = "photo" class = "feed-new-file" accept = "image/png, image/jpeg, image/jpg" />      <!-- 'accept' é o tipo de arquivos que serão aceitos -->
+            </div>
             <div class="feed-new-send">
                 <img src="<?= $base; ?>/assets/images/send.png" />
             </div>
@@ -22,6 +26,30 @@ $firstName = current(explode(' ', $userInfo->name));       // sepando o nome, 'c
     let feedInput = document.querySelector('.feed-new-input');      // seleção ultilizando 'querySelector'
     let feedSubmit = document.querySelector('.feed-new-send');
     let feedForm = document.querySelector('.feed-new-form');
+    let feedPhoto = document.querySelector('.feed-new-photo');
+    let feedFile = document.querySelector('.feed-new-file');
+
+    feedPhoto.addEventListener('click', function(){
+        feedFile.click();       // ação de 'click'
+    });
+
+    feedFile.addEventListener('change', async function() {      // quando houver 'change' uma mudança9seleçionar um arquivo)
+        let photo = feedFile.files[0];
+        let formData = new FormData();
+
+    formData.append('photo', photo);
+    let req = await fetch('ajax_upload.php', {      // mandando requisição para 'ajax_upload.php'
+        method: 'POST',     // requisição do tipo 'POST'
+        body: formData
+    });
+    let json = await req.json();        // reçebendo respota 'json'
+
+    if(json.error != '') {
+        alert(json.error);
+    }
+
+    window.location.href = window.location.href;        // atualiza a tela
+});
 
     feedSubmit.addEventListener('click', function() {       // cliando ação de 'click'
         let value = feedInput.innerText.trim();     // pegando o texto que o usuário digitar, 'trim' tira os espaços do começo e do fim
