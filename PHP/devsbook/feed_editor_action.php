@@ -1,7 +1,4 @@
 <?php
-
-// use DeepCopy\Filter\Filter;
-
 require 'config.php';
 require 'models/Auth.php';
 require 'dao/PostDaoMysql.php';     // puxando o 'dao'
