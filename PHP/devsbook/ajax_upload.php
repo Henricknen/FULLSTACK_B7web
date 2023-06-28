@@ -19,12 +19,14 @@ if(isset($_FILES['photo']) && !empty($_FILES['photo']['tmp_name'])) {       // v
         list($widthOrig, $heightOrig) = getimagesize($photo['tmp_name']);       // tamanho original da imagem
         $ratio = $widthOrig / $heightOrig;
 
-        $newWidth = $maxWidth;     // nova largura
-        $newHeight = $newWidth / $ratio;        // nova altura
+        $newWidth = $maxWidth;
+        $newHeight = $maxHeight;
+        $ratioMax = $maxWidth / $newHeight;
 
-        if($newHeight < $maxHeight) {
-            $newHeight = $maxHeight;
+        if($ratioMax > $ratio) {
             $newWidth = $newHeight * $ratio;
+        } else {
+            $newHeight = $newWidth / $ratio;
         }
 
         $finalImage = imagecreatetruecolor($newWidth, $newHeight);        // criação da imagem

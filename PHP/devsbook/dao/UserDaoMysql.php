@@ -26,7 +26,7 @@ class UserDaoMysql implements UserDAO {
         $u-> token = $array['token'] ?? '';
 
         if ($full) {
-            $urDaoMysql = new UserRelationDaoMysql($this-> pdo);
+            $this-> urDaoMysql = new UserRelationDaoMysql($this-> pdo);
             $postDaoMysql = new PostDaoMysql($this->  pdo);
 
             $u-> followers = $this-> urDaoMysql-> getFollowers($u-> id);

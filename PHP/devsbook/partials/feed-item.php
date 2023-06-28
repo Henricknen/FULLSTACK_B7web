@@ -39,7 +39,7 @@ if (isset($item)) {
         </div>
         <div class="feed-item-body mt-10 m-width-20">
             <?php
-            switch ($item->type) {
+            switch ($item-> type) {
                 case 'text':
                     echo nl2br($item-> body);
                 break;
