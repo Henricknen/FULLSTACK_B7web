@@ -29,11 +29,12 @@ $firstName = current(explode(' ', $userInfo-> name));       // sepando o nome, '
                         <div class="user-area-text"><?=$firstName;?></div>        <!--- '$userInfo-> name;' ultilizando nome do usuario cadastrado no banco de dados -->
                         <div class="user-area-icon">
                             
-                            <img src="media/avatars/avatar.jpg" />
+                            <!-- <img src="media/avatars/avatar.jpg" /> -->
                             
                         </div>
                     </a>
                     <a href="<?=$base;?>/logout.php" class="user-logout">
+                    <img src="<?= $base; ?>/media/avatars/<?= $userInfo->avatar; ?>" />
                         <img src="<?=$base;?>/assets/images/power_white.png" />
                     </a>
                 </div>

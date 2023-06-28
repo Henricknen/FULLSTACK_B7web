@@ -1,60 +1,67 @@
 <?php
-$firstName = current(explode(' ', $userInfo->name));       // sepando o nome, 'current' pega o primeiro nome
+$firstName = current(explode(' ', $userInfo->name)); // Separando o nome, 'current' pega o primeiro nome
 ?>
+
 <div class="box feed-new">
     <div class="box-body">
         <div class="feed-new-editor m-10 row">
             <div class="feed-new-avatar">
                 <img src="<?= $base; ?>/media/avatars/<?= $userInfo->avatar; ?>" />
             </div>
-            <div class="feed-new-input-placeholder">O que você está pensando, <?= $firstName; ?>?</div>
+            <div class="feed-new-input-placeholder">
+                O que você está pensando, <?= $firstName; ?>?
+            </div>
             <div class="feed-new-input" contenteditable="true"></div>
             <div class="feed-new-photo">
                 <img src="<?= $base; ?>/assets/images/photo.png" />
-                <input type = "file" name = "photo" class = "feed-new-file" accept = "image/png, image/jpeg, image/jpg" />      <!-- 'accept' é o tipo de arquivos que serão aceitos -->
+                <input type="file" name="photo" class="feed-new-file" accept="image/png, image/jpeg, image/jpg" />
             </div>
             <div class="feed-new-send">
                 <img src="<?= $base; ?>/assets/images/send.png" />
             </div>
-            <form class= "feed-new-form " action="<?= $base; ?>/feed_editor_action.php" method="POST">      <!-- formulário -->
-                <input type="hidden" name="body">       <!-- 'hidden' não deixar o input aparecer na tela -->
+            <form class="feed-new-form" action="<?= $base; ?>/feed_editor_action.php" method="POST">
+                <input type="hidden" name="body">
             </form>
         </div>
     </div>
 </div>
 <script>
-    let feedInput = document.querySelector('.feed-new-input');      // seleção ultilizando 'querySelector'
+    // Selecionando elementos do DOM
+    let feedInput = document.querySelector('.feed-new-input');
     let feedSubmit = document.querySelector('.feed-new-send');
     let feedForm = document.querySelector('.feed-new-form');
     let feedPhoto = document.querySelector('.feed-new-photo');
     let feedFile = document.querySelector('.feed-new-file');
 
-    feedPhoto.addEventListener('click', function(){
-        feedFile.click();       // ação de 'click'
+    // Evento de clique na foto
+    feedPhoto.addEventListener('click', function() {
+        feedFile.click();
     });
 
-    feedFile.addEventListener('change', async function() {      // quando houver 'change' uma mudança9seleçionar um arquivo)
+    // Evento de mudança no arquivo selecionado
+    feedFile.addEventListener('change', async function() {
         let photo = feedFile.files[0];
         let formData = new FormData();
 
-    formData.append('photo', photo);
-    let req = await fetch('ajax_upload.php', {      // mandando requisição para 'ajax_upload.php'
-        method: 'POST',     // requisição do tipo 'POST'
-        body: formData
+        formData.append('photo', photo);
+        let req = await fetch('ajax_upload.php', {
+            method: 'POST',
+            body: formData
+        });
+        let json = await req.json();
+
+        if (json.error !== '') {
+            alert(json.error);
+        }
+
+        window.location.href = window.location.href;
     });
-    let json = await req.json();        // reçebendo respota 'json'
 
-    if(json.error != '') {
-        alert(json.error);
-    }
+    // Evento de clique no botão de envio
+    feedSubmit.addEventListener('click', function() {
+        let value = feedInput.innerText.trim();
 
-    window.location.href = window.location.href;        // atualiza a tela
-});
-
-    feedSubmit.addEventListener('click', function() {       // cliando ação de 'click'
-        let value = feedInput.innerText.trim();     // pegando o texto que o usuário digitar, 'trim' tira os espaços do começo e do fim
-
-        feedForm.querySelector('input[name = body]'). value = value;        // pegando o que foi digitado e inserindo no formulário
-        feedForm.submit();      // enviando o formulário
+        feedForm.querySelector('input[name=body]').value = value;
+        feedForm.submit();
     });
 </script>
