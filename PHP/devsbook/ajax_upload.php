@@ -7,34 +7,34 @@ require_once 'dao/PostDaoMysql.php';
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
 
-$array = ['error' => ''];
+$array = ['error' => ''];       // se der erro a variável '$array' será preenchida com o erro
 
 $postDao = new PostDaoMysql($pdo);
 
 if(isset($_FILES['photo']) && !empty($_FILES['photo']['tmp_name'])) {       // verificando se foi reçebida alguma imagem
     $photo = $_FILES['photo'];
     // fazendo o tratamento da imagem
-    if(in_array($photo['type'], ['image/png', 'image/jpg', 'image/jpeg', ])) {        // tipos de 'type' aççeitos
+    if(in_array($photo['type'], ['image/png', 'image/jpg', 'image/jpeg'])) {        // tipos de 'type' aççeitos
 
         list($widthOrig, $heightOrig) = getimagesize($photo['tmp_name']);       // tamanho original da imagem
         $ratio = $widthOrig / $heightOrig;
 
-        $newWidth = $maxHeight;     // chegando ao mínimo viável
-        $newHeight = $newWidth / $ratio;
+        $newWidth = $maxWidth;     // nova largura
+        $newHeight = $newWidth / $ratio;        // nova altura
 
         if($newHeight < $maxHeight) {
             $newHeight = $maxHeight;
-            $newHeight = $newHeight * $ratio;
+            $newWidth = $newHeight * $ratio;
         }
 
         $finalImage = imagecreatetruecolor($newWidth, $newHeight);        // criação da imagem
-        switch ($photo["type"]) {
+        switch ($photo['type']) {
             case 'image/jpeg':
             case 'image/jpg':
-                $img = imagecreatefromjpeg($photo['tmp_name']);
+                $image = imagecreatefromjpeg($photo['tmp_name']);
             break;
             case 'image/png':
-                $img = imagecreatefrompng($photo['tmp_name']);
+                $image = imagecreatefrompng($photo['tmp_name']);
             break;
         }
 
@@ -44,7 +44,7 @@ if(isset($_FILES['photo']) && !empty($_FILES['photo']['tmp_name'])) {       // v
             $newWidth, $newHeight, $widthOrig, $heightOrig      // largura e altura novos e original
         );
 
-        $photoName = md5(time(). rand(0, 9999)). '.jpg';        // gerando um nome alatorio para a imagem cria
+        $photoName = md5(time(). rand(0, 9999)). '.jpg';        // gerando nome alatorio 'photoName' para a imagem criada
         imagejpeg($finalImage, 'media/uploads/'. $photoName);        // local onde imagem será salva
 
         $newPost = new Post();      // criando um 'Post'
@@ -56,7 +56,7 @@ if(isset($_FILES['photo']) && !empty($_FILES['photo']['tmp_name'])) {       // v
         $postDao-> insert($newPost);        // inserindo um novo 'Post'
 
     } else {
-        $array['error'] = "Arquivo não suportado (jpg ou png)...";
+        $array['error'] = 'Arquivo não suportado (jpg ou png)...';
     }
 
 } else {

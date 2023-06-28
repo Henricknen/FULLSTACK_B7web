@@ -39,22 +39,23 @@ $firstName = current(explode(' ', $userInfo->name)); // Separando o nome, 'curre
     });
 
     // Evento de mudança no arquivo selecionado
-    feedFile.addEventListener('change', async function() {
+    
+    feedFile.addEventListener('change', async function(){       // quando hover uma mudança 'change'
         let photo = feedFile.files[0];
         let formData = new FormData();
 
         formData.append('photo', photo);
-        let req = await fetch('ajax_upload.php', {
+        let req = await fetch('ajax_upload.php', {      // faz 'requisição' ajax
             method: 'POST',
             body: formData
         });
         let json = await req.json();
 
-        if (json.error !== '') {
+        if(json.error != '') {
             alert(json.error);
         }
 
-        window.location.href = window.location.href;
+        window.location.href = window.location.href;        // independente de dar erro ou não a tela será atualizada
     });
 
     // Evento de clique no botão de envio
