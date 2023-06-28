@@ -38,7 +38,16 @@ if (isset($item)) {
             </div>
         </div>
         <div class="feed-item-body mt-10 m-width-20">
-            <?= isset($item->body) ? nl2br($item->body) : ''; ?>        <!-- 'nl2br' pula linha -->
+            <?php
+            switch ($item->type) {
+                case 'text':
+                    echo nl2br($item-> body);
+                break;
+                case 'photo':
+                    echo '<img src = "'. $base. '/media/ uploads/'. $item-> body.'"/>';
+                break;
+            }
+            ?>
         </div>
         <div class="feed-item-buttons row mt-20 m-width-20">
             <div class="like-btn <?= isset($item->liked) && $item->liked ? 'on' : ''; ?>">
