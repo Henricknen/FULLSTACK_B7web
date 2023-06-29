@@ -1,5 +1,25 @@
-<script>
+f<script>
 window.onload = function() {
+
+    function closeFeedWindow() {        // função feçha todas as janelas
+        document.querySelectorAll('.feed-item-more-window').forEach(item=>{
+            item.style.display = 'none';
+        });
+        
+        document.removeEventListener('click', closeFeedWindow);     // remove a função da tela toda
+    }
+
+    document.querySelectorAll('.feed-item-head-btn').forEach(item=>{        // seleção de todos os botões 'feed-item-head-btn' e vai adiçionar um 'click'
+        item.addEventListener('click', ()=>{
+            closeFeedWindow();
+
+            item.querySelector('.feed-item-more-window').style.display = 'block';
+            setTimeout(()=>{
+                document.addEventListener('click', closeFeedWindow);
+            }, 500);
+        });
+    });
+
     document.querySelectorAll('.like-btn').forEach(item=>{      // monitorando todos botões 'like'
         item.addEventListener('click', ()=>{        // evento de click
             let id = item.closest('.feed-item').getAttribute('data-id');

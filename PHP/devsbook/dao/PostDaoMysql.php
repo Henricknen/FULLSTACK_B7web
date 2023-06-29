@@ -9,89 +9,86 @@ class PostDaoMysql implements PostDAO
 {
     private $pdo;
 
-    public function __construct(PDO $driver)
+    public function __construct(PDO $pdo)
     {
-        $this->pdo = $driver;
+        $this->pdo = $pdo;
     }
 
-    public function insert(Post $p)
+    public function insert(Post $post)
     {
-        $sql = $this->pdo->prepare('INSERT INTO posts (
-            id_user, type, created_at, body
-        ) VALUES (
-            :id_user, :type, :created_at, :body
-        )');
-
-        $sql->bindValue(':id_user', $p->id_user);
-        $sql->bindValue(':type', $p->type);
-        $sql->bindValue(':created_at', $p->created_at);
-        $sql->bindValue(':body', $p->body);
+        $sql = $this->pdo->prepare('INSERT INTO posts (id_user, type, created_at, body) VALUES (:id_user, :type, :created_at, :body)');
+        $sql->bindValue(':id_user', $post->id_user);
+        $sql->bindValue(':type', $post->type);
+        $sql->bindValue(':created_at', $post->created_at);
+        $sql->bindValue(':body', $post->body);
         $sql->execute();
     }
 
-    public function getUserFeed($id_user)
+    public function delete($post_id, $user_id)
+    {
+        $sql = $this->pdo->prepare('DELETE FROM posts WHERE id = :post_id AND id_user = :user_id');
+        $sql->bindValue(':post_id', $post_id);
+        $sql->bindValue(':user_id', $user_id);
+        $sql->execute();
+    }
+
+    public function getUserFeed($user_id)
     {
         $array = [];
 
-        $sql = $this->pdo->prepare("SELECT * FROM posts
-        WHERE id_user = :id_user
-        ORDER BY created_at DESC");
-        $sql->bindValue(':id_user', $id_user);
+        $sql = $this->pdo->prepare("SELECT * FROM posts WHERE id_user = :user_id ORDER BY created_at DESC");
+        $sql->bindValue(':user_id', $user_id);
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
             $data = $sql->fetchAll(PDO::FETCH_ASSOC);
-            $array = $this->_postListToObject($data, $id_user);
+            $array = $this->postListToObject($data, $user_id);
         }
 
         return $array;
     }
 
-    public function getHomeFeed($id_user)
+    public function getHomeFeed($user_id)
     {
         $array = [];
 
         $urDao = new UserRelationDaoMysql($this->pdo);
-        $userList = $urDao->getFollowing($id_user);
-        $userList[] = $id_user;
+        $userList = $urDao->getFollowing($user_id);
+        $userList[] = $user_id;
 
-        $sql = $this->pdo->prepare("SELECT * FROM posts
-        WHERE id_user IN (" . implode(',', $userList) . ")
-        ORDER BY created_at DESC");
+        $sql = $this->pdo->prepare("SELECT * FROM posts WHERE id_user IN (" . implode(',', $userList) . ") ORDER BY created_at DESC");
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
             $data = $sql->fetchAll(PDO::FETCH_ASSOC);
-            $array = $this->_postListToObject($data, $id_user);
+            $array = $this->postListToObject($data, $user_id);
         }
 
         return $array;
     }
 
-    public function getPhotosFrom($id_user)
+    public function getPhotosFrom($user_id)
     {
         $array = [];
 
-        $sql = $this->pdo->prepare("SELECT * FROM posts        
-        WHERE id_user = :id_user AND  type = 'photo'
-        ORDER BY created_at DESC");
-        $sql->bindValue(':id_user', $id_user);
+        $sql = $this->pdo->prepare("SELECT * FROM posts WHERE id_user = :user_id AND type = 'photo' ORDER BY created_at DESC");
+        $sql->bindValue(':user_id', $user_id);
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
             $data = $sql->fetchAll(PDO::FETCH_ASSOC);
-            $array = $this->_postListToObject($data, $id_user);
+            $array = $this->postListToObject($data, $user_id);
         }
 
         return $array;
     }
 
-    private function _postListToObject($post_list, $id_user)
+    private function postListToObject($post_list, $user_id)
     {
         $posts = [];
-        $userDao = new UserDaoMysql($this-> pdo);
-        $postLikeDao = new PostLikeDaoMysql($this-> pdo);
-        $PostCommentDao = new PostCommentDaoMysql($this-> pdo);
+        $userDao = new UserDaoMysql($this->pdo);
+        $postLikeDao = new PostLikeDaoMysql($this->pdo);
+        $postCommentDao = new PostCommentDaoMysql($this->pdo);
 
         foreach ($post_list as $post_item) {
             $newPost = new Post();
@@ -99,18 +96,11 @@ class PostDaoMysql implements PostDAO
             $newPost->type = $post_item['type'];
             $newPost->created_at = $post_item['created_at'];
             $newPost->body = $post_item['body'];
-            $newPost->mine = false;
-
-            if ($post_item['id_user'] == $id_user) {
-                $newPost->mine = true;
-            }
-
+            $newPost->mine = ($post_item['id_user'] == $user_id);
             $newPost->user = $userDao->findById($post_item['id_user']);
-            
             $newPost->likeCount = $postLikeDao->getLikeCount($newPost->id);
-            $newPost->liked = $postLikeDao->isLiked($newPost->id, $id_user);
-
-            $newPost->comments = $PostCommentDao-> getComments($newPost-> id); // informações sobre comentários
+            $newPost->liked = $postLikeDao->isLiked($newPost->id, $user_id);
+            $newPost->comments = $postCommentDao->getComments($newPost->id); // informações sobre comentários
 
             $posts[] = $newPost;
         }

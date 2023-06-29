@@ -33,9 +33,16 @@ if (isset($item)) {
                 <br />
                 <span class="fidi-date"><?= isset($item->created_at) ? date('d/m/Y', strtotime($item->created_at)) : ''; ?></span>      <!-- gerando a data -->
             </div>
-            <div class="feed-item-head-btn">
-                <img src="<?= isset($base) ? $base : ''; ?>/assets/images/more.png" />
-            </div>
+
+            <?php if($item-> mine): ?>      <!-- botão irá apareçer se o 'feed' for do usuário logado -->
+                <div class="feed-item-head-btn">
+                    <img src="<?= isset($base) ? $base : ''; ?>/assets/images/more.png" />
+                    <div class="feed-item-more-window">     <!-- janela -->
+                        <a href="<?= $base; ?>/excluir_post_action.php?id=<?= $item-> id; ?>">Excluir Post</a>
+                    </div>
+                </div>
+            <?php endif; ?>
+
         </div>
         <div class="feed-item-body mt-10 m-width-20">
             <?php
