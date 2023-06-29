@@ -1,7 +1,7 @@
 <?php
-require 'config.php';
-require 'models/Auth.php';
-require 'dao/PostDaoMysql.php';     // puxando o 'dao'
+require_once 'config.php';
+require_once 'models/Auth.php';
+require_once 'dao/PostDaoMysql.php';     // puxando o 'dao'
 
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();

@@ -9,9 +9,9 @@ class PostDaoMysql implements PostDAO
 {
     private $pdo;
 
-    public function __construct(PDO $pdo)
+    public function __construct(PDO $driver)
     {
-        $this->pdo = $pdo;
+        $this-> pdo = $driver;
     }
 
     public function insert(Post $post)
@@ -24,12 +24,12 @@ class PostDaoMysql implements PostDAO
         $sql->execute();
     }
 
-    public function delete($post_id, $user_id)
-    {
-        $sql = $this->pdo->prepare('DELETE FROM posts WHERE id = :post_id AND id_user = :user_id');
-        $sql->bindValue(':post_id', $post_id);
-        $sql->bindValue(':user_id', $user_id);
-        $sql->execute();
+    public function delete($id, $id_user) {
+        $sql = $this-> pdo-> prepare("DELETE FROM posts
+        WHERE id = :id' AND id_user = :id_user");
+        $sql-> bindValue(':id', $id);
+        $sql-> bindValue(':id_user', $id_user);
+        $sql-> execute();
     }
 
     public function getUserFeed($user_id)
@@ -37,8 +37,8 @@ class PostDaoMysql implements PostDAO
         $array = [];
 
         $sql = $this->pdo->prepare("SELECT * FROM posts WHERE id_user = :user_id ORDER BY created_at DESC");
-        $sql->bindValue(':user_id', $user_id);
-        $sql->execute();
+        $sql-> bindValue(':user_id', $user_id);
+        $sql-> execute();
 
         if ($sql->rowCount() > 0) {
             $data = $sql->fetchAll(PDO::FETCH_ASSOC);
