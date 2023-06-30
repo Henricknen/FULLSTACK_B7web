@@ -74,28 +74,37 @@ class PostDaoMysql implements PostDAO
 
     public function getHomeFeed($id_user) {
         $array = [];
-        $perpage = 2;       // variável '$perpage' define o limite de 'post'
+        $perPage = 4;       // variável '$perpage' define o limite de 'post'
 
         $page = intval(filter_input(INPUT_GET, 'p'));
         if($page < 1) {
             $page = 1;
         }
         
-        $offset = ($page - 1) * $perpage;
+        $offset = ($page - 1) * $perPage;
 
         $urDao = new UserRelationDaoMysql($this->pdo);      // pega a lista dos usuários seguidos
         $userList = $urDao-> getFollowing($id_user);
         $userList[] = $id_user;
 
-        $sql = $this->pdo-> prepare("SELECT * FROM posts
+        $sql = $this-> pdo-> query("SELECT * FROM posts
         WHERE id_user IN (" . implode(',', $userList) . ")
-        ORDER BY created_at DESC LIMIT $offset, $perpage");      // apresenta o tanto de 'post' que for definido na variável '$perpage'
+        ORDER BY created_at DESC LIMIT $offset, $perPage");      // apresenta o tanto de 'post' que for definido na variável '$perpage'
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
             $data = $sql-> fetchAll(PDO:: FETCH_ASSOC);
-            $array = $this-> postListToObject($data, $id_user);     // transforma o resultado em objetos
+            $array['feed'] = $this-> postListToObject($data, $id_user);     // transforma o resultado em objetos
         }
+                // pegando o total de 'post'
+        $sql = $this-> pdo-> query("SELECT COUNT(*) as c FROM posts
+        WHERE id_user IN (" . implode(',', $userList) . ")");
+        $totalData = $sql-> fetch();
+        $total = $totalData['c'];
+
+        $array['pages'] = ceil($total / $perPage);      // encontrando quantas páginas tem, 'ceil' faz o arredondamento para cima
+
+        $array['currentPage'] = $page;
 
         return $array;
     }

@@ -249,6 +249,24 @@ header .head-side {
     top: -500px;
 }
 
+.feed-pagination a {
+    display: inline;
+    padding: 7px 10px;
+    border: 1px solid #CCC;
+    margin: 5px;
+    text-decoration: none;
+    color: #000;
+    border-radius: 3px;
+}
+
+.feed-pagination a:hover {
+    background-color: #DDD;
+}
+
+.feed-pagination a.active {
+    background-color: #FFF;
+}
+
 .banners .box-body {
     margin:0 10px 10px 10px;
 }
