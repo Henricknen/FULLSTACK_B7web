@@ -22,10 +22,6 @@ require 'partials/menu.php';
             <?php foreach ($feed as $item) : ?>     <!-- loop mostra os 'feed' existentes -->
                 <?php include 'partials/feed-item.php'; ?>
             <?php endforeach; ?>
-
-
-
-
         </div>
         <div class="column side pl-5">
             <div class="box banners">

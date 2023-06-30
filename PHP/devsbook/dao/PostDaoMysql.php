@@ -9,13 +9,11 @@ class PostDaoMysql implements PostDAO
 {
     private $pdo;
 
-    public function __construct(PDO $driver)
-    {
+    public function __construct(PDO $driver) {
         $this-> pdo = $driver;
     }
 
-    public function insert(Post $post)
-    {
+    public function insert(Post $post) {
         $sql = $this->pdo->prepare('INSERT INTO posts (id_user, type, created_at, body) VALUES (:id_user, :type, :created_at, :body)');
         $sql->bindValue(':id_user', $post->id_user);
         $sql->bindValue(':type', $post->type);
@@ -57,11 +55,12 @@ class PostDaoMysql implements PostDAO
 
     }
 
-    public function getUserFeed($id_user)
-    {
+    public function getUserFeed($id_user) {
         $array = [];
 
-        $sql = $this->pdo->prepare("SELECT * FROM posts WHERE id_user = :id_user ORDER BY created_at DESC");
+        $sql = $this->pdo->prepare("SELECT * FROM posts
+        WHERE id_user = :id_user ORDER BY created_at DESC");
+
         $sql-> bindValue(':id_user', $id_user);
         $sql-> execute();
 
@@ -73,30 +72,41 @@ class PostDaoMysql implements PostDAO
         return $array;
     }
 
-    public function getHomeFeed($id_user)
-    {
+    public function getHomeFeed($id_user) {
         $array = [];
+        $perpage = 2;       // variável '$perpage' define o limite de 'post'
 
-        $urDao = new UserRelationDaoMysql($this->pdo);
-        $userList = $urDao->getFollowing($id_user);
+        $page = intval(filter_input(INPUT_GET, 'p'));
+        if($page < 1) {
+            $page = 1;
+        }
+        
+        $offset = ($page - 1) * $perpage;
+
+        $urDao = new UserRelationDaoMysql($this->pdo);      // pega a lista dos usuários seguidos
+        $userList = $urDao-> getFollowing($id_user);
         $userList[] = $id_user;
 
-        $sql = $this->pdo->prepare("SELECT * FROM posts WHERE id_user IN (" . implode(',', $userList) . ") ORDER BY created_at DESC");
+        $sql = $this->pdo-> prepare("SELECT * FROM posts
+        WHERE id_user IN (" . implode(',', $userList) . ")
+        ORDER BY created_at DESC LIMIT $offset, $perpage");      // apresenta o tanto de 'post' que for definido na variável '$perpage'
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
-            $data = $sql->fetchAll(PDO::FETCH_ASSOC);
-            $array = $this->postListToObject($data, $id_user);
+            $data = $sql-> fetchAll(PDO:: FETCH_ASSOC);
+            $array = $this-> postListToObject($data, $id_user);     // transforma o resultado em objetos
         }
 
         return $array;
     }
 
-    public function getPhotosFrom($id_user)
-    {
+    public function getPhotosFrom($id_user) {
         $array = [];
 
-        $sql = $this->pdo->prepare("SELECT * FROM posts WHERE id_user = :id_user AND type = 'photo' ORDER BY created_at DESC");
+        $sql = $this->pdo->prepare("SELECT * FROM posts
+        WHERE id_user = :id_user AND type = 'photo'
+        ORDER BY created_at DESC");
+
         $sql->bindValue(':id_user', $id_user);
         $sql->execute();
 
@@ -108,8 +118,7 @@ class PostDaoMysql implements PostDAO
         return $array;
     }
 
-    private function postListToObject($post_list, $id_user)
-    {
+    private function postListToObject($post_list, $id_user) {
         $posts = [];
         $userDao = new UserDaoMysql($this->pdo);
         $postLikeDao = new PostLikeDaoMysql($this->pdo);
