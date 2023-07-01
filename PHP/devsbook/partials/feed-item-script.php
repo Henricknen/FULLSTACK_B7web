@@ -1,6 +1,5 @@
-f<script>
-window.onload = function() {
-
+<script>
+window.addEventListener('load', function() {        // evento 'addEventListener'
     function closeFeedWindow() {        // função feçha todas as janelas
         document.querySelectorAll('.feed-item-more-window').forEach(item=>{
             item.style.display = 'none';
@@ -72,5 +71,5 @@ window.onload = function() {
             }
         });
     });
-};
+});
 </script>
