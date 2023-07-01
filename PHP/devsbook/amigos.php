@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
+require_once 'models/Auth.php';
 require_once 'dao/PostDaoMysql.php';
-require_once 'dao/UserDaoMysql.php';
 
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
@@ -14,29 +14,28 @@ if (!$id) {
     $id = $userInfo->id;
 }
 
-if ($id != $userInfo->id) {     // diz que está acessando o usuário logado
+if ($id != $userInfo->id) {
     $activeMenu = '';
 }
 
 $postDao = new PostDaoMysql($pdo);
 $userDao = new UserDaoMysql($pdo);
 
-$user = $userDao->findById($id, true);
+$user = $userDao->findById($id, true);      // pegando informações do Usuário
 if (!$user) {
     header("Location: " . $base);
     exit;
 }
-
 $dateFrom = new DateTime($user->birthdate);
 $dateTo = new DateTime('today');
-$age = $dateFrom->diff($dateTo);
-$user->ageYears = $age->y;
+$user->ageYears = $dateFrom->diff($dateTo)->y;
+
+// verificar se eu SIGO este usuário
 
 
 require 'partials/header.php';
 require 'partials/menu.php';
 ?>
-
 <section class="feed">
 
     <div class="row">
@@ -73,6 +72,7 @@ require 'partials/menu.php';
     </div>
 
     <div class="row">
+
         <div class="column">
 
             <div class="box">
@@ -109,21 +109,19 @@ require 'partials/menu.php';
                         </div>
                         <div class="tab-body" data-item="following">
 
-                            <?php foreach ($user->following as $item): ?>
-                                <div class="friend-icon">
-                                    <a href="<?= $base; ?>/perfil.php?id=<?= $item->id; ?>">
-                                        <div class="friend-icon-avatar">
-                                            <img src="<?= $base; ?>/media/avatars/<?= $item->avatar; ?>" />
-                                        </div>
-                                        <div class="friend-icon-name">
-                                            <?= $item->name; ?>
-                                        </div>
-                                    </a>
-                                </div>
-                            <?php endforeach; ?>
-
                             <div class="full-friend-list">
-
+                                <?php foreach ($user->following as $item) : ?>
+                                    <div class="friend-icon">
+                                        <a href="<?= $base; ?>/perfil.php?id=<?= $item->id; ?>">
+                                            <div class="friend-icon-avatar">
+                                                <img src="<?= $base; ?>/media/avatars/<?= $item->avatar; ?>" />
+                                            </div>
+                                            <div class="friend-icon-name">
+                                                <?= $item->name; ?>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
 
                         </div>
@@ -133,10 +131,10 @@ require 'partials/menu.php';
             </div>
 
         </div>
+
     </div>
 
 </section>
-
 <?php
 require 'partials/footer.php';
 ?>
