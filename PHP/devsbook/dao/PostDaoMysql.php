@@ -5,8 +5,7 @@ require_once 'dao/UserDaoMysql.php';
 require_once 'dao/PostLikeDaoMysql.php';
 require_once 'dao/PostCommentDaoMysql.php';
 
-class PostDaoMysql implements PostDAO
-{
+class PostDaoMysql implements PostDAO {
     private $pdo;
 
     public function __construct(PDO $driver) {
@@ -14,7 +13,11 @@ class PostDaoMysql implements PostDAO
     }
 
     public function insert(Post $post) {
-        $sql = $this->pdo->prepare('INSERT INTO posts (id_user, type, created_at, body) VALUES (:id_user, :type, :created_at, :body)');
+        $sql = $this->pdo-> prepare('INSERT INTO posts (
+            id_user, type, created_at, body
+        ) VALUES (
+            :id_user, :type, :created_at, :body
+        )');
         $sql->bindValue(':id_user', $post->id_user);
         $sql->bindValue(':type', $post->type);
         $sql->bindValue(':created_at', $post->created_at);
@@ -27,7 +30,7 @@ class PostDaoMysql implements PostDAO
         $postCommentDao = new PostCommentDaoMysql($this-> pdo);     // puxando o 'Dao' de comentarios
 
         // verificação se o 'post' existe
-        $sql = $this-> pdo-> prepare("DELETE FROM posts     
+        $sql = $this-> pdo-> prepare("DELETE * FROM posts     
         WHERE id = :id AND id_user = :id_user");
         $sql-> bindValue(':id', $id);
         $sql-> bindValue(':id_user', $id_user);
@@ -37,7 +40,7 @@ class PostDaoMysql implements PostDAO
             $post = $sql-> fetch(PDO:: FETCH_ASSOC);        // pegando o 'post'
 
             $postLikeDao-> deleteFromPost($id);     // deleta 'likes'
-            $postCommentDao->deleteFromPost($id);       // deleta 'comentarios'
+            $postCommentDao-> deleteFromPost($id);       // deleta 'comentarios'
 
             if($post['type'] === 'photo') {     // deleta o arquivo de 'type photo'
                 $img = 'media/iploads/'. $post['body'];
@@ -55,16 +58,13 @@ class PostDaoMysql implements PostDAO
 
     }
 
-    public function getUserFeed($id_user) {
-        $array = ['feed'=> array( )];
+    public function getUserFeed($id_user, $page = 1) {      // reçebendo o 'id' do usuário e 'page' com valor padrão 1 como parâmetro
+        $array = ['feed'=> []];
         $perPage = 4;
 
-        $page = intval(filter_input(INPUT_GET, 'p'));
-        if($page < 1) {
-            $page = 1;
-        }
+        $offset = ($page - 1) * $perPage;
 
-        $sql = $this->pdo->prepare("SELECT * FROM posts
+        $sql = $this-> pdo->prepare("SELECT * FROM posts
         WHERE id_user = :id_user
         ORDER BY created_at DESC LIMIT $offset, $perPage");
         $sql-> bindValue(':id_user', $id_user);
@@ -75,12 +75,13 @@ class PostDaoMysql implements PostDAO
             $array['feed'] = $this-> postListToObject($data, $id_user);
         }
         
-        $sql = $this->pdo->prepare("SELECT COUNT (*) as c * FROM posts
+        $sql = $this-> pdo-> prepare("SELECT COUNT(*) as c FROM posts
         WHERE id_user = :id_user");
         $sql-> bindValue(':id_user', $id_user);
         $sql-> execute();
         $totalData = $sql-> fetch();
         $total = $totalData['c'];
+        
         
         $array['pages'] = ceil($total / $perPage);
         $array['currentPage'] = $page;
@@ -88,14 +89,9 @@ class PostDaoMysql implements PostDAO
         return $array;
     }
 
-    public function getHomeFeed($id_user) {
+    public function getHomeFeed($id_user, $page = 1) {
         $array = [];
         $perPage = 4;       // variável '$perpage' define o limite de 'post'
-
-        $page = intval(filter_input(INPUT_GET, 'p'));
-        if($page < 1) {
-            $page = 1;
-        }
         
         $offset = ($page - 1) * $perPage;
 
@@ -105,7 +101,7 @@ class PostDaoMysql implements PostDAO
 
         $sql = $this-> pdo-> query("SELECT * FROM posts
         WHERE id_user IN (" . implode(',', $userList) . ")
-        ORDER BY created_at DESC LIMIT $offset, $perPage");      // apresenta o tanto de 'post' que for definido na variável '$perpage'
+        ORDER BY created_at DESC, id DESC LIMIT $offset, $perPage");      // apresenta o tanto de 'post' que for definido na variável '$perpage'
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
@@ -128,16 +124,15 @@ class PostDaoMysql implements PostDAO
     public function getPhotosFrom($id_user) {
         $array = [];
 
-        $sql = $this->pdo->prepare("SELECT * FROM posts
+        $sql = $this->pdo-> prepare("SELECT * FROM posts
         WHERE id_user = :id_user AND type = 'photo'
         ORDER BY created_at DESC");
+        $sql-> bindValue(':id_user', $id_user);
+        $sql-> execute();
 
-        $sql->bindValue(':id_user', $id_user);
-        $sql->execute();
-
-        if ($sql->rowCount() > 0) {
-            $data = $sql->fetchAll(PDO::FETCH_ASSOC);
-            $array = $this->postListToObject($data, $id_user);
+        if ($sql-> rowCount() > 0) {
+            $data = $sql-> fetchAll(PDO::FETCH_ASSOC);
+            $array = $this-> postListToObject($data, $id_user);
         }
 
         return $array;
@@ -145,21 +140,26 @@ class PostDaoMysql implements PostDAO
 
     private function postListToObject($post_list, $id_user) {
         $posts = [];
-        $userDao = new UserDaoMysql($this->pdo);
-        $postLikeDao = new PostLikeDaoMysql($this->pdo);
-        $postCommentDao = new PostCommentDaoMysql($this->pdo);
+        $userDao = new UserDaoMysql($this-> pdo);
+        $postLikeDao = new PostLikeDaoMysql($this-> pdo);
+        $postCommentDao = new PostCommentDaoMysql($this-> pdo);
 
         foreach ($post_list as $post_item) {
             $newPost = new Post();
-            $newPost->id = $post_item['id'];
-            $newPost->type = $post_item['type'];
-            $newPost->created_at = $post_item['created_at'];
-            $newPost->body = $post_item['body'];
-            $newPost->mine = ($post_item['id_user'] == $id_user);
-            $newPost->user = $userDao->findById($post_item['id_user']);
-            $newPost->likeCount = $postLikeDao->getLikeCount($newPost->id);
+            $newPost-> id = $post_item['id'];
+            $newPost-> type = $post_item['type'];
+            $newPost-> created_at = $post_item['created_at'];
+            $newPost-> body = $post_item['body'];
+            $newPost-> mine = false;
+
+            if($post_item['id_user'] == $id_user) {
+                $newPost->mine = true;
+            }
+
+            $newPost->user = $userDao->findById($post_item['id_user']);     // pegando informações do usuário
+            $newPost->likeCount = $postLikeDao->getLikeCount($newPost->id);     // informações sobre like
             $newPost->liked = $postLikeDao->isLiked($newPost->id, $id_user);
-            $newPost->comments = $postCommentDao->getComments($newPost->id); // informações sobre comentários
+            $newPost->comments = $postCommentDao->getComments($newPost->id);        // informações sobre comentários
 
             $posts[] = $newPost;
         }

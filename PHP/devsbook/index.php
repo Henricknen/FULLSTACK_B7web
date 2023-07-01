@@ -7,8 +7,13 @@ $auth = new Auth($pdo, $base);     // instançiando 'Auth'
 $userInfo = $auth->checkToken();       // 'checkToken' retorna as informações do usuário
 $activeMenu = 'home';
 
+$page = intval(filter_input(INPUT_GET, 'p'));       // pegando informações de páginação
+if($page < 1) {
+    $page = 1;
+}
+
 $postDao = new PostDaoMysql($pdo);
-$info = $postDao->getHomeFeed($userInfo-> id);       // pegando o 'feed'
+$info = $postDao->getHomeFeed($userInfo-> id, $page);       // pegando o 'feed'
 $feed = $info['feed'];
 $pages = $info['pages'];
 $currentPage = $info['currentPage'];

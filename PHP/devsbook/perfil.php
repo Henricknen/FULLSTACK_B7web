@@ -10,13 +10,18 @@ $activeMenu = 'profile';
 $user = [];
 $feed = [];
 
-$id = filter_input(INPUT_GET, 'id');
+$id = filter_input(INPUT_GET, 'id');        // pegando informações externas
 if (!$id) {
     $id = $userInfo-> id;
 }
 
 if ($id != $userInfo-> id) {
     $activeMenu = '';
+}
+
+$page = intval(filter_input(INPUT_GET, 'p'));       // pegando informações de páginação
+if($page < 1) {
+    $page = 1;
 }
 
 $postDao = new PostDaoMysql($pdo);
@@ -31,10 +36,10 @@ if (!$user) {
 
 $dateFrom = new DateTime($user-> birthdate);
 $dateTo = new DateTime('today');
-$age = $dateFrom-> diff($dateTo);
-$user-> ageYears = $age-> y;
+$user-> ageYears = $dateFrom->diff($dateTo)->y;
 
-$info = $postDao-> getUserFeed($id);     // pegando o 'feed' do usuário
+
+$info = $postDao-> getUserFeed($id, $page);     // pegando o 'feed' do usuário
 $feed = $info['feed'];
 $pages = $info['pages'];
 $currentPage = $info['currentPage'];
