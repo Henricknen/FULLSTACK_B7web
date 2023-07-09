@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $filable = [
-        'title', 'description', 'author'
+    protected $fillable = [
+        'title', 'content', 'author'
     ];
     use HasFactory;
 }
