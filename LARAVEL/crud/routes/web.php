@@ -11,6 +11,8 @@ Route::get('/post/all', [PostController::class, 'all']);
 
 Route::get('/post/update', [PostController::class, 'update']);
 
+Route::get('/post/delete', [PostController::class, 'delete']);
+
 Route::get('/', function () {
     return view('welcome');
 });

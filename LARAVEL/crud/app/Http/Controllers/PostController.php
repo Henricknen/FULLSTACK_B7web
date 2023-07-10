@@ -54,4 +54,16 @@ class PostController extends Controller {
         
         return $posts;
     }
+
+    public function delete(Request $request) {      // métod 'delete' apaga um registro do banco de dados
+        // $post= Post::find(1);       // seleçionando o registro que será apagado
+
+        // if($post) {
+        //     return $post-> delete();       // deletando
+        // }
+
+        // return 'Não existe post com este id';
+
+        $post = Post::where('id', '>', 0)-> delete();     // faz a exclusão em massa deletando todos os registros do banco de dados
+    }
 }
