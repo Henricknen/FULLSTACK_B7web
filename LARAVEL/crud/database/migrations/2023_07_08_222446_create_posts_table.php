@@ -16,6 +16,7 @@ return new class extends Migration
             $table-> string('title');       // titulo do 'post'
             $table-> text('content');   // conteúdo
             $table-> string('author');      // 'autor' do post
+            $table-> softDeletes();     // criando novo campo de 'softDetes'
             $table->timestamps();
         });
     }
