@@ -42,4 +42,16 @@ class PostController extends Controller {
 
         return $posts;
     }
+
+    public function update(Request $request) {
+        // $post = Post::find(2);      // atualiza 'post' de id 2
+        // $post-> title = 'Uma vez que tem este registro, ele pode ser modificado';        // 'title' será atualizada
+        // $post -> save();    # atualizando o registro no banco de dados
+
+        $posts = Post::where('id', '>', 0)-> update([          // atualizando mais de um 'post'
+            'author'=> 'Luis Henrique S F'
+        ]);
+        
+        return $posts;
+    }
 }

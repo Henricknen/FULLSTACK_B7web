@@ -9,6 +9,8 @@ Route::get('/post/read', [PostController::class, 'read']);
 
 Route::get('/post/all', [PostController::class, 'all']);
 
+Route::get('/post/update', [PostController::class, 'update']);
+
 Route::get('/', function () {
     return view('welcome');
 });
