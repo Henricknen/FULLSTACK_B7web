@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table-> id();       // 'id' do registro autoincrement e primary key
+            $table-> string('name');        // 'name' nome do produto
+            $table-> string('code')-> unique();     // 'code' codigo do produto 'unique' não deixa repetir
+            $table-> integer('quantity')-> default(0);      // 'quantity' quantidade do produto como quantidade'default' 0
+            $table-> timestamps();
         });
     }
 
