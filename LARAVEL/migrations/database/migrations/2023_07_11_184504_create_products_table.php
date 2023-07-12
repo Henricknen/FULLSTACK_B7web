@@ -16,6 +16,7 @@ return new class extends Migration
             $table-> string('name');        // 'name' nome do produto
             $table-> string('code')-> unique();     // 'code' codigo do produto 'unique' não deixa repetir
             $table-> integer('quantity')-> default(0);      // 'quantity' quantidade do produto como quantidade'default' 0
+            $table-> text('obs')-> nullable();      // 'obs' é as observações sobre o produto
             $table-> timestamps();
         });
     }
