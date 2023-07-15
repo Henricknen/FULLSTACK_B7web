@@ -11,4 +11,9 @@ class UserController extends Controller {
         $users = User::all();
         return $users;
     }
+
+    public function findOne(Request $r) {       // método 'findOne'
+        $user = User::find($r-> id);
+        return $user;
+    }
 }
