@@ -16,4 +16,10 @@ class UserController extends Controller {
         $user = User::find($r-> id);
         return $user;
     }
+
+    public function insert(Request $r) {
+        $rawData = $r-> only(['name', 'email', 'password']);        // implementando os campos 'name' 'email' e 'password'        
+        $user = User::create($rawData);     // criaçaõ do usuário
+        return $user;
+    }
 }
