@@ -14,8 +14,8 @@ return new class extends Migration
             $table-> foreign('address_id')        // adiçionando uma 'foreign key'
             -> references('id')
             -> on('addresses')
-            -> onDelete('SET NULL');        // quando for deletado o enderço que está referênçiado a um usuário, no mesmo será setado o valor de 'NULL'
-            // -> onDelete('CASCADE');      // se o endereço for deletado 'CASCADE' deleta tudo o que estiver relaçionado com ele
+            // -> onDelete('SET NULL');        // quando for deletado o enderço que está referênçiado a um usuário, no mesmo será setado o valor de 'NULL'
+            -> onDelete('CASCADE');      // se o endereço for deletado 'CASCADE' deleta tudo o que estiver relaçionado com ele
         });
     }
 
