@@ -15,6 +15,11 @@ class Invoice extends Model {
         'user_id'
     ];
 
+    protected $hidden = [
+        'user_id',
+        'address_id'
+    ];
+
     public function address() {     // método que criará um relaçionamento com endereço
         return $this-> hasOne(Address::class, 'id', 'address_id');
     }
