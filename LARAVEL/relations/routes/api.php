@@ -15,3 +15,7 @@ Route::get('/addresses', [AddressController::class, 'index']);     // lista os e
 Route::get('/addresses/{id}', [AddressController::class, 'findOne']);       // busca um endereço espeçifico pelo 'id'
 
 Route::post('/addresses', [AddressesController::class, 'insert']);
+
+Route::get('/invoices', [InvoiceController::class, 'index']);
+Route::get('/invoices', [InvoiceController::class, 'createInvoice']);
+Route::get('/invoices{id}', [InvoiceController::class, 'findOne']);
