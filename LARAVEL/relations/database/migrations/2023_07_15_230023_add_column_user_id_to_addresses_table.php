@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('addresses', function (Blueprint $table) {
             //
-            $table-> unsignedBigInteger('address_id')-> nullable();      // adiçionando campo 'address_id','unsigned' quer dizer que é numero positivo e 'BigInteger' diz que é um inteiro grande
+            $table-> unsignedBigInteger('user_id')-> nullable();      // adiçionando campo 'user_id','unsigned' quer dizer que é numero positivo e 'BigInteger' diz que é um inteiro grande
         });
     }
 
@@ -22,9 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('addresses', function (Blueprint $table) {
             //
-            $table-> dropColumn('address_id');      // deletando coluna 'address_id'
+            $table-> dropColumn('user_id');      // deletando coluna 'address_id'
 
         });
     }

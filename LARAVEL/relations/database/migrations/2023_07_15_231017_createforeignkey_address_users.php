@@ -10,10 +10,10 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void {
-        Schema::table('users', function (Blueprint $table) {
-            $table-> foreign('address_id')        // adiçionando uma 'foreign key'
+        Schema::table('addresses', function (Blueprint $table) {
+            $table-> foreign('user_id')        // adiçionando uma 'foreign key'
             -> references('id')
-            -> on('addresses')
+            -> on('users')
             // -> onDelete('SET NULL');        // quando for deletado o enderço que está referênçiado a um usuário, no mesmo será setado o valor de 'NULL'
             -> onDelete('CASCADE');      // se o endereço for deletado 'CASCADE' deleta tudo o que estiver relaçionado com ele
         });
@@ -23,8 +23,8 @@ return new class extends Migration
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::table('users', function (Blueprint $table) {
-            $table-> dropForeign('address_id');
+        Schema::table('addresses', function (Blueprint $table) {
+            $table-> dropForeign('user_id');
         });
     }
 };
