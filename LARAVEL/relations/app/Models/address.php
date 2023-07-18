@@ -13,5 +13,13 @@ class address extends Model {
         'address',
     ];
 
+    protected $hideen = [
+        'user_id'
+    ];
+
     use HasFactory;
+
+    public function user() {        // criação do relaçionamento
+        return $this-> belongsTo(User::class);
+    }
 }
