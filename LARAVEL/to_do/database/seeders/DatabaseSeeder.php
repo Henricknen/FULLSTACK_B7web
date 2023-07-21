@@ -11,7 +11,9 @@ class DatabaseSeeder extends Seeder {
      */
     public function run(): void {
         $this->call([       // chamando e passando um 'array' como os seeders que desejo rodar
-            UserSeeder::class
+            UserSeeder::class,
+            CategorySeeder::class,
+            TaskSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

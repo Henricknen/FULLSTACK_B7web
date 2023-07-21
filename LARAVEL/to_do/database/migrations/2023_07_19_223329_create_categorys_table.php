@@ -11,7 +11,7 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('categorys', function (Blueprint $table) {       // criação da tabela 'categorys'
+        Schema::create('categories', function (Blueprint $table) {       // criação da tabela 'categorys'
             $table->id();
             $table->string('title');
             $table->string('color')->default('#FFFFFF');
@@ -25,10 +25,10 @@ return new class extends Migration
      */
     public function down(): void {
 
-        Schema::table('categorys', function(Blueprint $table) {     // deletando a ForeignIdFor chave 'estrangeira'
+        Schema::table('categories', function(Blueprint $table) {     // deletando a ForeignIdFor chave 'estrangeira'
             $table->dropForeignIdFor(User::class);
         });
 
-        Schema::dropIfExists('categorys');
+        Schema::dropIfExists('categories');
     }
 };

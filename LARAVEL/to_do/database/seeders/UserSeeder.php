@@ -16,6 +16,12 @@ class UserSeeder extends Seeder {
             'email' => 'l.henrick@live.com',
             'password' => Hash::make('1020304050')
         ]);
+
+        User::create([
+            'name' => 'FullStack',
+            'email' => 'l.henrick@live.com',
+            'password' => Hash::make('1020304050')
+        ]);
         
     }
 }

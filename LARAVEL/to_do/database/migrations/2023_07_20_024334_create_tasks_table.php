@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('description');
             $table->datetime('due_date');
             $table->foreignIdFor(User::class)->references('id')->on('users')->onDelete('CASCADE');      // relaçionamento entre tabela "tasks" e a tabela "users"
-            $table->foreignIdFor(Category::class)->references('id')->on('categorys')->onDelete('CASCADE');
+            $table->foreignIdFor(Category::class)->references('id')->on('categories')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
