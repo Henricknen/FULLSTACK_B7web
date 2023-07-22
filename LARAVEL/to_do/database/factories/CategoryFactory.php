@@ -17,7 +17,7 @@ class CategoryFactory extends Factory {
         return [
             'title' => $this->faker->text(30),            // retornando um 'title' do tipo 'text' de 30 caracteres
             'color' => $this->faker->safeHexColor(),          // retornando cor em hexadeçimal
-            'user_id' => User::all()->random(),     // seleçiona um usuário aleatóriamente
+            'user_id' => User::all()->random()     // seleçiona um usuário aleatóriamente
         ];
     }
 }

@@ -21,8 +21,8 @@ class TaskFactory extends Factory
             'title' => $this->faker->text(30),
             'description' => $this->faker->text(60),
             'due_date' => $this->faker->datetime(),
-            'user_id' => User::all()->random(),
-            'category_id' => Category::factory()->create()->id, // Cria uma nova categoria fictícia e pega o ID dela
+            'user_id' => User::all()->random(),     // as 'task' será distribuido entre os 'user_id' aleatoriamente
+            'category_id' => Category::all()->random(),     // as 'task' será distribuido entre os 'category_id' aleatoriamente
         ];
     }
 }
