@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder {
             // UserSeeder::class,      // criará um usuário
         ]);
 
-        User::factory(10)->create();        // criando 10 usúarios
-        Category::factory(5)->create();     // chamando 'factory' da categoria para criar uma com 50 'categories'
-        Task::factory(30)->create();
+        User::factory(40)->create();        // criando usúarios aleatóriamente
+        Category::factory(30)->create();     // chamando 'factory' da categoria para criar varias 'categories'
+        Task::factory(100)->create();
 
     }
 }

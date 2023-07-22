@@ -1,6 +1,8 @@
 <?php
 namespace Database\Factories;
 
+// database/factories/TaskFactory.php
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Task;
 use App\Models\Category;
@@ -15,14 +17,23 @@ class TaskFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
-    {
+    public function definition(): array {
+
+        $user = User::all()->random();      // defindo usuário
+
+        while(count($user->categories) == 0) {      // se usuário não tiver 'categorias'
+            $user = User::all()->random();      // será gerado outro usuário
+        }
+
+        $category = $user->categories->random();        // pegando uma categoria aleatoria deste usuário '$user'
+
         return [
             'title' => $this->faker->text(30),
             'description' => $this->faker->text(60),
             'due_date' => $this->faker->datetime(),
-            'user_id' => User::all()->random(),     // as 'task' será distribuido entre os 'user_id' aleatoriamente
-            'category_id' => Category::all()->random(),     // as 'task' será distribuido entre os 'category_id' aleatoriamente
+            'user_id' => $user->id,
+            'category_id' => $category->id,
         ];
     }
 }
+
