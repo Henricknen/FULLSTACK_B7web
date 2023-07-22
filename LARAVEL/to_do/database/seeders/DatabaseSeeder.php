@@ -9,23 +9,14 @@ use App\Models\Task;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder {
-    /**
-     * Seed the application's database.
-     */
+    
     public function run(): void {
         $this->call([       // chamando e passando um 'array' como os seeders que desejo rodar
             UserSeeder::class,      // criará um usuário
         ]);
 
-        Category::factory(50)->create();     // chamando 'factory' da categoria para criar uma com 5 dados
+        Category::factory(5)->create();     // chamando 'factory' da categoria para criar uma com 50 'categories'
         Task::factory(30)->create();
 
-
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }
