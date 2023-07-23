@@ -1,11 +1,11 @@
 :root {     /* ':root' é a raiza da aplicação */
-    --background-light: #F0F2FA;
+    --background-light: #FAA94E;
     --background-white: #F6F5FF;
     --text-dark: #0A0040;
-    --color-primary: #6143FF;
+    --color-primary: #E93A2D;
 }
 
-* {
+* {     /* Estilizando todos os elementos da página */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -33,10 +33,35 @@ body {
 
 nav {
     height: 100px;
-    background-color: teal;
-    width: calc(100vw - 100px);
+    background-color: var(--background-light);
+    width: calc(100vw - 100px);     /* a largura é calculada como 100% da largura da janela do navegador menos 100 pixels (largura da .sidebar) */
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding-right: 20px;
+}
+
+.btn {
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+a.btn {
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+}
+
+section.graph {
+    background-color: brown;
+    width: 33%;
+    height: 100%;
 }
