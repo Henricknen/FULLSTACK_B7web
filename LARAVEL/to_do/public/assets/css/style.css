@@ -1,0 +1,21 @@
+:root {     /* ':root' é a raiza da aplicação */
+    --background-light: #F0F2FA;
+    --background-white: #F6F5FF;
+    --text-dark: #0A0040;
+    --color-primary: #6143FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Rubik, sans-serif;
+    color: var(--text-dark);
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-white);
+}
