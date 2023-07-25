@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            Logo
+            <img src="/assets/images/logo.jpg">
         </div>
         <div class="content">
             <nav>       {{-- barra de de navegação --}}
@@ -57,7 +57,12 @@
                                 <div>Titulo da Tarefa</div>
                             </div>
                             <div class="actions">
-                                Edita - Excluir
+                                <a href="#">
+                                    <img src="/assets/images/icon-edit.png">
+                                </a>
+                                <a href="#">
+                                    <img src="/assets/images/icon-delete.png">
+                                </a>
                             </div>
                         </div>
 
@@ -71,7 +76,12 @@
                                 <div>Titulo da Tarefa</div>
                             </div>
                             <div class="actions">
-                                Edita - Excluir
+                                <a href="#">
+                                    <img src="/assets/images/icon-edit.png">
+                                </a>
+                                <a href="#">
+                                    <img src="/assets/images/icon-delete.png">
+                                </a>
                             </div>
                         </div>
                     </div>
