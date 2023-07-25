@@ -25,7 +25,7 @@
                 <section class="graph">
                     <div class="graph_header">
                         <h2>Progresso do dia</h2>
-                        <hr class="LinhaHeader"/>
+                        {{-- <hr class="LinhaHeader"/> --}}
                         Data
                     </div>
 
@@ -42,9 +42,38 @@
 
                 <section class="list">
                     <div class="list_header">
-                        <select class="lisr_header-select">
+                        <select class="list_header-select">
                             <option value="1">Todas as tarefas</option>
                         </select>
+                    </div>
+                    <div class="task_list">
+                        <div class="task">
+                            <div class="title">
+                                <input type="checkbox"/>
+                                <div class="task_title">Titulo da Tarefa</div>
+                            </div>
+                            <div class="priority">
+                                <div class="sphere"></div>
+                                <div>Titulo da Tarefa</div>
+                            </div>
+                            <div class="actions">
+                                Edita - Excluir
+                            </div>
+                        </div>
+
+                        <div class="task">
+                            <div class="title">
+                                <input type="checkbox"/>
+                                <div class="task_title">Titulo da Tarefa</div>
+                            </div>
+                            <div class="priority">
+                                <div class="sphere"></div>
+                                <div>Titulo da Tarefa</div>
+                            </div>
+                            <div class="actions">
+                                Edita - Excluir
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>

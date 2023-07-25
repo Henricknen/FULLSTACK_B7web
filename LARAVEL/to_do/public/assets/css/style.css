@@ -61,7 +61,7 @@ main {
 }
 
 section.graph {
-    width: 33%;
+    width: 37.2%;
     height: 100%;
     padding: 5px;
 }
@@ -76,8 +76,8 @@ h2 {
     display: inline-block;
 }
 
-.hr.LinhaHeader {
-    width: 130px;
+hr.LinhaHeader {
+    width: 80px;
 }
 
 .graph_header-subtitle {
@@ -98,9 +98,65 @@ h2 {
 }
 
 .list {
-    padding: 5PX 15PX;
+    padding: 5px 15px;
+    flex: 1;
 }
 
 .list_header {
     display: flex;
+}
+
+/* .list_header-select {
+    margin-left: 20px;
+} */
+
+.task_list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    /* margin-left: 20px; */
+}
+
+.task {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--background-light);
+}
+
+.task:hover {
+    background-color: var(--background-light);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.priority, .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+}
+
+.actions {
+    justify-content: flex-end;
+}
+
+.sphere {
+    width: 22px;
+    height: 22px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.task_title {
+    padding-left: 10px;
+    font-weight: bold;
 }
