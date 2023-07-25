@@ -73,15 +73,27 @@ section.graph {
 .graph_header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 h2 {
-    flex: 1;
+    flex: 2;
+    font-size: 18px;
     display: inline-block;
 }
 
-hr.LinhaHeader {
-    width: 80px;
+.graph_header-line {
+    flex: 1;
+    width: 90px;
+    background-color: #000;
+    height: 2px;
+}
+
+.graph_header-date {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .graph_header-subtitle {
@@ -92,15 +104,18 @@ hr.LinhaHeader {
     background-color: #ccc;
     width: 300px;
     height: 300px;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-left: 10px;
     background: url('/assets/images/graph.png');
     background-size: contain;
 }
 
-.graph_header-tasks_left {
-    text-align: center;
-    margin-top: 10px;
+.tasks_left_footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .list {
