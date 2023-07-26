@@ -1,7 +1,7 @@
 :root {     /* ':root' é a raiza da aplicação */
     --background-light: #FAA94E;
     --background-white: #F6F5FF;
-    --text-dark: #0A0040;
+    --text-dark: #000;
     --color-primary: #E93A2D;
 }
 
@@ -48,6 +48,11 @@ nav {
 .btn {
     padding: 20px 30px;
     border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 a.btn {
@@ -61,31 +66,33 @@ a.btn {
 
 main {
     display: flex;
-    padding: 20px;
+    padding: 0px;
 }
 
 section.graph {
-    width: 37.2%;
+    width: 33%;
     height: 100%;
-    padding: 5px;
+    padding: 20px 20px 0 20px;
 }
 
 .graph_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--text-dark);
 }
 
 h2 {
     flex: 2;
     font-size: 18px;
     display: inline-block;
+    color: var(--text-dark);
 }
 
 .graph_header-line {
     flex: 1;
     width: 90px;
-    background-color: #000;
+    background-color: var(--text-dark);
     height: 2px;
 }
 
@@ -94,10 +101,13 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 11px;
+    color: var(--text-dark);
 }
 
-.graph_header-subtitle {
+.graph_header-subtitle, b {
     margin-top: 10px;
+    color: var(--text-dark);
 }
 
 .graph-placeholder {
@@ -116,10 +126,11 @@ h2 {
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+    color: var(--text-dark);
 }
 
 .list {
-    padding: 5px 15px;
+    padding: 20px 20px 0 20px;
     flex: 1;
 }
 
@@ -127,9 +138,12 @@ h2 {
     display: flex;
 }
 
-/* .list_header-select {
-    margin-left: 20px;
-} */
+.list_header-select {
+    background-color: transparent;
+    border: 0;
+    font-size: 18px;
+    color: var(--text-dark);
+}
 
 .task_list {
     display: flex;
@@ -147,6 +161,13 @@ h2 {
     padding: 30px 15px;
     margin-bottom: 10px;
     border-bottom: 1px solid var(--background-light);
+    transition: all 0.3s ease-in-out;
+}
+
+.task:hover {
+    transform: scale(1.05);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .task:hover {
@@ -173,16 +194,23 @@ h2 {
 .actions a {
     margin-left: 20px;
     margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.actions>a:hover {
+    transform: scale(1.50);
 }
 
 .sphere {
-    width: 22px;
-    height: 22px;
+    /* width: 22px; */
+    /* height: 22px; */
     border-radius: 50px;
     margin-right: 10px;
+    color: var(--text-dark);
 }
 
 .task_title {
     padding-left: 10px;
     font-weight: bold;
+    color: var(--text-dark);
 }

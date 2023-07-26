@@ -27,7 +27,9 @@
                         <h2>Progresso do dia</h2>
                         <div class="graph_header-line"></div>
                         <div class="graph_header-date">
-                            Data
+                            <img src="/assets/images/icon-prev.png">
+                                7/06
+                            <img src="/assets/images/icon-next.png">
                         </div>
                     </div>
 
@@ -59,27 +61,7 @@
                                 <div class="task_title">Titulo da Tarefa</div>
                             </div>
                             <div class="priority">
-                                <div class="sphere"></div>
-                                <div>Titulo da Tarefa</div>
-                            </div>
-                            <div class="actions">
-                                <a href="#">
-                                    <img src="/assets/images/icon-edit.png">
-                                </a>
-                                <a href="#">
-                                    <img src="/assets/images/icon-delete.png">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="task">
-                            <div class="title">
-                                <input type="checkbox"/>
-                                <div class="task_title">Titulo da Tarefa</div>
-                            </div>
-                            <div class="priority">
-                                <div class="sphere"></div>
-                                <div>Titulo da Tarefa</div>
+                                <div class="sphere">Titulo da Tarefa</div>
                             </div>
                             <div class="actions">
                                 <a href="#">
