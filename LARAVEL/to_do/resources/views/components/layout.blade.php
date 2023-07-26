@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TodoApp</title>
+    <title>{{$page ?? 'To_do_App'}}</title>        {{-- variável '$page' será o titulo conforme for definido em cada página e 'To_do_App' será o titulo padrão caso não estiver sido definido nunhum titulo --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">

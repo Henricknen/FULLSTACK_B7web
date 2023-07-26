@@ -1,4 +1,4 @@
-<x-layout>      {{-- tudo o que for comum entre as páginas será renderizado pelo componente 'layout' --}}
+<x-layout page="To_do_App_Inicio">      {{-- tudo o que for comum entre as páginas será renderizado pelo componente 'layout' --}}
     <section class="graph">
         <div class="graph_header">
             <h2>Progresso do dia</h2>
