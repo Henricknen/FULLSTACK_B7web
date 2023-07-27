@@ -41,23 +41,25 @@
             </select>
         </div>
         <div class="task_list">
-            <div class="task">
-                <div class="title">
-                    <input type="checkbox"/>
-                    <div class="task_title">Titulo da Tarefa</div>
-                </div>
-                <div class="priority">
-                    <div class="sphere">Titulo da Tarefa</div>
-                </div>
-                <div class="actions">
-                    <a href="#">
-                        <img src="/assets/images/icon-edit.png">
-                    </a>
-                    <a href="#">
-                        <img src="/assets/images/icon-delete.png">
-                    </a>
-                </div>
-            </div>
+            @php
+                $tasks =[        // array 'task' que preencherá as task com informações
+                    [
+                    'id' => 1,
+                    'done' => false,
+                    'title' => '1ª task',
+                    'category' => 'Categoria  1',
+                    ],
+                    
+                    [
+                    'id' => 2,
+                    'done' => true,
+                    'title' => '2ª task',
+                    'category' => 'Categoria  2',                   
+                    ],
+                ]
+            @endphp
+            <x-task :data="$tasks[0]" />        {{-- inserindo o componente 'task' e passando o primeiro indiçe do array 'tasks' --}}
+            <x-task :data="$tasks[1]" />            
         </div>
     </section>
 </x-layout>
