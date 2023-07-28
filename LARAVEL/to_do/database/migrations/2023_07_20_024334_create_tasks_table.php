@@ -14,6 +14,7 @@ return new class extends Migration
     public function up(): void {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_done')->default(false);     // campo indica se a 'task' está feita ou não
             $table->string('title');
             $table->string('description');
             $table->datetime('due_date');

@@ -41,25 +41,11 @@
             </select>
         </div>
         <div class="task_list">
-            @php
-                $tasks =[        // array 'task' que preencherá as task com informações
-                    [
-                    'id' => 1,
-                    'done' => false,
-                    'title' => '1ª task',
-                    'category' => 'Categoria  1',
-                    ],
-                    
-                    [
-                    'id' => 2,
-                    'done' => true,
-                    'title' => '2ª task',
-                    'category' => 'Categoria  2',                   
-                    ],
-                ]
-            @endphp
-            <x-task :data="$tasks[0]" />        {{-- inserindo o componente 'task' e passando o primeiro indiçe do array 'tasks' --}}
-            <x-task :data="$tasks[1]" />            
+            
+            @foreach ($tasks as $task)      {{-- loop 'foreach' irá gerar as tasks --}}
+                <x-task :data="$task" />        {{-- redenrizando 'task' que é a variável do foreach --}}
+            @endforeach
+
         </div>
     </section>
 </x-layout>
