@@ -9,28 +9,29 @@
         <h1>Criar tarefa</h1>
         <form>
             
-            <x-form.text_input name="title" label="Título da Task" placeholder="Digite o titulo da sua Task" />     {{-- utilizando o componente 'text_input' --}}
-            <x-form.text_input type="date" name="due_date" label="Data de realização" placeholder="Digite o titulo da tarefa" />
-            
-            <div class="inputArea">
-                <label for="category">
-                    Categoria
-                </label>
-                <select id="category" name="category" required>       {{-- 'select' category é 'required' obrigatorio seu preenchimento --}}
-                    <option selected disabled value="">Seleçione a categoria</option>
-                    <option>Valor qualquer</option>
-                </select>
-            </div>
-            
-            <div class="inputArea">
-                <label for="title">
-                    descrição da tarefa
-                </label>
-                <textarea name="description" placeholder="Digite uma descrição para sua task"></textarea>       {{-- textarea não é obrigado ser preenchido --}}
-            </div>
+            <x-form.text_input     {{-- utilizando o componente 'text_input' --}}
+            name="title"
+            label="Título da Tarefa"
+            placeholder="Digite o titulo da sua tarefa" />
 
+            <x-form.text_input
+            type="date"
+            name="due_date"
+            label="Data de realização"
+            placeholder="Digite o titulo da tarefa" />
+
+            <x-form.select_input name="category"
+            label="Categoria"
+            placeholder="Digite o titulo da tarefa">
+                <option>Valor qualquer</option>
+            </x-form.select_input>
+
+            <x-form.textarea_input
+            name="description"
+            placeholder="Digite a descrição da tarefa" />
+            
             <div class="inputArea">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">Criar Tarefa</button>
             </div>
         </form>
     </section>
