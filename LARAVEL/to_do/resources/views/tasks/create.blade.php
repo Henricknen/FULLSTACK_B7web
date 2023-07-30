@@ -30,9 +30,8 @@
             name="description"
             placeholder="Digite a descrição da tarefa" />
             
-            <div class="inputArea">
-                <button type="submit" class="btn btn-primary">Criar Tarefa</button>
-            </div>
+            <x-form.form_button submitTxt="Criar Tarefa" resetTxt="Resetar" />      {{-- ultilizando apenas um componente para renderizar os dois botões --}}
+
         </form>
     </section>
 </x-layout>
