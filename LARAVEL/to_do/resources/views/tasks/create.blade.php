@@ -7,7 +7,8 @@
 
     <section id="create_task_section">
         <h1>Criar tarefa</h1>
-        <form>
+        <form method="POST" action="{{route('task.create_action')}}">     {{-- o post deste formulario será enviado para 'tasck.create_action' --}}
+            @csrf       {{-- 'csrf' é um token é ultilizado para proxima página validar, iindicando que não é um robo enviando --}}
             
             <x-form.text_input     {{-- utilizando o componente 'text_input' --}}
             name="title"
@@ -20,10 +21,13 @@
             label="Data de realização"
             placeholder="Digite o titulo da tarefa" />
 
-            <x-form.select_input name="category"
+            <x-form.select_input
+            name="category_id"
             label="Categoria"
             placeholder="Digite o titulo da tarefa">
-                <option>Valor qualquer</option>
+            @foreach ($categories as $category)
+                <option value="{{$category-> id}}">{{$category-> title}}</option>
+            @endforeach                
             </x-form.select_input>
 
             <x-form.textarea_input
