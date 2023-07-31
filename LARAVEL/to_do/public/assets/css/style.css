@@ -218,12 +218,12 @@ h2 {
     color: var(--text-dark);
 }
 
-#create_task_section {
+#task_section {
     margin: auto;
     padding-top: 20px;
 }
 
-#create_task_section h1 {
+#task_section h1 {
     text-align: center;
     margin-bottom: 20px;
 }
