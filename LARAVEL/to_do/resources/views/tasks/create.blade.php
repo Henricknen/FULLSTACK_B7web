@@ -26,7 +26,7 @@
             label="Categoria"
             placeholder="Digite o titulo da tarefa">
             @foreach ($categories as $category)
-                <option value="{{$category-> id}}">{{$category-> title}}</option>
+                <option value="{{$category->id}}">{{$category->title}}</option>
             @endforeach                
             </x-form.select_input>
 
