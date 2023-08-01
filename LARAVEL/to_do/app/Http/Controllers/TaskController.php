@@ -18,7 +18,7 @@ class TaskController extends Controller {
     }
 
     public function create_action(Request $request) {
-        $task = $request->only(['title', 'category_yd', 'description', 'due_date']);
+        $task = $request->only(['title', 'category_id', 'description', 'due_date']);
         $task['user_id'] = 1;
 
 
