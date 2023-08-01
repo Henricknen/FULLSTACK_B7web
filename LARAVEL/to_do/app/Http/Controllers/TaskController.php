@@ -60,6 +60,8 @@ class TaskController extends Controller {
     public function edit_action(Request $request) {     // método de edição
         $request_data = $request->only(['title', 'due_date', 'category_id', 'description']);      // dados da task que serão atualizados
 
+        $request_data['is_done'] = $request-> is_done ? true: false;       // se foi enviado 'request is_done' checked será true 
+
         $task = Task::find($request->id);       // seleçionado task
         if(!$task) {
             return 'Erro task inexistente';
@@ -71,7 +73,15 @@ class TaskController extends Controller {
 
     }
 
-    public function delete(Request $request)  {        // e redirecionar para a 'home'
+    public function delete(Request $request)  {        // método de deletar
+        $id = $request-> id;
+
+        $task = Task::find($id);
+
+        if($task) {     // se hover 'task'
+            $task ->delete();      // apaga o registro da tabela tasks com base no 'id' informadp
+        }
+        
         return redirect(route('home'));
     }
 }

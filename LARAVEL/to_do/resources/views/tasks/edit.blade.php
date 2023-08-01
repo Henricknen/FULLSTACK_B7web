@@ -9,6 +9,12 @@
         <h1>Editar tarefa</h1>
         <form method="POST" action="{{route('task.edit_action')}}">
             @csrf       {{-- 'csrf' é um token é ultilizado para proxima página validar, iindicando que não é um robo enviando --}}
+
+            <x-form.checkbox_input      {{-- ultilizando componente de 'checkbox' --}}
+            name="is_done"
+            aria-label="Tarefa realizada?"
+            checked="{{$task->is_done}}" 
+            />
             
             <input type="hidden" name="id" value="{{$task->id}}" />        {{-- passando 'id'da tarefa --}}
             <x-form.text_input     {{-- utilizando o componente 'text_input' --}}
