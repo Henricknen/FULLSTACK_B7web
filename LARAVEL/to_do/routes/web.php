@@ -14,6 +14,7 @@ Route::get('/task/delete', [TaskController::class, 'delete'])-> name('task.delet
 Route::get('/task', [TaskController::class, 'index'])-> name('task.view');      // rota de exibição de 'task' espeçifica
 
 Route::get('/login', [AuthController::class, 'index'])-> name('login');        // na parte de autentificação será feito o 'login'
+Route::post('/login', [AuthController::class, 'login_action'])-> name('user.login_action');
 Route::get('/register', [AuthController::class, 'register'])-> name('register');       // também na autentificação será feito o 'registro'
 Route::post('/register', [AuthController::class, 'register_action'])-> name('user.register_action');     // rota de registro
 

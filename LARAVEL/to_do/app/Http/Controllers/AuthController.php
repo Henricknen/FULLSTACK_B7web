@@ -9,6 +9,14 @@ class AuthController extends Controller {
     public function index(Request $request) {
         return view('login');
     }
+
+    public function login_action(Request $request) {
+        $validator = $request-> validate([      // validando a requisição
+            'email' => 'required|email',   
+            'password' => 'required|min:6',
+        ]);
+        dd($validator);
+    }
     
     public function register(Request $request) {
         return view('register');
@@ -23,8 +31,8 @@ class AuthController extends Controller {
         ]);
         
         $data = $request-> only('name', 'email', 'password');       // pegando 'name', 'email', 'password'
-        // $userCreated = User::create($data);
-        // dd($userCreated);
+        $userCreated = User::create($data);
+        dd($userCreated);
         return redirect(route('login'));
     }
 }
