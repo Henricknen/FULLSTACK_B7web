@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller {
     public function index(Request $request) {
+        // dd(Auth::user());       // método para acessar o usuário logado
         return view('login');
     }
 
@@ -17,7 +18,10 @@ class AuthController extends Controller {
             'email' => 'required|email',   
             'password' => 'required|min:6',
         ]);
-        dd($validator);
+        
+        if (Auth::attempt($validator)) {        // 'attempt' criptografa a senha e compara com o 'hash'
+            return redirect()-> route('home');      // apartir do 'login' o usuário será redireçionado para 'home'
+        };
     }
     
     public function register(Request $request) {
