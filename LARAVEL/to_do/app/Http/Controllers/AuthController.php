@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller {
     public function index(Request $request) {
@@ -31,8 +33,11 @@ class AuthController extends Controller {
         ]);
         
         $data = $request-> only('name', 'email', 'password');       // pegando 'name', 'email', 'password'
+
+        $data['password'] = Hash::make($data['password']);      // passando para 'Hash::make' o password antes dele ser criptografado
+
         $userCreated = User::create($data);
-        dd($userCreated);
-        return redirect(route('login'));
+        
+        return redirect(route('login'));        // depois de registrado será feito 'login'
     }
 }
