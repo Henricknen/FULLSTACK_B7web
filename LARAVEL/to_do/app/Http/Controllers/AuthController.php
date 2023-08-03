@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller {
     public function index(Request $request) {
-        // dd(Auth::user());       // método para acessar o usuário logado
+        if(Auth::check()) {     // verificando se usuário está logado ultilizando 'Auth::check()'
+            return redirect()-> route('home');      // se estiver logado será redireçionado para página 'home'
+        }
         return view('login');
     }
 
@@ -25,6 +27,10 @@ class AuthController extends Controller {
     }
     
     public function register(Request $request) {
+        $user = Auth::User();       // pegando os dados do usuário ultilizando 'Auth::User()' e armazendo na variável '$user'
+        if($user) {     // verificando se usuário está logado
+            return redirect()-> route('home');
+        }
         return view('register');
     }
     
