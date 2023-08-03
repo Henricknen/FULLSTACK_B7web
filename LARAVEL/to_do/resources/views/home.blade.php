@@ -1,8 +1,10 @@
 <x-layout page="To_do_App_Inicio">      {{-- tudo o que for comum entre as páginas será renderizado pelo componente 'layout' --}}
-
     <x-slot:btn>
         <a href="{{route('task.create')}}" class="btn btn-primary">
             Criar Tarefa
+        </a>
+        <a href="{{route('logout')}}" class="btn btn-primary">
+            Sair
         </a>
     </x-slot:btn>
 

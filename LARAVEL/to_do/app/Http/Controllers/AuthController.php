@@ -50,4 +50,9 @@ class AuthController extends Controller {
         
         return redirect(route('login'));        // depois de registrado será feito 'login'
     }
+
+    public function logout() {
+        Auth()->logout();         // deslogando o usuário do sistema
+        return redirect()-> route('login');
+    }
 }
