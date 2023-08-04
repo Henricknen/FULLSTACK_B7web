@@ -50,4 +50,21 @@
 
         </div>
     </section>
+
+    <script>
+        async function taskUpdate(element) {
+            let status = element.checked;     // se 'status' for false estará desmarcando o elemento se for true estará marcando
+            let taskId = element.dataset.id;        // pegando o 'id'
+            let rawResult = await fetch(url, {          // 'rawResult' é o resultado cru
+                method:'POST',
+                headers:{
+                    "Content-Type": "application/json",
+                    accept:"application/json"
+                },
+                body: JSON.stringify({status, taskId})
+            });
+            result = await rawResult.json();        // pegando o resultado geral da requisição
+            =console.log(result);
+        }
+    </script>
 </x-layout>
