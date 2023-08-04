@@ -9,7 +9,10 @@ use Illuminate\Http\Request;
 class TaskController extends Controller {
 
     public function update(Request $request) {
-        dd($request-> all());
+        $task = Task:: findOrFail($request-> taskId);
+        $task-> is_done = $request-> status;        // passando o 'status' para a requisição
+        $task-> save();     // salvando a requisição
+        return ['success'=> true];       // verificação do front end que mostra que a atualizado teve sucesso
     }
 
     public function index() {
