@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller {
@@ -15,12 +16,13 @@ class HomeController extends Controller {
             $filterDate = date('Y-m-d');      // '$filterDate' será a data atual
         }
 
-        $data['date_as_string'] = '05 Agos';
-        $data['date_prev_button'] = '2023-08-04';
-        $data['date_next_button'] = '2023-08-06';
+        $carbonDate = Carbon::createFromDate($filterDate);      // biblioteca 'carbon' pega a data atual no formato de string
+        $data['date_as_string'] = $carbonDate-> format('d M');
+        $data['date_prev_button'] = $carbonDate-> addDay(-1)-> format('Y-m-d');       // voltando 1 dia
+        $data['date_next_button'] = $carbonDate-> addDay(2)-> format('Y-m-d'); // adiçionando 1 dia
 
         $data['tasks'] = Task::whereDate('due_date', $filterDate)-> get();        // 'wherDate' procura por uma data espeçifica e '$filterDate' filtra uma data
-        $data['AuthUser'] = Auth::user();       // incluidnso dados do usuário autenticado
+        $data['AuthUser'] = Auth::user();       // incluindo dados do usuário autenticado
 
         $data['tasks_count'] = $data['tasks']-> count();
         $data['undone_tasks_count'] = $data['tasks']-> where('is_done', false)-> count();
