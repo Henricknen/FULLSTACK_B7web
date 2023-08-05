@@ -17,7 +17,9 @@ class HomeController extends Controller {
         }
 
         $carbonDate = Carbon::createFromDate($filterDate);      // biblioteca 'carbon' pega a data atual no formato de string
-        $data['date_as_string'] = $carbonDate-> format('d M');
+        
+        $data['date_as_string'] = $carbonDate-> translatedFormat('d'). ' de '. ucfirst($carbonDate-> translatedFormat('M'));        // traduzindo a string 'ucfirst' inseri a primeira letra em maicula
+        
         $data['date_prev_button'] = $carbonDate-> addDay(-1)-> format('Y-m-d');       // voltando 1 dia
         $data['date_next_button'] = $carbonDate-> addDay(2)-> format('Y-m-d'); // adiçionando 1 dia
 
