@@ -27,8 +27,9 @@
                 placeholder="Digite sua senha" />
 
             
-            <x-form.form_button submitTxt="Login" resetTxt="Limpar" />      {{-- ultilizando apenas um componente para renderizar os dois botões --}}
-
+            <x-form.form_button submitTxt="Login" resetTxt="Limpar" />      {{-- ultilizando apenas um componente para renderizar os dois botões --}}            
         </form>
+
+        <p>Não tem uma conta? <a href="{{ route('register') }}">Registre-se</a></p>
     </section>
 </x-layout>
