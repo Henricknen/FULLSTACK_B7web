@@ -1,4 +1,9 @@
 <x-layout page="To_do_App_Login">
+    <x-slot:btn>
+        <a href="{{route('register')}}" class="btn btn-primary">
+            Registre-se
+        </a>
+    </x-slot:btn>
 
     <section id="task_section">
         <h1>Autenticação</h1>
@@ -29,7 +34,5 @@
             
             <x-form.form_button submitTxt="Login" resetTxt="Limpar" />      {{-- ultilizando apenas um componente para renderizar os dois botões --}}            
         </form>
-
-        <p>Não tem uma conta? <a href="{{ route('register') }}">Registre-se</a></p>
     </section>
 </x-layout>

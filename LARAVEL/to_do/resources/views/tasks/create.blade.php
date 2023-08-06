@@ -1,4 +1,4 @@
-<x-layout page="To_do_App_Login">
+<x-layout page="To_do_App_New">
     <x-slot:btn>
         <a href="{{route('home')}}" class="btn btn-primary">
             Voltar
@@ -8,7 +8,7 @@
     <section id="task_section">
         <h1>Criar tarefa</h1>
         <form method="POST" action="{{route('task.create_action')}}">     {{-- o post deste formulario será enviado para 'tasck.create_action' --}}
-            @csrf       {{-- 'csrf' é um token é ultilizado para proxima página validar, iindicando que não é um robo enviando --}}
+            @csrf       {{-- 'csrf' é um token é ultilizado para proxima página validar, indicando que não é um robo enviando --}}
             
             <x-form.text_input     {{-- utilizando o componente 'text_input' --}}
             name="title"
@@ -16,18 +16,21 @@
             placeholder="Digite o titulo da sua tarefa" />
 
             <x-form.text_input
-            type="datetime-local"
+            type="date"
             name="due_date"
             label="Data de realização"
             placeholder="Digite o titulo da tarefa" />
 
             <x-form.select_input
+            id="category"
             name="category_id"
             label="Categoria"
-            placeholder="Digite o titulo da tarefa">
+            placeholder="Digite o a categoria da tarefa">
+
             @foreach ($categories as $category)
                 <option value="{{$category->id}}">{{$category->title}}</option>
-            @endforeach                
+            @endforeach
+
             </x-form.select_input>
 
             <x-form.textarea_input

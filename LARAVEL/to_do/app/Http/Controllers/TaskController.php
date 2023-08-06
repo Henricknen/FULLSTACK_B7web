@@ -10,6 +10,9 @@ class TaskController extends Controller {
 
     public function update(Request $request) {
         $task = Task:: findOrFail($request-> taskId);
+        if(!$task) {
+            return ['sucess'=> false];
+        }
         $task-> is_done = $request-> status;        // passando o 'status' para a requisição
         $task-> save();     // salvando a requisição
         return ['success'=> true];       // verificação do front end que mostra que a atualizado teve sucesso
@@ -28,6 +31,10 @@ class TaskController extends Controller {
     public function create_action(Request $request) {
         $task = $request->only(['title', 'category_id', 'description', 'due_date']);
         $task['user_id'] = 1;
+
+        $dbTask = task::create($task);
+        return redirect(route('home'));
+        
 
 
         $request->validate([        // '$request->validate' Isso garantirá que os campos obrigatórios 'title' 'category_id' 'description' 'due_date' sejam fornecidos antes de inserir os dados na tabela tasks
@@ -50,19 +57,19 @@ class TaskController extends Controller {
     }
 
     public function edit(Request $request)  {
-        $id = $request->id;
+        // $id = $request->id;
 
-        $task = Task::find($id);
-        if(!$task) {
-            return redirect(route('home'));
-        }
+        // $task = Task::find($id);
+        // if(!$task) {
+        //     return redirect(route('home'));
+        // }
 
-        $categories = Category::all();
-        $data['categories'] = $categories;
+        // $categories = Category::all();
+        // $data['categories'] = $categories;
         
-        $data['task'] = $task;
+        // $data['task'] = $task;
 
-        return view('tasks.edit', $data);
+        return view('tasks.edit');      //  $data
     }
 
     public function edit_action(Request $request) {     // método de edição
@@ -82,13 +89,13 @@ class TaskController extends Controller {
     }
 
     public function delete(Request $request)  {        // método de deletar
-        $id = $request-> id;
+        // $id = $request-> id;
 
-        $task = Task::find($id);
+        // $task = Task::find($id);
 
-        if($task) {     // se hover 'task'
-            $task ->delete();      // apaga o registro da tabela tasks com base no 'id' informadp
-        }
+        // if($task) {     // se hover 'task'
+        //     $task ->delete();      // apaga o registro da tabela tasks com base no 'id' informadp
+        // }
         
         return redirect(route('home'));
     }

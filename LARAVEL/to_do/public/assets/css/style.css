@@ -153,7 +153,6 @@ h2 {
     flex-direction: column;
     width: 100%;
     margin-top: 20px;
-    /* margin-left: 20px; */
 }
 
 .task {
@@ -191,6 +190,7 @@ h2 {
 }
 
 .actions {
+    display: flex;
     justify-content: flex-end;
 }
 
@@ -205,8 +205,8 @@ h2 {
 }
 
 .sphere {
-    /* width: 22px; */
-    /* height: 22px; */
+    width: 22px;
+    height: 22px;
     border-radius: 50px;
     margin-right: 10px;
     color: var(--text-dark);

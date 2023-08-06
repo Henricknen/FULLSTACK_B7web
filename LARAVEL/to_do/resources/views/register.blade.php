@@ -1,7 +1,7 @@
-<x-layout page="To_do_App_Login">
+<x-layout page="To_do_App_Reg">
     <x-slot:btn>
-        <a href="{{route('home')}}" class="btn btn-primary">
-            Voltar
+        <a href="{{route('login')}}" class="btn btn-primary">
+            Já possui conta? faça login
         </a>
     </x-slot:btn>
 
@@ -42,7 +42,7 @@
                 label="Confirme sua senha"
                 placeholder="Confirme sua senha" />
             
-            <x-form.form_button submitTxt="Registrar-se" resetTxt="Limpar" />      {{-- ultilizando apenas um componente para renderizar os dois botões --}}
+            <x-form.form_button submitTxt="Registrar" resetTxt="Limpar" />      {{-- ultilizando apenas um componente para renderizar os dois botões --}}
 
         </form>
     </section>
