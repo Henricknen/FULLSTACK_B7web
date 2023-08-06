@@ -14,13 +14,13 @@
             <div class="graph_header-line"></div>
             <div class="graph_header-date">
 
-                {{-- <a href = "{{route('home', ['date'=> $date_prev_button])}}">      {{-- trasnformando o botão em um link --}
+                <a href = "{{route('home', ['date'=> $date_prev_button])}}">      {{-- trasnformando o botão em um link --}}
                     <img src="/assets/images/icon-prev.png">
                 </a>
-                    {{$date_as_string}}     {{-- variável dinâmica --}
+                    {{$date_as_string}}     {{-- variável dinâmica --}}
                 <a href = "{{route('home', ['date'=> $date_next_button])}}">
                     <img src="/assets/images/icon-next.png">
-                </a> --}}
+                </a> 
             
             </div>
         </div>
@@ -50,11 +50,18 @@
         </div>
         <div class="task_list">
             
-            @foreach ($tasks as $task)      {{-- loop 'foreach' irá gerar as tasks --}}
-            <x-task :data= $task />        {{-- redenrizando 'task' que é a variável do foreach --}}
+            {{-- @foreach ($tasks as $task)      {{-- loop 'foreach' irá gerar as tasks --}
+            <x-task :data= "$task" />        {{-- redenrizando 'task' que é a variável do foreach --}
+            @endforeach --}}
+
+            @foreach ($tasks as $task)
+                <x-task :data="$task" />
             @endforeach
 
+            
+
         </div>
+        {{-- <x-task :data= $task /> --}}
     </section>
 
     <script>
@@ -92,7 +99,7 @@
                     "Content-Type": "application/json",
                     accept:"application/json"
                 },
-                body: JSON.stringify({status, taskId,_token: '{{ csrf_token() }}'})
+                body: JSON.stringify({status, taskId, _token: '{{ csrf_token() }}'})
             });
             result = await rawResult.json();        // pegando o resultado geral da requisição
             if(result.success) {

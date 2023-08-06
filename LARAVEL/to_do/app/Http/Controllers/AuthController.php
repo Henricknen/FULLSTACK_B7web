@@ -22,13 +22,13 @@ class AuthController extends Controller {
         ]);
         
         if (Auth::attempt($validator)) {        // 'attempt' criptografa a senha e compara com o 'hash'
-            return redirect()-> route('home');      // apartir do 'login' o usuário será redireçionado para 'home'
+            return redirect()->route('home');      // apartir do 'login' o usuário será redireçionado para 'home'
         };
     }
     
     public function register(Request $request) {
-        $user = Auth::User();       // pegando os dados do usuário ultilizando 'Auth::User()' e armazendo na variável '$user'
-        if($user) {     // verificando se usuário está logado
+        $isLoggedIn = Auth::User();       // pegando os dados do usuário ultilizando 'Auth::User()' e armazendo na variável '$isLoggedIn'
+        if($isLoggedIn) {     // verificando se usuário está logado
             return redirect()-> route('home');
         }
         return view('register');

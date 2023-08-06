@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth'])-> group(function() {        // grupo 'group' de rotas com middleware 'auth'
+Route::middleware(['auth'])-> group(function() {        // grupo 'group' de rotas com middleware 'auth' que verifica se usuário está ou não está autenticado
     Route::get('/', [HomeController::class, 'index'])-> name('home');      // rota 'home'
 
     Route::get('/task/new', [TaskController::class, 'create'])->  name('task.create');

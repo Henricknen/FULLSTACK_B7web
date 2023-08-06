@@ -57,19 +57,19 @@ class TaskController extends Controller {
     }
 
     public function edit(Request $request)  {
-        // $id = $request->id;
+        $id = $request->id;
 
-        // $task = Task::find($id);
-        // if(!$task) {
-        //     return redirect(route('home'));
-        // }
+        $task = Task::find($id);
+        if(!$task) {
+            return redirect(route('home'));
+        }
 
-        // $categories = Category::all();
-        // $data['categories'] = $categories;
+        $categories = Category::all();
+        $data['categories'] = $categories;
         
-        // $data['task'] = $task;
+        $data['task'] = $task;
 
-        return view('tasks.edit');      //  $data
+        return view('tasks.edit', $data);
     }
 
     public function edit_action(Request $request) {     // método de edição
@@ -88,15 +88,17 @@ class TaskController extends Controller {
 
     }
 
-    public function delete(Request $request)  {        // método de deletar
-        // $id = $request-> id;
+    public function delete(Request $request) {        // método de deletar
+        $id = $request-> id;
 
-        // $task = Task::find($id);
+        $task = Task::find($id);
 
-        // if($task) {     // se hover 'task'
-        //     $task ->delete();      // apaga o registro da tabela tasks com base no 'id' informadp
-        // }
-        
-        return redirect(route('home'));
-    }
+        if ($task) {
+            $task-> delete(); // Apaga o registro da tabela tasks com base no 'id' informado
+            return redirect(route('home'))->with('success', 'Task deletada com sucesso.'); // Adiciona uma mensagem de sucesso
+        } else {
+            return redirect(route('home'))->with('error', 'Não foi possível encontrar a task.'); // Adiciona uma mensagem de erro
+        }
+}
+
 }
