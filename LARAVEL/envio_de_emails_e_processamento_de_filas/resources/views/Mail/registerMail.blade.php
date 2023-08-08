@@ -1,1 +1,1 @@
-<h1>Envio de 'E-mail' ultilizando Laravel</h1>
+<h1>Envio de 'E-mail' ultilizando Laravel, Programador se chama {{$nome}}</h1>
