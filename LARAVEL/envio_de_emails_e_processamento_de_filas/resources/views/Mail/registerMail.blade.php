@@ -1,1 +1,1 @@
-<h1>Laravel</h1>
+<h1>Envio de 'E-mail' ultilizando Laravel</h1>

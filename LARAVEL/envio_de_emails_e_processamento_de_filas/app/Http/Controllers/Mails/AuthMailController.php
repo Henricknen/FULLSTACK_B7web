@@ -12,6 +12,8 @@ class AuthMailController extends Controller
     public function sendRegisterMail() {        // método de envio de email
         $registerEmail = new RegisterEmail();        // instançiando a classe 'mail'
 
-        Mail::to('l.henrick@live.com')-> send($registerEmail);     // 'to' diz pra quem será enviado o email
+        return $registerEmail;      // retornando a view
+
+        // Mail::to('l.henrick@live.com')-> send($registerEmail);     // 'to' diz pra quem será enviado o email
     }
 }
