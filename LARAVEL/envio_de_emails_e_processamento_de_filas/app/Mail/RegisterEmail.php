@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -13,17 +14,17 @@ class RegisterEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    private $name;      // definição da propriedade '$name'
+    private $user;      // definição da propriedade '$user'
 
-    public function __construct($name) {
-        $this-> name = $name;
+    public function __construct(User $qualquerNome) {
+        $this-> user = $qualquerNome;
     }
 
-    public function Build() {       // método 'Build' é responsavél por contruir a estrutura do email
+    public function build() {       // método 'Build' é responsavél por contruir a estrutura do email
 
         // $nome = 'Luis Henrique S F';        // dado que será passado para a view
         return $this-> view('Mail.registerMail', [       // retornando view com 'registerMail'
-            'nome'=> $this-> name
+            'nome'=> $this-> user-> name
         ]);
     }
 
@@ -43,7 +44,7 @@ class RegisterEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'Mail.registerMail', // Substitua 'view.name' pelo nome correto da visualização
+            view: 'Mail.registerMail',      // Substitua 'view.name' pelo nome correto da visualização
         );
     }
 

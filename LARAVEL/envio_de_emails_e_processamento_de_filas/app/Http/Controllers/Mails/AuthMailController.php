@@ -13,11 +13,12 @@ class AuthMailController extends Controller
     public function sendRegisterMail() {        // método de envio de email
 
         $user = new User();     // instançiando um 'model'
-        $user-> name = ': Luis Henrique S F';
+        $user-> name = ': Luis Henrique S F...';
 
-        $registerEmail = new RegisterEmail($user-> name);        // criando 'email' com a função 'RegisterEmail'
+        $registerEmail = new RegisterEmail($user);        // criando 'email' com a função 'RegisterEmail'
 
         return $registerEmail;      // retornando a view
         // Mail::to('l.henrick@live.com')-> send($registerEmail);     // 'to' diz pra quem será enviado o email
     }
 }
+
