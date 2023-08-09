@@ -25,6 +25,8 @@ class RegisterEmail extends Mailable
         // $nome = 'Luis Henrique S F';        // dado que será passado para a view
         return $this-> view('Mail.registerMail', [       // retornando view com 'registerMail'
             'nome'=> $this-> user-> name
+        ])-> attach(__DIR__. '/../../public/error.png', [       // função 'attach' faz anexo do endereço dentro dos parênteses
+            'as' => '4404.png'      // renomeando o arquivo anexado
         ]);
     }
 
