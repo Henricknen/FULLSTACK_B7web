@@ -22,6 +22,10 @@ class RegisterEmail extends Mailable
 
     public function build() {       // método 'Build' é responsavél por contruir a estrutura do email
 
+        $this-> subject('Assunto do email');     // assunto do email
+        $this-> from('no-reply@email.com');     // endereço de remetente do email
+        $this-> replyTo('l.henrick@live.com');      // endereço de resposta do email
+
         // $nome = 'Luis Henrique S F';        // dado que será passado para a view
         return $this-> view('Mail.registerMail', [       // retornando view com 'registerMail'
             'nome'=> $this-> user-> name
