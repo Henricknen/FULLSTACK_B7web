@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'America/Sao_Paulo',      // ultilizando hora data e atual
+    'timezone' => 'UTC',
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'pt_BR',        // alterando idioma para português
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------

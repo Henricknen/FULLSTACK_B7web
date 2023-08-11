@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -18,9 +17,8 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void        // função 'boot' roda no iniçio da requisição
+    public function boot(): void
     {
         //
-        Carbon::setLocale($this-> app-> getLocale());       // 1carbon' será traduzido logo no iniçio
     }
 }

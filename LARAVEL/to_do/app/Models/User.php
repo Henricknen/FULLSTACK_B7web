@@ -46,10 +46,10 @@ class User extends Authenticatable
     ];
 
     public function tasks() {       // puxando todas as 'tasks' ultilizando relaçionamento 'hasMany'
-        return $this->hasMany(Task::class);
+        return $this-> hasMany(Task::class);
     }
 
-    public function categories() {
-        return $this->hasMany(Category::class);
+    public function categories() {       // puxando todas as 'category'
+        return $this-> hasMany(Category::class);
     }
 }

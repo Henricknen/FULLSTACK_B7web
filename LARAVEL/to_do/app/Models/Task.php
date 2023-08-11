@@ -19,11 +19,11 @@ class Task extends Model {
         'category_id'
     ];
 
-    public function user() {       // puxando todos 'user' ultilizando relaçionamento 'hasMany'
-        return $this->belongsTo(User::class);
+    public function user() {       // puxando o usuário que a task pertençe
+        return $this-> belongsTo(User::class);
     }
 
-    public function category() {
-        return $this->belongsTo(Category::class);
+    public function category() {        // puxando uma categoria
+        return $this-> belongsTo(Category::class);
     }
 }

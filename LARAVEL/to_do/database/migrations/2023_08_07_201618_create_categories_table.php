@@ -12,11 +12,11 @@ return new class extends Migration
      */
     public function up(): void {
         Schema::create('categories', function (Blueprint $table) {       // criação da tabela 'categorys'
-            $table->id();
-            $table->string('title');
-            $table->string('color')->default('#FFFFFF');
-            $table->foreignIdFor(User::class)->references('id')->on('users')->onDelete('CASCADE');       // relaçionamento entre tabela "categorys" e a tabela "users"
-            $table->timestamps();
+            $table-> id();
+            $table-> string('title');
+            $table-> string('color')-> default('#FFFFFF');
+            $table-> foreignIdFor(User::class)-> references('id')-> on('users')-> onDelete('CASCADE');       // relaçionamento entre tabela "categorys" e a tabela "users"
+            $table-> timestamps();
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down(): void {
 
         Schema::table('categories', function(Blueprint $table) {     // deletando a ForeignIdFor chave 'estrangeira'
-            $table->dropForeignIdFor(User::class);
+            $table-> dropForeignIdFor(User::class);
         });
 
         Schema::dropIfExists('categories');

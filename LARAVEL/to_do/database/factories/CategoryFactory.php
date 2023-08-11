@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -15,9 +16,9 @@ class CategoryFactory extends Factory {
     public function definition(): array {
 
         return [
-            'title' => $this->faker->text(30),            // retornando um 'title' do tipo 'text' de 30 caracteres
-            'color' => $this->faker->safeHexColor(),          // retornando cor em hexadeçimal
-            'user_id' => User::all()->random()     // seleçiona um usuário aleatóriamente
+            'title' => $this->faker->text(30),
+            'color' => $this->faker->safeHexColor(),
+            'user_id' => User::factory()->create()->id
         ];
     }
 }
