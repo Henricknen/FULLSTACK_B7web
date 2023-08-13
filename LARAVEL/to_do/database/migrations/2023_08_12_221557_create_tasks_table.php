@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    
     public function up(): void
     {
         Schema::create('tasks', function (Blueprint $table) {
@@ -24,9 +22,7 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void {
         Schema::table('tasks', function(Blueprint $table) {        // acessando tabel a 'tasks'
             $table-> dropForeignIdFor(User::class);     // deletando a chave estrangeira
