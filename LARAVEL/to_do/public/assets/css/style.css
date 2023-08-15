@@ -1,0 +1,44 @@
+:root {     /* ':root' é a raiz da aplicação */
+    --background-light: #FAA94E;
+    --background-white: #F6F5FF;
+    --text-dark: #000;
+    --color-primary: #E93A2D;
+}
+
+* {     /* Estilizando todos os elementos da página */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Rubik, sans-serif;
+    color: var(--text-dark);
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-white);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.sidebar {
+    width: 100px;
+    background-color: var(--color-primary);
+}
+
+
+nav {
+    height: 100px;
+    background-color: var(--background-light);
+    width: calc(100vw - 100px);     /* a largura é calculada como 100% da largura da janela do navegador menos 100 pixels (largura da .sidebar) */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
