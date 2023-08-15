@@ -62,7 +62,26 @@ main {
 }
 
 section.graph {
-    background-color: brown;
     width: 33%;
     height: 100%;
+}
+
+.graph_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+h2 {
+    flex: 1;
+    display: inline-block;
+}
+
+hr.LinhaHeader {
+    flex: 1;
+    display: inline-block;
+    width: 50px;
+}
+
+.graph_header-subtitle {
+    margin-top: 10px;
 }
