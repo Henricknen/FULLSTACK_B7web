@@ -42,3 +42,27 @@ nav {
     padding-right: 20px;
 }
 
+.btn {
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+a.btn {
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+}
+
+section.graph {
+    background-color: brown;
+    width: 33%;
+    height: 100%;
+}

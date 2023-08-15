@@ -11,6 +11,15 @@
                     Criar Tarefa
                 </a>
             </nav>
+            <main>      {{-- conteúdo prinçipal --}}
+                <section class="graph">
+                    Grafico
+                </section>
+
+                <section class="list">
+                    Lista
+                </section>
+            </main>
         </div>
     </div>
 </body>
