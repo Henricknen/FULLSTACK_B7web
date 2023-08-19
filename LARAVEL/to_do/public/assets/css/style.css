@@ -48,6 +48,11 @@ nav {
 .btn {
     padding: 20px 30px;
     border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 a.btn {
@@ -61,20 +66,20 @@ a.btn {
 
 main {
     display: flex;
-    padding: 20px;
+    padding: 0px;
 }
 
 section.graph {
-    width: 37.2%;
+    width: 33%;
     height: 100%;
-    padding: 5px;
-    display: inline-block;
+    padding: 20px 20px 0 20px;
 }
 
 .graph_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+        color: var(--text-dark);
 }
 
 h2 {
@@ -93,7 +98,7 @@ h2 {
 .graph_header-date {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
 }
 
@@ -168,9 +173,13 @@ hr.LinhaHeader {
     padding: 30px 15px;
     margin-bottom: 10px;
     border-bottom: 1px solid var(--background-light);
+    transition: all .3s ease-in-out;
 }
 
 .task:hover {
+    transform: scale(1.05);
+    border-radius: 10px;
+    overflow: hidden;
     background-color: var(--background-light);
 }
 
@@ -187,20 +196,28 @@ hr.LinhaHeader {
     flex: 1;
 }
 
-.actions {
-    justify-content: flex-end;
+.actions a {
+    margin-left: 20px;
+    margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.actions>a:hover {
+    transform: scale(1.50);
 }
 
 .sphere {
-    width: 22px;
-    height: 22px;
+    /* width: 22px; */
+    /* height: 22px; */
     border-radius: 50px;
     margin-right: 10px;
+    color: var(--text-dark);
 }
 
 .task_title {
     padding-left: 10px;
     font-weight: bold;
+    color: var(--text-dark);
 }
 
 .actions a {

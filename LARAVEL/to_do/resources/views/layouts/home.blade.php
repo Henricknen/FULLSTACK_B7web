@@ -17,7 +17,9 @@
                         <h2>Progresso</h2>
                         <div class="graph_header-line"></div>
                         <div class="graph_header-date">
-                            Data
+                            <img src="/assets/images/icon-prev.png">
+                                7/06
+                            <img src="/assets/images/icon-next.png">
                         </div>
                     
 
