@@ -3,7 +3,7 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            Logo
+            <img src="/assets/images/logo.jpg">
         </div>
         <div class="content">
             <nav>       {{-- menu de navegação --}}
@@ -33,7 +33,7 @@
 
                 <section class="list">
                     <div class="list_header">
-                        <select class="lisr_header-select">
+                        <select class="list_header-select">
                             <option value="1">Todas as tarefas</option>
                         </select>
                     </div>
@@ -48,7 +48,12 @@
                                 <div>Titulo da Tarefa</div>
                             </div>
                             <div class="actions">
-                                Edita - Excluir
+                                <a href="#">
+                                    <img src="/assets/images/icon-edit.png">
+                                </a>
+                                <a href="#">
+                                    <img src="/assets/images/icon-delete.png">
+                                </a>
                             </div>
                         </div>
 

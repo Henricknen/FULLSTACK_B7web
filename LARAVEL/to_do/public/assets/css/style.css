@@ -31,6 +31,9 @@ body {
     background-color: var(--color-primary);
 }
 
+.sidebar img {
+    max-width: 100%;
+}
 
 nav {
     height: 100px;
@@ -65,7 +68,6 @@ section.graph {
     width: 37.2%;
     height: 100%;
     padding: 5px;
-
     display: inline-block;
 }
 
@@ -89,12 +91,26 @@ hr.LinhaHeader {
     margin-left: 20px;
 } */
 
+.graph-placeholder {
+    background-color: #ccc;
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 10px;
+    background: url('/assets/images/graph.png');
+    background-size: contain;
+}
+
 .task_list {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-top: 20px;
     /* margin-left: 20px; */
+}
+
+.graph_header-tasks_left {
+    justify-content: flex-end;
 }
 
 .task {
@@ -138,4 +154,9 @@ hr.LinhaHeader {
 .task_title {
     padding-left: 10px;
     font-weight: bold;
+}
+
+.actions a {
+    margin-left: 20px;
+    margin-right: 10px;
 }
