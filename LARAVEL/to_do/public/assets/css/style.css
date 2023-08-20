@@ -83,9 +83,10 @@ section.graph {
 }
 
 h2 {
-    flex: 2;
+    flex: 4;
     font-size: 18px;
     display: inline-block;
+    color: var(--text-dark);
 }
 
 .graph_header-line {
@@ -98,15 +99,16 @@ h2 {
 .graph_header-date {
     flex: 1;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
+    font-size: 9px;
 }
 
 .graph_header-subtitle {
     background-color: #ccc;
     width: 300px;
     height: 300px;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: 10px;
     background: url('/assets/images/graph.png');
     background-size: contain;
@@ -127,7 +129,7 @@ hr.LinhaHeader {
 }
 
 .list {
-    padding: 5px 15px;
+    padding: 20px 20px 0px 20px;
     flex: 1;
 }
 
@@ -135,9 +137,12 @@ hr.LinhaHeader {
     display: flex;
 }
 
-/* .list_header-select {
-    margin-left: 20px;
-} */
+.list_header-select {
+    background-color: transparent;
+    border: 0;
+    font-size: 18px;
+    color: var(--text-dark);
+}
 
 .graph-placeholder {
     background-color: #ccc;
