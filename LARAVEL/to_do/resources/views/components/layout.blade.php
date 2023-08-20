@@ -17,9 +17,7 @@
         </div>
         <div class="content">
             <nav>       {{-- barra de de navegação --}}
-                <a href="http://" class="btn btn-primary">
-                    Criar Tarefa
-                </a>
+                {{$btn ?? null}}        {{-- slot chamado 'btn' --}}
             </nav>
             <main>      {{-- conteúdo prinçipal --}}
                 {{$slot}}
