@@ -4,9 +4,6 @@
         <a href="http://" class="btn btn-primary">
             Criar Tarefa
         </a>
-        <a href="http://" class="btn btn-primary">
-            Criar Tarefa
-        </a>
     </x-slot:btn>
     <section class="graph">
         <div class="graph_header">

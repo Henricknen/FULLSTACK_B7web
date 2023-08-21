@@ -56,6 +56,7 @@ nav {
 }
 
 a.btn {
+    margin-left: 5px;
     text-decoration: none;
 }
 
@@ -125,8 +126,8 @@ hr.LinhaHeader {
     width: 80px;
 }
 
-.graph_header-subtitle {
-}
+/* .graph_header-subtitle {
+} */
 
 .list {
     padding: 20px 20px 0px 20px;
