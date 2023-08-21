@@ -1,6 +1,6 @@
 :root {     /* ':root' é a raiz da aplicação */
     --background-light: #FAA94E;
-    --background-white: #F6F5FF;
+    --background-white: #FFFFFF;
     --text-dark: #000;
     --color-primary: #F03C2E;
 }
