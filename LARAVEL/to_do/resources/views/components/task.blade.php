@@ -1,7 +1,7 @@
 <div class="task">
     <div class="title">
         <input type="checkbox"
-        @if(isset($data) && $data['done'])      {{-- criando verificando se as tasks está marcadas, se 'done' for 'true' está se 'false' não está --}}
+        @if (isset($data) && $data['is_done'])     {{-- criando verificando se as tasks está marcadas, se 'is_done' for 'true' está se 'false' não está --}}
             checked 
         @endif 
         />

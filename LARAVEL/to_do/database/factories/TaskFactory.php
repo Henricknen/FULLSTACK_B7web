@@ -12,17 +12,21 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class TaskFactory extends Factory {
     
     public function definition(): array {
-        $user = User::all()-> random();     // definindo usuário
-        while(count($user-> categories) == 0) {     // verificando se usuário tem categorias
-            $user = User::all()-> random();     // se não tiver será gerado outro usuário
+        $user = User::all()-> random();      // defindo usuário
+
+        while(count($user-> categories) == 0) {      // se usuário não tiver 'categorias'
+            $user = User::all()-> random();      // será gerado outro usuário
         }
 
+        $category = $user-> categories-> random();        // pegando uma categoria aleatoria deste usuário '$user'
+
         return [
-            'title'=> $this-> faker-> text(30),
-            'description'=> $this-> faker-> text(60),
-            'due_date'=> $this-> faker-> dateTime(),
-            'user_id'=> $user,
-            'category_id'=> $user->categories-> random(),      // pegando uma categoria aleatória do usuário
+            'is_done' => $this-> faker -> boolean(),        // definindo 'is_done' como aleatório
+            'title' => $this-> faker -> text(30),
+            'description' => $this-> faker-> text(60),
+            'due_date' => $this-> faker-> datetime(),
+            'user_id' => $user-> id,
+            'category_id' => $category-> id,
         ];
     }
 }
