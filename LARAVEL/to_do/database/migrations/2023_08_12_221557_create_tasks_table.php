@@ -12,13 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
+            $table-> id();
+            $table-> boolean('is_done')-> default(false);        // 'is_done' indica se a 'task' está marcada ou não
             $table-> string('title');
             $table-> string('description');
             $table-> dateTime('due_date');
             $table-> foreignIdFor(User::class)-> references('id')-> on('users')-> onDelete('CASCADE');        // relaçionamento
             $table-> foreignIdFor(Category::class)-> references('id')-> on('categories')-> onDelete('CASCADE');        // relaçionamento
-            $table->timestamps();
+            $table-> timestamps();
         });
     }
 
