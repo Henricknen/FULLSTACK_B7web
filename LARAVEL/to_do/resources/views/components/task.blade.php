@@ -13,13 +13,11 @@
     </div>
 
     <div class="actions">
-        <a href="http://meusite.com/task/edit/{{ $data['id'] ?? '' }}">
+        <a href= "{{route('task.edit')}}">
             <img src="/assets/images/icon-edit.png">
         </a>
-
-        <a href="http://meusite.com/task/delete/{{ $data['id'] ?? '' }}">
+        <a href= "{{route('task.delete')}}">
             <img src="/assets/images/icon-delete.png">
         </a>
-
     </div>
 </div>
