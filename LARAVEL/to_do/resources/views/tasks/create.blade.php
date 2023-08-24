@@ -26,6 +26,7 @@
             </x-form.select_input>
 
             <x-form.textarea_input
+            label="Descrição da Tarefa"
             name="description"
             placeholder="Digite a descrição da tarefa" />
 

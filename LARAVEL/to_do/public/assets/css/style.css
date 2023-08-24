@@ -245,19 +245,21 @@ hr.LinhaHeader {
 
 .inputArea {
     display: block;
-    margin: 10px;
+    margin: 10px 0 20px 0;
 }
 
 .inputArea label {
     display: block;
     margin-bottom: 5px;
+    margin-left: 5px;
 }
 
 .inputArea input, .inputArea select {
     height: 40px;
     width: 400px;
-    border-radius: 10px;
-    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ccc;
     padding: 5px 10px;
 }
 
@@ -265,6 +267,7 @@ hr.LinhaHeader {
     height: 120px;
     width: 400px;
     border-radius: 10px;
-    border: 1px solid #333;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ccc;
     padding: 5px 10px;
 }
