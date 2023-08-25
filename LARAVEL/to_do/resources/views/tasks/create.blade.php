@@ -15,7 +15,7 @@
             placeholder="Digite o titulo da sua tarefa" />
 
             <x-form.text_input
-            type="date"
+            type="datetime-local"
             name="due_date"
             label="Data de realização"
             placeholder="Digite o titulo da tarefa" />
