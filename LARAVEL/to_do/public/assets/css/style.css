@@ -233,16 +233,16 @@ hr.LinhaHeader {
     margin-right: 10px;
 }
 
-#create_task_section {
+#task_section {
     margin: auto;
     padding-top: 20px;
 }
 
-#create_task_section h1 {
+#task_section h1 {
     text-align: center;
     margin-bottom: 20px;
 }
-
+	
 .inputArea {
     display: block;
     margin: 10px 0 20px 0;

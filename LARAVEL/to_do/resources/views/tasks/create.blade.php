@@ -5,7 +5,7 @@
         </a>
     </x-slot:btn>
 
-    <section id="create_task_section">
+    <section id="task_section">
         <h1>Criar tarefa</h1>
         <form method="POST" action="{{route('task.create_action')}}">     {{-- o post deste formulario será enviado para 'tasck.create_action' --}}
             @csrf       {{-- 'csrf' é um token é ultilizado para proxima página validar, iindicando que não é um robo enviando --}}
