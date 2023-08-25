@@ -10,6 +10,7 @@
         <h1>Editar tarefa</h1>
         <form method="POST" action="{{route('task.edit_action')}}">
             @csrf       {{-- 'csrf' é um token é ultilizado para proxima página validar, iindicando que não é um robo enviando --}}
+            <input type="hidden" name="id" value="{{$task-> id}}" />        {{-- passando o 'id' para o formulario --}}
 
             <x-form.text_input     {{-- utilizando o componente 'text_input' --}}
             name="title"

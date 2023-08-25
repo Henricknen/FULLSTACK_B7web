@@ -56,9 +56,19 @@ class TaskController extends Controller {
         return view('tasks.edit', $data);
     }
 
-    public function edit_action(Request $request) {
-        return 'ok';
+    public function edit_action(Request $request) {     // método de edição
+        $request_data = $request->only(['title', 'due_date', 'category_id', 'description']);      // dados da task que serão atualizados
+    
+        $task = Task::find($request->id);       // seleçionado task
+        if(!$task) {
+            return 'Erro task inexistente';
+        }
+        $task->update($request_data);
+        $task->save();
+        return redirect((route('home')));
+
     }
+    
 
     public function delete(Request $request)  {        // e redirecionar para a 'home'
         return redirect(route('home'));

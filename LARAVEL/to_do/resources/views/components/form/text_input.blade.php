@@ -4,7 +4,7 @@
     </label>
     <input
     type="{{empty($type) ? 'text' : $type}}"        {{-- se 'type' não for definido será do tipo 'text' --}}
-    id="{{$name}}" placeholder="{{$placeholder ?? ''}}"
+    id="{{$name}}" name="{{$name}}" placeholder="{{$placeholder ?? ''}}"
     {{empty($required) ? '' : 'required'}}      {{-- verificando se 'required' está ou não está vazia --}}
     value="{{$value ?? ''}}"
     />
