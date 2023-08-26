@@ -70,7 +70,15 @@ class TaskController extends Controller {
     }
     
 
-    public function delete(Request $request)  {        // e redirecionar para a 'home'
-        return redirect(route('home'));
+    public function delete(Request $request)  {        // método de deletar
+        $id = $request-> id;
+
+        $task = Task::find($id);
+
+        if($task) {     // se hover 'task'
+            $task ->delete();      // apaga o registro da tabela tasks com base no 'id' informadp
+        }
+
+        return redirect(route('home'));     // após a deleção usúario será redireçionado para 'home'
     }
 }
