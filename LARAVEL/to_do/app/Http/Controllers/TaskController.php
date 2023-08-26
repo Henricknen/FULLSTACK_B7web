@@ -58,6 +58,8 @@ class TaskController extends Controller {
 
     public function edit_action(Request $request) {     // método de edição
         $request_data = $request->only(['title', 'due_date', 'category_id', 'description']);      // dados da task que serão atualizados
+
+        $request_data['is_done'] = $request-> is_done ? true: false;        // se foi enviado 'request is_done' checked será true
     
         $task = Task::find($request->id);       // seleçionado task
         if(!$task) {
