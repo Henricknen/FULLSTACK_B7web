@@ -8,10 +8,10 @@
     <section id="task_section">
         <h1>Registrar-se</h1>
         
-        @if ($errors->any())        {{-- exibe erros de validação --}}  
+        @if ($errors->any())        {{-- verificando se tem algum erro --}}  
             <ul class="alert alert-danger">
                 @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
+                    <li>{{ $error }}</li>       {{-- imprimindo o erro --}}
                 @endforeach
              </ul>
         @endif
