@@ -7,14 +7,13 @@
 
     <section id="task_section">
         <h1>Registrar-se</h1>
-        @if ($errors->any())        {{-- exibe erros de validação --}}
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+        
+        @if ($errors->any())        {{-- exibe erros de validação --}}  
+            <ul class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+             </ul>
         @endif
 
         <form method="POST" action="{{route('user.register_action')}}">
