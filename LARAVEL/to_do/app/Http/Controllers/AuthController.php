@@ -17,8 +17,15 @@ class AuthController extends Controller {
 
     public function register_action(Request $request) {
 
-        $data = $request-> only('name', 'email', 'password');
-        $userCreated = User::create($data);
-        dd($userCreated);
+        $request-> validate([       // 'validate' com um array de regras
+            'name' => 'required',       // o usúario tem que ter um nome
+            'email' => 'required|email|unique:users',       // o email tem que ser único na tabel 'users'
+            'password' => 'required|min:6|confirmed',       // 'password' tem que ter no minimo 6 caracters |'confirmed' busca pela confirmação da senha
+        ]);
+
+        $data = $request-> only('name', 'email', 'password');       // pegando 'name', 'email', 'password'
+        User::create($data);
+        // dd($userCreated);
+        return redirect(route('login'));
     }
 }
