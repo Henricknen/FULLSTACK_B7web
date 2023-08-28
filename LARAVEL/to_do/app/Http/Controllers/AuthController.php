@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller {
+
     public function index(Request $request) {
-        if(Auth::check()) {     // verificando se usuário está logado ultilizando 'Auth::check()'
+        $islogeedIn = Auth::check();
+        if($islogeedIn) {     // verificando se usuário está logado ultilizando 'Auth::check()'
             return redirect()-> route('home');      // se estiver logado será redireçionado para página 'home'
         }
 
@@ -52,5 +54,10 @@ class AuthController extends Controller {
         $userCreated = User::create($data);
         
         return redirect(route('login'));        // depois de registrado será feito 'login'
+    }
+
+    public function logout() {
+        Auth()-> logout();         // deslogando o usuário do sistema
+        return redirect()-> route('login');     // e redireçionando para tela de 'login'
     }
 }
