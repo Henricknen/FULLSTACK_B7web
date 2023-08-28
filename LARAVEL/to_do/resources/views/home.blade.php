@@ -24,7 +24,7 @@
 
         <div class="tasks_left_footer">
             <img src="/assets/images/icon-info.png">
-            Resta apenas 3 tarefas para serem realizadas
+            Resta apenas 1 tarefas para ser realizada
         </div>
 
     </section>
