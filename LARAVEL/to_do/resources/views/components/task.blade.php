@@ -1,9 +1,9 @@
 <div class="task">
     <div class="title">
-        <input type="checkbox"
-        @if (isset($data) && $data['is_done'])     {{-- criando verificando se as tasks está marcadas, se 'is_done' for 'true' está se 'false' não está --}}
-            checked 
-        @endif 
+        <input type="checkbox" onchange = "taskUpdate(this)" data-id = "{{$data['id']}}"        {{-- 'onchange' verifica o estado do 'checkbox' --}}
+            @if (isset($data) && $data['is_done'])     {{-- verificando se as tasks está marcadas, se 'done' for 'true' está se 'false' não está --}}
+                checked
+            @endif 
         />
         <div class="task_title"> {{ $data['title'] ?? '' }} </div>      {{-- se não existir título ficará em branco '' --}}
     </div>

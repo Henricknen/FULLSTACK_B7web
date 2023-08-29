@@ -15,6 +15,7 @@ Route::middleware(['auth'])-> group(function() {        // grupo 'group' de rota
     Route::get('/task/delete', [TaskController::class, 'delete'])-> name('task.delete');
     Route::get('/task', [TaskController::class, 'index'])-> name('task.view');      // rota de exibição de 'task' espeçifica
     Route::get('/logout', [AuthController::class, 'logout'])-> name('logout');
+    Route::post('/task/update', [TaskController::class, 'update'])-> name('task.update');
 });
 
 Route::get('/login', [AuthController::class, 'index'])-> name('login');        // na parte de autentificação será feito o 'login'
