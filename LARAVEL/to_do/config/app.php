@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt_BR', // alterando a configuração do 'laravel' trocando o idioma para português
 
     /*
     |--------------------------------------------------------------------------
