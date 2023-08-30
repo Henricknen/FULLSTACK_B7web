@@ -1,4 +1,4 @@
-<div class="task">
+<div class="task {{isset($data['is_done']) && $data['is_done'] ? 'task_done' : 'task_pending'}}">
     <div class="title">
         <input type="checkbox" onchange = "taskUpdate(this)" data-id = "{{$data['id']}}"        {{-- 'onchange' verifica o estado do 'checkbox' --}}
             @if (isset($data) && $data['is_done'])     {{-- verificando se as tasks está marcadas, se 'done' for 'true' está se 'false' não está --}}
