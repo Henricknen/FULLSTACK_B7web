@@ -13,9 +13,14 @@
             <h2>Progresso</h2>
             <div class="graph_header-line"></div>
             <div class="graph_header-date">
-                <img src="/assets/images/icon-prev.png">
-                03/04
-                <img src="/assets/images/icon-next.png">
+                
+                <a href="{{route('home', ['date'=> $date_prev_button])}}">
+                    <img src="/assets/images/icon-prev.png">
+                </a>
+                    {{$date_as_string}}         {{-- tornando data dinâmica --}}
+                    <a href="{{route('home', ['date'=> $date_next_button])}}">
+                    <img src="/assets/images/icon-next.png">
+                </a>
             </div>
         </div>
 
