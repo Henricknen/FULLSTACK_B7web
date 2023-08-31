@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'Site\HomeController@index');       // parte frontal do sistema
+
+Route::prefix('painel')-> group (function () {       // parte traseira do sistema
+    Route::get('/', 'Admin\HomeController@index');      // referençiando a primeira página do painel
 });
