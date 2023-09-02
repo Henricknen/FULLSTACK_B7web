@@ -11,11 +11,3 @@
 @section('content')     {{-- conteudo da página --}}
     ....
 @endsection
-
-@section('css')     {{-- importações do 'css' --}}
-    <link rel="stylesheet" href="/assets/css/custom.css">
-@endsection
-
-@section('js')     {{-- inserindo javascript --}}
-    <script>alert("Rodando!");</script>
-@endsection

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller {
 
     public function __construct() {
-        // $this-> mmiddleware('auth');
+        // $this-> mmiddleware('auth');     // exigençia do 'login'
     }
     
     public function index() {

@@ -12,13 +12,15 @@ class LoginController extends Controller
 
     protected $redirectTo = '/painel';
 
-    public function __construct()
-    {
+    public function __construct()     {
         $this->middleware('guest')-> except('logout');
     }
 
-    public function index()
-    {
-        echo "Tela de login";
+    public function index()     {
+        return view('admin.login');
+    }
+
+    public function authenticate() {
+        
     }
 }
