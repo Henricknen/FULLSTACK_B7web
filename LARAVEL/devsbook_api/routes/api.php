@@ -18,7 +18,7 @@ Route::get('/ping', function () {       // rota para teste, fazendo um endpoint 
     return ['pong'=> true];     // e retornando 'pong'
 });
 
-Route::get('/401', 'AuthController#unauthorizer')-> name('login');      // rota leva para página de erro se usúario não estiver logado
+// Route::get('/401', 'AuthController#unauthorizer')-> name('login');      // rota leva para página de erro se usúario não estiver logado
 
 Route::post('/auth/login', 'AuthController@login');
 Route::post('/auth/logout', 'AuthController@logout');
