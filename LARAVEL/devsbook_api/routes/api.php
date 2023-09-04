@@ -20,25 +20,25 @@ Route::get('/ping', function () {       // rota para teste, fazendo um endpoint 
 
 // Route::get('/401', 'AuthController#unauthorizer')-> name('login');      // rota leva para página de erro se usúario não estiver logado
 
-Route::post('/auth/login', 'AuthController@login');
-Route::post('/auth/logout', 'AuthController@logout');
-Route::post('/auth/refresh', 'AuthController@refresh');
+// Route::post('/auth/login', 'AuthController@login');
+// Route::post('/auth/logout', 'AuthController@logout');
+// Route::post('/auth/refresh', 'AuthController@refresh');
 
 Route::post('/user', 'AuthController@create');
-Route::put('/user', 'UserController@update');
-Route::post('/user/avatar', 'UserController@updateAvatar');
-Route::post('/user/cover', 'UserController@updateCover');
+// Route::put('/user', 'UserController@update');
+// Route::post('/user/avatar', 'UserController@updateAvatar');
+// Route::post('/user/cover', 'UserController@updateCover');
 
-Route::get('/feed', 'FeedController@read');
-Route::get('/user/feed', 'FeedController@userFeed');
-Route::get('/user/{id}/feed', 'FeedController@userFeed');
+// Route::get('/feed', 'FeedController@read');
+// Route::get('/user/feed', 'FeedController@userFeed');
+// Route::get('/user/{id}/feed', 'FeedController@userFeed');
 
-Route::get('/user', 'UserController@read');
-Route::get('/user/{id}', 'UserController@read');
+// Route::get('/user', 'UserController@read');
+// Route::get('/user/{id}', 'UserController@read');
 
-Route::post('/feed', 'FeedController@create');
+// Route::post('/feed', 'FeedController@create');
 
-Route::post('/post/{id}/like', 'PostController@like');
-Route::post('/post/{id}/comment', 'PostController@comment');
+// Route::post('/post/{id}/like', 'PostController@like');
+// Route::post('/post/{id}/comment', 'PostController@comment');
 
-Route::post('/search', 'SearchController@search');
+// Route::post('/search', 'SearchController@search');
