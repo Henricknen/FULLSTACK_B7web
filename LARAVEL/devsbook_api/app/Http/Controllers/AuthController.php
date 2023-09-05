@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User as ModelsUser;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller {
@@ -17,6 +18,53 @@ class AuthController extends Controller {
             ]
         ]);
     }
+
+    public function unauthorizer() {
+        return response()-> json(['error'=> 'Não autorizado'], 401);        // quando acessar um método em que não estvir autorizado será retornado este 'json'
+    }
+
+    public function login(Request $request) {
+        $array = ['error'=> ''];
+
+        $email = $request-> input('email');     // pegando 'email' que usuário mandou
+        $password = $request-> input('password');     // pegando  'senha' que usuário mandou
+
+        if($email && $password) {
+            $token = auth()-> attempt([
+                'email'=> $email,
+                'password'=> $password,
+            ]);
+
+            if(!$token) {
+                $array['error'] = 'Email e/ou senha errados...';
+            }
+
+            $array['token'] = $token;
+            return $array;
+        }
+
+        $array['error'] = 'Dados não enviados...';
+        return $array;
+    }
+
+    public function logout() {
+        auth()-> logout();
+        return ['error'=> ''];
+    }
+
+    public function refresh() {
+        try {
+            $token = auth()->refresh();
+        } catch (\Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
+            return response()->json(['error' => 'Token inválido'], 401);
+        }
+    
+        return [
+            'error' => '',
+            'token' => $token,
+        ];
+    }
+    
 
     public function create(Request $request) {      // método 'create' criará o usuário
         $array = ['error'=> ''];        // array de eventuais 'erros'
