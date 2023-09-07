@@ -31,8 +31,8 @@ Route::post('/user/avatar', 'UserController@updateAvatar');
 Route::post('/user/cover', 'UserController@updateCover');
 
 Route::get('/feed', 'FeedController@read');
-// Route::get('/user/feed', 'FeedController@userFeed');
-// Route::get('/user/{id}/feed', 'FeedController@userFeed');
+Route::get('/user/feed', 'FeedController@userFeed');
+Route::get('/user/{id}/feed', 'FeedController@userFeed');
 
 // Route::get('/user', 'UserController@read');
 // Route::get('/user/{id}', 'UserController@read');
