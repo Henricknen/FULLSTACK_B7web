@@ -54,9 +54,9 @@ class AuthController extends Controller {
 
     public function refresh() {
         try {
-            $token = auth()->refresh();
+            $token = auth()-> refresh();
         } catch (\Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
-            return response()->json(['error' => 'Token inválido'], 401);
+            return response()-> json(['error' => 'Token inválido'], 401);
         }
     
         return [
@@ -64,7 +64,7 @@ class AuthController extends Controller {
             'token' => $token,
         ];
     }
-    
+
 
     public function create(Request $request) {      // método 'create' criará o usuário
         $array = ['error'=> ''];        // array de eventuais 'erros'

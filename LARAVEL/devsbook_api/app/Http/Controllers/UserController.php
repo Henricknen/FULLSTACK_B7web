@@ -118,7 +118,7 @@ class UserController extends Controller {
 
         if($image) {
             if(in_array($image-> getClientMimeType(), $allowedTypes)) {
-                $filename = md5(time(). rand(0, 9999)). 'jpd'; 
+                $filename = md5(time(). rand(0, 9999)). 'jpd';
 
                 $destPath =public_path('/media/covers');
 
