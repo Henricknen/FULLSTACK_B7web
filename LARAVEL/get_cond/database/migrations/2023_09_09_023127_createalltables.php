@@ -72,7 +72,7 @@ return new class extends Migration
             $table-> string('fileurl');
         });
      
-        Schema::create('foundendlost', function(Blueprint $table) {        // criando tabela de 'achados e perdidos'
+        Schema::create('foundandlost', function(Blueprint $table) {        // criando tabela de 'achados e perdidos'
             $table-> id();
             $table-> string('status')-> default('LOST');
             $table-> string('photo');
@@ -91,7 +91,7 @@ return new class extends Migration
             $table-> time('end_time');
         });
      
-        Schema::create('areasdisabledays', function(Blueprint $table) {        // criando tabela para 'desabilitar dias espeçificos'
+        Schema::create('areadisableddays', function(Blueprint $table) {        // criando tabela para 'desabilitar dias espeçificos'
             $table-> id();
             $table-> integer('id_area');
             $table-> date('day');
