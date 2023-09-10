@@ -8,6 +8,7 @@ use Illuminate\Support\Facaddes\Auth;
 
 use App\Models\User;
 use App\Models\Unit;
+use PhpParser\Node\Stmt\Return_;
 
 class AuthController extends Controller {
     public function unauthorized() {
@@ -65,6 +66,46 @@ class AuthController extends Controller {
 
         } else {
             $array['error'] = $validator-> errors()-> first();      // pegando o primeiro erro e inserindo dentro do array 'error'
+            return $array;
+        }
+
+        return $array;
+    }
+
+    public function login(Request $request) {
+        $array = ['error'=> ''];
+
+        $validator = Validator::make($request-> all(), [
+            'cpf'=> 'required|digits:11',
+            'password'=> 'required'
+        ]);
+
+        if($validator-> fails()) {
+            $cpf = $request-> input('cpf');
+            $password = $request-> input('password');
+
+            $token = auth()-> attempt([     // gerando 'token'
+                'cpf'=> $cpf,
+                'password'=> $password
+            ]);
+
+            if(!$token) {
+                $array['error'] = "Cpf e/ou Senha incorretos...";
+                return $array;
+            }
+
+            $array['token'] = $token;
+
+            $user = auth()-> user();
+            $array['user'] = $user;
+
+            $properties = Unit::select(['id', 'name'])         // pegando as propridade 'id' e 'name'
+            -> where('id_owner', $user['id'])
+            -> get();
+
+            $array['user']['properties'] = $properties;
+        } else {
+            $array['error'] = $validator-> errors()-> first();
             return $array;
         }
 
