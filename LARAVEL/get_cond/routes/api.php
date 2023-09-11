@@ -23,7 +23,7 @@ Route::post('/auth/login', [AuthController::class, 'login']);        // rota de 
 Route::post('/auth/register', [AuthController::class, 'register']);    // rota de 'cadastro' permite acesso mesmo não estando logado
 
 Route::middleware('auth:api')-> group(function() {      // para ter açesso a estas rotas é necessário estar logado
-    Route::post('/auth/validate', [AuthController::class, 'valiadeteToken']);
+    Route::post('/auth/validate', [AuthController::class, 'validateToken']);
     Route::post('/auth/logout', [AuthController::class, 'logout']);
 
         // rotas do mural de avisos
