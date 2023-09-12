@@ -23,7 +23,7 @@ class WallController extends Controller {
             $likes = WallLike::where('id_wall', $wallValue['id'])-> count();        // pegando quantidade total de 'likes'
             $walls[$wallKey]['liked'] = $likes;     // atualizando a quantidade de 'likes'
 
-            $melikes = WallLike::where('id_wall', $wallValue['id'])     // procura na tabela 'WllLikes' algum registro em que eu dei um 'like'
+            $melikes = WallLike::where('id_wall', $wallValue['id'])     // procura na tabela 'WallLikes' algum registro em que eu dei um 'like'
             ->where('id_user', $user['id'])
             ->count();
 
@@ -33,6 +33,32 @@ class WallController extends Controller {
         }
 
         $array['list'] = $walls;
+
+        return $array;
+    }
+
+    public function like($id) {
+        $array = ['error' => ''];
+
+        $user = auth()-> user();
+        $melikes = WallLike::where('id_wall', $id)      // procurando uma postagem
+        ->where('id_user', $user['id'])     // em que o usuário logado deu 'like'
+        ->count();
+
+        if($melikes > 0) {
+            WallLike::where('id_wall', $id)     // processo de remoção do 'like'
+            ->where('id_user',$user['id'])
+            -> delete();
+            $array['liked'] = false;        // removendo os 'like'
+        } else {
+            $newLike = new WallLike();
+            $newLike-> id_wall = $id;
+            $newLike-> id_user = $user['id'];
+            $newLike-> save();
+            $array['liked'] = true;     // adiçionando 'like'
+        }
+
+        $array['likes'] = WallLike::where('id_wall', $id)-> count();        // verificando quantos regitros de 'likes' tem 
 
         return $array;
     }
