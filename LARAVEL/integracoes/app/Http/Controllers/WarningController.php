@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\warning;
 use App\Models\Unit;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class WarningController extends Controller {
     public function getMyWarnings(Request $request) {
@@ -51,4 +53,23 @@ class WarningController extends Controller {
 
 		return $array;
 	}
+
+	public function addWarningFile(Request $request) {
+        $array = ['error'=> ''];
+
+        $validator = Validator::make($request-> all, [		// Validando campo 'photo'
+            'photo'=> 'required|mimes:jpg,png'		// tipos permitidos
+        ]);
+
+        if(!$validator-> fails()) {
+            $file = $request-> file('photo')-> store('public');		// salvando 'photo' no 'storage' padrão
+
+            $array['photo'] = asset(Storage::url($file));		// criação da 'url' para ser exibida
+        } else {
+            $array['error'] = $validator-> erros()-> first();
+            return $array;
+        }
+
+        return $array;
+    }
 }
