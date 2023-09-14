@@ -72,4 +72,43 @@ class WarningController extends Controller {
 
         return $array;
     }
+	
+	public function setWarnings(Request $request) {
+		$array = ['error'=> ''];
+		
+		$validator = Validator::make($request-> all(), [
+			'title'=> 'required',		// regras
+			'property'=> 'required'
+		]);
+		if(!$validator-> fails()) {		// verificando se 'validator' não deu nenhuma falha
+			$title = $request-> input('title');
+			$property = $request-> input('property');		// pegando os dados
+			$list = $request-> input('list');
+
+			$newWarn = new Warning();		// propriedades que novo aviso terá
+			$newWarn-> id_unit = $property;
+			$newWarn-> title = $title;
+			$newWarn-> status = 	'IN_REVIEW';
+			$newWarn-> datecreated = date('Y-m-d');
+
+			if($list && is_array($list)) {		// verificando se 'lista' tem itens e é um array
+				$photos = [];
+				foreach($list as $listItem) {
+					$url = explode('/', $listItem);
+					$photos[] = end($url);		// pegando o último intem do array 'photo' que será praticamente o 'nome' da foto
+				}
+				$newWarn-> photos = implode(',', $photos);
+			} else {
+				$newWarn-> photos = '';		// definido um valor padrão para o campo 'photos'
+			}
+
+			$newWarn->  save();		// salvando a ocorrençia
+
+		} else {
+			$array['error'] = $validator->erros()-> firts();
+			return $array;
+		}
+
+		return $array;
+	}
 }
