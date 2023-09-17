@@ -72,7 +72,7 @@ class ReservationController extends Controller {
                 return $array;
             }
         } else {
-            $array['error'] = $validator->errors()->first();
+            $array['error'] = $validator-> errors()-> first();
             return $array;
         }
 
@@ -117,6 +117,61 @@ class ReservationController extends Controller {
             return $array;
         }
 
+        return $array;
+    }
+
+    public function getTimes($id, Request $request) {
+        $array = ['eeror'=> '', 'list'=> []];
+        
+        $validator = Validator::make($request-> all(), [
+            'date'=> 'reuired|date_formart:Y-m-d'
+        ]);
+        if(!$validator-> fails()) {
+            $date = $request-> input('date');       // pegando 'data'
+            $area = Area::find($id);        // pegando 'Area'
+
+            if($area) {
+                $can = true;
+
+                $existingDisabladDay = AreaDisabledDays::where('id_area', $id)      // verificando se é dia 'disabled'
+                -> where('day', $date)
+                -> count();
+                if($existingDisabladDay > 0) {
+                    $can = false;
+                }
+
+                $allowedDays = explode(',', $area['days']);         // verificando se é dia permitido
+                $weekday = date('w', strtotime($date));
+                if(!in_array($weekday, $allowedDays)) {     // se dia não estiver dentro do array '$weekday' '$allowedDays' então não é um dia permitido
+                    $can = false;
+                }
+
+                if($can) {
+                    $start = strtotime($area['start_time']);
+                    $end = strtotime($area['end_time']);
+                    $times = [];
+                }
+
+                for(
+                    $lastTime = $start;
+                    $lastTime < $end;
+                    $lastTime = strtotime('+1 hour', $lastTime)
+                ) {
+                    $times = $lastTime;
+                }
+
+            } else {
+                $array['error'] = 'Area inexistente';
+                return $array;
+            }
+
+            print_r($times);
+
+        } else {
+            $array['error'] = $validator-> errors()-> first();
+            return $array;            
+        }
+        
         return $array;
     }
 }
