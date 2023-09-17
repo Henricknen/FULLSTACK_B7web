@@ -98,20 +98,17 @@ class ReservationController extends Controller {
                 }
             }
 
-            $keep = true;
             $start = time();        // listando os dias proibidos + 3 meses pra frente
             $end= strtotime('+3 months');
-            $current = $start;
-            while($keep) {
-                if($current < $end) {
-                    $wd = date('w', $current);      // pegando o dia da semana
-                    if(in_array($wd, $offDays)) {
-                        $array['list'][] = date('Y-m-d', $current);
-                    }
 
-                    $current = strtotime('+1 day', $current);       // atualizando '$current'
-                } else {
-                    $keep = false;
+            for(
+                $current = $start;
+                $current < $end;
+                $current = strtotime('+1 day', $current)
+            ) {
+                $wd = date('w', $current);
+                if(in_array($wd, $offDays)) {
+                    $array['list'][] = date('Y-m-d', $current);
                 }
             }
 
