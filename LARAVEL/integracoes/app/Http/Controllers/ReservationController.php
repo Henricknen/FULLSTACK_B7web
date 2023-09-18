@@ -160,12 +160,37 @@ class ReservationController extends Controller {
                     $times = $lastTime;
                 }
 
+                $timeList = [];
+                foreach($times as $time) {
+                    $timeList[] = [
+                        'id'=> date('H:i:s', $time),
+                        'title'=> date('H:i', $time). '-'. date('H:i', strtotime('+1 hour', $time))     // aparecerá para o usuário
+                    ];
+                }
+
+                $reservations = Reservation::where('id_area', $id)      // removendo as reservas
+                -> whereBetween('reservation_date', [       // pegando todas reservas do dia todo
+                    $date. '00:00:00',      // começo do dia
+                    $date. '23:59:59'       // final do dia
+                ])
+                -> get();
+
+                $toRemove = [];
+                foreach($reservations as $reservation) {
+                    $time = date('H:i:s', strtotime($reservation['reservation_date']));     // pegando a hora espeçifica da reserva
+                    $toRemove[] = $time;        // jogando a hora espeçifica dentro do array 1toRemove'
+                }
+
+                foreach($timeList as $timeItem) {
+                    if(!in_array($timeItem['id'], $toRemove)) {     // se não estiver dentro da lista 'toRemove'
+                        $array['list'][] = $timeItem;       // será adiçionado na lista 'list'
+                    }
+                }
+
             } else {
                 $array['error'] = 'Area inexistente';
                 return $array;
             }
-
-            print_r($times);
 
         } else {
             $array['error'] = $validator-> errors()-> first();
