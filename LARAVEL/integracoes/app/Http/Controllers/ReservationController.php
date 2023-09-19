@@ -238,4 +238,30 @@ class ReservationController extends Controller {
     }
     
     return $array;
+    }
+    public function delMyReservation($id) {
+        $array = ['error'=> ''];
+        
+        $user = auth()-> user();        // pegando usuário que está logado
+        $reservation = Reservation::find($id);
+        if($reservation) {      // verificando se a unidade da  reserva é sua
+
+            $unit = Unit:where('id', $reservation['id_unit'])
+            -> where('id_owner', $user['id'])
+            -> count();
+
+            if($unit > 0) {     // se encontrar alguma unidade
+                Reservation::find($id)-> delete();      // deleterá
+            } else {
+                $array['error'] = 'Está reserva não é sua';
+                return $array;
+            }
+
+        } else {
+            $array['error'] = 'Reserva inexistente';
+            return $array;
+        }
+
+        return $array;
+    }
 }
