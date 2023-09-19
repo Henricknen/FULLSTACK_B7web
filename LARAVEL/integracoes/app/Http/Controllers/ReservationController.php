@@ -200,24 +200,24 @@ class ReservationController extends Controller {
         return $array;
     }
 
-    public function getMyReservation(Request $request) {
+    puublic function getMyReservation(Request $request) {
     $array = ['error'=> '', 'list'=> []];
     
-    $property = $request-> input('property');
+    $property = $request-> input('property');       // reçebendo a 'propriedade'
     if($property) {
         $unit = Unit::find($property);
-        if($unit) {
+        if($unit) {     // verificando se a propriedade existe
 
-            $reservation = Reservation::where('id_unit', $property)
+            $reservation = Reservation::where('id_unit', $property)     // pegando o total das minhas reservas
             -> orderBy('reservation-date', 'DESC')
             -> get();
 
             foreach($reservations as $reservation) {
-                $area = Area::find($reservation['id_area']);
+                $area = Area::find($reservation['id_area']);        // pegando informações de 'area'
 
                 $daterev = date('d/m/Y H:i', strtotime($reservation['reservation_date']));
                 $aftertime = date('H:1', strtotime('+1 hour', strtotime($reservation['reservation_date'])));
-                $daterev .= 'á '. $aftertime;
+                $daterev .= 'á '. $aftertime;       // juntando 'data' com 'hora'
 
                 $array['list'][] = [
                     'id'=> $reservation['id'],
@@ -238,5 +238,4 @@ class ReservationController extends Controller {
     }
     
     return $array;
-
 }
