@@ -198,47 +198,48 @@ class ReservationController extends Controller {
         }
         
         return $array;
-    }
-
-    puublic function getMyReservation(Request $request) {
-    $array = ['error'=> '', 'list'=> []];
     
-    $property = $request-> input('property');       // reçebendo a 'propriedade'
-    if($property) {
-        $unit = Unit::find($property);
-        if($unit) {     // verificando se a propriedade existe
+    }
+    public function getMyReservation(Request $request) {
+        $array = ['error'=> '', 'list'=> []];
+    
+        $property = $request-> input('property');       // reçebendo a 'propriedade'
+        if($property) {
+            $unit = Unit::find($property);
+            if($unit) {     // verificando se a propriedade existe
 
-            $reservation = Reservation::where('id_unit', $property)     // pegando o total das minhas reservas
-            -> orderBy('reservation-date', 'DESC')
-            -> get();
+                $reservations = Reservation::where('id_unit', $property)     // pegando o total das minhas reservas
+                -> orderBy('reservation-date', 'DESC')
+                -> get();
 
-            foreach($reservations as $reservation) {
-                $area = Area::find($reservation['id_area']);        // pegando informações de 'area'
+                foreach($reservations as $reservation) {
+                    $area = Area::find($reservation['id_area']);        // pegando informações de 'area'
 
-                $daterev = date('d/m/Y H:i', strtotime($reservation['reservation_date']));
-                $aftertime = date('H:1', strtotime('+1 hour', strtotime($reservation['reservation_date'])));
-                $daterev .= 'á '. $aftertime;       // juntando 'data' com 'hora'
+                    $daterev = date('d/m/Y H:i', strtotime($reservation['reservation_date']));
+                    $aftertime = date('H:1', strtotime('+1 hour', strtotime($reservation['reservation_date'])));
+                    $daterev .= 'á '. $aftertime;       // juntando 'data' com 'hora'
 
-                $array['list'][] = [
-                    'id'=> $reservation['id'],
-                    'id_area'=> $reservation['id_area'],
-                    'title'=> $area['title'],
-                    'cover'e> asset('storagr/'. $area['cover']),
-                    'datereserbed'=> $datarev
-                ]
+                    $array['list'][] = [
+                        'id'=> $reservation['id'],
+                        'id_area'=> $reservation['id_area'],
+                        'title'=> $area['title'],
+                        'cover'=> asset('storagr/'. $area['cover']),
+                        'datereserbed'=> $daterev
+                    ];
+                }
+
+            } else {
+                $array['error'] = 'Propriedade inexistente';
+                return $array;    
             }
-
         } else {
-            $array['error'] = 'Propriedade inexistente';
-            return $array;    
+            $array['error'] = 'Propriedade necessaria';
+            return $array;
         }
-    } else {
-        $array['error'] = 'Propriedade necessaria';
+    
         return $array;
     }
-    
-    return $array;
-    }
+
     public function delMyReservation($id) {
         $array = ['error'=> ''];
         
@@ -246,7 +247,7 @@ class ReservationController extends Controller {
         $reservation = Reservation::find($id);
         if($reservation) {      // verificando se a unidade da  reserva é sua
 
-            $unit = Unit:where('id', $reservation['id_unit'])
+            $unit = Unit::where('id', $reservation['id_unit'])
             -> where('id_owner', $user['id'])
             -> count();
 
