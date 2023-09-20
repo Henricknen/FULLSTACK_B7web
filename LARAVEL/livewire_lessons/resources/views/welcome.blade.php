@@ -10,7 +10,6 @@
 <body>
     <h1>Página do blade</h1>        {{-- componente 'blade' normal --}}
     <livewire:hello-word />     {{-- renderizando componete livewire 'hello-word' --}}
-    <livewire:hello-word />
     @livewireScripts        {{-- diretiva 'livewireScripts' inclui os scripts --}}
 </body>
 </html>
