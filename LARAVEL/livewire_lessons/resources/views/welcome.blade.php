@@ -8,7 +8,9 @@
     @livewireStyles     {{-- diretiva 'livewireStyles' inclui todos os estilos do livewire --}}
 </head>
 <body>
-    <h1>Olá Mundo...</h1>
+    <h1>Página do blade</h1>        {{-- componente 'blade' normal --}}
+    <livewire:hello-word />     {{-- renderizando componete livewire 'hello-word' --}}
+    <livewire:hello-word />
     @livewireScripts        {{-- diretiva 'livewireScripts' inclui os scripts --}}
 </body>
 </html>
