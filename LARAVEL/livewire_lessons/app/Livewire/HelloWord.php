@@ -4,12 +4,13 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class HelloWord extends Component
-{
+class HelloWord extends Component {
+    public $name = 'Luis Henrique Silva Ferreira';      // '$name' propriedade publica do componente
     public function render() {      // método 'render' retornará a view
         return view('livewire.hello-word', [        // array 
             'name'=> 'Luis Henrique Silva Ferreira...',
-            'randomNumber'=> ''.rand(0, 99)       // 'randomNumber' gerará numeros aleatórios
+            'randomNumber'=> ''.rand(0, 99)
         ]);
+        return view('livewire.hello-word');
     }
 }
