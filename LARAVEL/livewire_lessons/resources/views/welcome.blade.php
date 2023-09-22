@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Primeiro projeto livewire</title>
-    @livewireStyles     {{-- diretiva 'livewireStyles' inclui todos os estilos do livewire --}}
+    <title>Primeiro projeto Livewire</title>
+    @livewireStyles      {{-- Diretiva 'livewireStyles' inclui todos os estilos do Livewire --}}
 </head>
 <body>
-    <h1>Página do blade</h1>        {{-- componente 'blade' normal --}}
-    <livewire:hello-word />     {{-- renderizando componete livewire 'hello-word' --}}
-    @livewireScripts        {{-- diretiva 'livewireScripts' inclui os scripts --}}
+    <h1>Página do Blade</h1>        {{-- Componente 'Blade' normal --}}
+    @livewireScripts        {{-- Diretiva 'livewireScripts' inclui os scripts --}}
 </body>
 </html>
