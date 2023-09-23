@@ -9,7 +9,7 @@
 </head>
 <body>
     
-    <livewire:hello-word />
+    <livewire:counter />
 
     @livewireScripts        {{-- Diretiva 'livewireScripts' inclui os scripts --}}
 </body>
