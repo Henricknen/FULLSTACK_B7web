@@ -10,7 +10,15 @@ class Counter extends Component {
         return view('livewire.counter');
     }
 
-    public function increment($quantity) {
-        $this-> number = $this-> number + $quantity;       // acreçentando 1 ao number
+    public function increment() {
+        if($this-> number < 5) {        // codição para 'incrementar'
+            $this-> number = $this-> number + 1;       // acreçentando 1 ao number
+        }
+    }
+
+    public function decrement() {
+        if($this-> number > 0) {        // codição para 'decrementar'
+            $this-> number = $this-> number - 1;       // dinminuindo 1 ao number
+        }
     }
 }
