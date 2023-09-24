@@ -9,7 +9,8 @@
 </head>
 <body>
     
-    <livewire:counter />
+    <livewire:counter />        {{-- chamando componente 'counter' --}}
+    <livewire:user user = "Luis Henrique S F" />        {{-- populando a chamada com dados --}}
 
     @livewireScripts        {{-- Diretiva 'livewireScripts' inclui os scripts --}}
 </body>
