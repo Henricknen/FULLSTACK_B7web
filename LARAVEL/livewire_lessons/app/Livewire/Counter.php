@@ -6,12 +6,14 @@ use Livewire\Component;
 
 class Counter extends Component {
     public $number = 0;     // propriedade 'number' iniçia em 0
+    public $number1 = true;
+    
     public function render() {
         return view('livewire.counter');
     }
 
     public function increment() {
-        if($this-> number < 5) {        // codição para 'incrementar'
+        if($this-> number < 50) {        // codição para 'incrementar'
             $this-> number = $this-> number + 1;       // acreçentando 1 ao number
         }
     }
