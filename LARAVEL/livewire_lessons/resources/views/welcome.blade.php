@@ -11,6 +11,7 @@
     
     <livewire:counter />        {{-- chamando componente 'counter' --}}
 
+
     @livewire('user', [     // rederizando componente 'user'
         'user'=> 'Luis Henrique S F',
     ])
