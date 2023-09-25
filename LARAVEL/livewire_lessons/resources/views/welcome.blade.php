@@ -10,7 +10,10 @@
 <body>
     
     <livewire:counter />        {{-- chamando componente 'counter' --}}
-    <livewire:user user = "Luis Henrique S F" />        {{-- populando a chamada com dados --}}
+
+    @livewire('user', [     // rederizando componente 'user'
+        'user'=> 'Luis Henrique S F',
+    ])
 
     @livewireScripts        {{-- Diretiva 'livewireScripts' inclui os scripts --}}
 </body>

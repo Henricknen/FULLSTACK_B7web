@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Illuminate\Http\Request;
 use Livewire\Component;
 
 class User extends Component {
@@ -12,7 +13,7 @@ class User extends Component {
         return view('livewire.user');
     }
 
-    public function mount($user) {
-        $this-> name = $user;       // atribuindo propriedade 'name' a 'user' que chega em 'mount'
+    public function mount(Request $request, $user) {        // método 'mount' com acesso a requisição
+        $this-> name = $request-> name;       // reçebendo o nome através da 'requisição'
     }
 }
