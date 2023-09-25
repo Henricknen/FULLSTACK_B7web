@@ -8,6 +8,7 @@ use Livewire\Component;
 class User extends Component {
 
     public $name = 'Luis Henrique';
+    public $surname = 'Silva Ferreira';
     public $hookName = 'N/A';
     public $propertyName = 'N/A';
     public $propertyValue = 'N/A';
@@ -16,15 +17,30 @@ class User extends Component {
         return view('livewire.user');
     }
 
-    public function updated($property, $value) {     // 'hook' roda toda vez que um dado for alterado na view
+    // public function updated($property, $value) {     // 'hook' roda toda vez que um dado for alterado na view
 
-        $this-> name = ucfirst($this-> name);
-        $this-> hookName = 'updated';       // alterando 'hookName'
-        $this-> propertyName = $property;
-        $this-> propertyValue = $value;
+    //     $this-> name = ucfirst($this-> name);
+    //     $this-> hookName = 'updated';       // alterando 'hookName'
+    //     $this-> propertyName = $property;
+    //     $this-> propertyValue = $value;
+    // }
+
+    // public function updating() {     // 'hook' roda enquanto os dados estão sendo atualizadod
+
+    //     $this-> hookName = 'updating';       // alterando 'hookName'
+    // }
+
+    public function updatingName() {
+
+        $this-> hookName = 'updating - Prppriedade NAME';       // alterando 'hookName'
     }
 
-    public function mount(Request $request, $user) {        // método 'mount' com acesso a requisição
-        $this-> name = $request-> name;       // reçebendo o nome através da 'requisição'
+    public function updatingSurname() {
+
+        $this-> hookName = 'updating - Propriedade SURNAME';
     }
+
+    // public function mount(Request $request, $user) {        // método 'mount' com acesso a requisição
+    //     $this-> name = $request-> name;       // reçebendo o nome através da 'requisição'
+    // }
 }
