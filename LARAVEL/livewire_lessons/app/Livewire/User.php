@@ -8,8 +8,7 @@ use Livewire\Component;
 class User extends Component {
 
     public $name = 'Luis Henrique';
-    public $surname = 'Silva Ferreira';
-    public $hookName = 'N/A';
+    public $hookName = [];
     public $propertyName = 'N/A';
     public $propertyValue = 'N/A';
 
@@ -32,15 +31,29 @@ class User extends Component {
 
     public function updatingName() {
 
-        $this-> hookName = 'updating - Prppriedade NAME';       // alterando 'hookName'
+        $this-> hookName = 'updating';       // alterando 'hookName'
     }
 
-    public function updatingSurname() {
+    public function updatedName() {
 
-        $this-> hookName = 'updating - Propriedade SURNAME';
+        $this-> hookName = 'updatedName';
     }
 
-    // public function mount(Request $request, $user) {        // método 'mount' com acesso a requisição
-    //     $this-> name = $request-> name;       // reçebendo o nome através da 'requisição'
-    // }
+    public function mount() {
+        $this-> hookName = 'mount';
+    }
+
+    public function boot() {
+        $this-> hookName = 'boot';
+    }
+
+    public function booted() {
+        $this-> hookName = 'booted';
+    }
+
+    public function hydrate() {
+        $this-> hookName = 'hydrate';
+    }
+
+
 }
