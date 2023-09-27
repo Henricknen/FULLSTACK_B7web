@@ -1,0 +1,92 @@
+.search-area-adsList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.search-area-adsList .search-text{
+  width: 30%;
+  aspect-ratio: 73/10;
+  color: #96a3ab;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 16px;
+  border: 1.5px solid #e7e9ed;
+  outline: none;
+}
+.options-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+}
+.categories-area,.states-area{
+  width: 48%;
+}
+.categories-area .categories-options,
+.states-area .states {
+  width: 100%;
+  aspect-ratio: 14/4;
+  color: #96a3ab;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 16px;
+  outline: none;
+  border: 1.5px solid #e7e9ed;
+}
+.categories-area,
+.states-area {
+  display: flex;
+  flex-direction: column;
+  margin-top: -22px;
+}
+.categories-area p,
+.states-area p {
+  color: #3c4952;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+.search-mobile-button{
+  display: none;
+}
+@media (max-width: 640px) {
+  .search-area-adsList {
+    flex-direction: column;
+    align-items: center;
+    max-width: 335px;
+  }
+  .search-area-adsList .search-text{
+    width: 100%;
+  }
+  .options-area {
+    flex-direction: column;
+    width: 100%;
+  }
+  .categories-area,
+  .states-area {
+    align-items: start;
+    margin-top: 4px;
+    width: 100%;
+  }
+  .categories-area .categories-options,
+.states-area .states{
+  height: 45px;
+}
+  .search-mobile-button{
+    display: block;
+    width: 100%;
+    background-color: #5c7bfa;
+    border: 0;
+    color: #FFF;
+    height: 64px;
+    font-family: "Inter";
+    font-size: 16px;
+
+  }
+}

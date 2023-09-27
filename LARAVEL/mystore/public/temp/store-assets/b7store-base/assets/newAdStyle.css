@@ -1,0 +1,242 @@
+:root {
+  --footerHeight: 92px;
+}
+.newAd-page {
+  width: 100%;
+  min-height: calc(100vh - var(--footerHeight));
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 126px;
+}
+.newAd-back-button {
+  display: block;
+  color: #5c7bfa;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  font-family: "Inter";
+}
+.newAd-title {
+  color: #3c4952;
+  font-size: 40px;
+  font-weight: 400;
+}
+.newAd-areas {
+  display: flex;
+  margin-top: 44px;
+  justify-content: space-between;
+}
+.newAd-area-left {
+  flex: 1;
+  max-width: 700px;
+}
+.area-left-up-title {
+  color: #3c4952;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.area-left-up-img {
+  width: 100%;
+  aspect-ratio: 9/5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1.5px dashed #5c7bfa;
+  background: rgba(245, 247, 255, 0.4);
+}
+.area-left-up-img-text {
+  width: 192px;
+  color: #96a3ab;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 20px;
+}
+.area-left-up-img-text span {
+  cursor: pointer;
+  color: #5c7bfa;
+}
+.area-left-bottom {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.smallpics {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px dashed #96a3ab;
+}
+.smallpics img {
+  width: 100%;
+}
+.newAd-area-right {
+  width: 80%;
+  max-width: 400px;
+  padding-left: 30px;
+}
+form {
+  margin: 0;
+  width: 100%;
+}
+.title-label,
+.value-area-text,
+.negotiable-label,
+.newAd-categories-label,
+.description-label {
+  color: #3c4952;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.title-area input {
+  width: 100%;
+  aspect-ratio: 77/10;
+  margin-bottom: 24px;
+  color: #96a3ab;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 16px;
+  outline: 0;
+  border: 1.5px solid #e7e9ed;
+}
+.value-area {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.value-label {
+  width: 60%;
+}
+.value-label input {
+  width: 100%;
+  height: 64px;
+  padding-left: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  outline: 0;
+  border: 1.5px solid #e7e9ed;
+}
+.negotiable-area {
+  width: 30%;
+}
+.negotiable-area select {
+  width: 100%;
+  height: 64px;
+  padding: 0 16px;
+  color: #96a3ab;
+  font-size: 16px;
+  font-weight: 400;
+  outline: 0;
+  border: 1.5px solid #e7e9ed;
+}
+.newAd-categories {
+  width: 100%;
+  aspect-ratio: 77/10;
+  border: 1.5px solid #e7e9ed;
+  color: #96a3ab;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 16px;
+  margin-bottom: 24px;
+}
+.description-text {
+  width: 100%;
+  height: 156px;
+  margin-bottom: 24px;
+  color: #96a3ab;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 16px;
+  padding-top: 16px;
+  font-family: "Inter";
+  outline: 0;
+  border: 1.5px solid #e7e9ed;
+  resize: none;
+  margin-bottom: 40px;
+}
+.newAd-button {
+  width: 100%;
+  height: 60px;
+  background-color: #5c7bfa;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .newAd-area-right {
+    max-width: 280px;
+  }
+  .value-area {
+    flex-direction: column;
+  }
+  .value-label {
+    width: 100%;
+  }
+  .negotiable-area {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .value-label input,
+  .negotiable-area select {
+    height: 32px;
+  }
+  .description-area {
+    height: 120px;
+  }
+  .description-text {
+    height: 100px;
+  }
+  .newAd-button {
+    height: 32px;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .newAd-page {
+    padding: 0 20px;
+  }
+  .newAd-back-button {
+    padding-left: 20px;
+  }
+  .newAd-title {
+    font-size: 32px;
+  }
+
+  .newAd-areas {
+    margin-top: 48px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .newAd-area-left {
+    flex: 1;
+    max-width: none;
+    width: 100%;
+  }
+  .newAd-area-right {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    margin-top: 24px;
+    padding: 0;
+  }
+  .value-label input,
+  .negotiable-area select {
+    height: 54px;
+  }
+  .newAd-button {
+    height: 64px;
+    margin-top: 20px;
+  }
+}
