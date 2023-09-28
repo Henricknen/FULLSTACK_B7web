@@ -1,0 +1,498 @@
+:root {
+  --footerHeight: 92px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+/* 
+* Header
+*/
+header {
+  width: 100%;
+  padding: 30px 0;
+  border-bottom: 1.5px solid #e7e9ed;
+}
+.header-area {
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-area-left {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  color: #5c7bfa;
+}
+.header-area-right {
+  width: 316px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.my-account {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #96a3ab;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.my-account img {
+  margin-right: 10px;
+}
+.announce-now {
+  text-decoration: none;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: #5c7bfa;
+}
+.menu-icon {
+  display: none;
+}
+.menu-mobile {
+  display: none;
+  width: 180px;
+  height: 250px;
+  background-color: #5c7bfa;
+  position: absolute;
+  right: 0;
+  top: 0;
+  flex-direction: column;
+  align-items: center;
+}
+.my-account-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #fff;
+  width: 130px;
+}
+/* 
+* /Header
+*/
+
+/* 
+* Main
+*/
+main {
+  max-width: 1280px;
+  margin: auto;
+  min-height: calc(100vh-var(--footerHeight));
+}
+/* 
+* Hero Area
+*/
+.hero-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+.hero-area .subtitle {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #96a3ab;
+}
+.hero-area .title {
+  margin-top: 34px;
+  color: #3c4952;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.search-area {
+  margin-top: 64px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.hero-area .search-text {
+  width: 38%;
+  aspect-ratio: 6/1;
+  color: #96a3ab;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 16px;
+  border: 1.5px solid #e7e9ed;
+  outline: none;
+}
+.hero-area .categories-options,
+.hero-area .states {
+  width: 18%;
+  aspect-ratio: 14/5;
+  color: #96a3ab;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 16px;
+  outline: none;
+  border: 1.5px solid #e7e9ed;
+}
+.hero-area .search-button {
+  width: 18%;
+  aspect-ratio: 14/5;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+  background-color: #5c7bfa;
+  border: 0;
+  cursor: pointer;
+}
+/* 
+* /Hero Area
+*/
+
+/* 
+* Categories Area
+*/
+.categories-area {
+  margin-top: 128px;
+  width: 100%;
+}
+.categories-area .title {
+  margin-bottom: 18px;
+  color: #3c4952;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.categories-area .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.buttons .cars,
+.buttons .eletronics,
+.buttons .clothes,
+.buttons .sports,
+.buttons .babies {
+  width: 17%;
+  aspect-ratio: 17/5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0;
+}
+.buttons .cars {
+  background-color: #5c7bfa;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: 0;
+}
+.buttons .eletronics,
+.buttons .clothes,
+.buttons .sports,
+.buttons .babies {
+  background-color: #f5f7ff;
+  color: #5c7bfa;
+}
+.buttons .cars img,
+.buttons .eletronics img,
+.buttons .clothes img,
+.buttons .sports img,
+.buttons .babies img {
+  margin-right: 8px;
+}
+/* 
+* /Categories Area
+*/
+
+/* 
+* Ads
+*/
+
+.ads {
+  margin-top: 76px;
+}
+.ads-title {
+  color: #3c4952;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+.ads-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.ad-item {
+  border: 1.5px solid #e7e9ed;
+  width: 100%;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+.ad-item .ad-image {
+  width: 100%;
+  aspect-ratio: 147/100;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 16px;
+}
+.ad-title {
+  width: 90%;
+  color: #3c4952;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 5%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ad-price {
+  color: #5c7bfa;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* 
+* /Ads
+*/
+
+/* 
+* /Main
+*/
+
+/* 
+* Footer
+*/
+footer {
+  max-width: 1280px;
+  margin: auto;
+  margin-top: 80px;
+  border-top: 1.5px solid #e7e9ed;
+  height: var(--footerHeight);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+}
+
+footer span:first-child {
+  color: #96a3ab;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: normal;
+}
+footer span:last-child {
+  color: #5c7bfa;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+}
+/* 
+* Footer
+*/
+
+@media (max-width: 1280px) {
+  .header-area,
+  main,
+  footer {
+    max-width: 1024px;
+    padding: 0 10px;
+  }
+  .hero-area .title {
+    font-size: 64px;
+  }
+  .ad-title {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1024px) {
+  .header-area,
+  main,
+  footer {
+    max-width: 768px;
+    padding: 0 5px;
+  }
+  .hero-area {
+    margin-top: 50px;
+  }
+  .hero-area .title {
+    font-size: 48px;
+  }
+  .categories-area {
+    margin-top: 64px;
+  }
+  .ads {
+    margin-top: 48px;
+  }
+  .ads-area {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  footer {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .header-area,
+  main,
+  footer {
+    max-width: 640px;
+  }
+  .header-area-right {
+    justify-content: flex-end;
+  }
+  .my-account {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+    margin-left: 20px;
+  }
+  .menu-icon:hover + .menu-mobile,
+  .menu-mobile:hover {
+    display: flex;
+  }
+  .hero-area .title {
+    font-size: 40px;
+  }
+  .hero-area .subtitle {
+    font-size: 18px;
+  }
+  .categories-area .buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .buttons .cars,
+  .buttons .eletronics,
+  .buttons .clothes,
+  .buttons .sports,
+  .buttons .babies {
+    width: 100%;
+  }
+  .ads-area {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ad-title {
+    font-size: 16px;
+  }
+}
+@media (max-width: 640px) {
+  .hero-area {
+    margin-top: 40px;
+  }
+  .subtitle {
+    display: none;
+  }
+  .hero-area .title {
+    text-align: center;
+    max-width: 300px;
+    font-size: 36px;
+  }
+  .search-area {
+    margin-top: 47px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-area .search-text,
+  .hero-area .categories-options,
+  .hero-area .states,
+  .hero-area .search-button {
+    max-width: 335px;
+    width: 90%;
+    aspect-ratio: 26/5;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+  .categories-area {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .categories-area .title {
+    margin-bottom: 24px;
+    margin-left: -245px;
+  }
+  .categories-area .buttons {
+    max-width: 336px;
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .buttons .cars,
+  .buttons .eletronics,
+  .buttons .clothes,
+  .buttons .sports,
+  .buttons .babies {
+    width: 158px;
+    height: 72px;
+  }
+  .ads {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 48px;
+  }
+  .ads-title {
+    margin-left: -190px;
+  }
+  .ads-area {
+    width: 335px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ad-item {
+    width: 335px;
+    height: 335px;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+  .ad-item img {
+    width: 333px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  footer {
+    max-width: 334px;
+    width: 90%;
+    margin-top: 34px;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 30px;
+  }
+  footer span:first-child {
+    margin-top: 30px;
+  }
+}
