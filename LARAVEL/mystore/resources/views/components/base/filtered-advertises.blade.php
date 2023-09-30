@@ -29,11 +29,7 @@
   <div class="ads">
     <div class="ads-title">Anúncios recentes</div>
     <div class="ads-area">
-      <x-simple-advertise
-        bgimage = "https://placeholder.it/140x140"
-        title = "Bola... de Futebol Americano Wilson"
-        price = "R$ 138,61"
-      />
+        <x-simple-advertises />
       <div class="ad-item">
         <div
           class="ad-image"
@@ -92,4 +88,3 @@
       </div>
     </div>
   </div>
-  
