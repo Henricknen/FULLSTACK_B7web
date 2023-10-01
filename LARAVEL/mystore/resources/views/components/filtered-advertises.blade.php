@@ -1,5 +1,5 @@
 <div class="categories-area">
-    <div class="title">Categorias..</div>
+    <div class="title">Categorias</div>
     <div class="buttons">
       <button class="cars">
         <img src="assets/icons/carIcon.png" alt="Ícone Carros" />
@@ -30,7 +30,12 @@
     <div class="ads-title">Anúncios recentes</div>
     <div class="ads-area">
       @foreach($advertisesList as $ad)
-        <x-simple-advertise bgImage = "{{$ad['image']}}" title = "{{$ad['title']}}" href = {{$ad['href']}} price = "{{$ad['price']}}" />
+        <x-simple-advertise
+          bgImage = "{{$ad['image']}}"
+          title = "{{$ad['title']}}"
+          href = {{$ad['href']}}
+          price = "{{$ad['price']}}"
+        />
       @endforeach
       
     </div>

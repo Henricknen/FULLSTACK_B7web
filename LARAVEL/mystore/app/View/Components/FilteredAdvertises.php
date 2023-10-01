@@ -16,43 +16,43 @@ class FilteredAdvertises extends Component {
     public function __construct() {
         $this-> advertisesList = [
             [
-                'image'=> 'http://placehold.it/150x150',
+                'image'=> 'http://placehold.it/145x145',
                 'title'=> 'Tênis vans Baby - 1 ano',
                 'price'=> 'R$ 189,99',
                 'href'=> '#'
             ],
             [
-                'image'=> 'http://placehold.it/150x150',
+                'image'=> 'http://placehold.it/145x145',
                 'title'=> 'Tênis vans Baby - 1 ano',
                 'price'=> 'R$ 189,99',
                 'href'=> '#'
             ],
             [
-                'image'=> 'http://placehold.it/150x150',
+                'image'=> 'http://placehold.it/145x145',
                 'title'=> 'Tênis vans Baby - 1 ano',
                 'price'=> 'R$ 189,99',
                 'href'=> '#'
             ],
             [
-                'image'=> 'http://placehold.it/150x150',
+                'image'=> 'http://placehold.it/145x145',
                 'title'=> 'Tênis vans Baby - 1 ano',
                 'price'=> 'R$ 189,99',
                 'href'=> '#'
             ],
             [
-                'image'=> 'http://placehold.it/150x150',
+                'image'=> 'http://placehold.it/145x145',
                 'title'=> 'Tênis vans Baby - 1 ano',
                 'price'=> 'R$ 189,99',
                 'href'=> '#'
             ],
             [
-                'image'=> 'http://placehold.it/150x150',
+                'image'=> 'http://placehold.it/145x145',
                 'title'=> 'Tênis vans Baby - 1 ano',
                 'price'=> 'R$ 189,99',
                 'href'=> '#'
             ],
             [
-                'image'=> 'http://placehold.it/150x150',
+                'image'=> 'http://placehold.it/145x145',
                 'title'=> 'Tênis vans Baby - 1 ano',
                 'price'=> 'R$ 189,99',
                 'href'=> '#'
