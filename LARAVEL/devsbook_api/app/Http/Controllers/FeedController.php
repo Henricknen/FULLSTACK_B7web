@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Intervention\Image\Facades\Image;
 use App\Models\Post;
+use App\Models\PostComent;
 use App\Models\PostLike as ModelsPostLike;
+use App\Models\User as ModelsUser;
+use App\Models\PostComment as ModelsPostComment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserRelation;
-use App\PostComment;
-use App\PostLike;
-use App\User;
 
+use Illuminate\Foundation\Auth\User as AuthUser;
 
 class FeedController extends Controller {
     private $loggedUser;
@@ -118,7 +119,7 @@ class FeedController extends Controller {
         return $array;
     }
 
-    public function userFeed(Request $reques, $id = false) {
+    public function userFeed(Request $request, $id = false) {
         $array = ['error'=> ''];
 
         if($id == false) {
@@ -154,22 +155,22 @@ class FeedController extends Controller {
                 $postList[$postKey]['mine'] = false;
             }
 
-            $userInfo = User::find($postItem['id_user']);       // preenchendo informações do usuário
+            $userInfo = ModelsUser::find($postItem['id_user']);       // preenchendo informações do usuário
             $userInfo['avatar'] = url('media/avatars/'. $userInfo['avatar']);
             $userInfo['cover'] = url('media/covers/'. $userInfo['cover']);
             $postList[$postKey]['user'] = $userInfo;
 
-            $likes = PostLike::where('id_post', $postItem['id'])-> count();
+            $likes = ModelsPostLike::where('id_post', $postItem['id'])-> count();
             $postList[$postKey]['likeCount'] = $likes;
 
-            $isLiked = PostLike::where('id_post', $postItem['id'])
+            $isLiked = ModelsPostLike::where('id_post', $postItem['id'])
             -> where('id_user', $loggedId)
             -> count();
             $postList[$postKey]['liked'] = ($isLiked > 0) ? true: false;
 
-            $comments = PostComment::where('id_post', $postItem['id'])-> get();     //preenchendo informaçõe dos comentarios
+            $comments = PostComent::where('id_post', $postItem['id'])-> get();     //preenchendo informaçõe dos comentarios
             foreach($comments as $commentKey=> $comment) {
-                $user = User::find($comment['id_user']);
+                $user = AuthUser::find($comment['id_user']);
                 $user['avatar'] = url('media/avatars/'. $user['avatar']);
                 $user['cover'] = url('media/covers/'. $user['cover']);
                 $comments[$commentKey]['user'] = $user;

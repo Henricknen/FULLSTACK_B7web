@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
+use App\Models\UserRelation;
 use Nette\Utils\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -141,6 +143,47 @@ class UserController extends Controller {
             return $array;
         }        
         
+        return $array;
+    }
+
+    public function read($id = false) {     // parametro opçional
+        $array = ['erro'=> ''];
+
+        if($id) {
+            $info = User::find($id);        // pegando informações do usuário
+            if(!$info) {
+                $array['error'] = 'Usuario inexitente' ;
+                return $array;
+            }
+        } else {
+            $info = $this-> loggedUser;
+        }
+
+        $info['avatar'] = url('media/avatars/'. $info['avatar']);
+        $info['cover'] = url('media/covers/'. $info['cover']);
+
+        $info['me'] = ($info['id'] == $this-> loggedUser['id']) ? true : false;     // verificando se as informações são minhas
+
+        $dateFrom = new \DateTime($info['birthdate']);
+        $dateTo = new \DateTime('today');
+        $info['age'] = $dateFrom-> diff($dateTo)-> y;       // calculando a quantidade de anos
+
+        $info['followers'] = UserRelation::where('user_to', $info['id'])-> count(); // pegando a quantidade de seguidores
+        $info['followers'] = UserRelation::where('user_from', $info['id'])-> count(); // pegando a quantidade de seguidores que sigo
+
+        $info['photoCount'] = Post::where('id_user', $info['id'])       // pegando meus 'posts'
+        -> where('type', 'photo')       // quando 'type' for igual a 'photos'
+        -> count();
+
+        $hasRelation = UserRelation::where('user_from', $this-> loggedUser['id'])       // pegando a informação de pessoas que eu sigo
+        -> where('user_to', $info['id'])
+        -> count();
+        $info['isFollowing'] = ($hasRelation > 0) ? true:false;
+
+        $array['data'] = $info;
+
+        $array['data'] = $info;     // preenchendo o array com informações do usuário que eu mandar ou com informações do meu próprio usuário
+
         return $array;
     }
 }
