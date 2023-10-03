@@ -1,10 +1,16 @@
 <?php
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/ping', function (): JsonResponse {     // 'JsonResponse' é o tipo da resposta que será retornado
+    return response()-> json(['Pong'=> true]);
+});
+
 
 /*
 Rota de Utilidade
-    [ ] - /ping - responde com pong
+    [x] - /ping - responde com pong
 
 Rotas de autenticação * Autenticação via TOKEN
     [ ] - /user/signin -- Login
