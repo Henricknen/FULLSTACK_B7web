@@ -42,4 +42,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    
+    public function state() {
+        return $this-> belongsTo(State::class);
+    }
+    
+    public function advertises() {
+        return $this-> hasMany(Advertise::class);
+    }
 }
