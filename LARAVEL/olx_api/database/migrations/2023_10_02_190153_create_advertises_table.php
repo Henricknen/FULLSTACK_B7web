@@ -14,13 +14,13 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('advertises', function (Blueprint $table) {
             $table-> id();
-            $table-> string('ritle');
+            $table-> string('title');
             $table-> float('price');
             $table-> boolean('isNegotiable');
             $table-> text('description')-> nullable();      // pode ser nulo
-            $table-> foreignId(User::class);        // relacionamento com 'user_id'
-            $table-> foreignId(Category::class);
-            $table-> foreignId(State::class);            
+            $table-> foreignIdFor(User::class);        // relacionamento com 'user_id'
+            $table-> foreignIdFor(Category::class);
+            $table-> foreignIdFor(State::class);            
             $table-> timestamps();
         });
     }

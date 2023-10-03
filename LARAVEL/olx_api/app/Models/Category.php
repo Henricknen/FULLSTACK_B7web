@@ -9,6 +9,7 @@ class Category extends Model {
     use HasFactory;
     
     protected $fillable =['name', 'slug'];
+    public $timestamps = false;
 
     public function advertises() {
         return $this-> hasMany(Advertise::class);       // retornando o relaçionamento
