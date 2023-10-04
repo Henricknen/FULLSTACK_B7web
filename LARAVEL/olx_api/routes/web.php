@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\StatesController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Route;
 
@@ -12,6 +13,10 @@ Route::get('/ping', function (): JsonResponse {     // 'JsonResponse' é o tipo 
 Route::get('/states', [StatesController::class, 'index']);
 Route::get('/categories', [CategoriesController::class, 'index']);
 
+Route::post('user/signup', [UserController::class, 'signup']);
+Route::post('user/signin', [UserController::class, 'signin']);
+Route::post('user/me', [UserController::class, 'me']);
+
 
 /*
 Rota de Utilidade
@@ -20,6 +25,7 @@ Rota de Utilidade
 Rotas de configuração geral
     [x] - /states - Listar os estados
     [x] - /categories - Listar as categorias do sistemas
+    [x] - criar a seeders para os estado e categorias
 
 Rotas de autenticação * Autenticação via TOKEN
     [ ] - /user/signin -- Login
