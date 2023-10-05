@@ -27,6 +27,19 @@ Rotas de configuração geral
     [x] - /categories - Listar as categorias do sistemas
     [x] - criar a seeders para os estado e categorias
 
+
+Menssagens de erros devem conter:
+error : menssagen descritiva do erro, exemplo:
+{
+    error: 'usuario invalçido'
+}
+
+Sucesso
+Deve conter um campo 'error ' com valor nulo ou vazio, exemplo:
+{
+    error: ' '
+}
+
 Rotas de autenticação * Autenticação via TOKEN
     [ ] - /user/signin -- Login
     [ ] - /user/signup -- Registro do usuario
