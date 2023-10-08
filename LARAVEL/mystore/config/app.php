@@ -72,6 +72,7 @@ return [
 
     'timezone' => 'America/Sao_Paulo',
 
+
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -96,7 +97,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'pt_BR',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------

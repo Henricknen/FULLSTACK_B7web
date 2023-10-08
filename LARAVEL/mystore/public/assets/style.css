@@ -249,7 +249,6 @@ main {
   width: 100%;
   aspect-ratio: 1/1;
   cursor: pointer;
-  text-decoration: none;
 }
 .ad-item .ad-image {
   width: 100%;
