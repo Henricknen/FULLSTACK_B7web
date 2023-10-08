@@ -29,17 +29,21 @@
   <div class="ads">
     <div class="ads-title">Anúncios recentes</div>
     <div class="ads-area">
-      <x-simpleadivertises
-      
-      bgImage = "http://placeholder.it/140x140"
-      title = "Bola!! de Futebol Americano Wilson" 
-      $price = "R$ 138,61"
-      $href = "#"
-      
-      />
+      @foreach ($advertisesList as $ad)
+        <x-simpleadivertises bgImage = "{{$ad['image']}}" title = "{{$ad['title']}}" price = "{{$ad['price']}}" href = "{{$ad['href']}}" />
+      @endforeach
+    <div class="ads-area">
+      @foreach ($advertisesList as $ad)
+        <x-simple-adivertise bgImage = "{{$ad['image']}}" title = "{{$ad['title']}}" price = "{{$ad['price']}}" href = "{{$ad['href']}}" />
+      @endforeach
+    <div class="ads-area">
+      @foreach ($advertisesList as $ad)
+        <x-simple-adivertises bgImage = "{{$ad['image']}}" title = "{{$ad['title']}}" price = "{{$ad['price']}}" href = "{{$ad['href']}}" />
+      @endforeach
+
       {{-- <x-simple-adivertises /> --}}
       {{-- <x-simple-adivertise /> --}}
-      <div class="ad-item">
+      {{-- <div class="ad-item">
         <div
           class="ad-image"
           style="background-image: url('http://placehold.it/150x150')"
@@ -87,13 +91,14 @@
         <div class="ad-title">Bola de Basquete Spalding - NBA</div>
         <div class="ad-price">R$ 190,36</div>
       </div>
-      <div class="ad-item">
-        <div
+      <div class="ad-item"> --}}
+        {{-- <div
           class="ad-image"
           style="background-image: url('http://placehold.it/150x150')"
         ></div>
         <div class="ad-title">MacBook Pro</div>
         <div class="ad-price">R$ 8.349,10</div>
-      </div>
+      </div> --}}
     </div>
   </div>
+</div>
