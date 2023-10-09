@@ -18,30 +18,35 @@
           Preencha os campos abaixo e realize seu cadastro.
         </div>
         <form method = "POST" action = "{{route('register_action')}}">
-          <div>
-            @if ($errors-> any())
-            <ul>
-              @foreach ($errors-> all() as $error)
-                  <h1>{{$error}}</h1>
-              @endforeach
-            </ul>
-                
-            @endif
-          </div>
           @csrf
           <div class = "name-area">
             <div class = "name-label">Nome</div>
-            <input type  =  "text" name = "nome" placeholder = "Digite o seu nome" />
+            <input type  =  "text" name = "name" placeholder = "Digite o seu nome" value="{{@old('name')}}" />
+            @error('name')    {{-- verificando se ha erro --}}
+              <div class="error">
+                {{$message}}
+              </div>
+            @enderror
           </div>
           <div class = "email-area">
             <div class = "email-label">E-mail</div>
-            <input type = "email" name = "email" placeholder = "Digite o seu e-mail" />
+            <input type = "email" name = "email" placeholder = "Digite o seu e-mail" value="{{@old('email')}}" />
+            @error('email')
+              <div class="error">
+                {{$message}}
+              </div>
+            @enderror
           </div>
           <div class = "password-area">
             <div class = "password-label">Senha</div>
             <div class = "password-input-area">
               <input name = "password" type = "password" placeholder = "Digite a sua senha" />
               <img src = "assets/icons/eyeIcon.png" alt = "Ícone mostrar senha" />
+              @error('password')
+              <div class="error">
+                {{$message}}
+              </div>
+            @enderror
             </div>
           </div>
           <div class = "password-area">
