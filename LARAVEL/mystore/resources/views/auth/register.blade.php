@@ -21,7 +21,7 @@
           @csrf
           <div class = "name-area">
             <div class = "name-label">Nome</div>
-            <input type  =  "text" name = "name" placeholder = "Digite o seu nome" value="{{@old('name')}}" />
+            <input type  =  "text" class="@error('name') is_invalid @enderror" name = "name" placeholder = "Digite o seu nome" value="{{@old('name')}}" />
             @error('name')    {{-- verificando se ha erro --}}
               <div class="error">
                 {{$message}}
@@ -30,7 +30,7 @@
           </div>
           <div class = "email-area">
             <div class = "email-label">E-mail</div>
-            <input type = "email" name = "email" placeholder = "Digite o seu e-mail" value="{{@old('email')}}" />
+            <input type = "email" class="@error('email') is_invalid @enderror" name = "email" placeholder = "Digite o seu e-mail" value="{{@old('email')}}" />
             @error('email')
               <div class="error">
                 {{$message}}
@@ -40,14 +40,15 @@
           <div class = "password-area">
             <div class = "password-label">Senha</div>
             <div class = "password-input-area">
-              <input name = "password" type = "password" placeholder = "Digite a sua senha" />
+              <input name = "password" type = "password" class="@error('password') is_invalid @enderror" placeholder = "Digite a sua senha" />
               <img src = "assets/icons/eyeIcon.png" alt = "Ícone mostrar senha" />
-              @error('password')
-              <div class="error">
-                {{$message}}
-              </div>
-            @enderror
             </div>
+            <x-form.password-input name = "password" placeholder = "confirme sua senha" id = "confirmeSenha" />
+              @error('password')
+                <div class="error">
+                  {{$message}}
+                </div>
+              @enderror
           </div>
           <div class = "password-area">
             <div class = "password-label">Confirme sua Senha</div>
