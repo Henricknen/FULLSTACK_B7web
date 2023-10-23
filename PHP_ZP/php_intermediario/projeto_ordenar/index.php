@@ -7,13 +7,21 @@ try {
     exit;
 }
 
+if(isset($_GET['ordem']) && empty($_GET['ordem']) == false) {       // verificando se houve o envio da 'ordem'
+    $ordem = addslashes($_GET['ordem']);        // armazenando na variável 'ordem'
+    $sql = "SELECT * FROM usuarios ORDER BY ". $ordem;
+} else {
+    $ordem = '';
+    $sql = "SELECT * FROM usuarios";
+}
+
 ?>
 
 <form method = "GET">       <!-- 'form' sem action envia os dados para está própria página -->
     <select name = "ordem" onchange = "this.form.submit()">       <!-- ao fazer alguma coisa 'onchange', envia 'this.form.submit' o próprio formúlario -->
         <option></option>
-        <option value = "nome">Pelo nome</option>
-        <option value = "idade">Pelo idade</option>
+        <option value = "nome" <?php echo ($ordem == "nome") ? 'selected = "selected"': ''; ?>>Pelo nome</option>        <!-- ' echo ($ordem == "nome") ? 'selected = "selected"': '';' deixa o item seleçionado -->
+        <option value = "idade" <?php echo ($ordem == "idade") ? 'selected = "selected"': ''; ?>>Pelo idade</option>
     </select>
 </form>
 
@@ -23,7 +31,7 @@ try {
         <th>Idade</th>
     </tr>
     <?php
-    $sql = "SELECT * FROM usuarios ORDER BY nome ASC";        // consulta 'ordenada' pelo nome
+
     $sql = $pdo-> query($sql);
     if($sql-> rowCount() > 0) {
         foreach($sql-> fetchAll() as $usuario):
