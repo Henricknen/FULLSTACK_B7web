@@ -21,6 +21,7 @@ if(isset($_SESSION['banco']) && empty($_SESSION['banco']) == false) {       // s
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,34 +35,35 @@ if(isset($_SESSION['banco']) && empty($_SESSION['banco']) == false) {       // s
     Titular: <?php echo $info['titular']; ?> <br/>
     Agência: <?php echo $info['agencia']; ?><br/>
     Conta: <?php echo $info['conta']; ?><br/>
+    Conta: <?php echo $info['saldo']; ?><br/>
     <a href="sair.php">Sair</a>
     <hr>
-    <h3>MovimentaçãoExtratos</h3>
+    <h3>Movimentação e Extratos</h3>
 
-    <a href="add-transacao.php">Adiçionar transação</a><br><br>
+    <a href="add-transacao.php">Adicionar transação</a><br><br>
 
-    <table border = "1" width = "400">
+    <table border="1" width="400">
         <tr>
             <th>Data</th>
             <th>Valor</th>
         </tr>
         <?php
-        $sql = $pdo-> prepare("SELECT * FROM historico WHERE id_conta = :id_conta");     // pegando historico de conta espeçifica
-        $sql-> bindValue(":id_conta", $id);
-        $sql-> execute();
+        $sql = $pdo->prepare("SELECT * FROM historico WHERE id_conta = :id_conta");     // pegando historico de conta espeçifica
+        $sql->bindValue(":id_conta", $id);
+        $sql->execute();
 
-        if($sql-> rowCount() > 0) {
-            foreach($sql-> fetch() as $item) {
+        if($sql->rowCount() > 0) {
+            while ($item = $sql->fetch()) {
                 ?>
                 <tr>
                     <td><?php echo date('d/m/Y H:i', strtotime($item['data_operacao'])); ?></td>
                     <td>
-                        <?php if($item['tipo' == '0']): ?>
-                        <span color = "green"> R$: <?php echo $item['valor'] ?> </span>
+                        <?php if($item['tipo'] == '0'): ?>
+                            <span style="color: green"> R$: <?php echo $item['valor'] ?> </span>
                         <?php else: ?>
-                        <span color = "red"> -R$: <?php echo $item['valor'] ?> </span>
+                            <span style="color: red"> -R$: <?php echo $item['valor'] ?> </span>
                         <?php endif; ?>
-                    <td>
+                    </td>
                 </tr>
                 <?php
             }
