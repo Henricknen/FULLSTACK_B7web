@@ -9,7 +9,7 @@
     <option>/</option>
 </select>
 
-<input type="number" name="n1" />
+<input type="number" name="n2" />
 
 <input type="submit" value="Calcular" />
 
