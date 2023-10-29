@@ -1,0 +1,5 @@
+RewriteEngine On        #  ativa o módulo de reescrita 'mod_rewrite' no Apache 
+
+RewriteCond %{REQUEST_FILENAME} !-f     # ignora todos arquivos
+RewriteCond %{REQUEST_FILENAME} !-d         # ignora todos os diretórios
+RewriteRule ^(.*)$ /index.php?q=$1 [L]          # é uma regra de reescrita que redireciona URLs para o arquivo 'index.php'
