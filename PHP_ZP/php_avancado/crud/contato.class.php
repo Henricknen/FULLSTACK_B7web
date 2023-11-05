@@ -7,7 +7,7 @@ class Contato {
         $this-> pdo = new PDO("mysql:dbname=crud_oo;host=localhost", "root", "");       // conexão com banco de dados 'crud_oo'
     }
             // CREATE
-    public function adicionar($email, $nome = '') {     // método 'adiçionar' com parâmetros, '$mail' de preenchimento obrigatorio e '$nome' opçional
+    public function adicionar($email, $nome = '') {     // método adiçionar 'create' com parâmetros, '$mail' de preenchimento obrigatorio e '$nome' opçional
         if($this-> existeEmail($email) == false) {          // se o 'email' não existir no sistema
             $sql = "INSERT INTO contatos (nome, email) VALUES (:nome, :email)";     // ocorre a inserção na tabela 'contatos' do banco de dados
             $sql = $this-> pdo-> prepare($sql);     // acessando o pdo 'conexão' 
@@ -21,7 +21,7 @@ class Contato {
         }
     }
             // READ
-    public function getNome($email) {       // lendo as informações de um 'contato espeçifico' através do seu 'email'
+    public function getNome($email) {       // lendo 'read' as informações de um 'contato espeçifico' através do seu 'email'
         $sql = "SELECT nome FROM contatos WHERE email = :email";
         $sql = $this-> pdo-> prepare($sql);
         $sql-> bindValue(':email', $email);
@@ -47,9 +47,37 @@ class Contato {
         }
     }
 
+    public function editar($nome, $email) {     // método editar que fará o 'update' com parâmetro 'nome' á informação que será modificada e 'email'para identificar qual é o contato que será modificado
+        if($this-> existeEmail($email) == true) {     // se email 'existir' no sistema
+            $sql =  "UPDADE contatos SET nome = :nome WHERE email = :email";        // atualização
+            $sql = $this-> pdo-> prepare($sql);
+            $sql-> bindValue(':nome', $nome);
+            $sql-> bindValue(':email', $email);
+            $sql-> execute();
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function excluir($email) {       // criando método para deletar 'delete' um contato
+        if($this-> existeEmail($email)) {
+            $sql = "DELETE FROM contatos WHERE email = :email";     // deletando contato onde a coluna 'email' for igual ao valor fornecido para o marcador ':email'
+            $sql = $this-> pdo-> prepare($sql);
+            $sql-> bindValue(':email', $email);
+            $sql-> execute();
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     private function existeEmail($email) {      // método verifica se o 'email' existe no sistema
 
     }
+
 }
 
 ?>
