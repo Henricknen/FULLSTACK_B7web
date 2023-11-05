@@ -46,10 +46,10 @@ class Contato {
             return array();     // se não encontrar nenhum cotato retorna um array 'vazio'
         }
     }
-
+            // UPDATE
     public function editar($nome, $email) {     // método editar que fará o 'update' com parâmetro 'nome' á informação que será modificada e 'email'para identificar qual é o contato que será modificado
         if($this-> existeEmail($email) == true) {     // se email 'existir' no sistema
-            $sql =  "UPDADE contatos SET nome = :nome WHERE email = :email";        // atualização
+            $sql =  "UPDATE contatos SET nome = :nome WHERE email = :email";        // atualização
             $sql = $this-> pdo-> prepare($sql);
             $sql-> bindValue(':nome', $nome);
             $sql-> bindValue(':email', $email);
@@ -60,7 +60,7 @@ class Contato {
             return false;
         }
     }
-
+            // DELETE
     public function excluir($email) {       // criando método para deletar 'delete' um contato
         if($this-> existeEmail($email)) {
             $sql = "DELETE FROM contatos WHERE email = :email";     // deletando contato onde a coluna 'email' for igual ao valor fornecido para o marcador ':email'
