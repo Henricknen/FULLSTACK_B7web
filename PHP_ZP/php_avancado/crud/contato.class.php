@@ -37,7 +37,7 @@ class Contato {
     }
 
     public function getAll() {      // lendo a lista de 'todos' os contatos
-        $sql = "SLECT * FROM contatos";
+        $sql = "SELECT * FROM contatos";
         $sql = $this-> pdo-> query($sql);
 
         if($sql-> rowCount() > 0) {
@@ -75,7 +75,16 @@ class Contato {
     }
 
     private function existeEmail($email) {      // método verifica se o 'email' existe no sistema
+        $sql = "SELECT * FROM contatos WHERE email = :email";
+        $sql = $this-> pdo -> prepare($sql);
+        $sql-> bindValue(':email', $email);
+        $sql-> execute();
 
+        if($sql-> rowCount() > 0) {     // verifica se se está 'query' teve algum retorno
+            return true;        // se teve significa que existe um 'email'
+        } else {
+            return false;
+        }
     }
 
 }
