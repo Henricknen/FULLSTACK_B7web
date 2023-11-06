@@ -61,17 +61,12 @@ class Contato {
         }
     }
             // DELETE
-    public function excluir($email) {       // criando método para deletar 'delete' um contato
-        if($this-> existeEmail($email)) {
-            $sql = "DELETE FROM contatos WHERE email = :email";     // deletando contato onde a coluna 'email' for igual ao valor fornecido para o marcador ':email'
+    public function excluir($id) {       // criando método para deletar 'delete' um contato via 'id'
+        $sql = "DELETE FROM contatos WHERE id = :id";     // deletando contato onde a coluna 'id' for igual ao valor fornecido para o marcador ':id'
             $sql = $this-> pdo-> prepare($sql);
-            $sql-> bindValue(':email', $email);
+            $sql-> bindValue(':id', $id);
             $sql-> execute();
 
-            return true;
-        } else {
-            return false;
-        }
     }
 
     private function existeEmail($email) {      // método verifica se o 'email' existe no sistema
