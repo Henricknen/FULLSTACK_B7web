@@ -47,18 +47,14 @@ class Contato {
         }
     }
             // UPDATE
-    public function editar($nome, $email) {     // método editar que fará o 'update' com parâmetro 'nome' á informação que será modificada e 'email'para identificar qual é o contato que será modificado
-        if($this-> existeEmail($email) == true) {     // se email 'existir' no sistema
-            $sql =  "UPDATE contatos SET nome = :nome WHERE email = :email";        // atualização
+    public function editar($nome, $id, $email) {
+            $sql =  "UPDATE contatos SET nome = :nome, email = :email WHERE id = :id";        // atualização
             $sql = $this-> pdo-> prepare($sql);
             $sql-> bindValue(':nome', $nome);
             $sql-> bindValue(':email', $email);
+            $sql-> bindValue(':id', $id);
             $sql-> execute();
 
-            return true;
-        } else {
-            return false;
-        }
     }
             // DELETE
     public function excluir($id) {       // criando método para deletar 'delete' um contato via 'id'
@@ -81,6 +77,20 @@ class Contato {
             return false;
         }
     }
+
+    public function getInfo($id) {
+        $sql = "SELECT * FROM contatos WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(':id', $id);
+        $sql->execute();
+    
+        if ($sql->rowCount() > 0) {
+            return $sql->fetch(PDO::FETCH_ASSOC);
+        } else {
+            return array(); // Retornar um array vazio se nenhum resultado for encontrado
+        }
+    }
+    
 
 }
 
