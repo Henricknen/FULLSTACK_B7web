@@ -48,12 +48,18 @@ class Contato {
     }
             // UPDATE
     public function editar($nome, $id, $email) {
+        if(existeEmail($email) == false) {      // verificando se email existe
             $sql =  "UPDATE contatos SET nome = :nome, email = :email WHERE id = :id";        // atualização
             $sql = $this-> pdo-> prepare($sql);
             $sql-> bindValue(':nome', $nome);
             $sql-> bindValue(':email', $email);
             $sql-> bindValue(':id', $id);
             $sql-> execute();
+
+            return true;
+        } else {
+            return false;
+        }
 
     }
             // DELETE
