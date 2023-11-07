@@ -3,12 +3,12 @@
 include 'contato.class.php';
 $contato = new Contato();
 
-if(!empty($_POST['id'])) {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $id = $_POST['id'];
+if(!empty($_POST['id'])) {      // verificando se tem 'id'
+    $nome = $_POST['nome'];         // pegando 'nome'
+    $email = $_POST['email'];           // pegando 'email'
+    $id = $_POST['id'];         // pegando 'id'
 
-    if(!empty($email)) {
+    if(!empty($email)) {        // verificação se email está 'preenchido'
         $contato-> editar($nome, $email, $id);
     }
 

@@ -21,18 +21,16 @@ class Contato {
         }
     }
             // READ
-    public function getNome($email) {       // lendo 'read' as informações de um 'contato espeçifico' através do seu 'email'
-        $sql = "SELECT nome FROM contatos WHERE email = :email";
+    public function getInfo($id) {     // método pega informações de um contato espeçifico com base em seu 'id'
+        $sql = "SELECT * FROM contatos WHERE id = :id";
         $sql = $this-> pdo-> prepare($sql);
-        $sql-> bindValue(':email', $email);
+        $sql-> bindValue(':id', $id);
         $sql-> execute();
 
-        if($sql-> rowCount() > 0) {     // verificando se foi encontrado um contato com 'email' requirido
-            $info = $sql-> fetch();
-
-            return $info['nome'];       // retornando o nome do contato
+        if($sql-> rowCount() > 0) {
+            return $sql-> fetch();       // retornando todos os dados desse contato espeçifico com base no 'id'
         } else {
-            return '';
+            return array();     // se não encontrar nenhum dado retorna um array 'vazio'
         }
     }
 
@@ -47,9 +45,9 @@ class Contato {
         }
     }
             // UPDATE
-    public function editar($nome, $id, $email) {
-        if(existeEmail($email) == false) {      // verificando se email existe
-            $sql =  "UPDATE contatos SET nome = :nome, email = :email WHERE id = :id";        // atualização
+    public function editar($nome, $email, $id) {
+        if($this-> existeEmail($email) == false) {      // se não exisitir o email no banco de dados pode fazer a alteração
+            $sql =  "UPDATE contatos SET nome = :nome, email = :email WHERE id = :id";        // atualização no banco de dados
             $sql = $this-> pdo-> prepare($sql);
             $sql-> bindValue(':nome', $nome);
             $sql-> bindValue(':email', $email);
@@ -60,7 +58,6 @@ class Contato {
         } else {
             return false;
         }
-
     }
             // DELETE
     public function excluir($id) {       // criando método para deletar 'delete' um contato via 'id'
@@ -83,20 +80,6 @@ class Contato {
             return false;
         }
     }
-
-    public function getInfo($id) {
-        $sql = "SELECT * FROM contatos WHERE id = :id";
-        $sql = $this->pdo->prepare($sql);
-        $sql->bindValue(':id', $id);
-        $sql->execute();
-    
-        if ($sql->rowCount() > 0) {
-            return $sql->fetch(PDO::FETCH_ASSOC);
-        } else {
-            return array(); // Retornar um array vazio se nenhum resultado for encontrado
-        }
-    }
-    
 
 }
 
