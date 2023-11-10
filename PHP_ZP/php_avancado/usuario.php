@@ -7,24 +7,26 @@ class Usuario {
     private $email;
     private $senha;
 
+    private $pdo;
+
     public function __construct($i) {
-        if (!empty($i)) {        // verifica se o parâmetro $i não está vazio
+        if (!empty($i)) {        // se o parâmetro '$i' não estiver vazio
             try {
-                $this->pdo = new PDO("mysql:dbname=usuarios;host=localhost", "root", "");        // conexão com o banco de dados
+                $this-> pdo = new PDO("mysql:dbname=usuarioss;host=localhost", "root", "");        // conexão com o banco de dados
             } catch (PDOException $e) {
                 echo "Falhou...: " . $e->getMessage();       // mensagem se houver falha na conexão
             }
     
             $sql = "SELECT * FROM usuarioss WHERE id = ?";       // selecionando dados do usuário com o 'id' fornecido
-            $sql = $this->pdo->prepare($sql);        // prepara a consulta SQL
+            $sql = $this->pdo->prepare($sql);        // 'prepare' prepara a consulta 'sql'
             $sql->execute(array($i));        // executa a consulta
     
-            if ($sql->rowCount() > 0) {      // verifica se achou algum resultado
-                $data = $sql->fetch();           // obtém os dados do usuário
-                $this->id = $data['id'];             // atribui o valor do campo 'id' ao atributo 'id' da classe
-                $this->nome = $data['nome'];             // atribui o valor do campo 'nome' ao atributo 'nome' da classe
-                $this->email = $data['email'];  // atribui o valor do campo 'email' ao atributo 'email' da classe
-                $this->senha = $data['senha'];       // atribui o valor do campo 'senha' ao atributo 'senha' da classe
+            if ($sql->rowCount() > 0) {      // verifica se existe algum valor
+                $data = $sql->fetch();           // método 'fetch' obtém os dados do usuário
+                $this-> id = $data['id'];             // atribui o valor do campo 'id' ao atributo 'id' da classe
+                $this-> nome = $data['nome'];             // atribui o valor do campo 'nome' ao atributo 'nome' da classe
+                $this-> email = $data['email'];  // atribui o valor do campo 'email' ao atributo 'email' da classe
+                $this-> senha = $data['senha'];       // atribui o valor do campo 'senha' ao atributo 'senha' da classe
             }
         }
     }
@@ -44,7 +46,7 @@ class Usuario {
 
 
     public function setSenha($s) {
-        $this-> senha = s;
+        $this-> senha = md5($s);
     }
 
     public function setNome($n) {
@@ -53,6 +55,19 @@ class Usuario {
 
     public function getNome() {
         return $this-> nome;
+    }
+
+    public function salvar() {      // método 'salvar'
+        if(!empty($this-> id)) {        // se foi encontrado um 'id'
+            $sql = "UPDATE usuarios SET email = '?', senha = '?', nome = '?' WHERE id = '?'";       // query de 'atualização'
+            $sql = $this-> pdo-> prepare($sql);
+            $sql-> execute(array($this-> email, $this-> senha, $this-> nome, $this-> id));      // mandando as informações do contato
+        } else {
+            
+            $sql = "INSERT INTO usuarios SET email = '?', senha = '?', nome = '?'";
+            $sql = $this-> pdo-> prepare($sql);
+            $sql-> execute(array($this-> email, $this-> senha, $this-> nome));
+        }
     }
 
 }
