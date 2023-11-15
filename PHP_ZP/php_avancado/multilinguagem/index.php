@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start();        // a liguagem será salva na 'seção' 
 
 if(!empty($_GET['lang'])) {     // verificando foi 'enviado'
     $_SESSION['lang'] = $_GET['lang'];      // troca a linguagem
@@ -16,4 +16,7 @@ $lang = new Language();
 Linguagem definida: <?php echo $lang-> getLanguage(); ?>
 <hr/>
 
-<button><?php echo $lang-> get('BUY'); ?></button>
+<button><?php echo $lang-> get('BUY'); ?></button>     <!-- botão de comprar -->
+<a href = ""><?php $lang-> get('LOGOUT'); ?></a>    <!-- botão de sair -->
+
+<?php $lang-> get('AUTHOR'); ?>: Luis Henrique Silva Ferreira
