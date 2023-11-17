@@ -14,6 +14,10 @@ try {
         <th>Idade</th>
     </tr>
     <?php
+    $sexos = array (
+        '0' => 'Masculino',
+        '1' => 'femininno'
+    );
     $sql = "SELECT * FROM usuarios";
     $result = $pdo->query($sql);
 
@@ -25,7 +29,7 @@ try {
                 ?>
                 <tr>
                     <td><?php echo $usuario['nome']; ?></td>
-                    <td><?php echo $usuario['sexo']; ?></td>
+                    <td><?php echo $sexos[$usuario['sexo']]; ?></td>
                     <td><?php echo $usuario['idade']; ?></td>
                 </tr>
                 <?php
