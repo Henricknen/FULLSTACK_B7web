@@ -45,4 +45,12 @@ class Usuarios {
     public function getPermissoes() {
         return $this-> permissoes;
     }
+
+    public function temPermisao($p) {       // método que verifica se usuário tem 'permissão'
+        if(in_array($p, $this-> permissoes)) {      // se parâmetro que foi passado ex. '$p' estiver dentro de 'permissões'
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

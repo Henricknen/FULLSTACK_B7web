@@ -19,7 +19,9 @@ $lista = $documentos-> getDocumentos();
 ?>
 <h1>Sistema</h1>
 
+<?php if($usuarios-> temPermissao('ADD')): ?>       <!-- para mostra o botão 'Adicionar documento...' usuário tem que ter a permissão 'ADD' -->
 <a href="">Adicionar documento...</a>
+<?php endif; ?>
 
 <table border = "1" width = "100%">
     <tr>
@@ -30,8 +32,12 @@ $lista = $documentos-> getDocumentos();
         <tr>
             <td><?php echo utf8_encode($item['titulo']); ?></td>
             <td>
+                <?php if($usuarios-> temPermissao('EDIT')): ?>      <!-- verificando se tem permissão 'EDIT' -->
                 <a href="">ditar</a>
+                <?php endif; ?>
+                <?php if($usuarios-> temPermissao('DEL')): ?>      <!-- verificando se tem permissão 'DEL' -->
                 <a href="">Ecluir</a>
+                <?php endif; ?>
             </td>
         </tr>
     <?php endforeach; ?>
