@@ -10,8 +10,9 @@ if(!isset($_SESSION['logado'])) {
 }
 
 $usuarios = new Usuarios($pdo);
-$usuarios-> Usuario($_SESSION['logado']);       // definindo (set) o usuário logado
+$usuarios-> setUsuario($_SESSION['logado']);       // definindo (set) o usuário logado
 
 
 ?>
 <h1>Teste[logado]</h1>
+Permissoes: <?php print_r($usuarios-> getPermissoes()); ?>      <!-- gera um array com as permissões -->    

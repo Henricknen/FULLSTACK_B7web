@@ -28,5 +28,5 @@ if(!empty($_POST['email'])) {       // verificando se 'email' foi preenchido
     Senha:<br/>
     <input type="password" name = "senha"></br><br/>
 
-    <input type="submit" vlaue = "Entrar"/>
+    <input type="submit" value = "Entrar"/>
 </form>
