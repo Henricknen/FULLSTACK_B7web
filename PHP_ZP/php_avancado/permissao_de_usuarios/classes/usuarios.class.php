@@ -1,4 +1,4 @@
-<?php       // arquivo com classe que cuidará dos usuários
+<?php       // arquivo com classe 'Usuarios' que cuidará dos usuários
 
 class Usuarios {
 
@@ -7,43 +7,42 @@ class Usuarios {
     private $permissoes;
 
     public function __construct($pdo) {     // fazendo conexão com banco de dados atraves do 'construtor'
-        $this->pdo = $pdo;
+        $this-> pdo = $pdo;
     }
 
-    public function fazerLogin($email, $senha) {        // fazendo 'login'
-        $sql = "SELECT * FROM usuarios WHERE email = :email";
-        $sql = $this->pdo->prepare($sql);
-        $sql->bindValue(":email", $email);
-        $sql->execute();
+    public function fazerLogin($email, $senha) {        // método 'fazerLogin' fará o login
+        $sql = "SELECT * FROM usuarios WHERE email = :email AND senha = :senha";
+        $sql = $this-> pdo-> prepare($sql);
+        $sql-> bindValue(":email", $email);
+        $sql-> bindValue(":senha", $senha);
+        $sql-> execute();
 
-        if ($sql->rowCount() > 0) {
-            $usuario = $sql->fetch();      // pega as informações dousuário
+        if ($sql-> rowCount() > 0) {
+            $usuario = $sql-> fetch();      // pega as informações do usuário
 
-            // Verifica a senha usando password_verify
-            if (password_verify($senha, $usuario['senha'])) {
-                $_SESSION['logado'] = $usuario['id'];
-                return true;
-            }
+            $_SESSION['logado'] = $usuario['id'];
+
+            return true;
         }
 
         return false;
     }
 
-    public function setUsuario($id) {
-        $this->id = $id;
+    public function setUsuario($id) {       // classe 'setUsuario' que salvará o 'id' e as 'permissoes' do usuario
+        $this-> id = $id;
 
         $sql = "SELECT * FROM usuarios WHERE id = :id";
-        $sql = $this->pdo->prepare($sql);
-        $sql->bindValue(":id", $id);
-        $sql->execute();
+        $sql = $this->pdo-> prepare($sql);
+        $sql-> bindValue(":id", $id);
+        $sql-> execute();
 
-        if ($sql->rowCount() > 0) {
+        if ($sql-> rowCount() > 0) {
             $usuario = $sql->fetch();
-            $this->permissoes = explode(',', $usuario['permissoes']);
+            $this-> permissoes = explode(',', $usuario['permissoes']);      // definindo 'set' as permissões e salvando dentro da variável 'permissoes'
         }
     }
 
     public function getPermissoes() {
-        return $this->permissoes;
+        return $this-> permissoes;
     }
 }

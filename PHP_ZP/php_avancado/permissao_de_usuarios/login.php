@@ -1,16 +1,16 @@
 <?php
 
-session_start();
+session_start();        // iniçiando a seção
 require 'config.php';
-require 'classes/usuarios.class.php';
+require 'classes/usuarios.class.php';       // puchando arquivo que contém a classe 'Usuario'
 
 if(!empty($_POST['email'])) {       // verificando se 'email' foi preenchido
     $email = addcslashes($_POST['email'], '.');
-    $senha = addcslashes($_POST['senha'], '.');
+    $senha = md5($_POST['senha']);
 
-    $usuarios = new Usuarios($pdo);     // instançiando classe 'usuário'
+    $usuarios = new Usuarios($pdo);     // instançiando classe 'usuários'
 
-    if($usuarios-> fazerLogin($email, $senha)) {        // verificando se 'login' foi feito com suçesso
+    if($usuarios-> fazerLogin($email, $senha)) {        // verificando se 'login' foi feito com sucesso
         header("Location: index.php");
         exit;
     } else {
@@ -21,7 +21,7 @@ if(!empty($_POST['email'])) {       // verificando se 'email' foi preenchido
 ?>
 
 <h1>Login</h1>
-<form method = "POST">
+<form method = "POST">      <!-- formulário de login -->
     E-mail:<br/>
     <input type="email" name = "email"></br><br/>
 
