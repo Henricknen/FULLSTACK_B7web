@@ -23,6 +23,10 @@ $lista = $documentos-> getDocumentos();
 <a href="">Adicionar documento...</a>
 <?php endif; ?>
 
+<?php if($usuarios-> temPermissao('SECRET')): ?>
+<a href="secreto.php">Página secreta...</a>     <!-- este botão só aparecerá se usuário tiver a permissão 'SECRET' -->
+<?php endif; ?>
+
 <table border = "1" width = "100%">
     <tr>
         <th>Nome do arquivo</th>
