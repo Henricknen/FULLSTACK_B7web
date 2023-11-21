@@ -1,15 +1,16 @@
 <?php
 
 require 'config.php';
-require 'classes/carros.class.php';
 require 'classes/reservas.class.php';
 
 $reservas = new Reservas($pdo);     // instançiando classe 'Reservas' mandando como parâmetro a conexão 'pdo'
-$carros = new Carros($pdo);
 
 ?>
 
 <h1>Reservas</h1>
+
+<a href="reservar.php">[Adicionar reservas]</a>
+<br/><br/>
 
 <?php
 
