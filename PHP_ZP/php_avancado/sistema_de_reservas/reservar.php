@@ -13,6 +13,15 @@ $carros = new Carros($pdo);
 <form method="POST">        <!-- formulário de adiçionar reservas -->
     Carro:<br/>
     <select name="carro">
+        <?php
+        $lista = $carros-> getCarros();       // lista dos carros salvos no banco de dados
+
+        foreach($lista as $carro):
+            ?>
+            <option value="<?php echo $carro['id']; ?>"><?php echo $carro['nome']; ?></option>      <!-- exibindo o 'id' e o 'nome' do carro no option -->
+            <?php
+        endforeach;
+        ?>
 
     </select><br/><br/>
 
