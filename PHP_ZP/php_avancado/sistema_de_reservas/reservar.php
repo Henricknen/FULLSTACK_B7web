@@ -8,16 +8,18 @@ $reservas = new Reservas($pdo);     // instançiando classe 'Reservas' mandando 
 $carros = new Carros($pdo);
 
 if(!empty($_POST['carro'])) {       // se o campo 'carro' estiver preenchido quer dizer que houve o envio do formulário
-    $carro = addcslashes($_POST['carro']);      // pegando todos os dados
-    $data_inicio = explode('/', addcslashes($_POST['data_inicio']));        // 'explode' inverte a '/' 
-    $data_fim = explode('/', addcslashes($_POST['data_fim']));
-    $pesssoa = addcslashes($_POST['pesssoa']);
+    $carro = addslashes($_POST['carro']);      // pegando todos os dados
+    $data_inicio = explode('/', addslashes($_POST['data_inicio']));        // 'explode' inverte a '/' 
+    $data_fim = explode('/', addslashes($_POST['data_fim']));
+    $pessoa = addslashes($_POST['pessoa']);
 
     $data_inicio = $data_inicio[2]. '-'. $data_inicio[1]. '-'. $data_inicio[0];      // reodernando o array data_nicio' transformando de um padrão basileiro em um  formato 'internacional'
     $data_fim = $data_fim[2]. '-'. $data_fim[1]. '-'. $data_fim[0];
 
     if($reservas-> verificarDidponibilidade($carro, $data_inicio, $data_fim)) {     // verificando a 'disponibilidade' de reservas
-        $reservas-> reservar($carro, $data_inicio, $data_fim, $pesssoa);        // reservando
+        $reservas-> reservar($carro, $data_inicio, $data_fim, $pessoa);        // reservando
+        header("Location: index.php");
+        exit;
     } else {
         echo "Este carro já está reservado neste período...";
     }
