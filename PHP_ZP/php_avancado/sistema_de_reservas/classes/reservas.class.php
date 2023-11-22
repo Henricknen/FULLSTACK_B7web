@@ -21,4 +21,22 @@ class Reservas {
         return $array;
     }
 
+    public function verificarDisponibilidade($carro, $data_inicio, $data_fim) {
+
+        $sql = "SELECT * FROM reservas WHERE id_carro = :carro AND()";      // verificando se ha reservas do carro
+        data_inicio 
+        $sql = $this-> pdo-> prepare();
+        $sql-> bindeValue(":carro", $carro);
+        $sql-> bindeValue(":data_inicio", $data_inicio);
+        $sql-> bindeValue(":data_fim", $data_fim);
+        $sql-> execute();
+
+        if($sql-> rowCount() > 0) {         // se 'rowCount' for maior que 0 é sinal que a consulta teve resultado
+            return false;
+        } else {        // caso contrario
+            return true;        // poderá ser feita a reserva
+        }
+
+    }
+
 }
