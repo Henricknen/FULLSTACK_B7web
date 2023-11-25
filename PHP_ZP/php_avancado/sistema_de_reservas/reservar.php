@@ -12,44 +12,48 @@ if(!empty($_POST['carro'])) {
 	$data_fim = explode('/', addslashes($_POST['data_fim']));
 	$pessoa = addslashes($_POST['pessoa']);
 
-	$data_inicio = $data_inicio[2]. '-'. $data_inicio[1]. '-'. $data_inicio[0];
-	$data_fim = $data_fim[2]. '-'. $data_fim[1]. '-'. $data_fim[0];
+	$data_inicio = $data_inicio[2].'-'.$data_inicio[1].'-'.$data_inicio[0];
+	$data_fim = $data_fim[2].'-'.$data_fim[1].'-'.$data_fim[0];
 
-	if($reservas->verificarDisponibilidade($carro, $data_inicio, $data_fim)) {
-		$reservas->reservar($carro, $data_inicio, $data_fim, $pessoa);
+	if($reservas-> verificarDisponibilidade($carro, $data_inicio, $data_fim)) {
+		$reservas-> reservar($carro, $data_inicio, $data_fim, $pessoa);
 		header("Location: index.php");
 		exit;
 	} else {
 		echo "Este carro já está reservado neste período.";
 	}
 
+
 }
+
+
+
 
 ?>
 <h1>Adicionar Reserva</h1>
 
-<form method = "POST">
+<form method="POST">
 	Carro:<br/>
-	<select name = "carro">
+	<select name="carro">
 		<?php
-		$lista = $carros->getCarros();
+		$lista = $carros-> getCarros();
 
 		foreach($lista as $carro):
 			?>
-			<option value = "<?php echo $carro['id']; ?>"><?php echo $carro['nome']; ?></option>
+			<option value="<?php echo $carro['id']; ?>"><?php echo $carro['nome']; ?></option>
 			<?php
 		endforeach;
 		?>
 	</select><br/><br/>
 
 	Data de início:<br/>
-	<input type = "text" name = "data_inicio" /><br/><br/>
+	<input type="text" name="data_inicio" /><br/><br/>
 
 	Data de fim:<br/>
-	<input type = "text" name = "data_fim" /><br/><br/>
+	<input type="text" name="data_fim" /><br/><br/>
 
 	Nome da pessoa:<br/>
-	<input type = "text" name = "pessoa" /><br/><br/>
+	<input type="text" name="pessoa" /><br/><br/>
 
-	<input type = "submit" value = "Reservar" />
+	<input type="submit" value="Reservar" />
 </form>
