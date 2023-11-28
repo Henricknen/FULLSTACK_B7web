@@ -12,6 +12,13 @@ if(!empty($_GET['id']) && !empty($_GET['voto'])) {      // verificando se foi re
         $sql-> bindValue(":id_filme", $id);
         $sql-> bindValue(":nota", $voto);
         $sql-> execute();
+
+        $sql = "UPDATE filmes SET media = (select (SUM(nota)/COUNT(*)) from votos where votos.id_filme = filmes.id) WHERE id = :id";      // calculando a média
+        $sql = $pdo-> prepare($sql);
+        $sql-> bindValue(":id", $id);
+        $sql-> execute();
+
+        header("Location: index.php");
     }
 
 }
