@@ -12,7 +12,13 @@ if(!empty($_POST['email'])) {       // se campo de 'email' não estiver vazio
     $sql-> execute();
 
     if($sql-> rowCount() > 0) {
+        $sql = $sql-> fetch();      // pegando o id
 
+        $_SESSION['mmnlogin'] = $sql['id'];
+
+        header("Location: index.php");
+        exit;
+        
     } else {
         echo "Usuário e/ou Senha errados...";
     }
