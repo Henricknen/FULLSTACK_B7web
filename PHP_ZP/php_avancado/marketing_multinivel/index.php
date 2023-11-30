@@ -22,7 +22,9 @@ if($sql-> rowCount() > 0) {     // verificando se encontrou algum resultado
 }
 ?>
 
-<h1>Sistema de Marketing Multinível</h1>
+<h1>Sistema de Marketing Multinível...</h1>
 <h2>Usuário logado: <?php echo $nome; ?></h2>
 
 <a href=  "cadastro.php">Cadastrar novo usuário</a>
+
+<a href="sair.php">Sair</a>
