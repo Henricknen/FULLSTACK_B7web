@@ -7,7 +7,7 @@ if(!empty($_POST['email'])) {       // se campo de 'email' não estiver vazio
     $senha = addslashes($_POST['senha']);
 
     $sql = $pdo-> prepare("SELECT * FROM usuarios WHERE email = :email AND senha = :senha");
-    $sql-> bindValue(":email", $email);
+    $sql-> bindValue(":email", $email);     // substituindo ':email' por '$email'
     $sql-> bindValue(":senha", $senha);
     $sql-> execute();
 
