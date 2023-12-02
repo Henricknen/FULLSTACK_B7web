@@ -15,22 +15,15 @@ $sql-> bindValue(":id", $id);
 $sql-> execute();
 
 if($sql-> rowCount() > 0) {     // verificando se encontrou algum resultado
-    $sql = $sql-> fetch();
+$sql = $sql-> fetch();
     $nome = $sql['nome'];       // armazenando o nome do usuário dentro da variável 'nome'
 } else {
     header("Location: login.php");
     exit;
 }
 
-$lista = array();        // lista iniçia como um 'array vazio'
-
-$sql = $pdo-> prepare("SELECT * FROM usuarios WHERE id_pai = :id");     // pegando informações cadastradaas pelo usuário logado
-$sql-> bindValue(":id", $id);
-$sql-> execute();
-if($sql-> rowCount() > 0) {
-    $lista = $sql-> fetchAll();
-}
-
+$lista = listar($id);       // chamando função 'listar' passando o id do usuário logado
+    
 ?>
 
 <h1>Sistema de Marketing Multinivel</h1>
@@ -43,6 +36,10 @@ if($sql-> rowCount() > 0) {
 <hr/>
 
 <h4>Lista de cadastros</h4>
+
+<pre>
+    <?php print_r($lista); ?>
+</pre>
 
 <ul>
     <?php foreach($lista as $usuario): ?>       <!-- ultilizando 'foreach' para pegar a lista de cadastro -->
