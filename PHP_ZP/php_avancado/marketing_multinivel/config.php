@@ -5,3 +5,5 @@ try {
 } catch(PDOExeption $e) {
     echo "ERRO: ". $e-> getMessage();
 }
+
+$limite = 3;        // estabelecendo um limite de 3 itens filhos

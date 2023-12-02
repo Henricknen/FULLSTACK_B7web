@@ -22,7 +22,7 @@ $sql = $sql-> fetch();
     exit;
 }
 
-$lista = listar($id);       // chamando função 'listar' passando o id do usuário logado
+$lista = listar($id, $limite);       // chamando função 'listar' passando o 'id' do usuário logado e o 'limite' de itens filhos como parâmetro
     
 ?>
 
@@ -37,12 +37,4 @@ $lista = listar($id);       // chamando função 'listar' passando o id do usuá
 
 <h4>Lista de cadastros</h4>
 
-<pre>
-    <?php print_r($lista); ?>
-</pre>
-
-<ul>
-    <?php foreach($lista as $usuario): ?>       <!-- ultilizando 'foreach' para pegar a lista de cadastro -->
-        <li><?php echo $usuario['nome']; ?></li>
-    <?php endforeach; ?>
-</ul>
+<?php exibir($lista); ?>    <!-- ultilizando a função exibir e passando a lista  -->
