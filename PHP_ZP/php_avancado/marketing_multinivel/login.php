@@ -2,8 +2,8 @@
 session_start();
 require 'config.php';
 
-if(!empty($_POST['email'])) {       // se campo de 'email' não estiver vazio
-    $email = addslashes($_POST['email']);
+if(!empty($_POST['email'])) {       // se campo de 'email' 'não estiver' vazio
+    $email = addslashes($_POST['email']);       // reçebe 'email' e 'senha'
     $senha = addslashes($_POST['senha']);
 
     $sql = $pdo-> prepare("SELECT * FROM usuarios WHERE email = :email AND senha = :senha");
@@ -12,7 +12,7 @@ if(!empty($_POST['email'])) {       // se campo de 'email' não estiver vazio
     $sql-> execute();
 
     if($sql-> rowCount() > 0) {
-        $sql = $sql-> fetch();      // pegando o id
+        $sql = $sql-> fetch();      // se o usuário digitar 'email' e 'senha' corretos se pega o 'id'
 
         $_SESSION['mmnlogin'] = $sql['id'];
 
