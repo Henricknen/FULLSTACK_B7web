@@ -1,5 +1,29 @@
 <?php
 
+function calcularCadastros($id, $limite) {		// função vai retorna quantos filhos direto determinado usuário tem
+	$lista = array();
+	global $pdo;
+
+	$sql = $pdo-> prepare("SELECT * FROM usuarios WHERE id_pai = :id");
+	$sql-> bindValue(":id", $id);
+	$sql-> execute();
+	$filhos = 0;
+	
+
+	if($sql-> rowCount() > 0) {
+		$lista = $sql-> fetchAll(PDO::FETCH_ASSOC);
+		$filhos = $sql-> rowCount();		// armazenado a quantidade de filhos na variável '$filhos'		
+
+		foreach($lista as $chave=> $usuario) {
+			if($limite > 0) {
+				$filhos += calcularCadastros($usuario['id'], $limite - 1);		// calculando quantos filhos direto cada usuário tem e acrescentando na variável '$filhos'
+			}
+		}
+	}
+
+	return $filhos;
+}
+
 function listar($id, $limite) {
 	$lista = array();        // lista iniçia como um 'array vazio'
 	global $pdo;
