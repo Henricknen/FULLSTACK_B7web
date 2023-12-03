@@ -1,6 +1,6 @@
 <?php
 
-function calcularCadastros($id, $limite) {		// função vai retorna quantos filhos direto determinado usuário tem
+function calcularCadastros($id, $limite) {		// função calcula quantos cadastro o usuário tem 
 	$lista = array();
 	global $pdo;
 
@@ -9,12 +9,11 @@ function calcularCadastros($id, $limite) {		// função vai retorna quantos filh
 	$sql-> execute();
 	$filhos = 0;
 	
-
 	if($sql-> rowCount() > 0) {
 		$lista = $sql-> fetchAll(PDO::FETCH_ASSOC);
-		$filhos = $sql-> rowCount();		// armazenado a quantidade de filhos na variável '$filhos'		
+		$filhos = $sql-> rowCount();		// armazenado a quantidade de filhos 'cadastro' na variável '$filhos'		
 
-		foreach($lista as $chave=> $usuario) {
+		foreach($lista as $chave => $usuario) {
 			if($limite > 0) {
 				$filhos += calcularCadastros($usuario['id'], $limite - 1);		// calculando quantos filhos direto cada usuário tem e acrescentando na variável '$filhos'
 			}
