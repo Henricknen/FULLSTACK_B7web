@@ -4,9 +4,14 @@ function listar($id, $limite) {
 	$lista = array();        // lista iniçia como um 'array vazio'
 	global $pdo;
 
-	$sql = $pdo-> prepare("SELECT * FROM usuarios WHERE id_pai = :id");     // pegando informações 'itens' cadastrados pelo usuário logado
+	$sql = $pdo-> prepare("SELECT 
+		usuarios.id, usuarios.id_pai, usuarios.patente, usuarios.nome, 
+		patentes.nome as p_nome 
+		FROM usuarios LEFT JOIN patentes ON patentes.id = usuarios.patente
+		WHERE usuarios.id_pai = :id");     // pegando dados espeçificos "usuarios.id, usuarios.id_pai, usuarios.patente, usuarios.nome, patentes.nome"
 	$sql-> bindValue(":id", $id);
 	$sql-> execute();
+
 	if($sql-> rowCount() > 0) {
 		$lista = $sql-> fetchAll(PDO::FETCH_ASSOC);		// 'PDO::FETCH_ASSOC' evita que os itens seja repetidos
 
@@ -26,7 +31,7 @@ function exibir($array) {		// função reçenendo'$array' como parâmetro que s�
 	echo '<ul>';
 	foreach($array as $usuario) {
 		echo '<li>';
-		echo $usuario['nome']. '('. count($usuario['filhos']). 'cadastros diretos';		// '('. count(). '' mostra quantos cadastro o usuário tem
+		echo $usuario['nome']. ' (' .$usuario['p_nome']. ')';
 
 		if(count($usuario['filhos']) > 0) {		// se usuário logado tiver 'itens filhos' serão exibidos
 			exibir($usuario['filhos']);
