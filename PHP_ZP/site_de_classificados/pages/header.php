@@ -1,10 +1,6 @@
 <?php require'config.php'; ?>
 <!DOCTYPE html>
-<html lang = "pt-br">
-<head>
-    <meta charset = "UTF-8">
-    <meta http-equiv = "X-UA-Compatible" content="IE=edge">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+<html>
     <title>Classificados</title>
     <link rel = "stylesheet" href = "assets/css/bootstrap.min.css" />       <!-- puchando bootstrap de 'css' -->
     <link rel = "stylesheet" href = "assets/css/style.css" />
@@ -23,8 +19,8 @@
                     <li><a href = "anuncios.php">Meus Anúncios</a></li>     <!-- se usuário estiver logado aparecerá estes botões -->
                     <li><a href = "sair.php">Sair</a></li>
                 <?php else: ?>      <!-- se não estiver aparecerá esses botões -->
-                <li><a href = "cadastre-se.php">Cadastre-se</a></li>
-                <li><a href = "login.php">Login</a></li>
+                    <li><a href = "cadastre-se.php">Cadastre-se</a></li>
+                    <li><a href = "login.php">Login</a></li>
                 <?php endif; ?>
             </ul>
         </div>

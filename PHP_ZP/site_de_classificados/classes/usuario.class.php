@@ -21,8 +21,26 @@ class Usuarios {
             } else {
                 return false; // Usuário já cadastrado
             }
-        } else {            
-            echo "Erro ao preparar a declaração SQL.";      // caso em que a preparação falhou
+        // } else {            
+        //     echo "Erro ao preparar a declaração SQL.";      // caso em que a preparação falhou
+        }
+    }
+    
+    public function login($email, $senha) {
+        global $pdo;
+        
+        $sql = $pdo-> prepare("SELECT id FROM usuarios WHERE email = :email AND senha = :senha");       // 'verificando' o login
+        $sql-> bindValue(":email", $email);
+        $sql-> bindValue(":senha", $senha);
+        $sql-> execute();
+
+        if($sql-> rowCount() > 0) {
+            $dado = $sql-> fetch();     // pegando o dado do usuário
+            $_SSESION['cLogin'] = $dado['id'];      // salvando o 'id' na seção
+
+            return true;
+        } else {
+            return false;
         }
     }
 }

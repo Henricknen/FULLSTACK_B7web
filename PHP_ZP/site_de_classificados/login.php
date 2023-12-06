@@ -8,7 +8,21 @@
     $u = new Usuarios();     // instançiando classe 'Usuario'
     if(isset($_POST['email']) && !empty($_POST['email'])) {
         $email = addslashes($_POST['email']);
-        $senha = $_POST['senha'];        
+        $senha = $_POST['senha'];
+
+        if($u-> login($email, $senha)) {        // ultilizando o model 'usuario' para fazer login
+            ?>
+
+                <script type = "text/javascript">window.location.href = "./";</script>      <!-- redireçionamento para página iniçial -->
+
+            <?php
+        } else {
+            ?>
+                <div class="alert alert-danger">
+                    Usuário e/ou Senha errados...
+                </div>
+            <?php
+        }
     }
     
     ?>
