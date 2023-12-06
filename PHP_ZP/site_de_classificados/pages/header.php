@@ -23,7 +23,7 @@
                     <li><a href = "anuncios.php">Meus Anúncios</a></li>     <!-- se usuário estiver logado aparecerá estes botões -->
                     <li><a href = "sair.php">Sair</a></li>
                 <?php else: ?>      <!-- se não estiver aparecerá esses botões -->
-                <li><a href = "cadastre.php">Cadastre-se</a></li>
+                <li><a href = "cadastre-se.php">Cadastre-se</a></li>
                 <li><a href = "login.php">Login</a></li>
                 <?php endif; ?>
             </ul>
