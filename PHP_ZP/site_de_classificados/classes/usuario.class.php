@@ -6,7 +6,7 @@ class Usuarios {
         global $pdo;
         $this-> email = $email;      // define a propriedade 'email' da classe com o valor passado como parâmetro
 
-        $sql = $pdo-> prepare("INSERT INTO usuarios (nome, email, senha, telefone) VALUES (:nome, :email, :senha, :telefone)");        // preparando a declaração SQL
+        $sql = $pdo-> prepare("INSERT INTO usuarios (nome, email, senha, telefone) VALUES (:nome, :email, :senha, :telefone)");        // 'adiçionando' usuário no bd
 
         if ($sql) {        // verifique se a preparação foi bem-sucedida
             
@@ -16,7 +16,7 @@ class Usuarios {
             $sql-> bindValue(":email", $email);
             $sql-> execute();
 
-            if ($sql-> rowCount() == 0) {
+            if ($sql-> rowCount() != 0) {
                 return true; // O usuário será cadastrado
             } else {
                 return false; // Usuário já cadastrado
