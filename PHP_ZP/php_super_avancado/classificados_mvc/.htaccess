@@ -1,0 +1,13 @@
+# Ativa o mecanismo de reescrita de URL do Apache
+RewriteEngine On
+
+# exclui 'arquivos' que poder ser acessados diretamente
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# exclui 'pastas' que poder ser acessados diretamente
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redireciona todas as solicitações para /classificados_mvc/index.php?url=<solicitação>
+# QSA (Query String Append) é utilizado para preservar as query strings existentes
+# L indica que esta é a última regra a ser processada se houver correspondência
+RewriteRule ^(.*) /classificados_mvc/index.php?url=$1 [QSA,L]
