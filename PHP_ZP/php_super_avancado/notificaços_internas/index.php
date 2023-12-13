@@ -22,5 +22,9 @@
 
 	<div class = "notificacoes">0</div>		<!-- verifica notificações -->
 
+	<hr/>
+
+	<button class = "addNotif">Criar notificação</button>
+
 </body>
 </html>
