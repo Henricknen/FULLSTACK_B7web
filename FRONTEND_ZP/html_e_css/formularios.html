@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <form method = "POST" action = "">      <!-- método 'post' os dados são enviados internamente não sendo possível o usuário ver 'action' é o endereço de envio -->
+        Usuário:<br>
+        <input type = "text" name = "usuario"><br><br>       <!-- tag 'input' necessita que o usuário digite algo 'type' espefica o tipo de campo que sera inserido -->
+
+        Senha:<br>
+        <input type = "password" name = "senha"><br><br>
+
+        <textarea name = "campo">       <!-- 'textarea' permite inseir mais de uma linha -->
+
+        </textarea><br><br>
+
+        <select name = "opcoes">
+            <option value = "1">Campo 1</option>        <!-- o que estiver espeçificado em 'value' é o que será enviado -->
+            <option value = "2">Campo 2</option>
+            <option value = "3">Campo 3</option>
+        </select><br><br>
+
+        <input type = "radio" name = "radio" value = "1">Opção 1<br>       <!-- 'radio' é campo de opções -->
+        <input type = "radio" name = "radio" value = "2">Opção 2<br>      
+        <input type = "radio" name = "radio" value = "3">Opção 3<br>
+
+        <input type="submit" value="Enviar">        <!-- botão enviar  -->
+    </form>
+</body>
+</html>
