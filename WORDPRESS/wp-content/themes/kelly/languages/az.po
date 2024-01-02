@@ -1,0 +1,243 @@
+# Translation of WordPress.com - Themes - Kelly in Azerbaijani
+# This file is distributed under the same license as the WordPress.com - Themes - Kelly package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-23 07:44:04+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: az\n"
+"Project-Id-Version: WordPress.com - Themes - Kelly\n"
+
+#: inc/wpcom-colors.php:52
+msgid "Header/Main Accent"
+msgstr "Başlıq/Əsas Vurğu"
+
+#: inc/wpcom-colors.php:16
+msgid "Footer"
+msgstr "Zirzəmi"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:51 content.php:60
+msgid "Tagged"
+msgstr "Etiketləndi"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/kelly/style.css
+msgid "A clean and simple responsive blogging theme with lots of room for your photos."
+msgstr "A clean and simple responsive blogging theme with lots of room for your photos."
+
+#: searchform.php:13
+msgctxt "submit button"
+msgid "Search"
+msgstr "Axtar"
+
+#: searchform.php:11
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Axtar &hellip;"
+
+#: searchform.php:10
+msgctxt "label"
+msgid "Search for:"
+msgstr "Axtarış:"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr " %s üçün Axtarışın Nəticələri:"
+
+#: no-results.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Axtardığınız səhifə tapılmadı. Bəlkə axtarış qutusu axtardığınızı tapmaqda sizə kömək edər."
+
+#: no-results.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Bağışlayın, axtarış kriteriyalarınıza uyğun heç bir şey tapılmadı. Bəzi fərqli açar kəlmələrdən istifadə edərək təkrar yoxlayın."
+
+#: no-results.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "İlk yazınızı dərc etməyə hazırsınızmı? <a href=\"%1$s\">Buradan başlayın</a>."
+
+#: no-results.php:13
+msgid "Nothing Found"
+msgstr "Tapılmadı"
+
+#: inc/template-tags.php:89
+msgid "All %s posts"
+msgstr "bütün %s  yazıları"
+
+#: inc/template-tags.php:48
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Yeni yazılar <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:44
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Əski yazılar"
+
+#: inc/template-tags.php:39
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:38
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:34
+msgid "Post navigation"
+msgstr "Yazı naviqasiyaları"
+
+#: inc/extras.php:55
+msgid "Page %s"
+msgstr "Səhifə %s"
+
+#: header.php:38
+msgid "Skip to content"
+msgstr "Mühtəviyyata keç"
+
+#: header.php:37
+msgid "Menu"
+msgstr "Menyu"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Open Sans, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:139
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:95
+msgid "Footer Sidebar 3"
+msgstr "Zirzəmi yan menyu çubuğu 3"
+
+#: functions.php:87
+msgid "Footer Sidebar 2"
+msgstr "Zirzəmi yan menyu çubuğu 2"
+
+#: functions.php:79
+msgid "Footer Sidebar 1"
+msgstr "Zirzəmi yan menyu çubuğu 1"
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr "Əsas menyu"
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr "Mövzu: %1$s tərəfindən %2$s."
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr "%s qürurla təqdim edər"
+
+#: content.php:64
+msgid "% Comments"
+msgstr "% Şərh"
+
+#: content.php:64
+msgid "1 Comment"
+msgstr "1 Şərh"
+
+#: content.php:64
+msgid "Leave a comment"
+msgstr "Bir şərh yazın"
+
+#: content.php:36
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Oxumağa davam et <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-single.php:45 content.php:54
+msgid "Posted in %1$s"
+msgstr "%1$s içində dərc edildi"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:41 content-single.php:51 content.php:50 content.php:60
+msgid ", "
+msgstr ","
+
+#: content-page.php:23 content-single.php:53 content.php:67
+msgid "Edit"
+msgstr "Redaktə et"
+
+#: content-page.php:18 content-single.php:32 content.php:39
+msgid "Pages:"
+msgstr "Səhifələr:"
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr "Şərh üçün bağlıdır."
+
+#: comments.php:38 comments.php:58
+msgid "Newer Comments &rarr;"
+msgstr "Yeni şərhlər &rarr;"
+
+#: comments.php:37 comments.php:57
+msgid "&larr; Older Comments"
+msgstr "&larr; Əski şərhlər"
+
+#: comments.php:36 comments.php:56
+msgid "Comment navigation"
+msgstr "Şərh naviqasiyası"
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "&ldquo;%2$s&rdquo; üzərinə bir şərh"
+msgstr[1] "&ldquo;%2$s&rdquo; üzərinə %1$s şərh"
+
+#: archive.php:57
+msgid "Archives"
+msgstr "Arxivlər"
+
+#: archive.php:54
+msgid "Galleries"
+msgstr "Qalereyalar"
+
+#: archive.php:51 inc/wpcom-colors.php:62
+msgid "Links"
+msgstr "Bağlantılar"
+
+#: archive.php:48
+msgid "Quotes"
+msgstr "Sitatlar"
+
+#: archive.php:45
+msgid "Videos"
+msgstr "Videolar"
+
+#: archive.php:42
+msgid "Images"
+msgstr "Təsvirlər"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Kənarlar"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Ay: %s"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Ay: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Gün: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Müəllif: %s"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Deyəsən burada heç bir şey tapılmadı. Yüngülcə bir axtarışa nə deyirsiniz?"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Bağışlayın! Bu səhifə tapılmır."

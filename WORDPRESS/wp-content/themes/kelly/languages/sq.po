@@ -1,0 +1,263 @@
+# Translation of WordPress.com - Themes - Kelly in Albanian
+# This file is distributed under the same license as the WordPress.com - Themes - Kelly package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-23 07:44:04+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: sq_AL\n"
+"Project-Id-Version: WordPress.com - Themes - Kelly\n"
+
+#: inc/wpcom-colors.php:52
+msgid "Header/Main Accent"
+msgstr "Theksimi për Krye/Bazë"
+
+#: inc/wpcom-colors.php:16
+msgid "Footer"
+msgstr "Fundfaqe"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:51 content.php:60
+msgid "Tagged"
+msgstr "U etiketua"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/kelly/style.css
+msgid "A clean and simple responsive blogging theme with lots of room for your photos."
+msgstr "Një temë blogjesh e thjeshtë dhe e qëruar, reaguese, me plot hapësirë për fotot tuaja."
+
+#: searchform.php:13
+msgctxt "submit button"
+msgid "Search"
+msgstr "Kërko"
+
+#: searchform.php:11
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Kërkim &hellip;"
+
+#: searchform.php:10
+msgctxt "label"
+msgid "Search for:"
+msgstr "Kërko për:"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Përfundime Kërkimi për: %s"
+
+#: no-results.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Duket se nuk gjejmë dot ç&rsquo;po kërkonit. Ndoshta mund t&#8217;ju ndihë kërkimi."
+
+#: no-results.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Na ndjeni, por nuk u përputh gjë me termat tuaj të kërkimit. Ju lutemi, riprovoni me ndoca fjalëkyçe të tjera."
+
+#: no-results.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Gati për botimin e postimit tuaj të parë? <a href=\"%1$s\">Fillojani këtu</a>."
+
+#: no-results.php:13
+msgid "Nothing Found"
+msgstr "Nuk u Gjet Gjë"
+
+#: inc/template-tags.php:102
+msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
+msgstr "<span class=\"posted-on\">Postuar në %1$s</span><span class=\"byline\"> nga %2$s</span>"
+
+#: inc/template-tags.php:89
+msgid "All %s posts"
+msgstr "Krejt postimet %s"
+
+#: inc/template-tags.php:86
+msgid "<span class=\"entry-format\">%1$s</span> <span class=\"posted-on\">posted on %2$s</span><span class=\"byline\"> by %3$s</span>"
+msgstr "<span class=\"entry-format\">%1$s</span> <span class=\"posted-on\">postuar në %2$s</span><span class=\"byline\"> nga %3$s</span>"
+
+#: inc/template-tags.php:79
+msgid "<span class=\"posted-on\">Featured</span><span class=\"byline\"> by %1$s</span>"
+msgstr "<span class=\"posted-on\">E zgjedhur</span><span class=\"byline\"> nga %1$s</span>"
+
+#: inc/template-tags.php:48
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Postime më të reja <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:44
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Postime më të vjetra"
+
+#: inc/template-tags.php:39
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:38
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:34
+msgid "Post navigation"
+msgstr "Lëvizje te postimet"
+
+#: inc/extras.php:55
+msgid "Page %s"
+msgstr "Faqe %s"
+
+#: header.php:38
+msgid "Skip to content"
+msgstr "Hidhu te lënda"
+
+#: header.php:37
+msgid "Menu"
+msgstr "Menu"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Leckerli One, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:145
+msgctxt "Leckerli One font: on or off"
+msgid "on"
+msgstr "on"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Open Sans, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:139
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "më"
+
+#: functions.php:95
+msgid "Footer Sidebar 3"
+msgstr "Anështylla 3 Fundfaqeje"
+
+#: functions.php:87
+msgid "Footer Sidebar 2"
+msgstr "Anështylla 2 Fundfaqeje"
+
+#: functions.php:79
+msgid "Footer Sidebar 1"
+msgstr "Anështylla 1 Fundfaqeje"
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr "Menuja Parësore"
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr "Temë: %1$s nga %2$s."
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr "Bazohet me krenari në %s"
+
+#: content.php:64
+msgid "% Comments"
+msgstr "% Komente"
+
+#: content.php:64
+msgid "1 Comment"
+msgstr "1 Koment"
+
+#: content.php:64
+msgid "Leave a comment"
+msgstr "Lini një koment"
+
+#: content.php:36
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Vazhdoni leximin <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-single.php:45 content.php:54
+msgid "Posted in %1$s"
+msgstr "Postuar te %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:41 content-single.php:51 content.php:50 content.php:60
+msgid ", "
+msgstr ", "
+
+#: content-page.php:23 content-single.php:53 content.php:67
+msgid "Edit"
+msgstr "Përpunim"
+
+#: content-page.php:18 content-single.php:32 content.php:39
+msgid "Pages:"
+msgstr "Faqe:"
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr "Komentet janë të mbyllura."
+
+#: comments.php:38 comments.php:58
+msgid "Newer Comments &rarr;"
+msgstr "Komente Më të Reja &rarr;"
+
+#: comments.php:37 comments.php:57
+msgid "&larr; Older Comments"
+msgstr "&larr; Komentet Më të Vjetra"
+
+#: comments.php:36 comments.php:56
+msgid "Comment navigation"
+msgstr "Lëvizje te komentet"
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Një mendim mbi &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s mendime mbi &ldquo;%2$s&rdquo;"
+
+#: archive.php:57
+msgid "Archives"
+msgstr "Arkiva"
+
+#: archive.php:54
+msgid "Galleries"
+msgstr "Galeri"
+
+#: archive.php:51 inc/wpcom-colors.php:62
+msgid "Links"
+msgstr "Lidhje"
+
+#: archive.php:48
+msgid "Quotes"
+msgstr "Citime"
+
+#: archive.php:45
+msgid "Videos"
+msgstr "Video"
+
+#: archive.php:42
+msgid "Images"
+msgstr "Figura"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Anësore"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Vit: %s"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Muaj: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Ditë: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Duket se nuk u gjet gjë në këtë vend. Ndoshta duhet provuar një kërkim?"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Hmm! Ajo faqe nuk gjendet dot."

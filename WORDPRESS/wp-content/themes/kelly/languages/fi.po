@@ -1,0 +1,218 @@
+# Translation of WordPress.com - Themes - Kelly in Finnish
+# This file is distributed under the same license as the WordPress.com - Themes - Kelly package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-02-08 04:35:59+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.3.0-rc.1\n"
+"Language: fi\n"
+"Project-Id-Version: WordPress.com - Themes - Kelly\n"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:51 content.php:60
+msgid "Tagged"
+msgstr "Avainsanat:"
+
+#: searchform.php:13
+msgctxt "submit button"
+msgid "Search"
+msgstr "Hae"
+
+#: searchform.php:11
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Haku &hellip;"
+
+#: searchform.php:10
+msgctxt "label"
+msgid "Search for:"
+msgstr "Haku:"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Hakutulokset kohteelle: %s"
+
+#: no-results.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
+
+#: no-results.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Pahoittelut mutta mitään ei löytynyt hakuehdoillasi. Kokeile uudelleen joillakin toisilla hakusanoilla."
+
+#: no-results.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Oletko valmis julkaisemaan ensimmäisen kirjoituksesi? <a href=\"%1$s\">Aloita tästä</a>."
+
+#: no-results.php:13
+msgid "Nothing Found"
+msgstr "Mitään ei löytynyt"
+
+#: inc/template-tags.php:102
+msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
+msgstr "<span class=\"posted-on\">Julkaistu %1$s</span><span class=\"byline\"> by %2$s</span>"
+
+#: inc/template-tags.php:48
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Uudemmat artikkelit <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:44
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Vanhemmat artikkelit"
+
+#: inc/template-tags.php:39
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:38
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:34
+msgid "Post navigation"
+msgstr "Artikkelien selaus"
+
+#: inc/extras.php:55
+msgid "Page %s"
+msgstr "Sivu %s"
+
+#: header.php:38
+msgid "Skip to content"
+msgstr "Siirry sisältöön"
+
+#: header.php:37
+msgid "Menu"
+msgstr "Valikko"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Open Sans, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:139
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr "Ensisijainen valikko"
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr "Teema: %1$s tekijä %2$s."
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr "Voimanlähteenä %s"
+
+#: content.php:64
+msgid "% Comments"
+msgstr "% kommenttia"
+
+#: content.php:64
+msgid "1 Comment"
+msgstr "1 kommentti"
+
+#: content.php:64
+msgid "Leave a comment"
+msgstr "Jätä kommentti"
+
+#: content.php:36
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lue loppuun <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-single.php:45 content.php:54
+msgid "Posted in %1$s"
+msgstr "Kategoriassa %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:41 content-single.php:51 content.php:50 content.php:60
+msgid ", "
+msgstr ", "
+
+#: content-page.php:23 content-single.php:53 content.php:67
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: content-page.php:18 content-single.php:32 content.php:39
+msgid "Pages:"
+msgstr "Sivut:"
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr "Kommentointi on suljettu."
+
+#: comments.php:38 comments.php:58
+msgid "Newer Comments &rarr;"
+msgstr "Uudemmat kommentit &rarr;"
+
+#: comments.php:37 comments.php:57
+msgid "&larr; Older Comments"
+msgstr "&larr; Vanhemmat kommentit"
+
+#: comments.php:36 comments.php:56
+msgid "Comment navigation"
+msgstr "Kommenttien selaus"
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Yksi kommentti artikkeliin &rdquo;%2$s&rdquo;"
+msgstr[1] "%1$s kommenttia artikkeliin &rdquo;%2$s&rdquo;"
+
+#: archive.php:57
+msgid "Archives"
+msgstr "Arkistot"
+
+#: archive.php:54
+msgid "Galleries"
+msgstr "Galleriat"
+
+#: archive.php:51
+msgid "Links"
+msgstr "Linkit"
+
+#: archive.php:48
+msgid "Quotes"
+msgstr "Lainaukset"
+
+#: archive.php:45
+msgid "Videos"
+msgstr "Videot"
+
+#: archive.php:42
+msgid "Images"
+msgstr "Kuvat"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Sivuhuomautukset"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Vuosi: %s"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Kuukausi: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Päivä: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Kirjoittaja: %s"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Näyttää siltä että täällä ei ole mitään. Kokeilepa hakua?"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Tätä sivua ei löydy."

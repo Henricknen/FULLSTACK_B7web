@@ -1,0 +1,263 @@
+# Translation of WordPress.com - Themes - Kelly in Portuguese (Brazil)
+# This file is distributed under the same license as the WordPress.com - Themes - Kelly package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-23 07:44:04+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: pt_BR\n"
+"Project-Id-Version: WordPress.com - Themes - Kelly\n"
+
+#: inc/wpcom-colors.php:52
+msgid "Header/Main Accent"
+msgstr "Cabeçalho/chamada principal"
+
+#: inc/wpcom-colors.php:16
+msgid "Footer"
+msgstr "Rodapé"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:51 content.php:60
+msgid "Tagged"
+msgstr "Com a tag"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/kelly/style.css
+msgid "A clean and simple responsive blogging theme with lots of room for your photos."
+msgstr "Um tema de blog simples e responsivo com bastante espaço para suas fotos."
+
+#: searchform.php:13
+msgctxt "submit button"
+msgid "Search"
+msgstr "Pesquisar"
+
+#: searchform.php:11
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Pesquisar &hellip;"
+
+#: searchform.php:10
+msgctxt "label"
+msgid "Search for:"
+msgstr "Pesquisar por:"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Resultados da pesquisa por: %s"
+
+#: no-results.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Parece que não podemos encontrar o que você está procurando. Talvez pesquisar pode ajudar."
+
+#: no-results.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Nada foi encontrado com os termos da sua pesquisa. Tente novamente com algumas palavras-chaves diferentes."
+
+#: no-results.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Pronto para publicar seu primeiro post? <a href=\"%1$s\">Comece aqui</a>."
+
+#: no-results.php:13
+msgid "Nothing Found"
+msgstr "Nada Encontrado"
+
+#: inc/template-tags.php:102
+msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
+msgstr "<span class=\"posted-on\">Publicado em %1$s</span><span class=\"byline\"> por %2$s</span>"
+
+#: inc/template-tags.php:89
+msgid "All %s posts"
+msgstr "Todos o conteúdo de tipo %s"
+
+#: inc/template-tags.php:86
+msgid "<span class=\"entry-format\">%1$s</span> <span class=\"posted-on\">posted on %2$s</span><span class=\"byline\"> by %3$s</span>"
+msgstr "<span class=\"entry-format\">%1$s</span> <span class=\"posted-on\">publicado em %2$s</span><span class=\"byline\"> por %3$s</span>"
+
+#: inc/template-tags.php:79
+msgid "<span class=\"posted-on\">Featured</span><span class=\"byline\"> by %1$s</span>"
+msgstr "<span class=\"posted-on\">Em destaque</span><span class=\"byline\"> por %1$s</span>"
+
+#: inc/template-tags.php:48
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Posts Recentes <span class=\"meta-nav\"> → </span>"
+
+#: inc/template-tags.php:44
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\"> ← </span> Posts Anteriores"
+
+#: inc/template-tags.php:39
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:38
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:34
+msgid "Post navigation"
+msgstr "Navegação de Posts"
+
+#: inc/extras.php:55
+msgid "Page %s"
+msgstr "Página %s"
+
+#: header.php:38
+msgid "Skip to content"
+msgstr "Pular para o conteúdo"
+
+#: header.php:37
+msgid "Menu"
+msgstr "Menu"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Leckerli One, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:145
+msgctxt "Leckerli One font: on or off"
+msgid "on"
+msgstr "on"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Open Sans, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:139
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "em"
+
+#: functions.php:95
+msgid "Footer Sidebar 3"
+msgstr "Barra lateral do rodapé 3"
+
+#: functions.php:87
+msgid "Footer Sidebar 2"
+msgstr "Barra lateral do rodapé 2"
+
+#: functions.php:79
+msgid "Footer Sidebar 1"
+msgstr "Bara Lateral de Rodapé 1"
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr "Menu Principal"
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s por %2$s. "
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr "Orgulhosamente mantido com %s"
+
+#: content.php:64
+msgid "% Comments"
+msgstr "% Comentários"
+
+#: content.php:64
+msgid "1 Comment"
+msgstr "1 comentário"
+
+#: content.php:64
+msgid "Leave a comment"
+msgstr "Deixe um comentário"
+
+#: content.php:36
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continuar lendo <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-single.php:45 content.php:54
+msgid "Posted in %1$s"
+msgstr "Postado em %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:41 content-single.php:51 content.php:50 content.php:60
+msgid ", "
+msgstr ", "
+
+#: content-page.php:23 content-single.php:53 content.php:67
+msgid "Edit"
+msgstr "Editar"
+
+#: content-page.php:18 content-single.php:32 content.php:39
+msgid "Pages:"
+msgstr "Páginas"
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr "Os comentários estão desativados."
+
+#: comments.php:38 comments.php:58
+msgid "Newer Comments &rarr;"
+msgstr "Comentários mais recentes &rarr;"
+
+#: comments.php:37 comments.php:57
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentários mais antigos"
+
+#: comments.php:36 comments.php:56
+msgid "Comment navigation"
+msgstr "Navegação de Comentários"
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Um comentário sobre &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s comentários sobre &ldquo;%2$s&rdquo;"
+
+#: archive.php:57
+msgid "Archives"
+msgstr "Arquivos"
+
+#: archive.php:54
+msgid "Galleries"
+msgstr "Galerias"
+
+#: archive.php:51 inc/wpcom-colors.php:62
+msgid "Links"
+msgstr "Links"
+
+#: archive.php:48
+msgid "Quotes"
+msgstr "Citações"
+
+#: archive.php:45
+msgid "Videos"
+msgstr "Vídeos"
+
+#: archive.php:42
+msgid "Images"
+msgstr "Imagens"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Notas"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Ano: %s"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Mês: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Dia: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Parece que não foi encontrado nada neste local. Que tal tentar uma busca?"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Opa! Esta página não pode ser encontrada."

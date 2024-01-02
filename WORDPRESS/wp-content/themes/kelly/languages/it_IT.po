@@ -1,0 +1,238 @@
+# Translation of WordPress.com - Themes - Kelly in Italian
+# This file is distributed under the same license as the WordPress.com - Themes - Kelly package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-23 07:44:04+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: it\n"
+"Project-Id-Version: WordPress.com - Themes - Kelly\n"
+
+#: inc/wpcom-colors.php:52
+msgid "Header/Main Accent"
+msgstr "Intestazione/Accent principale"
+
+#: inc/wpcom-colors.php:16
+msgid "Footer"
+msgstr "Pié di pagina"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:51 content.php:60
+msgid "Tagged"
+msgstr "Contrassegnato da tag"
+
+#: searchform.php:13
+msgctxt "submit button"
+msgid "Search"
+msgstr "Cerca"
+
+#: searchform.php:11
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Cerca &hellip;"
+
+#: searchform.php:10
+msgctxt "label"
+msgid "Search for:"
+msgstr "Ricerca per:"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Risultati della ricerca per: %s"
+
+#: no-results.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Non riusciamo a trovare quello che cerchi. Forse eseguire una ricerca potrebbe essere di aiuto."
+
+#: no-results.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Spiacente, nulla corrisponde i termini della tua ricerca. Riprova con parole chiave diverse."
+
+#: no-results.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Sei pronto a pubblicare il tuo primo articolo? <a href=\"%1$s\">Comincia da qui</a>."
+
+#: no-results.php:13
+msgid "Nothing Found"
+msgstr "Nessun risultato"
+
+#: inc/template-tags.php:89
+msgid "All %s posts"
+msgstr "Tutti %s i posti"
+
+#: inc/template-tags.php:48
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articoli più recenti <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:44
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articoli più vecchi"
+
+#: inc/template-tags.php:39
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:38
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:34
+msgid "Post navigation"
+msgstr "Navigazione articolo"
+
+#: inc/extras.php:55
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: header.php:38
+msgid "Skip to content"
+msgstr "Vai al contenuto"
+
+#: header.php:37
+msgid "Menu"
+msgstr "Menu"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Open Sans, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:139
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:95
+msgid "Footer Sidebar 3"
+msgstr "Barra laterale 3 a piè di pagina"
+
+#: functions.php:87
+msgid "Footer Sidebar 2"
+msgstr "Barra laterale 2 a piè di pagina"
+
+#: functions.php:79
+msgid "Footer Sidebar 1"
+msgstr "Barra laterale 1 a piè di pagina"
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr "Menu principale"
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s di %2$s."
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr "Funziona grazie a %s"
+
+#: content.php:64
+msgid "% Comments"
+msgstr "% commenti"
+
+#: content.php:64
+msgid "1 Comment"
+msgstr "1 Commento"
+
+#: content.php:64
+msgid "Leave a comment"
+msgstr "Lascia un commento"
+
+#: content.php:36
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continua a leggere <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-single.php:45 content.php:54
+msgid "Posted in %1$s"
+msgstr "Inviato su %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:41 content-single.php:51 content.php:50 content.php:60
+msgid ", "
+msgstr ", "
+
+#: content-page.php:23 content-single.php:53 content.php:67
+msgid "Edit"
+msgstr "Modifica"
+
+#: content-page.php:18 content-single.php:32 content.php:39
+msgid "Pages:"
+msgstr "Pagine: "
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr "I commenti sono chiusi."
+
+#: comments.php:38 comments.php:58
+msgid "Newer Comments &rarr;"
+msgstr "Commenti più recenti &rarr;"
+
+#: comments.php:37 comments.php:57
+msgid "&larr; Older Comments"
+msgstr "&larr; Commenti meno recenti"
+
+#: comments.php:36 comments.php:56
+msgid "Comment navigation"
+msgstr "Navigazione commenti"
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un pensiero su &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s pensieri su &ldquo;%2$s&rdquo;"
+
+#: archive.php:57
+msgid "Archives"
+msgstr "Archivi"
+
+#: archive.php:54
+msgid "Galleries"
+msgstr "Gallerie"
+
+#: archive.php:51 inc/wpcom-colors.php:62
+msgid "Links"
+msgstr "Link"
+
+#: archive.php:48
+msgid "Quotes"
+msgstr "Citazioni"
+
+#: archive.php:45
+msgid "Videos"
+msgstr "Video"
+
+#: archive.php:42
+msgid "Images"
+msgstr "Immagini"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Incisi"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "Anno: %s"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Mese: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Giorno: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Autore: %s"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Sembra che non ci sia nulla. Provare una ricerca?"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops! Impossibile trovare la pagina."

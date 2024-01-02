@@ -1,0 +1,262 @@
+# Translation of WordPress.com - Themes - Kelly in Persian
+# This file is distributed under the same license as the WordPress.com - Themes - Kelly package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-23 07:44:04+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: fa\n"
+"Project-Id-Version: WordPress.com - Themes - Kelly\n"
+
+#: inc/wpcom-colors.php:52
+msgid "Header/Main Accent"
+msgstr "سرایند/لهجهٔ اصلی"
+
+#: inc/wpcom-colors.php:16
+msgid "Footer"
+msgstr "پسایند"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:51 content.php:60
+msgid "Tagged"
+msgstr "برچسب‌خورده با"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/kelly/style.css
+msgid "A clean and simple responsive blogging theme with lots of room for your photos."
+msgstr "پوسته‌ای تمیز، ساده و پاسخگو برای وب‌نویسی به همراه فضای زیادی برای عکس‌ها."
+
+#: searchform.php:13
+msgctxt "submit button"
+msgid "Search"
+msgstr "جستجو"
+
+#: searchform.php:11
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "جستجو &hellip;"
+
+#: searchform.php:10
+msgctxt "label"
+msgid "Search for:"
+msgstr "جستجو برای:"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "نتایج جست‌وجو برای: %s"
+
+#: no-results.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "به نظر می‌آید ما نمی‌توانیم آنچه به دنبالش هستید بیابیم. احتمالا جست‌وجو می‌تواند کمک کند."
+
+#: no-results.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "متأسفیم، موردی مطابق با جستجوی شما پیدا نشد. لطفا برای جستجو از کلیدواژه‌های دیگری استفاده کنید."
+
+#: no-results.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "آمادهٔ انتشار نخستین نوشتهٔ خود هستید؟ <a href=\"%1$s\">از اینجا بیآغازید</a>."
+
+#: no-results.php:13
+msgid "Nothing Found"
+msgstr "چیزی پیدا نشد"
+
+#: inc/template-tags.php:102
+msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
+msgstr "<span class=\"posted-on\">منتشرشده در %1$s</span><span class=\"byline\"> بدست %2$s</span>"
+
+#: inc/template-tags.php:89
+msgid "All %s posts"
+msgstr "همهٔ %s نوشته"
+
+#: inc/template-tags.php:86
+msgid "<span class=\"entry-format\">%1$s</span> <span class=\"posted-on\">posted on %2$s</span><span class=\"byline\"> by %3$s</span>"
+msgstr "<span class=\"entry-format\">%1$s</span> <span class=\"posted-on\">فرستاده‌شده در %2$s</span><span class=\"byline\"> بدست %3$s</span>"
+
+#: inc/template-tags.php:79
+msgid "<span class=\"posted-on\">Featured</span><span class=\"byline\"> by %1$s</span>"
+msgstr "<span class=\"posted-on\">به‌نمایش‌درآمده</span><span class=\"byline\"> بدست %1$s</span>"
+
+#: inc/template-tags.php:48
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "نوشته‌های تازه‌تر <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:44
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> نوشته‌های پیشین"
+
+#: inc/template-tags.php:39
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:38
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:34
+msgid "Post navigation"
+msgstr "ناوبری نوشته"
+
+#: inc/extras.php:55
+msgid "Page %s"
+msgstr "صفحهٔ %s"
+
+#: header.php:38
+msgid "Skip to content"
+msgstr "پرش به محتوا"
+
+#: header.php:37
+msgid "Menu"
+msgstr "گزینگان"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Leckerli One, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:145
+msgctxt "Leckerli One font: on or off"
+msgid "on"
+msgstr "روشن"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Open Sans, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:139
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "روی"
+
+#: functions.php:95
+msgid "Footer Sidebar 3"
+msgstr "نوار کناری پسایند ۳"
+
+#: functions.php:87
+msgid "Footer Sidebar 2"
+msgstr "نوار کناری پسایند ۲"
+
+#: functions.php:79
+msgid "Footer Sidebar 1"
+msgstr "نوار کناری پسایند ۱"
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr "گزینگان اصلی"
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr "پوسته: %1$s کاری از %2$s."
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr "با افتخار، نیرو گرفته از %s"
+
+#: content.php:64
+msgid "% Comments"
+msgstr "% دیدگاه"
+
+#: content.php:64
+msgid "1 Comment"
+msgstr "۱ دیدگاه"
+
+#: content.php:64
+msgid "Leave a comment"
+msgstr "بیان دیدگاه"
+
+#: content.php:36
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "به خواندن ادامه دهید <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-single.php:45 content.php:54
+msgid "Posted in %1$s"
+msgstr "فرستاده‌شده در %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:41 content-single.php:51 content.php:50 content.php:60
+msgid ", "
+msgstr "، "
+
+#: content-page.php:23 content-single.php:53 content.php:67
+msgid "Edit"
+msgstr "ویرایش"
+
+#: content-page.php:18 content-single.php:32 content.php:39
+msgid "Pages:"
+msgstr "صفحه‌ها:"
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr "دیدگاه‌ها بسته شده‌اند."
+
+#: comments.php:38 comments.php:58
+msgid "Newer Comments &rarr;"
+msgstr "دیدگاه‌های تازه‌تر &rarr;"
+
+#: comments.php:37 comments.php:57
+msgid "&larr; Older Comments"
+msgstr "&larr; دیدگاه‌های پیشین"
+
+#: comments.php:36 comments.php:56
+msgid "Comment navigation"
+msgstr "ناوبری دیدگاه"
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s نظر برای &ldquo;%2$s&rdquo;"
+
+#: archive.php:57
+msgid "Archives"
+msgstr "بایگانی"
+
+#: archive.php:54
+msgid "Galleries"
+msgstr "گالری‌ها"
+
+#: archive.php:51 inc/wpcom-colors.php:62
+msgid "Links"
+msgstr "پیوندها"
+
+#: archive.php:48
+msgid "Quotes"
+msgstr "گفتاورد"
+
+#: archive.php:45
+msgid "Videos"
+msgstr "ویدئوها"
+
+#: archive.php:42
+msgid "Images"
+msgstr "تصویرها"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "کلمات قصار"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "سال: %s"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "ماه: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "روز: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "نویسنده: %s"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "به نظر می‌رسد چیزی اینجا نیست. مایل هستید جستجو کنید؟"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "اوه! امکان یافتن صفحه نیست."

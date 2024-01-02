@@ -1,0 +1,264 @@
+# Translation of WordPress.com - Themes - Kelly in Romanian
+# This file is distributed under the same license as the WordPress.com - Themes - Kelly package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-23 07:44:04+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ro\n"
+"Project-Id-Version: WordPress.com - Themes - Kelly\n"
+
+#: inc/wpcom-colors.php:52
+msgid "Header/Main Accent"
+msgstr "Antet/accent principal"
+
+#: inc/wpcom-colors.php:16
+msgid "Footer"
+msgstr "Subsol"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:51 content.php:60
+msgid "Tagged"
+msgstr "Etichetat"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/kelly/style.css
+msgid "A clean and simple responsive blogging theme with lots of room for your photos."
+msgstr "O temă simplă și curată, cu mult spațiu pentru fotografiile dumneavoastră."
+
+#: searchform.php:13
+msgctxt "submit button"
+msgid "Search"
+msgstr "Caută"
+
+#: searchform.php:11
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Caută &hellip;"
+
+#: searchform.php:10
+msgctxt "label"
+msgid "Search for:"
+msgstr "Caută după:"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Rezultatele căutării după: %s"
+
+#: no-results.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Se pare că nu putem găsi ceea ce căutați. Probabil că funcția de căutare v-ar putea ajuta."
+
+#: no-results.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Ne pare rău, dar nimic nu se potrivește cu termenii căutați. Vă rugăm să încercați din nou cu alte cuvinte cheie."
+
+#: no-results.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Esti pregătit pentru primul tău articol? <a href=\"%1$s\">Incepe aici</a>."
+
+#: no-results.php:13
+msgid "Nothing Found"
+msgstr "Nu a fost găsit nimic"
+
+#: inc/template-tags.php:102
+msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
+msgstr "<span class=\"posted-on\">Publicat la %1$s</span><span class=\"byline\"> de %2$s</span>"
+
+#: inc/template-tags.php:89
+msgid "All %s posts"
+msgstr "Toate %s articolele"
+
+#: inc/template-tags.php:86
+msgid "<span class=\"entry-format\">%1$s</span> <span class=\"posted-on\">posted on %2$s</span><span class=\"byline\"> by %3$s</span>"
+msgstr "<span class=\"entry-format\">%1$s</span> <span class=\"posted-on\">publicat la %2$s</span><span class=\"byline\"> de %3$s</span>"
+
+#: inc/template-tags.php:79
+msgid "<span class=\"posted-on\">Featured</span><span class=\"byline\"> by %1$s</span>"
+msgstr "<span class=\"posted-on\">Recomandate</span><span class=\"byline\"> de %1$s</span>"
+
+#: inc/template-tags.php:48
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articole mai noi <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:44
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> articole mai vechi"
+
+#: inc/template-tags.php:39
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:38
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:34
+msgid "Post navigation"
+msgstr "Navigare articole"
+
+#: inc/extras.php:55
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: header.php:38
+msgid "Skip to content"
+msgstr "Sări la conţinut"
+
+#: header.php:37
+msgid "Menu"
+msgstr "Meniu"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Leckerli One, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:145
+msgctxt "Leckerli One font: on or off"
+msgid "on"
+msgstr "on"
+
+#. Translators: If there are characters in your language that are not
+#. * supported by Open Sans, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:139
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:95
+msgid "Footer Sidebar 3"
+msgstr "Coloana 3 din subsol"
+
+#: functions.php:87
+msgid "Footer Sidebar 2"
+msgstr "Coloana 2 din subsol"
+
+#: functions.php:79
+msgid "Footer Sidebar 1"
+msgstr "Coloana 1 din subsol"
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr "Meniu principal"
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s de %2$s."
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr "Rulează cu mândrie pe %s"
+
+#: content.php:64
+msgid "% Comments"
+msgstr "% comentarii"
+
+#: content.php:64
+msgid "1 Comment"
+msgstr "1 comentariu"
+
+#: content.php:64
+msgid "Leave a comment"
+msgstr "Scrie un comentariu"
+
+#: content.php:36
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continuă citirea <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-single.php:45 content.php:54
+msgid "Posted in %1$s"
+msgstr "Publicat în %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:41 content-single.php:51 content.php:50 content.php:60
+msgid ", "
+msgstr ", "
+
+#: content-page.php:23 content-single.php:53 content.php:67
+msgid "Edit"
+msgstr "Editare"
+
+#: content-page.php:18 content-single.php:32 content.php:39
+msgid "Pages:"
+msgstr "Pagini:"
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr "Comentariile nu sunt permise."
+
+#: comments.php:38 comments.php:58
+msgid "Newer Comments &rarr;"
+msgstr "Comentarii mai noi &rarr;"
+
+#: comments.php:37 comments.php:57
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentarii mai vechi"
+
+#: comments.php:36 comments.php:56
+msgid "Comment navigation"
+msgstr "Navigare comentarii"
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un gând despre &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s gânduri despre &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s de gânduri despre &ldquo;%2$s&rdquo;"
+
+#: archive.php:57
+msgid "Archives"
+msgstr "Arhive"
+
+#: archive.php:54
+msgid "Galleries"
+msgstr "Galerii"
+
+#: archive.php:51 inc/wpcom-colors.php:62
+msgid "Links"
+msgstr "Legături"
+
+#: archive.php:48
+msgid "Quotes"
+msgstr "Citate"
+
+#: archive.php:45
+msgid "Videos"
+msgstr "Fişiere video"
+
+#: archive.php:42
+msgid "Images"
+msgstr "Fotografii"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "Note"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "An: %s"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "Lună: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "Zi: %s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Se pare că nu a fost găsit nimic aici. Poate încerci o căutare?"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Hopa! Pagina nu a fost găsită."
