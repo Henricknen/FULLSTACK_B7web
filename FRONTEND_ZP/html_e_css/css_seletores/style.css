@@ -1,0 +1,16 @@
+body {      /* seletor */
+    background-color: black;
+    color: white;
+}
+
+img {
+    width: 200px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: right;
+}
