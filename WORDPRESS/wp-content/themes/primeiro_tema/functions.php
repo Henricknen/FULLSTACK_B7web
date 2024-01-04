@@ -1,6 +1,9 @@
 <?php
-// include
-require get_template_directory(). '/include/lp_footer_functions.php';       // função pega a pasta do tema, 'include' com o seu arquivo
+function lp_theme_styles() {
+    wp_enqueue_style('theme_css', get_template_directory_uri(). '/assets/css/theme.css');       // função que adiçiona 'css'
 
-// hooks
-add_action('shutdown', 'lp_fim');       // função do wordpress evento 'shutdown' é executado por último por sua vez executara a função 'lp_fim'
+    wp_enqueue_script('theme_js', get_template_directory_uri(). '/assets/js/script.js', array('jquery'), '', true);        // função carrega os 'javascripts' parâmetro 'true' adiçiona a função no final do código
+}
+
+// hook
+add_action('wp_enqueue_scripts', 'lp_theme_styles');       // evento 'wp_enqueue_scripts' permite incluir 'css' e 'javascripts' no cabeçalho ou rodapé de uma página
