@@ -1,0 +1,33 @@
+body {      /* seletor */
+    background-color: blue;
+    color: black;
+}
+
+img {
+    width: 200px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: right;
+}
+
+.classe_1 {     /* uma classe é o '.' seguido do nome espeçificado no atributo 'class' */
+    width: 500px;
+}
+
+#profissional {     /* 'id' é a mesma sintaxe do comentário anterior mas ao invés do '.' se ultiliza o '#', sendo recomendado se ultilzar apenas uma tag do código */
+    font-size: 20px;
+    color: white;
+}
+
+.tecnico_class {
+    background-color: black;
+}
+
+#tecnico_id {
+    color: yellow;
+}
