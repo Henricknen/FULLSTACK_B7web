@@ -1,3 +1,18 @@
 body {
-    background-color: #00FF00;
+    background-color: #00FF04;
+}
+
+.main_menu {
+    background-color: red;    
+}
+
+.main_menu ul,
+.main_menu li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main_menu li {
+    display: inline;
 }
