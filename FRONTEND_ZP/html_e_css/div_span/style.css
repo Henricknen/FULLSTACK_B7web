@@ -1,0 +1,27 @@
+body {
+    margin: 0;      /* tira a margem */
+}
+
+.div {      /* seleçionando 'class = div' */
+    width: 100%;
+    height: 100px;
+    background-color: blue;
+}
+
+.menu {
+    width: 200px;
+    height: 300px;
+    background-color: red;
+    float: left;        /* está propriedade deixa a 'div' flutuando na esquerda */
+}
+
+.conteudo {
+    width: 500px;
+    height: 300px;
+    background-color: chartreuse;
+    float: right;
+}
+
+span {      /* seleçionando a tag span */
+    background-color: yellow;
+}
