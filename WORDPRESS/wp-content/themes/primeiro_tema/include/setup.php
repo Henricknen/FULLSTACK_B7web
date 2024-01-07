@@ -10,3 +10,17 @@ function lp_after_setup() {
 
     register_nav_menu('primary', __('Primary Menu', 'primeiro_tema'));      // registro da localização do menu de navegação
 }
+
+function lp_widgets() {
+    register_sidebar(array(     // registrando o 'sidebar'
+        'name'=> __('Primeiro_Sidebar', 'primeiro_tema'),       // propriedades
+        'id'=> 'lp_sidebar',
+        'description'=> __('Sidebar para o tema', 'primeiro_tema'),
+
+        'before_title'=> '<h4 class = "widget_title">',        // tag que ficará antes do título do width
+        'after_title'=> '</h4>',
+
+        'before_widget'=> '<div id = "%1$s" class = "widget %2$s">',
+        'after_widget'=> '</div>'
+    ));
+}

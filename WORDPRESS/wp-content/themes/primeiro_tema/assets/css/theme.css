@@ -16,3 +16,17 @@ body {
 .main_menu li {
     display: inline;
 }
+
+.container {
+    width: 70%;
+    float: left;
+}
+
+sidebar {
+    width: 30%;
+    float: left;
+}
+
+.widget_title {
+    color: blue;
+}
