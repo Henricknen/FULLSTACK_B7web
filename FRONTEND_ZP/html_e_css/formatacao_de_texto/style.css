@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+}
+
+.texto {
+    width: 500px;       /* largura */
+    height: 200px;          /* altura */
+    background-color: rgb(52, 158, 158);
+    color: red;
+    font-size: 40px;     /* propriedada que altera o 'tamanho' da letra */
+    font-family: Helvetica, Verdana, Arial, Times, sans-serif;      /* altera o 'tipo' de fonte */
+    font-weight: normal;      /* propriedade especifica o 'peso' da fonte */
+    text-align: center;     /* alinhando o texto ao centro */
+    text-transform: lowercase;      /* deixa o texto em 'caixa baixa' */
+    text-decoration: underline;         /* propriedade deixa o texto 'sublinhado' */
+}
