@@ -6,7 +6,7 @@
         ...
     </div>
 
-    <?php get_sidebar(); ?>
+    <?php get_sidebar(); ?>     <!-- pucha o arquivo 'sidebar' -->
 
     <div style = "clear:both"></div>        <!-- está div limpa todos os 'float' e volta o site ao normal -->
 

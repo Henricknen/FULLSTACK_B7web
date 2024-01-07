@@ -27,6 +27,7 @@ sidebar {
     float: left;
 }
 
-.widget_title {
+.wp-block-latest-posts__post-title {
     color: blue;
 }
+

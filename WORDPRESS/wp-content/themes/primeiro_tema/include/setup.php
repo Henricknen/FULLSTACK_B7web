@@ -15,9 +15,10 @@ function lp_widgets() {
     register_sidebar(array(     // registrando o 'sidebar'
         'name'=> __('Primeiro_Sidebar', 'primeiro_tema'),       // propriedades
         'id'=> 'lp_sidebar',
-        'description'=> __('Sidebar para o tema', 'primeiro_tema'),
+        'description'=> __('Sidebar_para_o_tema', 'primeiro_tema'),
 
-        'before_title'=> '<h4 class = "widget_title">',        // tag que ficará antes do título do width
+        // opções adiçionais
+        'before_title'=> '<h4 class = "wp-block-latest-posts__post-title">',        // tag que ficará antes do título do width
         'after_title'=> '</h4>',
 
         'before_widget'=> '<div id = "%1$s" class = "widget %2$s">',
