@@ -22,12 +22,24 @@ body {
     float: left;
 }
 
-sidebar {
+.sidebar {
     width: 30%;
     float: left;
 }
 
 .wp-block-latest-posts__post-title {
     color: blue;
+}
+
+article {
+    background-color: white;
+    border-bottom: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+article.post_thumbnail {
+    float: left;
+    margin-right: 20px;
 }
 
