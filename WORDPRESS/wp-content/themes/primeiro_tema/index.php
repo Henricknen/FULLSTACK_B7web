@@ -40,6 +40,12 @@
                 </article>
             <?php endwhile; ?>
         <?php endif; ?>
+
+        <div class="paginacao">
+            <div class="pagina_anterior"><?php previous_posts_link('Página Anterior'); ?></div>     <!-- função 'previous_posts_link' gera um link -->
+            <div class="pagina_proxima"><?php next_posts_link('Próxima Página'); ?></div>
+        </div>
+
     </div>
 
     <?php get_sidebar(); ?>     <!-- pucha o arquivo 'sidebar' -->

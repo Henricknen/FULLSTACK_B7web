@@ -43,3 +43,19 @@ article.post_thumbnail {
     margin-right: 20px;
 }
 
+.paginacao {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.pagina_anterior {
+    float: left;
+}
+
+.pagina_proxima {
+    float: right;
+}
+
+footer {
+    margin-top: 50px;
+}
