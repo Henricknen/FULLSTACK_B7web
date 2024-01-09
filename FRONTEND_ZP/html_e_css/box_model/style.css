@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+}
+
+.texto {
+    width: 700px;
+    height: 200px;
+    background-color: rgb(52, 158, 158);
+    color: red;
+    font-size: 40px;
+    font-family: Helvetica, Verdana, Arial, Times, sans-serif;
+    font-weight: normal;
+    text-align: center;
+    text-transform: lowercase;
+    text-decoration: underline;
+
+    margin: auto;       /* deixa as margens da div automática 'centralizando' */
+    margin-top: 20px;       /* dando espaçamento por 'fora' da div */
+    padding-top: 20px;          /* 'padding' da uma espaçamento por 'dentro' da div */
+}
