@@ -34,6 +34,13 @@
                         <?php comments_number('0 comentários', 'um comentário', '% comentários'); ?> /     <!-- exibindo a quantidade de comentários -->
                     </p>
 
+                    <hr>
+
+                    <?php
+                        if(comments_open()) {      // verificando se comentários estão abertos para posts
+                            comments_template();        // chama arquivo 'comments.php'
+                        }
+                    ?>
 
                 </article>
             <?php endwhile; ?>
