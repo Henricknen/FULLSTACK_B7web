@@ -6,20 +6,27 @@
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel = "stylesheet" href = "assets/css/bootstrap.min.css">
     <title>Grid</title>
+    <style type="text/css">
+        .row [class^=col-], .row .col {
+            background-color: gray;
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">     <!-- 'container' basicamente é uma div que determina até onde o site vai -->
-        <div class = "row">     <!-- linha -->
-            <div class = "col" style = "background-color: red">...</div>        <!-- 'col' é coluna -->
-            <div class = "col-sm" style = "background-color: green">...</div>     <!-- '-sm' espeçifica o limite mínimo do tamanho de um 'celular' -->
-            <div class = "col-md" style = "background-color: red">...</div>              <!-- 'md' espeçifica o limite mínimo do tamanho de um 'tablet' -->
-            <div class = "col-lg" style = "background-color: green">...</div>              <!-- 'lg' espeçifica o limite mínimo do tamanho de dispositivos maiores -->
+    <div class="container">
+        <div class = "row">
+            <div class = "col-2">...</div>      <!-- o 2 depois de col especifica um tamanho 'fixo' da coluna -->
+            <div class = "col">...</div>            <!-- as outras se estende para completar todo o tamanho da coluna -->
+            <div class = "col">...</div>
+        </div>
+            <!-- <div class="w-100"></div>       está div em branco é uma forma de quebra linha -->
+        <div class = "row">     <div class = "row"><!-- outra forma é criar outra 'row' -->
+            <div class = "col">...</div>
+            <div class = "col-6">...</div>      <!-- 6 pega 'metade' da coluna -->
+            <div class = "col">...</div>
         </div>
     </div>
-
-    <!-- <div class="container-fluid" style = "background-color: blue">      <!- estrutura 'container-fluid' pega de ponta a ponta do site ->
-        <h2>Luis Henrique Silva Ferreira</h2>
-    </div> -->
 
     <script type="text/javascript" src="assets/js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
