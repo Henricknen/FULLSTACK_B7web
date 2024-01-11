@@ -8,7 +8,7 @@
     <title>Grid</title>
     <style type="text/css">
         .row [class^=col-], .row .col {
-            background-color: gray;
+            background-color: gainsboro;
             border: 1px solid black;
         }
     </style>
@@ -16,15 +16,11 @@
 <body>
     <div class="container">
         <div class = "row">
-            <div class = "col-2">...</div>      <!-- o 2 depois de col especifica um tamanho 'fixo' da coluna -->
-            <div class = "col">...</div>            <!-- as outras se estende para completar todo o tamanho da coluna -->
-            <div class = "col">...</div>
-        </div>
-            <!-- <div class="w-100"></div>       está div em branco é uma forma de quebra linha -->
-        <div class = "row">     <div class = "row"><!-- outra forma é criar outra 'row' -->
-            <div class = "col">...</div>
-            <div class = "col-6">...</div>      <!-- 6 pega 'metade' da coluna -->
-            <div class = "col">...</div>
+            <div class = "col">Primeira</div>       <!-- colunas 'sem' espeçificações de 'ordem' vem primeiro -->
+            <div class = "col ordem-last">Segunda</div>
+            <div class = "col order-first">Terçeira</div>       <!-- classe 'order-first' insere a coluna em primeiro lugar idependente das sem especificações ordem -->
+            <div class = "col order-3">Quarta</div>     <!-- 'order-3' insere a coluna na terçeira posição iniçiando depois das colunas sem espeçificações de ordem -->
+            <div class = "col order-2">Quinta</div>
         </div>
     </div>
 
