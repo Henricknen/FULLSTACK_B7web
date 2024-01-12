@@ -31,7 +31,7 @@
                     </p>
 
                     <p>
-                        <?php comments_number('0 comentários', 'um comentário', '% comentários'); ?> /     <!-- exibindo a quantidade de comentários -->
+                        <?php comments_number('0 comentários', 'um comentário', '% comentários'); ?>     <!-- exibindo a quantidade de comentários -->
                     </p>
 
                     <hr>
