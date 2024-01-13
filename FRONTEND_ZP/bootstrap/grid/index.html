@@ -7,23 +7,69 @@
     <link rel = "stylesheet" href = "assets/css/bootstrap.min.css">
     <title>Grid</title>
     <style type="text/css">
+        body {
+            background-color: aqua;
+        }
         .row [class^=col-], .row .col {
             background-color: gainsboro;
             border: 1px solid black;
         }
+
+        .row {
+            background-color: crimson;
+            padding: 10px;
+        }
+        
+        .row2 {
+            background-color: crimson;
+            padding: 10px;
+        }
+
+        .container2 {
+            background-color: aqua;
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class = "row">
-            <div class = "col">Primeira</div>       <!-- colunas 'sem' espeçificações de 'ordem' vem primeiro -->
-            <div class = "col ordem-last">Segunda</div>
-            <div class = "col order-first">Terçeira</div>       <!-- classe 'order-first' insere a coluna em primeiro lugar idependente das sem especificações ordem -->
-            <div class = "col order-3">Quarta</div>     <!-- 'order-3' insere a coluna na terçeira posição iniçiando depois das colunas sem espeçificações de ordem -->
-            <div class = "col order-2">Quinta</div>
+    <div class="container2">
+        <div class="container">
+            <div class = "row justify-content-start">      <!-- 'justify-content-start' faz as div iniçiarem na esquerda -->
+                <div class = "col-3">Primeira</div>
+                <div class = "col-3">Segunda</div>
+                <div class = "col-3">Terçeira</div>
+            </div>
+        </div><br>
+        <div class="container">
+            <div class = "row justify-content-center">      <!-- justify-content-center faz as div iniçiarem no centro -->
+                <div class = "col-3">Quarta</div>
+                <div class = "col-3">Quinta</div>
+                <div class = "col-3">Sexta</div>
+            </div>
+        </div><br>
+        <div class="container">
+            <div class = "row justify-content-end">      <!-- 'justify-content-end' faz as div iniçiarem na direita -->
+                <div class = "col-3">Setima</div>
+                <div class = "col-3">Oitava</div>
+                <div class = "col-3">Nona</div>
+            </div>
+        </div><br>
+        <div class="container">
+            <div class = "row justify-content-around">      <!-- 'justify-content-around' faz as div se espalharem -->
+                <div class = "col-3">Décima</div>
+                <div class = "col-3">Décima Primeira</div>
+                <div class = "col-3">Décima Segunda</div>
+            </div>
+        </div><br>
+        <div class="container">
+            <div class = "row justify-content-between">      <!-- 'justify-content-between' espalha as div entre uma e outra -->
+                <div class = "col-3">Décima Terçeira</div>
+                <div class = "col-3">Décima Quarta</div>
+                <div class = "col-3">Décima Quinta</div>
+            </div>
         </div>
     </div>
-
+    
     <script type="text/javascript" src="assets/js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
