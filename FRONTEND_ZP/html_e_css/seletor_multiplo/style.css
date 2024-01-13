@@ -1,0 +1,16 @@
+div, h1 {       /* para formatar mais de um elemento ao mesmo tempo se ultiliza ',' */
+    background-color: red;
+    font-size: 30px;
+}
+
+.class, span {      /* formatando 'class' e 'span' ao mesmo tempo */
+    font-size: 40px;
+    color: white;
+    background-color: blue;
+}
+
+#id,p {     /* formatando 'id' e 'p' ao mesmo tempo */
+    font-size: 60px;
+    background-color: green;
+    font-weight: bold;
+}
