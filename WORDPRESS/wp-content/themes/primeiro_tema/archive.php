@@ -3,6 +3,9 @@
 <section>
 
     <div class = "container">       <!-- conteúdo do site -->
+
+        <h1><?php the_archive_title(); ?></title></h1>      <!-- função mostra a categoria que esta sendo filtrada -->
+
         <?php if(have_posts()): ?>      <!-- verificando se tem 'posts' -->
             <?php while(have_posts()): ?>
                 <?php the_post(); ?>
