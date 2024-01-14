@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+}
+
+nav {
+    height: 50px;
+    background-color: aqua;
+}
+
+footer {
+    height: 100px;
+    background-color: grey;
+}
