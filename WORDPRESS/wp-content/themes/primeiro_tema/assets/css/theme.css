@@ -22,6 +22,10 @@ body {
     float: left;
 }
 
+.fullwidth {
+    width: 100%;
+}
+
 .sidebar {
     width: 30%;
     float: left;
