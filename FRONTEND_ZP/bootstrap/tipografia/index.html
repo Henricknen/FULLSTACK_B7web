@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href =  "assets/css/bootstrap.min.css">
+        <title>Tipografia</title>
+        <style type = "text/css">
+            .class {
+                width: 500px;
+                height: 30px;
+                border: 1px solid blue;
+            }
+
+            .alinhamento {
+                width: 800px;
+                height: 500px;
+                border: 1px solid blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "container alinhamento text-center">         <!-- classe 'text-center' faz o alinhamento automáticamente -->
+
+            <h1>Luis Henrique Silva Ferreira</h1>      <!-- 'h1' a 'h6' serve para fazer título de página ou dar destaque a um dertminado texto  -->
+            <h2>Formação:</h2>
+
+            <div class = "h1">Análise e desenvolvimento de sistemas</div>     <!-- o bootstrap ja tem as classess 'h1 a h6' 'pronta' -->
+            <div class = "h2">Técnico Informática para internet</div>
+            <div class = "h2">Técnico em Eletroeletrônica</div>
+            <div class = "h3">Programador Front End</div>
+            <div class = "h3">Lógica de Programação</div><br>
+
+            <h3><small class = "text-muted">Programador </small>: FULLSTACK</h3>        <!-- tag 'small' e classe 'text-muted' deixa o texto mais acinzentado -->
+
+            <p>Possui conhecimento em diversas Linguagens de programação e Frameworks em espeçial <span class = "mark">PHP</span> e <span class = "mark">LARAVEL</span></p>     <!-- 'span class = "mark"' destaca o texto -->
+
+            <ul class = "list-inline class">      <!-- 'list-inline' faz com que a lista fica 'em linha' -->
+                <li class = "list-inline-item">BOOTSTRAP</li>
+                <li class = "list-inline-item">HTML</li>        <!-- 'list-inline-item' espeçifica os itens para fica um ao lado do outro -->
+                <li class = "list-inline-item">PHP</li>
+                <li class = "list-inline-item">LARAVEL</li>
+                <li class = "list-inline-item">SQL</li>
+                <li class = "list-inline-item">GIT</li>
+            </ul>
+        </div>
+
+        <script type = "text/javascript" src = "assets/js/jquery-3.7.1.min.js"></script>
+        <script type = "text/javascript" src = "assets/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
