@@ -36,6 +36,33 @@
 
                     <hr>
 
+                        <h3>Posts relaçionados</h3>
+
+                        <?php
+                        $categories = get_the_category();
+
+                        $bp_query = new WP_Query(array(     // classe 'WP_Query' faz uma busca interna no wordpress
+                            'posts_per_page'=> 3,       // propriedade de quantos posts serão pegos
+                            'posts__not_in'=> array( $post-> ID ),       // 'posts__not_in' exclui posts determinados nas chaves '()' e '$post-> ID' pega o id da página atual
+                            'cat'=> $categories[0]-> term_id
+                        ));
+
+                        if($bp_query-> have_posts()) {
+                            while($bp_query-> have_posts()) {
+                                $bp_query-> the_post();
+
+                                get_template_part('template_parts/related_post');
+                            }
+
+                            wp_reset_postdata();        // resta a requisição 'feita' e volta para requisição 'principal'
+                        }
+
+                        ?>
+
+                        <div style = "clear:both"></div>
+
+                    <hr>
+
                     <?php
                         if(comments_open()) {      // verificando se comentários estão abertos para posts
                             comments_template();        // chama arquivo 'comments.php'
