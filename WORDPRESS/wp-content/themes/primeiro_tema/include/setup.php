@@ -9,6 +9,10 @@ function lp_after_setup() {
     // add_theme_support('menus');     // adiçiona o suporte a 'menus' no tema
 
     add_theme_support('post-thumbnails');        // permite o tema suporta 'minhaturas' do posts
+    
+    add_theme_support('title-tag');
+    
+    add_theme_support('custom-logo');
 
     register_nav_menu('primary', __('Primary Menu', 'primeiro_tema'));      // registro da localização do menu de navegação
 }
