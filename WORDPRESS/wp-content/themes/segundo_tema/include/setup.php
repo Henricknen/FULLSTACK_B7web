@@ -21,5 +21,9 @@
 }
 
 function ls_after_setup() {
+    add_theme_support('title-tag');     // insere o titulo do site na aba do da página
+    add_theme_support('custom-logo');       // habilitando a logo
+    add_theme_support('post-thumbnails');       // 
 
+    register_nav_menu("primary", __('Primary Menu', 'segundotema'));        // 'registrando' o menu
 }
