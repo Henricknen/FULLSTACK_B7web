@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+.teste {        /* definindo a formatção 'padrão' da classe 'teste' */
+    width: 600px;
+    height: 300px;
+    background-color: red;
+}
+
+@media only screen and (min-width:200px) and (max-width:600px) {     /* tag 'media' com uma (larguta maxima for 500px) */
+    .teste {
+        width: 200px;        /* se a condição for sastifeita será aplicada está formatação */
+    }
+}
