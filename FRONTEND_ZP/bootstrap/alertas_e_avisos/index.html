@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel = "stylesheet" href = "assets/css/bootstrap.min.css">
+    <title>Alertas e avisos</title>
+    <style type = "text/css">
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="alert alert-primary" role="alert">      <!-- 'alert' criar um alerta com um estilo específico, onde 'alert-primary' define a cor de fundo 'azul' -->
+            Esta menssagem é um [Aviso] ou [Alerta] como preferir
+        </div>
+
+        <div class="alert alert-secondary" role="alert">      <!-- tematização 'alert-secondary' mostra uma messagem mais 'acinzentada' -->
+            Este é um [outro tipo] de alerta
+        </div>
+
+        <div class="alert alert-success" role="alert">      <!-- 'alert-success' indica que algo deu certo mostrando uma menssagem 'verde' -->
+            Sistema visualizado com [sucesso...]
+        </div>
+        
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">      <!-- 'danger' quando algo deu errado alert-'dismissible' indica que este alerta pode desapareçer -->
+            E-mail e/ou Senha incorretos!
+            <button class="close" data-dismiss="alert">     <!-- botão -->
+                <span aria-hidden="true">&times;</span>     <!-- 'X' do botão -->
+            </button>
+        </div>
+        
+        <div class="alert alert-warning" role="alert">      <!-- 'warning' tematização de aviso -->
+            Alerta de realmente [aviso]
+        </div>
+        
+        <div class="alert alert-info" role="alert">      <!-- 'info' informativo -->
+            Alerta [informativo]
+        </div>
+        
+        <div class="alert alert-light" role="alert">      <!-- 'light' deixa o fundo e texto em uma cor clara -->
+            Alerta [light]
+        </div>
+        
+        <div class="alert alert-dark" role="alert">      <!-- 'dark' ao contrario do light deixa fundo e texto em uma cor escura -->
+            Alerta [dark]
+        </div>
+    </div>
+
+    <script type="text/javascript" src="assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
