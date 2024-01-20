@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel = "stylesheet" href = "assets/css/bootstrap.min.css">
+    <title>Botoes e grupo de botoes</title>
+    <style type = "text/css">
+
+    </style>
+</head>
+<body>
+    <div class = "container">
+
+        <a class = "btn btn-primary btn-lg" href = "#">Botão</a>       <!-- 'a' botão como um link 'btn-primary' define a cor primária 'btn-lg' define o tamanho do botão como grande -->
+        <a class = "btn btn-primary btn-sm" href = "#">Botão</a><br><br>        <!-- 'btn' é a classe de todos botões no bootstrap a classe 'btn-sm' faz o botão ter um tamanho menor -->
+
+        <button class = "btn btn-outline-primary">Botão</button>            <!-- botão ultilizando a tag 'button' -->
+        <button class = "btn btn-outline-secondary">Botão</button><br><br>        <!-- classe 'btn-outline-secondary' cria um botão só com bordas sem o fundo -->
+
+        <input class = "btn btn-link" type = "submit" value = "Botão"><br>       <!-- botão apresentado como um elemento de formulário do tipo 'submit' -->
+        <a class = "btn btn-primary btn-block" href = "#">Botão</a><br><br>         <!-- 'btn-block' faz com que o botão ocupe toda largura do container pai -->
+        
+        <div class = "btn-group">       <!-- classe 'btn-group' agrupa os botões juntos na horizontal -->
+            <a class = "btn btn-primary" href = "#">Botão</a>
+            <button class = "btn btn-secondary">Botão</button>
+            <input class = "btn btn-primary" type = "submit" value = "Botão"><br>
+        </div><br><br>
+        
+        <div class = "btn-group-vertical">       <!-- classe 'btn-group-vertical' agrupa os botões na vertical -->
+            <a class = "btn btn-secondary" href = "#">Botão</a>
+            <button class = "btn btn-primary">Botão</button>
+            <input class = "btn btn-secondary" type = "submit" value = "Botão"><br>
+        </div>
+
+    </div>
+
+    <script type =  "text/javascript" src =  "assets/js/jquery-3.7.1.min.js"></script>
+    <script type =  "text/javascript" src =  "assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
