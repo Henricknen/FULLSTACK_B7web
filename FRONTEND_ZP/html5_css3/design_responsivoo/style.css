@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+}
+
+.topo {
+    width: 100%;        /* terá sempre 100% de largura */
+    max-width: 800px;       /* e largura 'máxima' de 800px */
+    height: 100px;
+    margin: auto;
+}
+
+.logo {
+    width: 50%;
+    height: 100px;
+    float: left;
+    background-color: #EEE;
+}
+
+.menu {
+    width: 50%;
+    height: 100px;
+    float: left;
+    background-color: #DDD;
+}
+
+.corpo {
+    width: 100%;
+    max-width: 800px;
+    height: 200px;
+    margin: auto;
+    background-color: #CCC;
+}
+
+.rodape {
+    width: 100%;
+    max-width: 800px;
+    height: 100px;
+    margin: auto;
+    background-color: #DDD;
+}
+
+@media only screen and (max-width:600px) {     /* 'media' cria exeção com base na largura máxima e alterada a estrutura */
+    .topo {
+        height: 200px;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .menu {
+        width: 100%;
+    }
+}
+
