@@ -1,0 +1,84 @@
+.arpw-bg {
+	background-color: #f3f3f3;
+}
+
+.arpw-bg .widget-control-actions {
+	clear: both;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .ui-tabs-nav {
+	padding: 1em 0; 
+	float: left; 
+	width: 8em;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .ui-tabs-nav li { 
+	clear: left; 
+	width: 100%; 
+	margin-bottom: 0;
+	padding: .8em 0 .8em 1em;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .ui-tabs-nav li.ui-state-focus {
+	box-shadow: none;
+	outline: none;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .ui-tabs-nav li a { 
+	display:block;
+	text-decoration: none;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .ui-tabs-nav li a:focus {
+	box-shadow: none;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { 
+	background-color: #fff;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .arpw-tabs-content {
+	background-color: #fff;
+	overflow: hidden;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	min-height: 12em;
+	padding: 1em 1.5em 1em 1.5em;
+}
+
+.arpw-tab-content p {
+	margin-bottom: 1.5em;
+}
+
+.arpw-tab-content p small {
+	color: #777;
+	font-style: italic;
+}
+
+.arpw-multiple-check-form {
+	margin: 1em 0;
+}
+
+.arpw-multiple-check-form ul {
+	border: 1px solid #eee;
+	padding: 10px;
+	max-height: 110px;
+	overflow: auto;
+}
+
+.arpw-multiple-check-form ul li:last-child {
+	margin-bottom: 0;
+}
+
+label.input-checkbox {
+	width: 100px;
+	display: inline-block;
+}
+
+.arpw-input-half {
+	width: 47%;
+}
+
+.arpw-block {
+	display: block;
+}

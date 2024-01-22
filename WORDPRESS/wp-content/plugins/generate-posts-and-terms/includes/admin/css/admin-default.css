@@ -1,0 +1,282 @@
+#generate_posts_and_terms-admin-panel {
+	background-color: #f6f6f6;
+	width: 710px;
+	border-radius: 4px 4px 0 0;
+	margin-top: 25px;
+	margin-bottom: 15px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	margin-left: 2px;
+}
+
+#generate_posts_and_terms-admin-panel-header {
+	height: 70px;
+	width: 100%;
+}
+
+#generate_posts_and_terms-admin-panel-header span {
+	font-size: 20px;
+	line-height: 20px;
+	padding: 25px;
+	margin: 0px;
+	display: block;
+	font-family: "Trebuchet MS";
+}
+
+#generate_posts_and_terms-admin-panel-main {
+	border-bottom: 1px solid #DFDFDF;
+	border-left: 1px solid #DFDFDF;
+	border-right: 1px solid #DFDFDF;
+}
+
+#generate_posts_and_terms-admin-panel-menu {
+	width: 168px;
+	z-index: 1;
+	position: relative;
+	float: left;
+	margin-bottom: 30px;
+}
+
+#generate_posts_and_terms-admin-panel-menu ul {
+	margin: 0px;
+	list-style: none;
+	padding: 0px;
+}
+
+#generate_posts_and_terms-admin-panel-menu ul li.open.menu_last {
+	border-bottom: none;
+}
+
+#generate_posts_and_terms-admin-panel-menu ul li h3 {
+	background-color: #fafafa;
+}
+
+#generate_posts_and_terms-admin-panel-menu ul li h3:hover {
+	background-color: #F5F5F5;
+	color: #222222;
+}
+
+#generate_posts_and_terms-admin-panel-menu ul li.open h3 {
+	background-color: #F5F5F5;
+}
+
+#generate_posts_and_terms-admin-panel-menu ul li ul {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #F5F5F5;
+}
+
+#generate_posts_and_terms-admin-panel-menu ul li ul li {
+	margin: 0px;
+}
+
+#generate_posts_and_terms-admin-panel-menu ul li ul li h3 {
+	padding: 10px 15px;
+	position: relative;
+	margin: 0px;
+	border-top: 1px solid #F5F5F5;
+	border-bottom: 1px solid #F5F5F5;
+	cursor: pointer;
+	color: #606060;
+}
+
+#generate_posts_and_terms-admin-panel-menu ul li.open ul li.submenu_open h3 {
+	background-color: #fafafa;
+	border-top: 1px solid #DFDFDF;
+	border-bottom: 1px solid #DFDFDF;
+	border-right: 1px solid #fafafa;
+	margin-right: -1px;
+	color: #222222;
+}
+
+#generate_posts_and_terms-admin-panel-menu ul li.open ul li.submenu_open h3 span {
+	position: absolute;
+	height: 100%;
+	width: 4px;
+	top: 0px;
+	left: 0px;
+}
+
+#generate_posts_and_terms-admin-panel-menu ul li ul li h3:after {
+	content: '';
+}
+
+#generate_posts_and_terms-admin-panel-menu h3 {
+	font-size: 14px;
+	border: none;
+}
+
+.generate_posts_and_terms-admin-panel-content {
+	border-left: 1px solid #DFDFDF;
+	background-color: #FAFAFA;
+}
+
+#generate_posts_and_terms-admin-panel-content {
+	float: left;
+	min-height: 450px;
+	width: 539px;
+}
+
+#generate_posts_and_terms-admin-panel-content .generate_posts_and_terms-menu-content {
+	display: none;
+	padding: 10px 10px 0;
+}
+
+#generate_posts_and_terms-admin-panel-content .generate_posts_and_terms-menu-content.open {
+	display: block;
+}
+
+#generate_posts_and_terms-admin-panel-content .generate_posts_and_terms-submenu-content {
+	display: none;
+}
+
+#generate_posts_and_terms-admin-panel-content .generate_posts_and_terms-submenu-content.submenu_open {
+	display: block;
+}
+
+#generate_posts_and_terms-admin-panel-content .generate_posts_and_terms-submenu-content .generate_posts_and_terms-row {
+	padding-bottom: 20px;
+}
+
+.generate_posts_and_terms-row-description {
+	padding: 0 15px;
+}
+
+.generate_posts_and_terms-row .generate_posts_and_terms__h3 {
+    color: #4B4B4B;
+    float: left;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+    padding-bottom: 8px;
+    padding-top: 2px;
+}
+
+.generate_posts_and_terms-row .generate_posts_and_terms-row-title-generate_posts_and_terms-checkbox {
+    color: #4B4B4B;
+    float: left;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+    padding-bottom: 8px;
+    margin-right: 20px;
+    padding-top: 2px;
+}
+
+.generate_posts_and_terms-row input.generate_posts_and_terms__input {
+	margin: 0px;
+}
+
+.generate_posts_and_terms-row .generate_posts_and_terms__input_text {
+	width: 100%;
+}
+
+.generate_posts_and_terms-row .generate_posts_and_terms-inside-table {
+	display: table;
+	width: 100%;
+	box-sizing: border-box;
+	border-collapse: collapse;
+}
+
+.generate_posts_and_terms-row .generate_posts_and_terms__table_cell {
+	vertical-align: top;
+    border: 15px solid transparent;
+}
+
+.generate_posts_and_terms-row .table_cell_generate_posts_and_terms__h3 {
+	width: 50%;
+	min-width: 50%;
+}
+
+.generate_posts_and_terms-row .table_cell_generate_posts_and_terms__h3_title_checkbox {
+	width: 300px;
+	min-width: 300px;
+}
+
+.generate_posts_and_terms-row .table_cell_generate_posts_and_terms__full_width {
+	width: 100%;
+}
+
+.generate_posts_and_terms-row .table_cell_generate_posts_and_terms__280 {
+	width: 280px;
+}
+
+.generate_posts_and_terms-row .generate_posts_and_terms-inside-table-generate_posts_and_terms-checkbox {
+	float: left;
+}
+
+.generate_posts_and_terms-row .generate_posts_and_terms__textarea {
+	width: 100%;
+	margin: 0px;
+	min-height: 135px;
+	resize: vertical;
+}
+
+.generate_posts_and_terms-row .generate_posts_and_terms__textarea.code-text {
+    word-break: break-all;
+    word-wrap: break-word;
+	font-family: monospace;
+	line-height: 16px;
+}
+
+.generate_posts_and_terms-row .generate_posts_and_terms__select {
+	width: 100%;
+	margin: 0px;
+}
+
+.generate_posts_and_terms-row p.true {
+	margin: 0;
+	color: green;
+	line-height: 12px;
+	padding-top: 7px;
+	padding-bottom: 2px;
+	font-size: 12px;
+}
+
+.generate_posts_and_terms__option p.false {
+	margin: 0;
+	color: red;
+	line-height: 12px;
+	padding-top: 7px;
+	padding-bottom: 2px;
+	font-size: 12px;
+}
+
+.generate_posts_and_terms-row small {
+	color: #717171;
+}
+
+textarea[readonly] {
+    background-color: #EEEEEE;
+}
+
+.generate_posts_and_terms-row select.generate_posts_and_terms__multiple[multiple] {
+	width: 240px;
+	height: 135px;
+	margin: 0px;
+	margin-bottom: 10px;
+}
+
+.generate_posts_and_terms-row .generate_posts_and_terms__input_checkbox {
+	margin: 0px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+
+#generate_posts_and_terms-admin-panel-content .visible {
+	display: block;
+}
+
+#generate_posts_and_terms-admin-panel-footer {
+	border-bottom: 1px solid #DFDFDF;
+	border-left: 1px solid #DFDFDF;
+	border-right: 1px solid #DFDFDF;
+	padding: 15px 20px;
+}
+
+#submit-button {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}

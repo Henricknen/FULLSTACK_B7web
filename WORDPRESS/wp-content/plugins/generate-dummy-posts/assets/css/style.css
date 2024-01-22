@@ -1,0 +1,43 @@
+/*! gd posts - v1.0.0 */
+#gdp_loader{
+    border: 5px solid #c2bdbd;
+    border-radius: 50%;
+    border-top: 4px solid #2271b1;
+    width: 20px;
+    height: 20px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+div#gdpmain_parent label {
+    display: table;
+    font-weight: bold;
+}
+input#gdp_count {
+    margin: 0 0;
+    border-radius: 0;
+    margin: 5px 0 10px;
+}
+div#gdpmain_parent {
+    margin: 20px 0 0;
+}
+div#generating_message p.post {
+    margin: 0 0 5px;
+    border-bottom: 1px solid #dedada;
+}
+.gdpmain_buy_paypal {
+    margin: 10px 0 0;
+}
