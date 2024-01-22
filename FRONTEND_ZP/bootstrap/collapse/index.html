@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <title>Collapse</title>
+    <style type = "text/css">
+        #area {
+            border: 1px solid black;
+            padding: 20px;
+            background-color: gainsboro;
+        }
+    </style>
+</head>
+<body>
+    <div class = "continer">        <!-- 'btn-primary' classe da estilo ao botão -->
+        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#area">Mostrar/Esconder</button>        <!-- 'data-toggle' indica o funçionamento diz que quando botão for clicado ele dará um 'collapse' -->
+    </div>      <!-- 'data-target' indica quem será o alvo do botão -->
+
+    <div class="collapse" id="area">         <!-- classe 'collapse' indica que esta div apareçerá depois -->
+        Este texto que ira apareçer
+    </div>
+
+    <script type="text/javascript" src="assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
