@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+p {
+    padding: 10px;
+}
+
+h3 {
+    padding-left: 10px;
+}
+
+.topo {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background-color: goldenrod;
+    text-align: center;
+}
+
+.cidade {
+    width: 25%;     /* o total de divs de class cidade dará 100% */
+    float: left;
+}
+
+@media only screen and (min-width:500px) and (max-width:800px) {        /* 'media' cria codições */
+    
+    .cidade {
+        width: 50%;     /* se a condição for sastisfeita será impressa 'duas' divs na tela */
+    }
+}
+
+@media only screen and (max-width:500px) {
+    
+    .cidade {
+        width: 100%;        /* será impressa apenas 'uma' div na tela */
+    }
+}
