@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <title>Accordion</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <div id = "accordion">
+            <div class = "card">        <!-- ultilizando recuso chamado 'card' que é composto do 'título' e 'corpo' -->
+                <div class = "card-header">
+                    <button class = "btn btn-link" data-toggle = "collapse" data-target = "#c1" aria-controls = "c1">Titulo do CARD 1</button>        <!-- 'btn-link' transforma o botão em um link  -->
+                </div>
+
+                <div id = "c1" class = "collapse" data-parent = "#accordion">       <!-- 'collapse' indica que está area que irá apareçer ou desapareçer -->
+                    <div class = "card-body">       <!-- card-body é o conteúdo que 'apareçer' e 'desapareçer' -->
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lor
+                    </div>
+                </div>
+            </div>
+
+            <div class = "card">
+                <div class = "card-header">
+                    <button class = "btn btn-link" data-toggle = "collapse" data-target = "#c2" aria-controls = "c2">Titulo do CARD 2</button>
+                </div>
+
+                <div id = "c2" class = "collapse show" data-parent = "#accordion">      <!-- 'show' deixa o conteúdo apareçendo -->
+                    <div class = "card-body">
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lor
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
