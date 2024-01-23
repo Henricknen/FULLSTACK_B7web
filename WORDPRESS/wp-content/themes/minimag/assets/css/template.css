@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+}
+
+.top_header {
+    background-color: gray;
+    height: 45px;
+    border-bottom: 1px solid grey;
+}
+
+.navbar-default {
+    background: none;
+    border: 0;
+}
