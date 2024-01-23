@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    background-color: gainsboro;
+}
+
+p {
+    padding: 10px;
+}
+
+h3 {
+    padding-left: 10px;
+}
+
+.menumobile {
+    display: none;
+    height: 30px;
+    text-align: center;
+}
+
+.site {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+}
+
+.topo {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background-color: coral;
+    text-align: center;
+}
+
+.menu {
+    width: 25%;
+    height: 300px;
+    float: left;
+}
+
+.menu ul, menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    list-style: none;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px solid gainsboro;
+    padding-left: 10px;
+}
+
+.center {
+    width: 50%;
+    height: 300px;
+    float: left;
+}
+
+.rightside {
+    width: 25%;
+    height: 300px;
+    float: right;
+    background-color: gray;
+}
+
+.rodape {
+    clear: both;
+    height: 80px;
+    background-color: gainsboro;
+}
+
+@media only screen and(min-width:500px) and (max-width:700px) {
+    .center {
+        width: 75%;
+    }
+
+    .rightside {
+        width: 75%;
+        height: 100px;
+    }
+}
+
+@media only screen and(max-width:500px) {
+    .menumobile {
+        display: block;
+    }
+
+    .menu ul {
+        display: none;
+    }
+
+    .menu {
+        width: 100px;
+        height: 30px;
+    }
+    
+    .center {
+        width: 100%;
+    }
+
+    .rightside {
+        width: 100%;
+        height: 100px;
+    }
+
+
+}
