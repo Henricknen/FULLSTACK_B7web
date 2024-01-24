@@ -1,0 +1,9 @@
+form {
+    background-color: gray;
+    width: 20%;
+    text-align: center;
+}
+
+input[autofocus] {
+    border: 2px solid blue;
+}
