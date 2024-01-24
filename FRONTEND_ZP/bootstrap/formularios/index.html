@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "assets/css/bootstrap.min.css">
+    <title>Formularios</title>
+</head>
+<body>
+    <h1>Sem bootstrap</h1>
+
+    <div class = "container">
+        <form method = "POST">
+            E-mail:<br><br>
+            <input type = "email" name = "email"><br><br>
+            Senha:<br><br>
+            <input type = "password" name = "senha"><br><br>
+            <input type = "submit" value = "Entrar">
+        </form>
+        
+        <hr>
+
+        <h1>Com booststrap</h1>
+
+        <form method = "POST">
+
+            <div class = "form-group">      <!-- 'form-group' agrupa as informações -->
+                <label for = "name">Nome:</label>
+                <input id = "name" type = "text" name = "text" class = "form-control" placeholder = "Digite seu nome">      <!-- classe 'form-control' da um efeito a mais de estilo -->
+            </div>
+
+            <div class = "form-group">
+                <label for = "email">E-mail:</label>     <!-- ao clicar no nome email 'for' irá direçionar para o campo de 'id' email -->
+                <input id = "email" type = "email" name = "email" class = "form-control form-control-lg" value = "Ex: l.henrick@live.com">       <!-- 'value' mostra um texto comum editável -->
+            </div>
+
+            <div class = "form-group">
+                <label for = "senha">Senha:</label>
+                <input id = "senha" type = "password" name = "senha" class = "form-control form-control-sm" placeholder = "Digite sua senha">       <!-- classe 'form-control-lg' aumeta o espaço do campo e 'form-control-sm' diminui -->
+            </div>
+
+            <div class = "form-group">
+                <input class = "btn btn-primary" type = "submit" value = "Enviar">
+            </div>
+
+        </form>
+        
+        <hr>
+
+        <h1>Com booststrap</h1>
+
+        <form method = "POST">
+
+            <div class = "form-group">
+                <label for = "name">Nome:</label>
+                <input id = "name" type = "text" name = "name" class = "form-control-plaintext" value = "Ex: Luis Henrique Silva Ferreira" readonly>      <!-- classe 'form-control-plaintext' simula texto comum propriedade 'readonly' torna o campo só leitura -->
+            </div>
+
+            <div class = "form-group">
+                <label for = "email">E-mail:</label>     <!-- ao clicar no nome email 'for' irá direçionar para o campo de 'id' email -->
+                <input id = "email" type = "email" name = "email" class = "form-control form-control-lg" value = "Ex: l.henrick@live.com">       <!-- 'value' mostra um texto comum editavel -->
+            </div>
+
+            <div class = "form-group">
+                <label for = "senha">Senha:</label>
+                <input id = "senha" type = "password" name = "senha" class = "form-control form-control-lg" placeholder = "Digite sua senha">       <!-- classe 'form-control-lg' aumeta o espaço do campo e 'form-control-sm' diminui -->
+            </div>
+
+            <div class = "form-group">
+                <input class = "btn btn-primary" type = "submit" value = "Enviar">
+            </div>
+
+        </form>
+        
+        <hr>
+
+        <h1>Com booststrap - inline</h1>
+
+        <form method = "POST" class = "form-inline">
+
+            <div class = "form-group">
+                <label for = "name" class = "sr-only">Nome:</label>         <!-- classe 'sr-only' olcuta a label visualmente -->
+                <input id = "name" type = "text" name = "name" class = "form-control" placeholder = "nome" >
+            </div>
+
+            <div class = "form-group">
+                <label for = "email" class = "sr-only">E-mail:</label>
+                <input id = "email" type = "email" name = "email" class = "form-control" placeholder = "email">
+            </div>
+
+            <div class = "form-group">
+                <label for = "senha" class = "sr-only">Senha:</label>
+                <input id = "senha" type = "password" name = "senha" class = "form-control" placeholder = "senha">
+            </div>
+
+            <div class = "form-group">
+                <input class = "btn btn-primary" type = "submit" value = "Enviar">
+            </div>
+
+        </form>
+
+        <hr>
+
+        <h1>Com booststrap - sistema grid</h1>
+
+        <form method = "POST">
+
+            <div class="form-row">      <!-- linha -->
+                <div class="col">           <!-- coluna -->
+                    <div class = "form-group">
+                        <label for = "name" class = "sr-only">Nome:</label>
+                        <input id = "name" type = "text" name = "name" class = "form-control" placeholder = "nome" >
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class = "form-group">
+                        <label for = "email" class = "sr-only">E-mail:</label>
+                        <input id = "email" type = "email" name = "email" class = "form-control" placeholder = "email">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class = "form-group">
+                        <label for = "senha" class = "sr-only">Senha:</label>
+                        <input id = "senha" type = "password" name = "senha" class = "form-control" placeholder = "senha">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">       <!-- botão em outra linha -->
+                <div class="col">
+                    <div class = "form-group">
+                        <input class = "btn btn-primary" type = "submit" value = "Enviar">
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src = "assets/js/jquery-3.7.1.min.js"></script>
+    <script src = "assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
