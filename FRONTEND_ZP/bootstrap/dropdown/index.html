@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "assets/css/bootstrap.min.css">
+    <title>DropDown</title>
+    <style type = "text/css">
+    </style>
+</head>
+<body>
+    <div class =  "container">
+
+        <div class = "dropdown btn-group">
+            <a href = "http://instagram.com" class =  "btn btn-primary">Instagram</a>
+            <a href =  "#" class = "btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle = "dropdown"></a>      <!-- a classe 'dropdown-toggle' indica que ao clicar no botão sera aberta algumas opções 'data-toggle = "dropdown"' da ação de abrir e fechar os itens -->
+
+            <div class = "dropdown-menu">      <!-- dentro desta div de classe 'dropdow-menu' está o conteúdo que será aberto quando o botão for clicado -->
+                <!-- <form method="POST">
+                    <input type="text" name="usuario">
+                </form> -->
+
+                <a class = "dropdown-item" href = "http://google.com">Google</a>      <!-- itens de menu -->
+                <div class = "dropdown-divider"></div>        <!-- faz uma divisão -->
+                <a class = "dropdown-item" href = "http://facebook.com">Facebook</a>        <!-- 'dropdown-item' formata os itens -->
+                <div class = "dropdown-divider"></div>
+                <a class = "dropdown-item" href = "http://youtube.com">Youtube</a><a class = "dropdown-item" href = "https://github.com/Henricknen/FULLSTACK_B7web/tree/main/FRONTEND_ZP/bootstrap">Bootstrap</a>
+            </div>
+
+        </div>
+    </div>
+    
+    <script src = "assets/js/jquery-3.7.1.min.js"></script>
+    <script src = "assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
