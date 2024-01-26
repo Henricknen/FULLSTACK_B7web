@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "assets/css/bootstrap.min.css">
+    <title>Input_group</title>
+    <style type = "text/css">
+
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <h1>E-mail</h1>
+        <form method = "POST">
+            <div class = "input-group input-group-sm">      <!-- classe 'input-group-sm' o campo de digitação comprimido -->
+                <input type = "email" name = "email" class = "form-control" placeholder = "Digite seu email">       <!-- campo de email -->
+                <div class = "input-group-append">      <!-- classe 'input-group-append' insere informações 'depois' do campo -->
+                    <span class = "input-class-text">@hotmail.com</span>        <!-- esta será a informação que será inserida -->
+                </div>
+            </div>
+
+            <h1>Pretensão salarial</h1>
+            <div class = "input-group input-group-lg">      <!-- 'input-group-lg' deixa o campo mais largo -->
+                <div class = "input-group-prepend">     <!-- classe 'input-group-prepend' insere a informação adiçional 'antes' do campo -->
+                    <span class = "input-class-text">R$:</span>
+                </div>
+                <input type = "number" name = "number" class = "form-control">
+                <div class = "input-group-append">     <!-- classe 'input-group-prepend' insere a informação adiçional 'antes' do campo -->
+                    <span class = "input-class-text">, 00</span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src = "assets/js/jquery-3.7.1.min.js"></script>
+    <script src = "assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
