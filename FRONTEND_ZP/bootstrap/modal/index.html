@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang = "pt_br">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel = "stylesheet" href = "assets/css/bootstrap.min.css">
+    <title>Modal</title>
+    <style type = "text/css">       
+    </style>
+</head>
+<body>
+    <div class = "container">
+
+        <button type="button" class = "btn btn-primary" data-toggle = "modal" data-target = "#janela">Clique aqui para abrir...</button>      <!-- botão que 'abre' o modal -->
+
+        <div class = "modal fade" id = "janela">        <!-- iniçio do 'modal' propriedade 'fade' faz com que o modal abre 'lentamente' -->
+            <div class = "modal-dialog modal-dialog-centered">        <!-- 'janela' do modal 'modal-dialog-centered' centraliza o modal no centro da tela -->
+                <div class = "modal-content">
+                    <div class = "modal-header">        <!-- 'cabeçalho' do modal -->
+                        <h5 class = "modal-title">Título do Modal</h5>
+                        <button class = "close" data-dismiss = "modal"><span>&times;</span></button>        <!-- botão funçiona como um 'x' para 'sair' do modal e propriedade 'data-dismiss' realiza a ação de sair -->
+                    </div>
+
+                    <div class = "modal-body">        <!-- 'corpo' do modal -->
+                        <div class = "row">
+                            <div class = "col">item 1</div>
+                            <div class = "col">item 2</div>
+                        </div>
+                    </div>
+
+                    <div class = "modal-footer">        <!-- 'roda pé' do modal -->
+                        <button class = "btn btn-primary">Salvar</button>
+                        <button class = "btn btn-danger" data-dismiss="modal">Cancelar</button>     <!-- botão também realiza 'função' de fechar o modal -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src = "assets/js/jquery-3.7.1.min.js"></script>
+    <script src = "assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
