@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+form {
+    width: 160px;
+    height: 150px;
+    background-color: wheat;
+    margin: auto;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+input {
+    padding: 5px;
+    font-size: 13px;
+}
