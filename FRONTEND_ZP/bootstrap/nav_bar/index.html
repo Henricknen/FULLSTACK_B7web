@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "assets/css/bootstrap.min.css">
+    <title>Nav_bar</title>
+    <style class = "text/css">        
+    </style>
+</head>
+<body>
+    <div class = "container">
+                <!-- classe 'navbar-expand-lg' conforme a resolução da tela deixa o menu expandivél -->
+        <nav class = "navbar navbar-expand-lg navbar-light" style = "background-color: aqua;">       <!-- 'nav' é uma tag semântica indica que aqui é o menu de navegação, classe 'navbar-expand-lg' deixa responsível -->
+            
+            <a class = "navbar-brand" href="#">Empresa XYZ</a>      <!-- classe 'navbar-brand' espeçifica uma area para por o 'nome' da empresa ou 'imagens' -->
+
+            <button class = "navbar-toggler" data-toggler = "collapse" data-target = "#navbarMenu">     <!-- botão só apareçerá em celulares -->
+                <span class = "navbar-toggler-icon"></span>     <!-- 'icone' de botão de três traçinhos -->
+            </button>
+
+            <div class = "navbar-collapse collapse" id = "navbarMenu">      <!-- ao criar o navbar com 'navbar-collapse collapse' deixa o menu expandivél -->
+
+                <div class = "navbar-nav">      <!-- menu de navegação -->
+                    <a href = "#" class = "nav-item nav-link active">Link 1</a>
+                    <a href = "#" class = "nav-item nav-link">Link 2</a>
+                    <a href = "#" class = "nav-item nav-link">Link 3</a>
+                    <a href = "#" class = "nav-item nav-link">Link 4</a>
+                </div>
+            </div>
+
+            <form method = "POST" class = "form-inline">        <!-- formulário de busca, classe 'form-inline' indica que ele estará na 'mesma' linha do menu -->
+                <input type = "text" class = "form-control" placeholder = "Pesquisar...">
+            </form>
+            
+        </nav>
+
+    </div>
+    
+
+    <script src = "assets/js/jquery-3.7.1.min.js"></script>
+    <script src = "assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
