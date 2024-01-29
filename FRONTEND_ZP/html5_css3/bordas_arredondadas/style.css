@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+#teste {
+    background-color: green;
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;        /* deixando todas as bordas arredondadas */
+
+    border-top-left-radius: 20px;       /* deixando borda 'superior' esquerda arrendondada */
+    border-bottom-right-radius: 100px;              /* deixando borda 'inferior' esquerda arrendondada */
+}
