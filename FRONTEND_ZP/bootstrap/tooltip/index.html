@@ -10,16 +10,15 @@
 </head>
 <body>
     <div class = "container">
-
-        <button class = "btn btn-sucess" data-toggle = "tooltip" data-placeholder = "bottom" title = "Ao clicar, irá salvar os dados do usuário">Salvar</button>
-
+                    <!-- classe 'btn btn-success' deixa a cor verde -->            <!-- em 'title' é inserido o texto que irá 'apareçer' no tooltip -->
+        <button class = "btn btn-success" data-toggle = "tooltip" data-placement = "right" title = "Ao clicar, irá salvar os dados do usuário">Salvar</button>
+                  <!-- para que funçione 'data-toggle' tem que ser 'tooltip' -->        <!-- 'data-placement' espeçifica o lugar/lado em que irá apareçer o tooltip -->
     </div>
-
     <script type = "text/javascript" src = "assets/js/jquery-3.7.1.min.js"></script>
     <script type = "text/javascript" src = "assets/js/bootstrap.bundle.min.js"></script>
-    <script type = "text/javascript">
+    <script type = "text/javascript">       // 'ativando' o tooltip para que funçione
         $(function() {
-            $('[data-toggle = "tooltip"]'). tooltip();
+            $('[data-toggle = "tooltip"]'). tooltip();      // procura todos elementos que tenha 'data-toggle = "tooltip"' e ativando o toolttip neles
         });
     </script>
 </body>
