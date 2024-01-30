@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "assets/css/bootstrap.min.css">
+    <title>Paginação</title>
+    <style type = "text/css">
+    </style>
+</head>
+<body>
+    <div class = "container">
+                <!-- 'justify-content-center' centraliza a páginação -->
+        <ul class = "pagination justify-content-center">        <!-- para criar uma páginação deve de iniçiar com 'ul' com clase 'pagination' -->
+            <li class = "page-item disabled"><a href = "#" class = "page-link">Anterior</a></li>     <!-- cada página vai ser um 'li' -->
+            <li class = "page-item "><a href = "#" class = "page-link">1</a></li>
+            <li class = "page-item"><a href = "#" class = "page-link">2</a></li>        <!-- 'a href' leva para uma página espeçifica -->
+            <li class = "page-item"><a href = "#" class = "page-link">3</a></li>     <!-- 'active' indica que a página está ativada -->
+            <li class = "page-item"><a href = "#" class = "page-link">4</a></li>
+            <li class = "page-item"><a href = "#" class = "page-link">5</a></li>
+            <li class = "page-item disabled"><a href = "#" class = "page-link">Próxima</a></li>     <!-- 'disabled' desativa o botão quando as páginas chegarem no limite -->
+        </ul>
+
+    </div>
+
+    <script src = "assets/js/jquery-3.7.1.min.js"></script>
+    <script src = "assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
