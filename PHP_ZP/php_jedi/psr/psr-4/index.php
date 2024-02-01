@@ -5,7 +5,7 @@ spl_autoload_register(function ($class) {      // função será chamada automat
 
     $file = $base_dir. str_replace('\\', '/', $class). '.php';      // invertendo as '\' por '/'
 
-    if(file_exists($file)) {        // verificando se o arquivo existe
+    if(file_exists($file)) {        // verificando se o arquivo existegit 
         require($file);
     }
 });
