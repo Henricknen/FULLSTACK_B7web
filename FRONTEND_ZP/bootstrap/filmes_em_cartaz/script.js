@@ -18,7 +18,7 @@ $(function(){       // função que será executada quando a página terminar de
                 html += '<div class="col-md-4"><div class="filme"><img src="'+ json[i].avatar+ '" />'+ json[i].titulo+ '</div></div>';
             }
 
-            $('.filmes').html(html);    // substitui o conteúdo da classe 'filmes' pelo html criado
+            $('.filmes'). html(html);    // substitui o conteúdo da classe 'filmes' pelo html criado
         }
     });
 
