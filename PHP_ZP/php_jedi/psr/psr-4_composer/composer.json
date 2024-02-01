@@ -1,0 +1,10 @@
+{
+    "require": {
+        "estrutura básica vazia\\":"/"
+    },
+    "autoload": {
+        "psr-4": {
+            "Loja\\":"pacotes/Loja/"
+        }
+    }
+}
