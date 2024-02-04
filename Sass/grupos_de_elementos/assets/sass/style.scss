@@ -1,0 +1,22 @@
+nav {
+    background-color: aliceblue;
+    height: 100px;
+
+    ul {        // css 'dentro' do outro css
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+
+        a {     /// propriedades só funçionarão em 'a' que estiver dentro do 'nav'
+            display: block;
+            background-color: aquamarine;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+nav {
+  background-color: aliceblue;
+  height: 100px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav li a {
+  display: block;
+  background-color: aquamarine;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
