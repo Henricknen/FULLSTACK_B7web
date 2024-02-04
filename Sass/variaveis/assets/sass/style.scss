@@ -1,0 +1,23 @@
+$cor-fundo: gray;       // para criar uma variável se ultiliza o símbolo '$'
+$cor-fonte: blue;           // variáveis podem ser ultilizadas em qualquer lugar do codigo
+$borda-padrao: 2px;
+$fundo-padrao: yellow;
+
+body {
+    background-color: $cor-fundo;       // ultilizando variável '$cor-fundo'
+    color: $cor-fonte;
+}
+
+.quadrado {
+    width: 200px;
+    height: 200px;
+    border: $borda-padrao solid black;      // ultilizando variável '$borda-padrao'
+    background-color: $fundo-padrao;
+}
+
+.retangulo {
+    width: 300px;
+    height: 200px;
+    border: $borda-padrao solid black;
+    background-color: $fundo-padrao;
+}
