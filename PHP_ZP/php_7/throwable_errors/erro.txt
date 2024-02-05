@@ -1,0 +1,1 @@
+Call to undefined function jhjhhuhug() - C:\xampp\htdocs\FULLSTACK_B7web\PHP_ZP\php_7\throwable_errors\index.php - 4
