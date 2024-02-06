@@ -1,0 +1,60 @@
+@import 'reset';
+
+@mixin girar($graus) {
+
+    transform:rotate($graus);
+    -webkit-transform:rotate($graus);
+    -moz-transform:rotate($graus);
+    -ms-transform:rotate($graus);
+}
+
+nav {
+    background-color: aliceblue;
+    height: 100px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+        @include girar(30deg);
+
+        a {
+            display: block;
+            background-color: aquamarine;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
+
+%fundamento-msg {       // grupo de propriedades 'fundamento-msg'
+    padding: 10px;
+    font-size: 24px;
+    border: 2px solid gray;
+    margin: auto;
+    max-width: 500px;
+    margin-top: 10px;
+}
+
+.msg-info {
+    @extend %fundamento-msg;     // classe inserindo o grupo de propriedade 'fundamento-msg'
+    border-color: blue;     // complementando com outras formatações
+    color: blue;
+}
+
+.msg-aviso {
+    @extend %fundamento-msg;
+    border-color: red;
+    color: red;
+}
+
+.msg-sucesso {
+    @extend %fundamento-msg;
+    border-color: lightblue;
+    color: lightblue;
+}

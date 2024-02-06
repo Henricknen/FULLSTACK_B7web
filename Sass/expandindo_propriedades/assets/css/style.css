@@ -1,0 +1,53 @@
+body {
+  font-family: Arial;
+  font-size: 14px;
+  background-color: gray;
+}
+
+nav {
+  background-color: aliceblue;
+  height: 100px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+}
+nav li a {
+  display: block;
+  background-color: aquamarine;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.msg-sucesso, .msg-aviso, .msg-info {
+  padding: 10px;
+  font-size: 24px;
+  border: 2px solid gray;
+  margin: auto;
+  max-width: 500px;
+  margin-top: 10px;
+}
+
+.msg-info {
+  border-color: blue;
+  color: blue;
+}
+
+.msg-aviso {
+  border-color: red;
+  color: red;
+}
+
+.msg-sucesso {
+  border-color: lightblue;
+  color: lightblue;
+}
