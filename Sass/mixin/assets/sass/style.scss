@@ -1,0 +1,33 @@
+@import 'reset';
+
+@mixin girar($graus) {      // definindo um mixin chamado 'girar' que aceita um parâmetro '$graus'
+
+    transform:rotate($graus);       // aplica uma rotação usando a propriedade 'transform'
+    -webkit-transform:rotate($graus);
+    -moz-transform:rotate($graus);
+    -ms-transform:rotate($graus);
+}
+
+nav {
+    background-color: aliceblue;
+    height: 100px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+        @include girar(30deg);      // utilizando o mixin 'girar' para aplicar uma rotação de 30 graus
+
+        a {
+            display: block;
+            background-color: aquamarine;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
