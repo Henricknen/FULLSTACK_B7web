@@ -25,3 +25,11 @@ Para executar os testes, basta executar o seguinte comando no terminal, no diret
 (vendor/bin/phpunit)
 
 Isso executará todos os testes disponíveis em seu projeto e exibirá os resultados no terminal.
+
+## Atualizando Dependências do Composer
+
+Se você precisar atualizar as dependências do Composer, incluindo o PHPUnit, você pode executar o seguinte comando no terminal, no diretório raiz do seu projeto:
+
+(composer update)
+
+Isso atualizará todas as dependências do Composer para suas versões mais recentes, incluindo o PHPUnit, se uma versão mais recente estiver disponível.
