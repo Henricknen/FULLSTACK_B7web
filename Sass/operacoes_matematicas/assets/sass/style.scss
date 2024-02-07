@@ -1,0 +1,62 @@
+@import 'reset';
+
+@mixin girar($graus) {
+
+    transform:rotate($graus);
+    -webkit-transform:rotate($graus);
+    -moz-transform:rotate($graus);
+    -ms-transform:rotate($graus);
+}
+
+nav {
+    background-color: aliceblue;
+    height: 100px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+        @include girar(30deg);
+
+        a {
+            display: block;
+            background-color: aquamarine;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
+
+%item {     // grupo de propriedade '%item'
+    background-color: black;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+$item-width: 250px;     // variavel '$item-width' largura
+
+.item {
+    @extend %item;      // extendendo grupo de propriedade '%item'
+    width: $item-width;
+}
+
+.item-duplo {
+    @extend %item;
+    width: $item-width * 2;     // multiplicando variável por 2
+    
+}
+
+.item-metade {
+    @extend %item;
+    width: $item-width / 2;
+}
+
+.item-tripo {
+    @extend %item;
+    width: 100px * 3;       // ultilizando valor 'fixo' de width
+}

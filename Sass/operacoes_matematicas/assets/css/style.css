@@ -1,0 +1,51 @@
+body {
+  font-family: Arial;
+  font-size: 14px;
+  background-color: gray;
+}
+
+nav {
+  background-color: aliceblue;
+  height: 100px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+}
+nav li a {
+  display: block;
+  background-color: aquamarine;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.item-tripo, .item-metade, .item-duplo, .item {
+  background-color: black;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.item {
+  width: 250px;
+}
+
+.item-duplo {
+  width: 500px;
+}
+
+.item-metade {
+  width: 125px;
+}
+
+.item-tripo {
+  width: 300px;
+}
