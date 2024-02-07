@@ -1,7 +1,7 @@
 {
     "autoload": {
         "classmap": [
-            "classmap/"   
+            "classmap/"
         ]
     },
 
