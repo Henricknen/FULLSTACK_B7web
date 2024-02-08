@@ -20,11 +20,15 @@ Após a conclusão da instalação, você poderá escrever e executar testes uni
 
 ## Executando Testes
 
-Para executar os testes, basta executar o seguinte comando no terminal, no diretório raiz do seu projeto:
+Para executar os testes,entre na pasta do seu projeto e executa o seguinte comando no terminal, no diretório raiz do seu projeto:
 
-(vendor/bin/phpunit)
+(./vendor/bin/phpunit)
 
-Isso executará todos os testes disponíveis em seu projeto e exibirá os resultados no terminal.
+Isso executará todos os testes disponíveis em seu projeto.
+
+Se o PHPUnit precisar de um arquivo de inicialização (bootstrap), você pode especificá-lo usando a opção --bootstrap:
+
+(./vendor/bin/phpunit --bootstrap vendor/autoload.php pasta_do_teste/nome_do_teste)
 
 ## Atualizando Dependências do Composer
 
