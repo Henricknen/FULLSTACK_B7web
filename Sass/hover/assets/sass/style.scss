@@ -1,0 +1,59 @@
+@import 'reset';
+
+@mixin girar($graus) {
+
+    transform:rotate($graus);
+    -webkit-transform:rotate($graus);
+    -moz-transform:rotate($graus);
+    -ms-transform:rotate($graus);
+}
+
+nav {
+    background-color: aliceblue;
+    height: 100px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+        @include girar(30deg);
+
+        a {
+            display: block;
+            background-color: aquamarine;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+
+            &:hover {       // '&' signifia o item 'a' em que está dentro
+                background-color: gray;
+                color: white;
+            }
+        }
+    }
+}
+
+%item-padrao {
+    font-size: 14px;
+    border: 1px solid gainsboro;
+    padding: 5px;
+}
+
+%item-negrito{
+    font-weight: bold;
+}
+
+@for $i from 1 through 10 {
+
+    .item-#{$i} {
+        @extend %item-padrao;
+
+        @if $i <= 3 {
+            @extend %item-negrito;
+        }
+    }
+}

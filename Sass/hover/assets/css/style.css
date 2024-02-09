@@ -1,0 +1,43 @@
+body {
+  font-family: Arial;
+  font-size: 14px;
+  background-color: gray;
+}
+
+nav {
+  background-color: aliceblue;
+  height: 100px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+}
+nav li a {
+  display: block;
+  background-color: aquamarine;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+nav li a:hover {
+  background-color: gray;
+  color: white;
+}
+
+.item-10, .item-9, .item-8, .item-7, .item-6, .item-5, .item-4, .item-3, .item-2, .item-1 {
+  font-size: 14px;
+  border: 1px solid gainsboro;
+  padding: 5px;
+}
+
+.item-3, .item-2, .item-1 {
+  font-weight: bold;
+}
