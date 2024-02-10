@@ -43,3 +43,15 @@ Essa instrução solicita ao Webpack para usar o arquivo webpack.config.js como 
 Também é possível ultilizar um atalho para fazer a configutação só ultilizar o comando
 
 (npm run build)
+
+## Carregando css no projeto
+
+Primeiro se instala as bibliotecas style-loader e a css-loader com o seguinte comando
+
+(npm install style-loader css-loader --save-dev)
+
+E inserindo (--save-dev) salva as bibliotecas como dependências de desenvolvimento no arquivo package.json
+
+Atualizar o projeto ultilize o seguinte comando
+
+(npm run build)  

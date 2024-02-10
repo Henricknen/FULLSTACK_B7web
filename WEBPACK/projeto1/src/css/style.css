@@ -1,0 +1,9 @@
+body {
+    background-color: deepskyblue;
+}
+.botao {
+    background-color: red;
+    color: grey;
+    border: 0px;
+    padding: 20px;
+}
