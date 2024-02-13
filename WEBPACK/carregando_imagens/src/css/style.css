@@ -1,0 +1,30 @@
+body {
+    background-color: deepskyblue;
+}
+
+.botao {
+    background-color: red;
+    color: grey;
+    border: 0px;
+    padding: 20px;
+}
+
+.frontend, .php, .tecnico {     /* formatação igual para todas a imagens */
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.frontend {     /* particularidades */
+    background-image: url(../images/front_end.jpg);
+}
+
+.php {
+    background-image: url(../images/php.jpg);
+}
+
+.tecnico {
+    background-image: url(../images/Tecnico_de_informatica_para_internet.jpg);
+}
