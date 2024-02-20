@@ -3,6 +3,7 @@ phpinfo();      // função exibe informações detalhadas sobre a configuraçã
 
 /*
 
+
 dentro do arquivo 'php.ini' procure pela diretiva de configuração 'error_reporting':
 procure pela diretiva que estiver sem o ; no iniçio isso indica que está descomentada
 em error_reporting voçe pode inserir a seguites constantes pré-definidas:
