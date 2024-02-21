@@ -1,0 +1,3 @@
+<!-- função 'htmlspecialchars' converte caracteres especiais em entidades HTML para que possam ser exibidos corretamente no navegador garantindo que sejam exibidos corretamente na página da web sem serem interpretados como parte do código HTML -->
+<h1>Voçê pesquisou por: <?php echo htmlspecialchars($_GET['busca']); ?></h1>
+..........
