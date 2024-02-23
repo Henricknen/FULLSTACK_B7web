@@ -1,0 +1,36 @@
+* {     /* '*' insere formatação no site todo */
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    text-decoration: none;
+    color: #333;
+    list-style: none;
+}
+
+#topo {
+    width: 100%;        /* largura */
+    height: 200px;           /* altura */
+    float: left;        /* flutuará */
+    background-color: #DDF;   /* cor de fundo */
+}
+
+#menu {
+    width: 100%;
+    height: 50px;
+    float: left;
+    background-color: #FDD;   
+}
+
+#conteudo {
+    width: 100%;
+    height:600px;
+    float: left;
+    background-color: #FFD;
+}
+
+#rodape {
+    width: 100%;
+    height: 50px;
+    float: left;
+    background-color: #DDD;   
+}
