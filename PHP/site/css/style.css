@@ -7,12 +7,36 @@
     list-style: none;
 }
 
+body {
+    background-color:#111;
+}
+
+#geral {
+    width: 800px;
+    /* max-width: 1200px; */
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/*----------------------------------- topo do site ---------------------------------------------------------*/
+
 #topo {
     width: 100%;        /* largura */
     height: 200px;           /* altura */
     float: left;        /* flutuará */
     background-color: #DDF;   /* cor de fundo */
 }
+
+.logo {
+    width: 200px;
+    height: auto;
+    float: left;
+    margin: 20px;
+    
+}
+
+/*----------------------------------- fim do topo ---------------------------------------------------------*/
 
 #menu {
     width: 100%;
