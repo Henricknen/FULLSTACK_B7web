@@ -32,8 +32,17 @@ body {
     width: 200px;
     height: auto;
     float: left;
-    margin: 20px;
+    margin: 20px;       /* define a margem 'espaço' ao redor do elemento */
     
+}
+
+.links_top {
+    float: right;
+    padding: 10px;      /* define o espaço entre o conteudo do elemento com sua borda interna */
+    margin: 5px 2px;
+    border-radius: 7px;     /* arredonda a borda do elemento */
+    background-color: #145;
+    color: #FFF;        /* cor do texto */
 }
 
 /*----------------------------------- fim do topo ---------------------------------------------------------*/
