@@ -14,7 +14,7 @@
         </div>
 
         <div id = "menu">
-            menu
+            <?php include "menu.php";?>
         </div>
 
         <div id = "conteudo">
@@ -22,7 +22,7 @@
         </div>
 
         <div id = "rodape">
-            rodape
+            <?php include "rodape.php";?>
         </div>
     </div>
     </body>

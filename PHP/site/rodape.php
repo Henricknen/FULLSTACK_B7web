@@ -1,0 +1,1 @@
+<p class = "direitos">&copy; Luis Henrique S. F.</p>
