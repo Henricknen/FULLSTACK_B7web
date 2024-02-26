@@ -18,7 +18,7 @@
         </div>
 
         <div id = "conteudo">
-            conteudo
+            <?php include "conteudo.php";?>
         </div>
 
         <div id = "rodape">
