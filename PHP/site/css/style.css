@@ -94,6 +94,30 @@ body {
     margin: 20px 10px;
 }
 
+.postagens {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    float: left;
+    margin: 10px 0;
+    border: 1px solid #F00;
+}
+
+.titulos {
+    font-size: 20px;
+    font-family: Calibri,sans-serif;
+    float: left;
+    width: 96%;
+    margin: 5px 2%;
+}
+
+.imagem {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin: 5px 0;
+}
+
 /*----------------------------------- rodape do site --------------------------------------------------------*/
 
 #rodape {
