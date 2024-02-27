@@ -73,9 +73,10 @@ body {
 
 #conteudo {
     width: 100%;
-    min-height:600px;
+    min-height:500px;
     float: left;
     background-color: #FFF;
+    padding-bottom: 20px;
 }
 
 #conteudo_pricipal {
@@ -138,6 +139,38 @@ body {
     width: 96%;
     font-family: calibri, sans-serif;
     margin: 5px 0;
+}
+
+/*----------------------------------- página de contatos ----------------------------------------------------*/
+
+.campos {
+    width: 80%;
+    margin: 10px 10%;
+    height: 30px;
+    float: left;
+    padding: 2px;
+    font-size: 16px;
+}
+
+.campos2 {
+    width: 80%;
+    margin: 10px 10%;
+    height: 150px;
+    float: left;
+    padding: 2px;
+}
+
+.bt_enviar {
+    float: left;
+    margin-left: 10%;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.legenda {
+    float: left;
+    margin-left: 10%;
+    font-size: 16px;
 }
 
 /*----------------------------------- rodape do site --------------------------------------------------------*/
