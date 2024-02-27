@@ -1,4 +1,5 @@
 <div id = "conteudo_pricipal">
+    <h1 class = "titulos">Página de Postagens</h1>
     <div class = "postagens">
         <h1 class = "titulos">Titulo</h1>
         <img src = "img/php.jpg" class = "imagem">
