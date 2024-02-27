@@ -15,5 +15,8 @@
 </div>
 
 <div id = "recentes">
-
+    <div class = "postagens_recentes">
+        <h1 class = "titulos"><a href="#">Titulo dos arquivos recentes</a></h1>
+        <span class = "data">26/02/2024</span>
+    </div>
 </div>

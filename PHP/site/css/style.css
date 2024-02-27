@@ -75,7 +75,7 @@ body {
     width: 100%;
     min-height:600px;
     float: left;
-    background-color: #FFD;
+    background-color: #FFF;
 }
 
 #conteudo_pricipal {
@@ -100,7 +100,16 @@ body {
     overflow: hidden;
     float: left;
     margin: 10px 0;
-    border: 1px solid #F00;
+    border: 0px solid #F00;
+}
+
+.postagens_recentes {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    float: left;
+    margin: 10px 0;
+    border: 0px solid #F00;
 }
 
 .titulos {
@@ -111,10 +120,23 @@ body {
     margin: 5px 2%;
 }
 
+.titulos a:hover {
+    color: #59f;
+}
+
 .imagem {
     width: 100%;
     height: auto;
     float: left;
+    margin: 5px 0;
+}
+
+.paragrafo, .data {     /* aplicando formatação a classe 'paragrafo' e 'data' */
+    font-size: 16px;
+    color: #333;
+    float: left;
+    width: 96%;
+    font-family: calibri, sans-serif;
     margin: 5px 0;
 }
 
