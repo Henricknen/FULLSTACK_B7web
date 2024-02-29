@@ -1,0 +1,3 @@
+insert into tb_user(nome, email, senha, lembrete, foto, nivel, dt, hr) values		-- 'insert into' prenche os campos que estão dentro do parêntes
+('LuisHenriqueSF', 'l.henrick@live.com', 'luisH123', 'Nome+adm', 'link.png', 1, '2024-02-29', '00:49:30'),		-- os campos serão prençhindos com esses 'values' valores
+('FullStack', 'l.henrick@hotmail.com', 123, 'adm', 'link2.png', 2, '2024-02-29', '00:53:12');
