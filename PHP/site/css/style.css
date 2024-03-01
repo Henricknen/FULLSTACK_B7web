@@ -141,9 +141,9 @@ body {
     margin: 5px 0;
 }
 
-/*----------------------------------- página de contatos ----------------------------------------------------*/
+/*----------------------------------- página de contato ----------------------------------------------------*/
 
-.campos {
+.campos, .campos_cad, #botoes {
     width: 80%;
     margin: 10px 10%;
     height: 30px;
@@ -171,6 +171,22 @@ body {
     float: left;
     margin-left: 10%;
     font-size: 16px;
+}
+
+#box_form {
+    width: 80%;
+    min-height: 300px;
+    background-color: #FFF;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.bt_cad {
+    float: left;
+    font-size: 16px;
+    padding: 5px;
+    margin-right: 5px;
 }
 
 /*----------------------------------- rodape do site --------------------------------------------------------*/
