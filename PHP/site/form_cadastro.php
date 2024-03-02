@@ -22,5 +22,11 @@
                     <input type = "reset" value = "Limpar" class = "bt_cad">
                 </div>
             </form>
+
+            <div class = "botoes">
+                <a href = "index.php" class = "form_link">&larr; Voltar para página prinçipal</a>       <!-- '&larr' é uma entidade html que representa uma seta apontada para esquerda -->
+                <p class = "p_form">Já possui cadastro? Clique no link abaixo para fazer o login</p>
+                <a href = "login.php" class = "form_link">Logar</a>     <!-- link para usuário cadastrado 'logar' -->
+            </div>
         </div>
     </body>

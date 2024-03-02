@@ -143,10 +143,10 @@ body {
 
 /*----------------------------------- página de contato ----------------------------------------------------*/
 
-.campos, .campos_cad, #botoes {
+.campos, .campos_cad, #botoes, .botoes {
     width: 80%;
     margin: 10px 10%;
-    height: 30px;
+    min-height: 30px;
     float: left;
     padding: 2px;
     font-size: 16px;
@@ -187,6 +187,19 @@ body {
     font-size: 16px;
     padding: 5px;
     margin-right: 5px;
+}
+
+.form_link {
+    color: #59f;
+    font-size: 16px;
+    float: left;
+}
+
+.p_form {
+    color: #333;
+    font-size: 16px;
+    float: left;
+    width: 100%;
 }
 
 /*----------------------------------- rodape do site --------------------------------------------------------*/
