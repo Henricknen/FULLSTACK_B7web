@@ -1,0 +1,1 @@
+SELECT * FROM produtos WHERE preco = 120;		-- 'WHERE' realiza uma filtragem por um item espeçifico na consulta
