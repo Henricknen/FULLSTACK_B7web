@@ -10,16 +10,6 @@ $lembrete = $_POST['lembrete'];
 $foto = $_FILES['foto']['name'];        // colocando o nome do campo 'foto' e 'name' que indica que o que está sendo pego é o nome do arquivo
 $tipo = $_FILES['foto']['type'];            // pegando o tipo 'type' do campo 'foto'
 
-// verificando se os 'valores prenchidos' no formulário estão 'chegando' neste arquivo casdastrar.php
-
-// echo "Nome: ". $nome. "</br>";
-// echo "Email: ". $email. "</br>";
-// echo "Senha: ". $senha. "</br>";
-// echo "Repetição da denha: ". $reptsenha. "</br>";
-// echo "Lembrete: ". $lembrete. "</br>";
-// echo "Foto: ". $foto. "</br>";
-// echo "Tipo: ". $tipo. "</br>";
-
 $registro = false;
 if($nome != "" && $email != "" && $senha != "" && $lembrete != "") {      // verificando se as variáveis não estão vazias
     if($senha != $reptsenha) {      // teste verifica se senhas são iguais
@@ -37,4 +27,10 @@ while($line = mysqli_fetch_array($sql)) {       // enquanto variável '$line' es
 }
 
 $id = $id + 1;
-mkdir("user". $id, 0777);        // função 'mkdir' cria pasta ela ultiliza dois argumentos primeiro é o 'nome da pasta' e o segundo é o 'comando padrão php' que irar criar a pasta
+$pasta = "user". $id;
+if(file_exists($pasta)) {       // 'file_exists' é uma função do php que verifica se uma variável existe
+    echo "<script>alert('Essa pasta já existe...'); window.history.go(-1);</script>";       // depois da menssagem de pasta existente 'window.history.go(-1)' faz usuário retornar para o formulário
+} else {
+    mkdir("user". $id, 0777);        // função 'mkdir' cria pasta ela ultiliza dois argumentos primeiro é o 'nome da pasta' e o segundo é o 'comando padrão php' que irar criar a pasta
+    echo "<script>alert('A pasta ". $pasta. " foi criada com sucesso...');</script>";
+}
