@@ -34,8 +34,7 @@ if($nome != "" && $email != "" && $senha != "" && $lembrete != "") {      // ver
 $sql = mysqli_query($link, "SELECT * FROM tb_user order by id_user desc limit 1");       // função 'mysqli_query' é ultilizada para 'castrar' fazer 'atualização' ou 'deletar' algum registro da tabela do banco de dados
 while($line = mysqli_fetch_array($sql)) {       // enquanto variável '$line' estiver reçebendo dados da função 'mysqli_fetch_array'
     $id = $line['id_user'];     // será guardado dentro da variável '$id' o que estiver dentro do campo 'id_user'
-    $nome_user = $line['nome'];
 }
 
-echo $id;
-echo $nome_user;
+$id = $id + 1;
+mkdir("user". $id, 0777);        // função 'mkdir' cria pasta ela ultiliza dois argumentos primeiro é o 'nome da pasta' e o segundo é o 'comando padrão php' que irar criar a pasta
