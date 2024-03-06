@@ -10,6 +10,8 @@ $lembrete = $_POST['lembrete'];
 $foto = $_FILES['foto']['name'];        // colocando o nome do campo 'foto' e 'name' que indica que o que está sendo pego é o nome do arquivo
 $tipo = $_FILES['foto']['type'];            // pegando o tipo 'type' do campo 'foto'
 
+echo "Tipo: $tipo<br>";
+
 $registro = false;
 if($nome != "" && $email != "" && $senha != "" && $lembrete != "") {      // verificando se as variáveis não estão vazias
     if($senha != $reptsenha) {      // teste verifica se senhas são iguais
@@ -27,7 +29,7 @@ while($line = mysqli_fetch_array($sql)) {       // enquanto variável '$line' es
 }
 
 $id = $id + 1;
-$pasta = "user". $id;       // variável '$pasta' armazena o 'id' do usuário cadastrado
+$pasta = "user". $id;
 if(file_exists("user/". $pasta)) {       // função 'file_exists' verifica se a variável '$pasta' que contém o 'id' do usuário já existe
     echo "<script>alert('Essa pasta já existe...'); window.history.go(-1);</script>";       // depois da menssagem de pasta existente 'window.history.go(-1)' faz usuário retornar para o formulário
 } else {
@@ -35,4 +37,11 @@ if(file_exists("user/". $pasta)) {       // função 'file_exists' verifica se a
     echo "<script>alert('A pasta ". $pasta. " foi criada com sucesso...');</script>";
 }
 
-move_uploaded_file($_FILES['foto']['tmp_name'], "user/". $pasta. "/". $foto);       // função 'move_uploaded_file' é quem faz o 'upload' das imagens reçebendo dois argumentos o 'primeiro' informa o nome do arquivo e o 'segundo' é o local onde o arquivo será guardado
+$formatos = array(1=> 'image/png', 2=> 'image/jpg', 3=> 'image/jpeg', 4=> 'image/gif');     // array de arquivos permitidos
+
+$teste = array_search($tipo, $formatos);        // função 'array_search' procura por um tipo espeçifico
+if($teste == true) {
+    move_uploaded_file($_FILES['foto']['tmp_name'], "user/". $pasta. "/". $foto);       // função 'move_uploaded_file' é quem faz o 'upload' das imagens reçebendo dois argumentos o 'primeiro' informa o nome do arquivo e o 'segundo' é o local onde o arquivo será guardado
+} else {
+    echo "<script>alert('Tipo de arquivo não é suportado...'); window.history.go(-1);</script>";
+}
