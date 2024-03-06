@@ -27,10 +27,12 @@ while($line = mysqli_fetch_array($sql)) {       // enquanto variável '$line' es
 }
 
 $id = $id + 1;
-$pasta = "user". $id;
-if(file_exists($pasta)) {       // 'file_exists' é uma função do php que verifica se uma variável existe
+$pasta = "user". $id;       // variável '$pasta' armazena o 'id' do usuário cadastrado
+if(file_exists("user/". $pasta)) {       // função 'file_exists' verifica se a variável '$pasta' que contém o 'id' do usuário já existe
     echo "<script>alert('Essa pasta já existe...'); window.history.go(-1);</script>";       // depois da menssagem de pasta existente 'window.history.go(-1)' faz usuário retornar para o formulário
 } else {
-    mkdir("user". $id, 0777);        // função 'mkdir' cria pasta ela ultiliza dois argumentos primeiro é o 'nome da pasta' e o segundo é o 'comando padrão php' que irar criar a pasta
+    mkdir("user/". $pasta, 0777);        // entrando na pasta 'user' e dentro dela criando uma pasta chamada 'user' com o 'id' do usuário cadastrado
     echo "<script>alert('A pasta ". $pasta. " foi criada com sucesso...');</script>";
 }
+
+move_uploaded_file($_FILES['foto']['tmp_name'], "user/". $pasta. "/". $foto);       // função 'move_uploaded_file' é quem faz o 'upload' das imagens reçebendo dois argumentos o 'primeiro' informa o nome do arquivo e o 'segundo' é o local onde o arquivo será guardado
