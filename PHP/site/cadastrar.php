@@ -31,7 +31,7 @@ while($line = mysqli_fetch_array($sql)) {       // enquanto variável '$line' es
 $id = $id + 1;
 $pasta = "user". $id;
 if(file_exists("user/". $pasta)) {       // função 'file_exists' verifica se a variável '$pasta' que contém o 'id' do usuário já existe
-    echo "<script>alert('Essa pasta já existe...'); window.history.go(-1);</script>";       // depois da menssagem de pasta existente 'window.history.go(-1)' faz usuário retornar para o formulário
+    echo "<script>alert('Essa pasta já existe...');</script>";       // depois da menssagem de pasta existente
 } else {
     mkdir("user/". $pasta, 0777);        // entrando na pasta 'user' e dentro dela criando uma pasta chamada 'user' com o 'id' do usuário cadastrado
     echo "<script>alert('A pasta ". $pasta. " foi criada com sucesso...');</script>";
@@ -39,9 +39,23 @@ if(file_exists("user/". $pasta)) {       // função 'file_exists' verifica se a
 
 $formatos = array(1=> 'image/png', 2=> 'image/jpg', 3=> 'image/jpeg', 4=> 'image/gif');     // array de arquivos permitidos
 
+$foto = str_replace(" ", "_", $foto);      // função 'str_replace' substitui a string indesejada por outra string
+$foto = strtolower($foto);
+
 $teste = array_search($tipo, $formatos);        // função 'array_search' procura por um tipo espeçifico
 if($teste == true) {
     move_uploaded_file($_FILES['foto']['tmp_name'], "user/". $pasta. "/". $foto);       // função 'move_uploaded_file' é quem faz o 'upload' das imagens reçebendo dois argumentos o 'primeiro' informa o nome do arquivo e o 'segundo' é o local onde o arquivo será guardado
 } else {
-    echo "<script>alert('Tipo de arquivo não é suportado...'); window.history.go(-1);</script>";
+    echo "<script>alert('Tipo de arquivo não é suportado...');</script>";
+}
+
+$dt = date('Y-m-d');
+$hr = date('H:i:s');
+
+if($registro == true) {
+    mysqli_query($link, "INSERT INTO tb_user(nome, email, senha, lembrete, foto, nivel, dt, hr) VALUES
+    ('$nome', '$email', '$senha', '$lembrete', '$foto', 5, '$dt', '$hr')");            // fazendo cadastro do usuário na tabela 'tb_user'
+    echo "<script>alert('Usuario cadastrado com sucesso...'); window.location.href='index.php';</script>";
+} else {
+    echo "<script>window.history.go(-1);</script>";
 }
