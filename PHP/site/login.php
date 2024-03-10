@@ -9,7 +9,14 @@
     </head>
     <body>
         <div id="box_form">
-            <h1 class = "titulos" style = "margin-left:10%">Tela de Login</h1>
+            <h1 class = "titulos" style = "margin-left:10%">Tela de Login
+            <?php
+            @$v = $_GET['valor'];       // '@' evita erros por variável '$v' estar vazia
+            if($v) {
+                echo " - <span style = 'color:red'>Todos os campos devem ser preenchidos...</span>";
+            }
+            ?>
+        </h1>
             <form action = "logar.php" method = "POST" enctype = "multipart/form-data">
                 <input type = "email" name = "email" class = "campos_cad" placeholder = "Email">
                 <input type = "password" name = "senha" class = "campos_cad" placeholder = "Senha">

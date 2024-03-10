@@ -17,5 +17,5 @@ if($email != ""  && $senha != "") {     // verificando se variáveis estão pree
         echo "<a href = 'form_cadastro.php'>Cadastre-se</a>";
     }
 } else {
-    echo "É necessario preencher todos os campos e possuir um cadastro";
+    header('location:login.php?valor=1');
 }
