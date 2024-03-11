@@ -173,7 +173,7 @@ body {
     font-size: 16px;
 }
 
-#box_form {
+#box_form, #box_log {
     width: 80%;
     min-height: 300px;
     background-color: #FFF;
