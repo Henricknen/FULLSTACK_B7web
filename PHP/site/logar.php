@@ -11,10 +11,18 @@ if($email != ""  && $senha != "") {     // verificando se variáveis estão pree
         $senha_user = $line['senha'];
     }
     if($registro) {     // o 'if' já verifica se a condição já é 'true'
+        if($senha_user == $senha) {
+            SESSION_START();        // iniçiando uma sessao
+            $_SESSION['login'] = $email;      // guardando o email da pessoa na sessão 'login' da variável de ambiente '$_SESSION' 
+            $_SESSION['password'] = $senha;
+        } else {
+            echo "Senha não confere com a cadastra...";
+            echo "<a href = 'login.php'>[Voltar]</a>";
 
+        }
     } else {
         echo "Voçê não possui cadastro, Deseja-se cadastrar ?";
-        echo "<a href = 'form_cadastro.php'>Cadastre-se</a>";
+        echo "<a href = 'form_cadastro.php'>[Cadastre-se]</a>";
     }
 } else {
     header('location:login.php?valor=1');
