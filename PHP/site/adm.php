@@ -11,7 +11,7 @@ while($line = mysqli_fetch_array($sql)) {       // 'mysqli_fetch_array' faz uma 
 }
 
 if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está logado com senha da tabela e se o nivel é igual a 1
-    echo "E-mail". $login;
+    
 } else {
     header('location:index.php');
 }
@@ -28,8 +28,9 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
     </head>
     <body>
         <div id="box_log">
-            <h1 class = "titulos" style = "margin-left:2%">Bem vindo a tela de ADM</h1>
-            
+            <h1 class = "titulos" style = "margin-left:2%">Usuário logado como: <?php echo $login; ?></h1>
+            <a href = "form_postar.php" style = "margin-left:2%">Criar uma postagem</a> | <a href = "form_scriptcss.php">Criar script css</a> |
+            <a href="logout.php">Sair</a>
         </div>
     </body>
 </html>
