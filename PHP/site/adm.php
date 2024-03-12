@@ -1,5 +1,24 @@
-<!DOCTYPE html>
-    <html lang = "pt-br">
+<?php
+
+include "connect.php";
+SESSION_START();        // iniçia ou recupera uma sessão que está em aberto
+$login = $_SESSION['login'];        // email do usuário
+$senha_log = $_SESSION['password'];     // senha do usuário
+$sql = mysqli_query($link, "SELECT * FROM tb_user WHERE email = '$login'");
+while($line = mysqli_fetch_array($sql)) {       // 'mysqli_fetch_array' faz uma varredura na tabela
+    $senha = $line['senha'];
+    $nivel = $line['nivel'];
+}
+
+if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está logado com senha da tabela e se o nivel é igual a 1
+    echo "E-mail". $login;
+} else {
+    header('location:index.php');
+}
+
+?>
+
+<html>
     <head>
         <meta charset = "UTF-8">
         <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
@@ -10,6 +29,7 @@
     <body>
         <div id="box_log">
             <h1 class = "titulos" style = "margin-left:2%">Bem vindo a tela de ADM</h1>
-           
+            
         </div>
     </body>
+</html>
