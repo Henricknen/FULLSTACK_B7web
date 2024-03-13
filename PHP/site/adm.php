@@ -29,7 +29,9 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
     <body>
         <div id="box_log">
             <h1 class = "titulos" style = "margin-left:2%">Usuário logado como: <?php echo $login; ?></h1>
-            <a href = "form_postar.php" style = "margin-left:2%">Criar uma postagem</a> | <a href = "form_scriptcss.php">Criar script css</a> |
+            <a href = "index.php" style = "margin-left:2%">Ir para Home</a> | 
+            <a href = "form_postar.php">Criar uma postagem</a> | 
+            <a href = "form_scriptcss.php">Criar script css</a> |
             <a href="logout.php">Sair</a>
         </div>
     </body>
