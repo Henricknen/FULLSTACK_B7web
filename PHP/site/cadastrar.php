@@ -30,7 +30,7 @@ while($line = mysqli_fetch_array($sql)) {       // enquanto variável '$line' es
     $email_user = $line['email'];
 }
 
-$id = $id + 1;
+@$id = $id + 1;
 $pasta = "user". $id;
 if(file_exists("user/". $pasta)) {       // função 'file_exists' verifica se a pasta já existe
     // echo "<script>alert('Essa pasta já existe...');</script>";       // depois da menssagem de pasta existente
@@ -54,7 +54,7 @@ $foto = strtolower($foto);
 $dt = date('Y-m-d');        // pegando 'data' e 'hora' do computador
 $hr = date('H:i:s');
 
-if($registro == true && $email != $email_user) {     // fazendo cadastro do usuário na tabela 'tb_user'
+if(@$registro == true && $email != $email_user) {     // fazendo cadastro do usuário na tabela 'tb_user'
     mysqli_query($link, "INSERT INTO tb_user(nome, email, senha, lembrete, foto, nivel, dt, hr) VALUES
     ('$nome', '$email', '$senha', '$lembrete', '$foto', 5, '$dt', '$hr')");
     echo "<p style='text-align:center;color:#333;padding:5px;'>Usuário cadastrado com sucesso...<br>";

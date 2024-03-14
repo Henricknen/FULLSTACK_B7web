@@ -8,6 +8,8 @@ $sql = mysqli_query($link, "SELECT * FROM tb_user WHERE email = '$login'");
 while($line = mysqli_fetch_array($sql)) {       // 'mysqli_fetch_array' faz uma varredura na tabela
     $senha = $line['senha'];
     $nivel = $line['nivel'];
+    $foto = $line['foto'];
+    $id = $line['id_user'];
 }
 
 if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está logado com senha da tabela e se o nivel é igual a 1
@@ -33,6 +35,7 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
             <a href = "form_postar.php">Criar uma postagem</a> | 
             <a href = "form_scriptcss.php">Criar script css</a> |
             <a href="logout.php">Sair</a>
+            <img src = "<?php echo "user/user$id/$foto";?>" style = "float:right;width:80px;height:auto;margin:-20px 5px 0 0;">
         </div>
     </body>
 </html>
