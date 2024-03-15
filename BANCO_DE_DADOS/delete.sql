@@ -1,0 +1,1 @@
+DELETE FROM produtos WHERE id = 7;		-- 'delete' deletando o produto 'where' da tabela produtos 'where' enquanto o id for igual a 7
