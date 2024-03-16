@@ -30,8 +30,8 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
     </head>
     <body>
         <div id="box_form">
-            <h1 class = "titulos" style = "margin-left:10%">Formulário de postagens</h1>
-            <form action = "postar.php" method = "POST" enctype = "multipart/form-data">
+            <h1 class = "titulos" style = "margin-left:10%">Formulário de script css</h1>
+            <form action = "postar_script.php" method = "POST" enctype = "multipart/form-data">
                 <input type = "text" name = "titulo" class = "campos_cad" placeholder = "Digite o título da postagem">
                 <input type = "file" name = "foto" class = "campos_cad">
                 <textarea name = "conteudo" class ="campos" placeholder = "Digite aqui o conteúdo em até 300c..." style = "height:300px" maxlength = "300"></textarea>
@@ -43,7 +43,7 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
 
             <div class = "botoes">
                 <a href = "index.php" class = "form_link">&larr; Voltar para página prinçipal</a>
-                <a href = "form_scriptcss.php" class = "form_link" style = "margin-left:20px">Ir para form script css &rarr;</a>
+                <a href = "form_postar.php" class = "form_link" style = "margin-left:20px">Ir para form postar &rarr;</a>
             </div>
         </div>
     </body>
