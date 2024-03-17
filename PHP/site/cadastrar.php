@@ -39,6 +39,8 @@ if(file_exists("user/". $pasta)) {       // função 'file_exists' verifica se a
     // echo "<script>alert('A pasta ". $pasta. " foi criada com sucesso...');</script>";
 }
 
+include "substituicao.php";     // fazendo include de arquivo que faz a substituição de caracteres indejados
+
 $formatos = array(1=> 'image/png', 2=> 'image/jpg', 3=> 'image/jpeg', 4=> 'image/gif');     // array de arquivos permitidos
 $teste = array_search($tipo, $formatos);        // função 'array_search' procura por um tipo espeçifico
 if($teste == true) {
