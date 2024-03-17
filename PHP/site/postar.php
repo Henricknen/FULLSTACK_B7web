@@ -19,9 +19,7 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
     $tipo = $_FILES['foto']['type'];
     $conteudo = $_POST['conteudo'];
     
-    echo $foto. "<br>";     // arquivo antes da substituição
     include "substituicao.php";     // para alterar o nome do arquivo
-    echo $foto. "<br>";     // depois da substituição
     
     $registro = false;
     if($titulo != "" && $foto != "" && $conteudo != "") {       // se variáveis forem diferentes de vazio
@@ -29,6 +27,13 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
     } else {
         echo "<script>window.history.go(-1);</script>";
     }
+
+    $sql = mysqli_query($link, "SELECT * FROM tb_postagens ORDER BY id_post DESC LIMIT 1");     // consulta pega o 'id' da tabela postagem em ordem decreceste
+    while($line = mysqli_fetch_array($sql)) {       // variável '$line' reçebe o que vem da consulta
+        $id = $line['id_post'];     // variável $id reçebe o que estiver na posição 'id_post' da variável $line que se torna um array 
+    }
+
+    echo "id: $id";     // fazendo o print do 'id'
 
 } else {
     header('location:index.php');
