@@ -17,8 +17,18 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
     $titulo = $_POST['titulo'];     
     $foto = $_FILES['foto']['name'];        // variável '$foto' reçebendo o nome do arquivo
     $tipo = $_FILES['foto']['type'];
-
+    $conteudo = $_POST['conteudo'];
+    
+    echo $foto. "<br>";     // arquivo antes da substituição
     include "substituicao.php";     // para alterar o nome do arquivo
+    echo $foto. "<br>";     // depois da substituição
+    
+    $registro = false;
+    if($titulo != "" && $foto != "" && $conteudo != "") {       // se variáveis forem diferentes de vazio
+        $registro = true;       // variável '$registro' equivale a 'true' habilitando fazer cadastro na tabela de registro
+    } else {
+        echo "<script>window.history.go(-1);</script>";
+    }
 
 } else {
     header('location:index.php');
