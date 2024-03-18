@@ -34,9 +34,11 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
     }
 
     $pasta = "postagem/post$id";        // local e nome da pasta
-    echo $pasta;
-    mkdir($pasta, 0777, true);        // função 'mkdir' ultilizada para criar pasta
-    echo "pasta criada";
+    if(file_exists($pasta)) {       // 'file_exists' verifica se o arquivo existe
+        echo "pasta já existe...";
+    } else {
+        mkdir($pasta, 0777, true);        // função 'mkdir' ultilizada para criar a pasta caso ela não exista
+    }
 
 } else {
     header('location:index.php');
