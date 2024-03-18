@@ -33,10 +33,11 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
         $id = $line['id_post'];     // variável $id reçebe o que estiver na posição 'id_post' da variável $line que se torna um array 
     }
 
-    echo "id: $id";     // fazendo o print do 'id'
+    $pasta = "postagem/post$id";        // local e nome da pasta
+    echo $pasta;
+    mkdir($pasta, 0777, true);        // função 'mkdir' ultilizada para criar pasta
+    echo "pasta criada";
 
 } else {
     header('location:index.php');
 }
-
-?>
