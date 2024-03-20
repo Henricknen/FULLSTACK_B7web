@@ -10,7 +10,7 @@ $sql = mysqli_query($link, "SELECT * FROM tb_user WHERE email = '$login'");
 while($line = mysqli_fetch_array($sql)) {       // 'mysqli_fetch_array' faz uma varredura na tabela
     $senha = $line['senha'];
     $nivel = $line['nivel'];
-    $id = $line['id_user'];
+    $id_user = $line['id_user'];
 }
 
 if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está logado com senha da tabela e se o nivel é igual a 1
@@ -30,8 +30,12 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
 
     $sql = mysqli_query($link, "SELECT * FROM tb_postagens ORDER BY id_post DESC LIMIT 1");     // consulta pega o 'id' da tabela postagem em ordem decreceste
     while($line = mysqli_fetch_array($sql)) {       // variável '$line' reçebe o que vem da consulta
-        $id = $line['id_post'];     // variável $id reçebe o que estiver na posição 'id_post' da variável $line que se torna um array 
+        @$id = $line['id_post'];     // variável $id reçebe o que estiver na posição 'id_post' da variável $line que se torna um array 
     }
+
+    @$id = $id + 1;
+
+    echo "Id: $id";
 
     $pasta = "postagem/post$id";        // local e nome da pasta
     if(file_exists($pasta)) {       // 'file_exists' verifica se o arquivo existe
