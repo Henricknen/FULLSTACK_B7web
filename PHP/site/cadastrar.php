@@ -44,7 +44,7 @@ include "substituicao.php";     // fazendo include de arquivo que faz a substitu
 $formatos = array(1=> 'image/png', 2=> 'image/jpg', 3=> 'image/jpeg', 4=> 'image/gif');     // array de arquivos permitidos
 $teste = array_search($tipo, $formatos);        // função 'array_search' procura por um tipo espeçifico
 if($teste == true) {
-    move_uploaded_file($_FILES['foto']['tmp_name'], "user/". $pasta. "/". $foto);       // função 'move_uploaded_file' é quem faz o 'upload' das imagens reçebendo dois argumentos o 'primeiro' informa o nome do arquivo e o 'segundo' é o local onde o arquivo será guardado
+           // função 'move_uploaded_file' é quem faz o 'upload' das imagens reçebendo dois argumentos o 'primeiro' informa o nome do arquivo e o 'segundo' é o local onde o arquivo será guardado
 } else {
     echo "<script>alert('Tipo de arquivo não é suportado...');</script>";
 }

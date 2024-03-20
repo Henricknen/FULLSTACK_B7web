@@ -48,6 +48,19 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
     $hr = date('H:i:s');
     $page = 1;
 
+    if($registro == true) {     // se registro for verdadeiro o usuário poderá cadastrar na tabela
+        
+        mysqli_query($link, "insert into tb_postagens(titulo, imagem, texto, dt, hr, page, id_user) VALUES
+                     ('$titulo', '$foto', '$conteudo', '$dt', '$hr', '$page', '$id_user')");
+        move_uploaded_file($_FILES['foto']['tmp_name'], "user/". $pasta. "/". $foto);
+    
+        header('location:form_postar.php');
+    } else {
+        echo "Não foi possível cadastrar esse conteúdo...";
+        echo "<a href=form_postar.php>Voltar ao formulário</a>";
+    }
+
+
 } else {
     header('location:index.php');
 }
