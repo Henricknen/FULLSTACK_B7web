@@ -44,6 +44,10 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
         mkdir($pasta, 0777, true);        // função 'mkdir' ultilizada para criar a pasta caso ela não exista
     }
 
+    $dt = date('Y-m-d');
+    $hr = date('H:i:s');
+    $page = 1;
+
 } else {
     header('location:index.php');
 }
