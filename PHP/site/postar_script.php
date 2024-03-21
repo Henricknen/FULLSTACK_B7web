@@ -45,16 +45,16 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
         }
         $dt = date('Y-m-d');
         $hr = date('H:i:s');
-        $page = 1;      // se refere a postagem
-
+        $page = 2;      // 2 se refera ao script_css
+        
         mysqli_query($link, "insert into tb_postagens(titulo, imagem, texto, dt, hr, page, id_user) VALUES
                      ('$titulo', '$foto', '$conteudo', '$dt', '$hr', '$page', '$id_user')");
         move_uploaded_file($_FILES['foto']['tmp_name'], "user/". $pasta. "/". $foto);
     
-        header('location:form_postar.php');
+        header('location:form_scriptcss.php');
     } else {
         echo "Não foi possível cadastrar esse conteúdo...";
-        echo "<a href=form_postar.php>Voltar ao formulário</a>";
+        echo "<a href=form_scriptcss.php>Voltar ao formulário</a>";
     }
 
 
