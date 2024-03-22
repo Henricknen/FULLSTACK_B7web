@@ -33,7 +33,7 @@ while($line = mysqli_fetch_array($sql)) {       // enquanto variável '$line' es
 @$id = $id + 1;
 $pasta = "user". $id;
 if(file_exists("user/". $pasta)) {       // função 'file_exists' verifica se a pasta já existe
-    // echo "<script>alert('Essa pasta já existe...');</script>";       // depois da menssagem de pasta existente
+    echo "<script>alert('Essa pasta já existe...');</script>";       // depois da menssagem de pasta existente
 } else {
     mkdir("user/". $pasta, 0777);        // entrando na pasta 'user' e dentro dela criando uma pasta chamada 'user' com o 'id' do usuário cadastrado
     // echo "<script>alert('A pasta ". $pasta. " foi criada com sucesso...');</script>";
@@ -44,7 +44,7 @@ include "substituicao.php";     // fazendo include de arquivo que faz a substitu
 $formatos = array(1=> 'image/png', 2=> 'image/jpg', 3=> 'image/jpeg', 4=> 'image/gif');     // array de arquivos permitidos
 $teste = array_search($tipo, $formatos);        // função 'array_search' procura por um tipo espeçifico
 if($teste == true) {
-           // função 'move_uploaded_file' é quem faz o 'upload' das imagens reçebendo dois argumentos o 'primeiro' informa o nome do arquivo e o 'segundo' é o local onde o arquivo será guardado
+    move_uploaded_file($_FILES['foto']['tmp_name'], "user/". $pasta. "/". $foto);           // função 'move_uploaded_file' é quem faz o 'upload' das imagens reçebendo dois argumentos o 'primeiro' informa o nome do arquivo e o 'segundo' é o local onde o arquivo será guardado
 } else {
     echo "<script>alert('Tipo de arquivo não é suportado...');</script>";
 }

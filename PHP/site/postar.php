@@ -34,18 +34,18 @@ if($senha_log == $senha && $nivel == 1) {        // testando senha de quem está
     }
 
     
+    @$id = $id + 1;
+    $pasta = "postagem/post$id";        // local e nome da pasta
+    if(file_exists($pasta)) {       // 'file_exists' verifica se o arquivo existe
+        echo "pasta já existe...";
+    } else {
+        mkdir($pasta, 0777);        // função 'mkdir' ultilizada para criar a pasta caso ela não exista
+    }
+    $dt = date('Y-m-d');
+    $hr = date('H:i:s');
+    $page = 1;      // se refere a postagem
+    
     if($registro == true) {     // se registro for verdadeiro o usuário poderá cadastrar na tabela
-        
-        @$id = $id + 1;
-        $pasta = "postagem/post$id";        // local e nome da pasta
-        if(file_exists($pasta)) {       // 'file_exists' verifica se o arquivo existe
-            echo "pasta já existe...";
-        } else {
-            mkdir($pasta, 0777, true);        // função 'mkdir' ultilizada para criar a pasta caso ela não exista
-        }
-        $dt = date('Y-m-d');
-        $hr = date('H:i:s');
-        $page = 1;      // se refere a postagem
 
         mysqli_query($link, "insert into tb_postagens(titulo, imagem, texto, dt, hr, page, id_user) VALUES
                      ('$titulo', '$foto', '$conteudo', '$dt', '$hr', '$page', '$id_user')");

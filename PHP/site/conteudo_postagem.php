@@ -8,14 +8,17 @@
         $imagem = $line['imagem'];
         $conteudo = $line['texto'];
         $data = $line['dt'];
-        $id_post = $line['id_post'];    
+        $id_post = $line['id_post'];
+        $hora = $line['hr'];
     ?>
 
     <div class = "postagens">       <!-- este conteúdo será gerado enquanto o loop 'encontrar registros' na tabela tb_postagens -->
         <h1 class = "titulos"><?php echo $titulo; ?></h1>
         <img src = "postagem/<?php echo "post". $id_post. "/". $imagem; ?>" class = "imagem">
         <p class = "paragrafo"><?php echo $conteudo; ?></p>
-        <span class = "data"><?php echo $data; ?></span>
+        <span class = "data"><?php echo date('d/m/Y', strtotime($data));
+            echo "<br>". date('H:i', strtotime($hora));
+        ?></span>
     </div>
     
     <?php
