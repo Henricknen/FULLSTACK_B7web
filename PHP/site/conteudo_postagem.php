@@ -1,18 +1,27 @@
 <div id = "conteudo_pricipal">
     <h1 class = "titulos">Página de Postagens</h1>
-    <div class = "postagens">
-        <h1 class = "titulos">Titulo</h1>
-        <img src = "img/php.jpg" class = "imagem">
-        <p class = "paragrafo">kadfkldaçdkjdçdj</p>
-        <span class = "data">26/02/2024</span>
+    <?php
+    include "connect.php";      // fazendo a inclusão do arquivo de conexão com banco de dados
+    $sql = mysqli_query($link, "select * from tb_postagens where page = 1 order by id_post desc");       // consultando todos os registros da tabela 'tb_postegens'
+    while($line = mysqli_fetch_array($sql)) {          // enquanto variável $line reçeber o que vier da consulta
+        $titulo = $line['titulo'];       // armazenará em variáveis
+        $imagem = $line['imagem'];
+        $conteudo = $line['texto'];
+        $data = $line['dt'];
+        $id_post = $line['id_post'];    
+    ?>
+
+    <div class = "postagens">       <!-- este conteúdo será gerado enquanto o loop 'encontrar registros' na tabela tb_postagens -->
+        <h1 class = "titulos"><?php echo $titulo; ?></h1>
+        <img src = "postagem/<?php echo "post". $id_post. "/". $imagem; ?>" class = "imagem">
+        <p class = "paragrafo"><?php echo $conteudo; ?></p>
+        <span class = "data"><?php echo $data; ?></span>
     </div>
     
-    <div class = "postagens">
-        <h1 class = "titulos">Titulo</h1>
-        <img src = "img/laravel.jpg" class = "imagem">
-        <p class = "paragrafo">kadfkldaçdkjdçdj</p>
-        <span class = "data">26/02/2024</span>
-    </div>
+    <?php
+    }       // 'finalização' do loop while
+    ?>
+
 </div>
 
 <div id = "recentes">
