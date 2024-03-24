@@ -30,7 +30,40 @@
 
         $contar = mysqli_num_rows($sel_total);      // conta a quantidade de registro da tabela
         $contar_pages = $contar / $qtde_registros;
-        echo $contar_pages;
+        // echo $contar_pages;
+
+        while($line = mysqli_fetch_array($sel_parcial)) {       // enquanto '$line' reçeber o que vier da 'sel_parcial' será pego os registros abaixo
+            $titulo = $line['titulo'];
+            $imagem = $line['imagem'];
+            $conteudo = $line['texto'];
+            $data = $line['dt'];
+            $id_post = $line['id_post'];
+        ?>
+        <h1 class = "titulos"><?php echo $titulo; ?></h1>
+        <img src = "postagem/<?php echo "post". $id_post. "/". $imagem; ?>" class = "imagem">
+        <p class = "paragrafo"><?php echo $conteudo; ?></p>
+        <span class = "data"><?php echo date('d/m/Y', strtotime($data));
+        ?></span>
+        
+        <?php
+        }
+        
+
+        $anterior = $pagina -1;
+        $proximo = $pagina + 1;
+
+        echo "<br><br>";
+        if($pagina > 1) {
+            echo "<a href=?pag=$anterior> &larr; Anterior</a>";     // botão de voltar
+        }
+
+        for($i = 1; $i < $contar_pages + 1; $i++) {
+            echo "<a href=?pag=". $i.">". $i. "</a>"; 
+        }
+        
+        if($pagina < $contar_pages) {
+            echo "<a href=?pag=$proximo> Proximo &rarr;</a>";        // botão de seguir adiante
+        }
     ?>
 </div>
 
