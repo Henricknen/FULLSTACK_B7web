@@ -68,9 +68,22 @@
 </div>
 
 <div id = "recentes">
-    <h1 class = "titulos">Recentes</h1>
+<h1 class = "titulos">Recentes</h1>
     <div class = "postagens_recentes">
-        <h1 class = "titulos"><a href="#">Titulo dos arquivos recentes</a></h1>
-        <span class = "data">26/02/2024</span>
+    <?php
+    $contar = 0;
+    $sql = mysqli_query($link, "select * from tb_postagens order by id_post desc");
+    while($line = mysqli_fetch_array($sql) and $contar < 3) { 
+        $titulo = $line['titulo'];
+        $data = $line['dt'];
+    
+    ?>
+        <h1 class = "titulos"><?php echo $titulo; ?></h1>
+        <span class = "data"><?php echo date('d/m/Y', strtotime($data)); ?></span>
+
+    <?php
+    $contar++;
+    }
+    ?>
     </div>
 </div>

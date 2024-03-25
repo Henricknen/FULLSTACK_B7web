@@ -141,6 +141,15 @@ body {
     margin: 5px 0;
 }
 
+#conteudo_pricipal a {
+    padding: 5px;
+    background-color: #CCC;
+    margin: 2px;
+}
+
+#conteudo_pricipal a:hover {
+    background-color: #59f;
+}
 /*----------------------------------- página de contato ----------------------------------------------------*/
 
 .campos, .campos_cad, #botoes, .botoes {
