@@ -1,0 +1,15 @@
+                        # arquivo de configuração
+version: "3"        # versão do arquivo de configuração
+
+services:       # serviços rodando
+    www:
+        build:  .
+        restart: always
+        ports:
+            -  '8000:80'
+        volumes:
+            - ./www:/var/www/html
+        networks:
+            - default
+volumes:        # local para armazenar algum dado
+    db_data:
