@@ -1,14 +1,28 @@
                         # arquivo de configuração
 version: "3"        # versão do arquivo de configuração
 
-services:       # serviços rodando
-    www:
+services:
+    www:        # configuração do servidor
         build:  .
         restart: always
         ports:
             -  '8000:80'
         volumes:
             - ./www:/var/www/html
+        networks:
+            - default
+    db:     # configuração do banco de dados
+        image: mysql:5.7
+        restart: always
+        ports:
+            - '3306:3306'
+        environment:
+            MYSQL_DATABASE: bd_docker
+            MYSQL_USER: root
+            MYSQL_PASSWORD: 123
+            MYSQL_ROOT_PASSWORD: 123456
+        volumes:
+            db_data:/var/lib/mysql
         networks:
             - default
 volumes:        # local para armazenar algum dado
