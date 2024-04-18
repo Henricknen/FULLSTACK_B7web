@@ -37,3 +37,23 @@ class Sorcerer extends Character {        // classe de caracteristica do persona
         this.maxLife = this.life;
     }
 }
+
+class LittleMonster extends Character {        // classe de caracteristica do personagem  'LittleMonster'
+    constructor() {
+        super('Little Monster');
+        this.life = 40;
+        this.attack = 4;
+        this.defense = 4;
+        this.maxLife = this.life;
+    }
+}
+
+class BigMonster extends Character {        // classe de caracteristica do personagem  'BigMonster'
+    constructor() {
+        super('Big Monster');
+        this.life = 120;
+        this.attack = 16;
+        this.defense = 6;
+        this.maxLife = this.life;
+    }
+}
