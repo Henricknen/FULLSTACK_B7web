@@ -5,7 +5,7 @@ const stage = new Stage(
     hero,
     monster,
     document.querySelector('#hero'),
-    document.querySelector('#moster')
+    document.querySelector('#monster')
 );
 
 stage.start();
