@@ -1,12 +1,10 @@
-function createPerson(name, lastname, age) {
-    return {
-        name,
-        lastname,
-        age
+let person = {
+    name: 'Luis',
+    lastname: 'Henrique',
+    age: 33,
+    getFullName() {     // criando função sendo propriedade, ela tem acesso ao objeto 'this'
+        return `${this.name} ${this.lastname}`;
     }
 }
 
-let person1 = createPerson('Luis', 'Henrique', 33);
-let person2 = createPerson('Front End', 'Back End', 100);
-
-console.log(person1.name);
+console.log(person.getFullName());
