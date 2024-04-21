@@ -78,7 +78,7 @@ const stage = {
     },
     doAttack(attacking, attacked) {
         if(attacking <= 0 || attacked.life <= 0) {
-            console.log('Adversário está morto voçê não pode mais atacar...');
+            log.addMessage('Adversário está morto voçê não pode mais atacar...');
             return;
         }
 
@@ -91,11 +91,27 @@ const stage = {
         if(actualAttack > actualDefense) {
             attacked.life -= actualAttack;
             attacked.life = attacked.life < 0 ? 0 : attacked.life;
-            console.log(`${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}`);
+            log.addMessage(`${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}`);
         } else {
-            console.log(`${attacked.name} conseguiu se defender....`);
+            log.addMessage(`${attacked.name} conseguiu se defender....`);
         }
 
         this.update();
+    }
+}
+
+const log = {       // objeto de log
+    list: [],           // array 'list'
+    addMessage(msg) {
+        this.list.push(msg);        // adiçionando menssagem no 'array'
+        this.render();
+    },
+    render() {      // função que exibirá as menssagens
+        const logEl = document.querySelector('.log');
+        logEl.innerHTML = '';
+
+        for(let i in this.list) {
+            logEl.innerHTML += `<li>${this.list[i]}</li>`;
+        }
     }
 }
