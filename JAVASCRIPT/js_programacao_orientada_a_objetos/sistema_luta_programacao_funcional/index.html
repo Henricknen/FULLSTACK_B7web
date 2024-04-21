@@ -4,13 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Luta</title>
+    <title>Sistema Luta ultilizando programacao funcional</title>
+    <link rel = "stylesheet" href = "./assets/style.css">
 </head>
 <body>
-    
-    <h1>Programação funcional</h1>
-    <h2>Substituindo o Construtor</h2>
+    <div class = "fightarea">
+        <div id = "hero">
+            <div class = "lifebar">     <!-- barra de vida do personagem -->
+                <div class = "bar" style = "width: 10%"></div>
+            </div>
+            <strong class = "name">---</strong>     <!-- nome do usuario -->
+            <div>
+                <button class = "attackButton">Atacar</button>
+            </div>
+        </div>
+        
+        <div id = "monster">
+            <div class = "lifebar">
+                <div class = "bar" style = "width: 10%"></div>
+            </div>
+            <strong class = "name">---</strong>
+            <div>
+                <button class = "attackButton">Atacar</button>
+            </div>
+        </div>
+    </div>
 
+    <ul class = "log"></ul>     <!-- lista dos aconteçimentos -->
+    
+    <script src = "assets/functions.js"></script>
     <script src = "assets/script.js"></script>
 </body>
 </html>
