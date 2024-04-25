@@ -19,4 +19,38 @@ async function readPosts() {            // função que irar lê os posts
         }
 }
 
+async function addNewPost(title, body) {        // função reçebe o 'title' e o 'body' e faz a requisição e vai enviar o 'title' e o 'body' pra requisição
+        await fetch(
+                'https://jsonplaceholder.typicode.com/posts',
+                {
+                        method: 'POST',
+                        headers: {
+                                'Content-Type': 'application/json'
+                        },
+                        body: JSON.strinify({
+                                title: title,
+                                body: body,
+                                userId: 2
+                        })
+                }
+        );
+
+        document.querySelector('#titleField').value = '';       // limpando os campos
+        document.querySelector('#bodyField').value = '';
+
+        readPosts();    // executando a função 'readPosts'
+
+}
+
+document.querySelector('#isertButton').addEventListener('click', () => {       
+        let title = document.querySelector('#titleField').value;        // pegando o valor que está digitado no campo de id 'titleField'
+        let body = document.querySelector('#bodyField').value;
+
+        if(title && body) {     // verificando se os campos estão preenchidos
+                addNewPost(title, body);
+        } else {
+                alert("Preencha todos os campos...");
+        }
+});
+
 readPosts();
