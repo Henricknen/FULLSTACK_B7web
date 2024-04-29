@@ -13,20 +13,19 @@ class app_flutter extends StatelessWidget {
         appBar: AppBar(
           title: Text('Codificando MaterialApp'),   // definição do título
         ),
-        body:Container(    // Container é um width que deixa o corpo do projeto vazio, para possíveis códificações
-        color: Colors.red,
-          child: Row(   // linha para posiçionar os 'widgets'
+        body:Center(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Expanded(   // da um 'espaço' entre os widgets
-              child: Text('Luis Henrique'),   // 'exibe' o nome na tela
-              ),
-              Expanded(
-              child: Text('Silva Ferreira'),
-              )
+              Icon(Icons.star, color: Colors.green),
+              Icon(Icons.star, color: Colors.green),
+              Icon(Icons.star, color: Colors.green),
+              Icon(Icons.star, color: Colors.black),
+              Icon(Icons.star, color: Colors.black),
             ],
           )
         )
-      ),
+      )
     );
   }
 }
