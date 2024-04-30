@@ -11,19 +11,72 @@ class app_flutter extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Codificando MaterialApp'),   // definição do título
+          title: Text('Codificando Style'),   // definição do título
         ),
-        body:Center(
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.star, color: Colors.green),
-              Icon(Icons.star, color: Colors.green),
-              Icon(Icons.star, color: Colors.green),
-              Icon(Icons.star, color: Colors.black),
-              Icon(Icons.star, color: Colors.black),
-            ],
-          )
+        body:Column(    // coluna
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child:Container(
+                    height: 100,
+                    color: Colors.red
+                  )
+                ),
+              ],
+            ),
+            Row(    // linha
+              children: [
+                Expanded(
+                  child:Container(
+                    height: 100,
+                    width: 100,
+                    color: Colors.blue
+                  )
+                ),
+                Expanded(
+                  child:Container(
+                    height: 100,
+                    width: 100,
+                    color: Colors.green
+                  )
+                )
+              ]
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child:Container(
+                    height: 100,
+                    width: 100,
+                    color: Colors.pink
+                  )
+                ),
+                Expanded(
+                  child:Container(
+                    height: 100,
+                    color: Colors.yellow
+                  )
+                ),
+                Expanded(
+                  child:Container(
+                    height: 100,
+                    color: Colors.black
+                  )
+                )
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child:Container(
+                    height: 100,
+                    color: Colors.deepOrangeAccent
+                  )
+                ),
+              ],
+            ),
+          ],          
         )
       )
     );
