@@ -10,6 +10,10 @@ function updateClock() {        // função 'updateClock' atualizará o relógio
     let secund = now.getSeconds();
 
     digitaElement.innerHTML = `${fixZero(hour)}:${fixZero(minute)}:${fixZero(secund)}`;
+
+    sDeg = ((360 / 60) * secund) - 90;     // variável 'sDeg' é o ângulo dos segundos
+
+    sElement.style.transform = `rotate(${sDeg}deg)`;     // inserindo propriedade 'css' no ponteiro de segundos
 }
 
 function fixZero(time) {
