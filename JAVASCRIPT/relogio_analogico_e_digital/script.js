@@ -11,9 +11,11 @@ function updateClock() {        // função 'updateClock' atualizará o relógio
 
     digitaElement.innerHTML = `${fixZero(hour)}:${fixZero(minute)}:${fixZero(secund)}`;
 
-    sDeg = ((360 / 60) * secund) - 90;     // variável 'sDeg' é o ângulo dos segundos
-
+    let sDeg = ((360 / 60) * secund) - 90;     // variável 'sDeg' é o ângulo dos segundos
+    let mDeg = ((360 / 60) * minute) - 90;
+    
     sElement.style.transform = `rotate(${sDeg}deg)`;     // inserindo propriedade 'css' no ponteiro de segundos
+    mElement.style.transform = `rotate(${mDeg}deg)`;
 }
 
 function fixZero(time) {
