@@ -13,9 +13,11 @@ function updateClock() {        // função 'updateClock' atualizará o relógio
 
     let sDeg = ((360 / 60) * secund) - 90;     // variável 'sDeg' é o ângulo dos segundos
     let mDeg = ((360 / 60) * minute) - 90;
+    let hDeg = ((360 / 12) * hour) - 90;
     
     sElement.style.transform = `rotate(${sDeg}deg)`;     // inserindo propriedade 'css' no ponteiro de segundos
     mElement.style.transform = `rotate(${mDeg}deg)`;
+    hElement.style.transform = `rotate(${hDeg}deg)`;
 }
 
 function fixZero(time) {
@@ -27,3 +29,4 @@ function fixZero(time) {
 }
 
 setInterval(updateClock, 1000);      // função 'setInterval' executa a função 'updateClock' a cada segundo '1000'
+updateClock();      // chamando a função 'updateClock' de imediato para evitar 'delay'
