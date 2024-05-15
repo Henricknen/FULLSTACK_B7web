@@ -4,6 +4,7 @@ document.querySelector('.busca'). addEventListener('submit', async (event)=> {  
     let input = document.querySelector('#searchInput'). value;      // armazenando na variável 'input' o que o usúario digitou
 
     if(input != '') {
+        clearInfo();
         showWarning('Carregando...');
 
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(input)}&appid=f4838ed66dee1f86bdf4ff4b4a14d845&units=metric&lang=pt_br`;      // variável url ultilizando llink de 'api'
@@ -22,19 +23,31 @@ document.querySelector('.busca'). addEventListener('submit', async (event)=> {  
             });
 
         } else {
+            clearInfo();
             showWarning('Não foi encontrada está localização');
         }
+    } else {
+        clearInfo();        // quando não encontrar nada a tela será limpada
     }
 });
 
 function showInfo(json) {       // função 'showInfo' é espeçifica para mostrar as informações
     showWarning('');
 
-    document.querySelector('.resultado').style.display = 'block';
     document.querySelector('.titulo').innerHTML = `${json.name}, ${json.country}`;
     document.querySelector('.tempInfo').innerHTML = `${json.temp} <sup>°C</sup>`;
-    document.querySelector('.ventoInfo').innerHTML = `${json.windSpeed}} <span>Km</span>`;
-    
+    document.querySelector('.ventoInfo').innerHTML = `${json.windSpeed}} <span>Km/h</span>`;
+
+    document.querySelector('.temp img').setAttribute('src', `https://openweathermap.org/img/wn/${json.tempIcon}@2x.png`)     // 'seleçionando' a imagem e trocando sua 'url'
+
+    document.querySelector('.ventoPonto').style.transform = `rotate(${json.windAngle-90}deg)`;      // formantando angulo do icone do relógio
+
+    document.querySelector('.resultado').style.display = 'block';       // exibi na tela o resultado com tudo preenchido
+}
+
+function clearInfo() {      // função removerá o 'showWarning' e ocultará o resultado
+    showWarning('');
+    document.querySelector('.resultado').style.display = 'none';
 }
 
 function showWarning(msg) {     // função 'showWarning' mostrará ou removerá algum aviso
