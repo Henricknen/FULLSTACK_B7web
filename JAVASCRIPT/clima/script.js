@@ -11,7 +11,7 @@ document.querySelector('.busca'). addEventListener('submit', async (event)=> {  
         let results = await fetch(url);     // variável 'results' armazenará o resultado da requisição
         let json = await results.json();        // transformando o resultado em 'json'
 
-        if(json.cod === 200) {
+        if(json.cod === 200) {      // 220 é quando se encontra um resultado, quando dá certo a requisição
             showInfo({      // montando objeto com informações
                 name: json.name,
                 country: json.sys.country,
@@ -27,11 +27,13 @@ document.querySelector('.busca'). addEventListener('submit', async (event)=> {  
     }
 });
 
-function showInfo(json) {       // função 'showInfo' é espeçifica para mstrar as informações
+function showInfo(json) {       // função 'showInfo' é espeçifica para mostrar as informações
     showWarning('');
 
     document.querySelector('.resultado').style.display = 'block';
     document.querySelector('.titulo').innerHTML = `${json.name}, ${json.country}`;
+    document.querySelector('.tempInfo').innerHTML = `${json.temp} <sup>°C</sup>`;
+    document.querySelector('.ventoInfo').innerHTML = `${json.windSpeed}} <span>Km</span>`;
     
 }
 
