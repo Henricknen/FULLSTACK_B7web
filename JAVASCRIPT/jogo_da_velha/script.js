@@ -1,7 +1,7 @@
 let square = {      // objeto 'square' tem cada uma das casas e o que tem dentro dela 'vazias'
     a1: '', a2: '', a3: '',
-    b1: 'x', b2: '', b3: '',
-    c1: '', c2: 'o', c3: '',
+    b1: '', b2: '', b3: '',
+    c1: '', c2: '', c3: '',
 };
 
 let player = '';        // variável 'player' armazena de quem é a vez
@@ -11,6 +11,14 @@ let playing = '';               // 'playing' indica de o jogo está rolando ou n
 reset();        // executando a função 'reset' para iniçiar dando um reset
 
 document.querySelector('.reset'). addEventListener('click', reset);     // criando evento de 'click' que chamará a função 'reset'
+document.querySelectorAll('.item'). forEach(item => {       // 'querySelectorAll' seleçiona mais de um item que tem a classe 'item'
+    item.addEventListener('click', itemClick);      
+});
+
+function itemClick() {
+    let item = event.target.getAttribute('data-item');      // pegando o atributo 'data-item' para saber em quem foi clicado
+    console.log('clicou  em ', item);
+}
 
 function reset() {
     warning = '';      // função 'reset' limpará os avisos 'warning'
