@@ -1,12 +1,14 @@
 let square = {      // objeto 'square' tem cada uma das casas e o que tem dentro dela 'vazias'
     a1: '', a2: '', a3: '',
-    b1: '', b2: '', b3: '',
-    c1: '', c2: '', c3: '',
+    b1: 'x', b2: '', b3: '',
+    c1: '', c2: 'o', c3: '',
 };
 
 let player = '';        // variável 'player' armazena de quem é a vez
 let warning = '';           // variável 'warning' armazenará a menssagem
 let playing = '';               // 'playing' indica de o jogo está rolando ou não
+
+reset();        // executando a função 'reset' para iniçiar dando um reset
 
 document.querySelector('.reset'). addEventListener('click', reset);     // criando evento de 'click' que chamará a função 'reset'
 
@@ -20,7 +22,24 @@ function reset() {
         player = 'o';
     }
 
-    for(let in square) {        // zera(deixa sem nada) o tabuleiro do jogo da velha
-        square[i] = '';
+    // for(let i in square) {        // zera(deixa sem nada) o tabuleiro do jogo da velha
+    //     square[i] = '';
+    // }
+
+    playing = true;
+
+    renderSquare();
+    renderInfo();
+}
+
+function renderSquare() {
+    for(let i in square) {      // percorre a variável 'square'
+        let item = document.querySelector(`div[data-item=${i}]`);       // seleçionando o item espeçifico do 'square'
+        item.innerHTML = square[i];
     }
+}
+
+function renderInfo() {
+    document.querySelector('.vez'). innerHTML = player;
+    document.querySelector('.resultado'). innerHTML = warning;
 }
