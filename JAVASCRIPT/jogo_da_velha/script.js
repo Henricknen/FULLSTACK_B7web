@@ -79,3 +79,29 @@ function checkGame() {      // função verifica quem ganhou
         playing = false;
     }
 }
+
+function checkWinnerFor() {
+    let pos = [
+        'a1, a2, a3',       // possibilidades de vitória na 'horizontal'
+        'b1, b2, b3',
+        'c1, c2, c3',
+
+        'a1, b1, c1',       // possibilidade de vitória na 'vertical'
+        'a2, b2, c2',
+        'a3, b3, c3',
+
+        'a1, b2, c3',     // possibilidade de vitória na 'transversal'
+        'a3, b2, c1',
+    ];
+
+    for(let w in pos) {     // verifica se o player está com as posições preenchidas
+        let pArray = pos[w]. split(',');        // cria um array com 'a1, a2 e a3'
+        pArray.every((option)=> {     // percorrendo o array 'pArray'
+            if(square[option] === player) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+    }
+}
