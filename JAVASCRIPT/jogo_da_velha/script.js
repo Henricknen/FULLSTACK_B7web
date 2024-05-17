@@ -17,7 +17,11 @@ document.querySelectorAll('.item'). forEach(item => {       // 'querySelectorAll
 
 function itemClick() {
     let item = event.target.getAttribute('data-item');      // pegando o atributo 'data-item' para saber em quem foi clicado
-    console.log('clicou  em ', item);
+    if(square[item] === '') {
+        square[item] = player;      // preenchendo 'square' com o jogador da vez
+        renderSquare();
+        togglePlayer();
+    }
 }
 
 function reset() {
@@ -40,14 +44,38 @@ function reset() {
     renderInfo();
 }
 
-function renderSquare() {
+function renderSquare() {       // função mostra as informações na tela
     for(let i in square) {      // percorre a variável 'square'
         let item = document.querySelector(`div[data-item=${i}]`);       // seleçionando o item espeçifico do 'square'
         item.innerHTML = square[i];
     }
+
+    checkGame();
 }
 
 function renderInfo() {
     document.querySelector('.vez'). innerHTML = player;
     document.querySelector('.resultado'). innerHTML = warning;
+}
+
+function togglePlayer(){        // função altenará o jogador
+    if(player === 'x') {
+        player = 'o';
+    } else {
+        player = 'x';
+    }
+
+}
+
+function checkGame() {      // função verifica quem ganhou
+    if(checkWinnerFor('x')) {
+        warning = 'O "x" venceu';
+        playing = false;
+    } else if(checkWinnerFor('o')) {
+        warning = 'O "o" venceu';
+        playing = false;
+    } else if(isFull()) {
+        warning = 'Deu empate';
+        playing = false;
+    }
 }
