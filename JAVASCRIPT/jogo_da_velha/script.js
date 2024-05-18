@@ -17,7 +17,7 @@ document.querySelectorAll('.item'). forEach(item => {       // 'querySelectorAll
 
 function itemClick() {
     let item = event.target.getAttribute('data-item');      // pegando o atributo 'data-item' para saber em quem foi clicado
-    if(square[item] === '') {
+    if(playing && square[item] === '') {
         square[item] = player;      // preenchendo 'square' com o jogador da vez
         renderSquare();
         togglePlayer();
@@ -28,15 +28,11 @@ function reset() {
     warning = '';      // função 'reset' limpará os avisos 'warning'
 
     let random = Math.floor(Math.random() * 2);     // gera um número aleatório entre 0 e 1
-    if(random === 0) {      // definindo o 'player'
-        player = 'x';
-    } else {
-        player = 'o';
-    }
+    player = (random === 0) ? 'x' : 'o';
 
-    // for(let i in square) {        // zera(deixa sem nada) o tabuleiro do jogo da velha
-    //     square[i] = '';
-    // }
+    for(let i in square) {        // zera(deixa sem nada) o tabuleiro do jogo da velha
+        square[i] = '';
+    }
 
     playing = true;
 
@@ -53,17 +49,14 @@ function renderSquare() {       // função mostra as informações na tela
     checkGame();
 }
 
-function renderInfo() {
+function renderInfo() {     // função mostra as informações
     document.querySelector('.vez'). innerHTML = player;
     document.querySelector('.resultado'). innerHTML = warning;
 }
 
 function togglePlayer(){        // função altenará o jogador
-    if(player === 'x') {
-        player = 'o';
-    } else {
-        player = 'x';
-    }
+    player = (player === 'x') ? 'o' : 'x';
+    renderInfo();
 
 }
 
@@ -96,12 +89,21 @@ function checkWinnerFor() {
 
     for(let w in pos) {     // verifica se o player está com as posições preenchidas
         let pArray = pos[w]. split(',');        // cria um array com 'a1, a2 e a3'
-        pArray.every((option)=> {     // percorrendo o array 'pArray'
-            if(square[option] === player) {
-                return true;
-            } else {
-                return false;
-            }
-        })
+        let hasWon = pArray.every(option=> square[option] === player);        // se variável hasWon estiver preenchida é sinal que o 'player' ganhou
+        if(hasWon) {
+            return true;        // será retornado 'true'
+        }
     }
+
+    return false;
+}
+
+function isFull() {     // função 'isFull' verefica o empate
+    for(let i in square) {
+        if(square[i] === '') {      // se square estiver algum item vazio 
+            return false;       // o jogo não acabou
+        }
+    }
+
+    return true;        // indica que está tudo preenchido
 }
