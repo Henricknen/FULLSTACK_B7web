@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset = "UTF-8">
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <div v-if = "pais == 'brazil'">
+            <p v-html = "brazil"></p>
+            <p>América do Sul</p>
+        </div>
+    <div id = "app">
+        <div v-if = "pais == 'china'">
+            <p v-html = "china"></p>
+            <p>Ásis</p>
+        </div>
+    <div id = "app">
+        <div v-if = "pais == 'argentina'">
+            <p v-html = "argentina"></p>
+            <p>América do Sul</p>
+        </div>
+    <div id = "app">
+        <div v-if = "pais == 'uk'">
+            <p v-html = "uk"></p>
+            <p>Europa</p>
+        </div>
+    <div id = "app">
+        <div v-if = "pais == 'usa'">
+            <p v-html = "usa"></p>
+            <p>América do Norte</p>
+        </div>
+    </div>
+
+    <script src = "script.js"></script>
+</body>
+</html>
