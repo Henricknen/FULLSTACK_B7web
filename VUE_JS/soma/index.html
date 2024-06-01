@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset = "UTF-8">
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <span>{{ n1 }} + {{ n2 }}</span>
+        <input type = "text" v-model = "n3" />      <!-- associação direta 'bi-lateral' -->
+        <div v-if = "n1 + n2 == parseInt(n3)">ACERTOU</div>     <!-- 'v-if' insere condição -->
+        <div v-if = "n3 != '0' && n1 + n2 != parseInt(n3)">ERROU</div>
+    </div>
+    
+    <script src = "script.js"></script>
+</body>
+</html>
