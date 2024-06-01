@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset = "UTF-8">
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "placar">
+        <div>{{ n }}</div>
+        <span v-if = "n > 5">Parabéns, chegou aos 5 pontos</span>       <!-- 'v-if' permite a inserção de 'condição' -->
+        <span v-if = "aparecer">Se a variável for 'true' está menssagem aparecerá, se 'false' ficará oculta</span>
+    </div>
+    <div id = "lista">
+        <ul>
+            <li v-for = "info in hardskills">       <!-- v-for se repetirá quantas vezes for necessário, de acordo com a variável 'hardskills' do js -->
+                <span>Linguagem de programação: {{info.liguagem_de_programacao}}</span>
+                <span>/</span>
+                <span> Framework: {{info.framework}}</span>
+            </li>
+        </ul>
+    </div>
+    
+    <script src = "script.js"></script>
+</body>
+</html>
