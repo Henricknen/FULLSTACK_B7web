@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset = "UTF-8">
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <div id = "app">
+        <div class = "header">
+
+            {{ titulo }}</br>       <!-- entre '{ }' será sempre interpletado como um texto -->
+            <small v-html = "subtitulo"></small>
+
+        </div>
+        <section class = "container">
+            <section class = "container__content">
+
+                {{ carregado ? 'SIM' : 'NÃO' }}     <!-- ultilizando operador ternário para exibir menssagem quando elemento 'carregado' for true ou false  -->
+
+            </section>
+            <section class = "container__sidebar">
+
+                {{ profissional }}</br></br>        <!-- elemento 'profissional' será invertido -->
+                {{ profissional. split(''). reverse(). join('') }}        <!-- 'split' tranforma cada palavra em um item de array, reverse inverte a ordem do array, 'join' transforma de string para array novamente -->
+
+            </section>
+        </section>
+        <footer class = "footer">
+
+            {{ copyright }}
+
+        </footer>
+    </div>
+    
+    <script src = "script.js"></script>
+</body>
+</html>
