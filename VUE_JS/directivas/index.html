@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset = "UTF-8">
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <div id = "app">
+        <div class = "header">
+
+            <div v-if = "aviso">Aviso será visivel enquanto elemento 'aviso' for true</div>            
+
+        </div>
+        <section class = "container">
+            <section class = "container__content">
+
+                <div v-bind:id = "'item-' + n">Div qualquer</div>       <!-- 'v-bind' permite a adicição de um  'id' dinâmico ao div, concatenando 'item-' com o valor de 'n' do vue.js -->
+
+            </section>
+            <section class = "container__sidebar">
+
+                <form v-on:submit.prevent = "enviou">       <!-- formulário que 'prevent' previne o comportamento padrão de submissão e chama o método 'enviou' definido no vue.js -->
+                    <input type = "text">
+                    <input type = "submit" value = "Enviar">
+                </form>
+
+            </section>
+        </section>
+        <footer class = "footer">
+
+            <button v-on:click = "clicou">Clique aki</button>       <!-- ultilizando 'v-on' que e ultilizado para eventos, botão chama o método 'clicou' definido no vue.js quando clicado -->
+
+        </footer>
+    </div>
+    
+    <script src = "script.js"></script>
+</body>
+</html>
