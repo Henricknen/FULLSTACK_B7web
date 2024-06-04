@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset = "UTF-8">
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <div id = "app">
+        <div class = "header">
+            
+
+        </div>
+        <section class = "container">
+            <section class = "container__content">
+
+                <a :href="url">Repositorio Vue.js</a><br>        <!-- ':' torna o 'href =' dinâmico e equivale a 'v-bind:' -->
+
+                <button @click = "fazAlgumaCoisa">Clique aqui para fazer alguma coisa...</button>       <!-- '@' transforma 'click =' em dinâmico -->
+
+            </section>
+            <section class = "container__sidebar">
+
+
+            </section>
+        </section>
+        <footer class = "footer">
+
+        </footer>
+    </div>
+    
+    <script src = "script.js"></script>
+</body>
+</html>
