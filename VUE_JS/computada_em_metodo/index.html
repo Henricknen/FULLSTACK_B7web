@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset = "UTF-8">
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <div id = "app">
+        <div class = "header">
+            
+
+        </div>
+        <section class = "container">
+            <section class = "container__content">
+
+                <div>{{ nome }}</div><br/>
+            <div>{{ nomeInvertido() }}</div><br/>        <!-- ultilizando propriedade computada 'nomeInvertido' como uma função -->
+
+            <div>{{ aleatorio }}</div>      <!-- execução -->
+            <div>{{ aleatorioFuncao() }}</div>      <!-- faz uma execução -->
+            
+        </section>
+        <aside section class = "container__sidebar">
+            
+            <div>{{ nomeInvertido() }}</div><br/>
+            
+            <div>{{ aleatorio }}</div>      <!-- pegando somente o resultado da execução, pois não houve modificação -->
+            <div>{{ aleatorioFuncao() }}</div>      <!-- faz uma outra execução -->
+
+            </aside>
+            </section>
+        </section>
+        <footer class = "footer">
+
+        </footer>
+    </div>
+    
+    <script src = "script.js"></script>
+</body>
+</html>
