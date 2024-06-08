@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+
+        </header>
+        <section class="container">
+            <section class="container__content">
+
+                <h1 v-if="vif">Condicional 'v-if'...</h1> <!-- h1 condicionado 'v-if' à variável 'vif' -->
+                <h1 v-else>É um outro tipo de condicional...</h1> <!-- se condição não for satisfeita, exibirá esta mensagem -->
+
+            </section>
+            <aside class="container__sidebar">
+
+                <template v-if="template">
+                    <h1>Condicional 'template'</h1>		<!-- dentro do template, é possível inserir mais elementos -->
+                    <h2>framework</h2>
+                    <h3>Vue.js</h3>
+                </template>
+                <template v-else-if="">
+
+                </template>
+                <template v-else>
+                    <h1>É um outro tipo de condicional...</h1>		<!-- será exibido se 'template' for falso -->
+                </template>
+
+            </aside>
+        </section>
+        <footer class="footer">
+
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
