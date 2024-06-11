@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+
+        </header>
+        <section class="container">
+            <section class="container__content">
+
+                <button v-on:click = "addContagem">Clique aqui</button><br>        <!-- adiçionando evento de click ultilizando 'v-on' para fazer a chamado do método 'addContagem' -->
+                <button v-on:click = "addContagemm(3)">Adiçionando de 3 em 3</button>
+
+                <p>A contagem é: {{ contagem }}</p>
+
+            </section>
+            <aside class="container__sidebar">
+
+
+            </aside>
+        </section>
+        <footer class="footer">
+
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
