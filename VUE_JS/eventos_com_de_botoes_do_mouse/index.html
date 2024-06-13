@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+
+        </header>
+        <section class="container">
+            <section class="container__content">
+
+                <button v-on:click.right.prevent = "teclou" v-on:click.middle = "teclou">Clique aqui...</button>     <!-- 'middle' o método é chamado quando clicar o botão do meio ser clicado e 'right' chama o método quando o botão direito do mouse for clicado e 'prevent' tira a ação original do botão -->
+
+                <p>A contagem é: {{ contagem }}</p>
+
+            </section>
+            <aside class="container__sidebar">
+
+
+            </aside>
+        </section>
+        <footer class="footer">
+
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!--        modifiers
+    stop: quando um evento for disparado em um elemento, ele não será transmitido aos elementos ancestrais.
+    prevent: é usado para prevenir a ação padrão associada ao evento.
+    capture: usa a captura de eventos em vez de bolhas.
+    self: só é chamado quando o próprio elemento é clicado.
+    once: é chamado apenas uma vez.
+    passive:  é usado para melhorar a performance de eventos de rolagem.
+ -->
