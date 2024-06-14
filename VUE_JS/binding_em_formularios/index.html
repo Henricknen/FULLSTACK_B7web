@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+        </header>
+        <section class="container">
+            <section class="container__content">
+                
+                <input type="text" v-model="menssagem" />       <!-- campo de texto vinculado ao dado 'menssagem' usando v-model -->
+
+                <p>Menssagem: {{ menssagem }}</p>
+                
+                <input type="checkbox" v-model="selecionado" />
+                
+                <p>Selecionado: {{ selecionado }}</p>
+
+                
+                <input type="checkbox" value="Vue.js" v-model="nomes"> Framework<br />      <!-- checkbox com valor "Vue.js" vinculado ao array 'nomes' usando v-model -->
+
+                <input type="checkbox" value="JavaScript" v-model="nomes"> Linguagem de programação<br />
+
+                <input type="checkbox" value="Profissional" v-model="nomes"> Luis Henrique S F<br />
+                
+                <p>Nomes: {{ nomes }}</p>       <!-- exibe o conteúdo do array 'nomes' -->
+            </section>
+            <aside class="container__sidebar">
+
+
+            </aside>
+        </section>
+        <footer class="footer">
+
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
