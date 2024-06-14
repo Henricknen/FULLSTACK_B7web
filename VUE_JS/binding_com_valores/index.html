@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+        </header>
+        <section class="container">
+            <section class="container__content">
+                
+                <select v-model = "selecionado">
+                    <option v-bind:value = "{nome:'Fulano', idade:10}">Opção 1</option>     <!-- inserido um 'objeto' com valor do option -->
+                    <option v-bind:value = "{nome:'Ciclano', idade:20}">Opção 2</option>
+                    <option v-bind:value = "{nome:'Beltrano', idade:30}">Opção 3</option>
+                </select>
+
+                <p>Selecionado: {{ selecionado.nome }}</p>
+
+            </section>
+            <aside class="container__sidebar">
+
+
+            </aside>
+        </section>
+        <footer class="footer">
+
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
