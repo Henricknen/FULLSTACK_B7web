@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset = "utf-8" />
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
+</head>
+<body>
+    <div id = "app">
+        <header class  = "header">
+            
+        </header>
+        <section class = "container">
+            <section class = "container__content" id = "conteudo">
+
+                <aviso>
+                    Menssagem de aviso
+                </aviso>
+                
+                <postagem>      <!-- conteúdo html -->
+                    <template slot = "titulo">      <!-- 'template' separa o codigo para maior organização -->
+                        Titulo da postagem
+                    </template>
+
+                    <template slot = "corpo">
+                        Corpo da postagem<br/>
+                        <button>Botão da postagem</button><br/>
+                        <img src = "http://www.google.com.br/google.jpg" />
+                    </template>
+                </postagem>
+                
+            </section>
+            <aside class = "container__sidebar">
+                
+                
+                <contador></contador>
+
+            </aside>
+        </section>
+        <footer class = "footer">
+
+        </footer>
+    </div>
+
+    <script type = "text/javascript" src = "script.js"></script>
+</body>
+</html>
