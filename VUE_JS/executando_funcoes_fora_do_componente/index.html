@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset = "utf-8" />
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
+</head>
+<body>
+    <div id = "app">
+        <header class  = "header">
+            
+        </header>
+        <section class = "container">
+            <section class = "container__content" id = "conteudo">
+
+                <postagem titulo = "Titulo da postagem 1" v-on:responder = "abrirResposta">
+                    Corpo da postagem 1
+                </postagem>
+                
+                <postagem titulo = "Titulo da postagem 2" v-on:responder = "abrirResposta">
+                    Corpo da postagem 2
+                </postagem>
+
+                <template v-if = "responderAberto">
+                    <span>Respondendo a: {{ respostaTitulo }}</span><br>
+
+                    <textarea></textarea>
+                </template>
+                
+            </section>
+            <aside class = "container__sidebar">
+                
+                
+
+            </aside>
+        </section>
+        <footer class = "footer">
+
+        </footer>
+    </div>
+
+    <script type = "text/javascript" src = "script.js"></script>
+</body>
+</html>
