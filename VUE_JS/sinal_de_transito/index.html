@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset = "utf-8" />
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script src = "https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
+</head>
+<body>
+    <div id = "app">
+        <div class = "controle">        <!-- area de controle do sinal -->
+            <button v-on:click = "liberar">Liberar</button>
+            <button v-on:click = "fechar">Fechar</button>
+        </div>
+
+        <sinal></sinal>
+    </div>
+
+    <script type = "text/javascript" src = "script.js"></script>
+</body>
+</html>
