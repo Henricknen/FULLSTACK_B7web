@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js</title>
+    <meta charset = "utf-8" />
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
+</head>
+<body>
+    <div id = "app">
+        <header class  = "header" id = "header">
+
+            <todo-adicionar v-on:add = "addTodoItem"></todo-adicionar>
+            
+        </header>
+        <section class = "container">
+            <section class = "container__content" id = "conteudo">
+
+                
+            </section>
+            <aside class = "container__sidebar" id = "sidebar">
+                
+                <lista v-bind:itens = "itens"></lista>     <!-- chamando componente 'lista' passando o array itens com parâmetro-->
+
+            </aside>
+        </section>
+        <footer class = "footer">
+
+        </footer>
+    </div>
+
+    <script type = "text/javascript" src = "script.js"></script>
+</body>
+</html>
