@@ -10,11 +10,11 @@
 <body>
     <div id = "app">
         <div class = "controle">        <!-- area de controle do sinal -->
-            <button v-on:click = "liberar">Liberar</button>
-            <button v-on:click = "fechar">Fechar</button>
+            <button v-if = "sinalStatus == 'red'" v-on:click = "liberar">Liberar</button>
+            <button v-else v-on:click = "fechar">Fechar</button>
         </div>
 
-        <sinal></sinal>
+        <sinal v-bind:status = "sinalStatus"></sinal>
     </div>
 
     <script type = "text/javascript" src = "script.js"></script>

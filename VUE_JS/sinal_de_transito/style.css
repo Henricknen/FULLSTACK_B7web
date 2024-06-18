@@ -31,3 +31,15 @@ body {
 	margin-bottom: 20px;
 	background-color: #000;
 }
+
+.red {
+	background-color: #FF0000;
+}
+
+.yellow {
+	background-color: #FFFF00;
+}
+
+.green {
+	background-color: #00FF00;
+}
