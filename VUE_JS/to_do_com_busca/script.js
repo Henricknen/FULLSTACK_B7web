@@ -1,7 +1,17 @@
 let busca = {		// variável busca
+	data:function() {
+		return {
+			txt: '',
+			only_stock: false
+		}
+	},
 	template: `
 		<div>
-			....
+			<input type = "text" placeholder = "Busca..." v-model = "txt" /><br/>
+			<input type = "checkbox" id = "only_stock" v-model = "only_stock" />
+			<label for = "only_stock">Mostrar apenas produtos em estoque</label>
+
+			<p>{{ txt }} - {{ only_stock }}</p>
 		</div>
 	`
 }
