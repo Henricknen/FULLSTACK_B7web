@@ -20,7 +20,8 @@ let lista = {
 						<td colspan = "2"><strong>{{ cat.nome }}</strong></td>
 					</tr>
 					<tr v-for = "p in cat.itens">
-						<td>{{ p.nome }}</td>
+						<td v-if = "p.estoque">{{ p.nome }}</td>
+						<td v-else style = "color:red">{{ p.nome }}</td>						
 						<td>{{ '$' + p.preco }}</td>
 					</tr>
 				</template>
@@ -44,7 +45,11 @@ let app = new Vue({
 				{nome: 'celular', preco: '499.99', estoque: false},
 				{nome: 'iphone', preco: '7000.00', estoque: true},
 			]}
-		]
+		],
+		exibidos: []		// lista que será exibida
+	},
+	created:function() {
+		this.exibidos = this.produtos;
 	},
 	components: {		// tranformando variáveis 'busca' e 'lista' em componentes
 		busca,
