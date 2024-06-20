@@ -1,0 +1,23 @@
+{
+  "name": "projeto_pre_compilado",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^7.1.2",
+    "gulp": "^5.0.0",
+    "vinyl-named": "^1.1.0",
+    "vue": "^3.4.29",
+    "vue-loader": "^17.4.2",
+    "vue-style-loader": "^4.1.3",
+    "vue-template-compiler": "^2.7.16",
+    "webpack-stream": "^7.0.0"
+  }
+}
