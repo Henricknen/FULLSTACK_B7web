@@ -1,0 +1,12 @@
+{
+  "name": "script_npm_personalizados",
+  "version": "1.0.0",
+  "main": "npm.js",
+  "scripts": {
+    "start": "node ./npm.js",
+    "codificando": "node ./ambiente_de_execucao.js"
+  },
+  "author": "Luis_Henrique_Silva_Ferreira",
+  "license": "ISC",
+  "description": ""
+}
