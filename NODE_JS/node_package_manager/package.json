@@ -1,0 +1,11 @@
+{
+  "name": "node_package_manager",
+  "version": "1.0.0",
+  "main": "npm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis_Henrique_Silva_Ferreira",
+  "license": "ISC",
+  "description": ""
+}
