@@ -12,3 +12,12 @@ npm install -D typescript
 
 ### Instalando a biblioteca de forma global:
 npm install -g tyescript
+
+### compilando arquivos typescript 'ts':
+npx tsc index.ts
+
+###  criando arquivo de configuração 'tsconfig.js':
+npx  tsc --init
+
+### executado com biblioteca ts-node instalada:
+npx ts-node index.ts
