@@ -1,0 +1,14 @@
+{
+  "name": "typescript_no_node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis_Henrique_Silva_Ferreira",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  }
+}

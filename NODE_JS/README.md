@@ -6,3 +6,9 @@ npm init
 
 ### Para executar os comandos de script ultilizar:
 npm run "nome do comando dejesado"
+
+### Instalando a biblioteca 'typescript' nas depêndençias de desenvolvimento, utilize npm install -D "nome da biblioteca":
+npm install -D typescript
+
+### Instalando a biblioteca de forma global:
+npm install -g tyescript
