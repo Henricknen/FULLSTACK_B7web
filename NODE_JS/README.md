@@ -21,3 +21,12 @@ npx  tsc --init
 
 ### executado com biblioteca ts-node instalada:
 npx ts-node index.ts
+
+### para habilitar o modo WATCH utilize:
+node --watch src/nome_do_arquivo
+
+### para adiçionar um suporte para rodar arquivos typescript tem que instalar uma biblioteca chamada 'tsx':
+node --import tsx --watch src/nome_do_arquivo.ts
+
+### para encerrar a execução do watch digite:
+ctrl + c

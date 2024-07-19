@@ -1,0 +1,16 @@
+{
+  "name": "typescript_no_node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --import=tsx --watch ./src/outro.ts"
+  },
+  "author": "Luis_Henrique_Silva_Ferreira",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "tsx": "^4.16.2"
+  }
+}
