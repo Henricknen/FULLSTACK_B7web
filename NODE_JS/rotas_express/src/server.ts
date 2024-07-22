@@ -13,9 +13,23 @@ server.get('/ping', (req, res)=> {      // criando uma rota chamada 'ping'
     res.json({ pong: true });       // rota retorna 'pong'
 });
 
+server.get('/produtos', (req, res)=> {
+    res.json({ produtos: [] }); 
+});
+
+server.get('/produtos/:id', (req, res)=> {      // ':id' transforma a rota em dinâmica
+    console.log(req.params);        // 'params' é um objeto onde ficara armazenado o parâmetro
+
+    res.json({ name: 'Teclado ADFD', price: 100 }); 
+});
+
+server.get('/voos/:from/:to', (req, res)=> {
+    res.json({ flight: { from: "X", to: "Y", price: 4564878 } });
+});
+
 server.get('/', (req, res)=> {
-    let tecnologia: string = "Node.js";
-    let ano: number = 2024;
+    let tecnologia = "Node.js";
+    let ano = 2024;
 
     res.json({ tecnologia, ano });
 });
