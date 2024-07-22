@@ -1,11 +1,13 @@
-import {createServer} from 'node:http';
+import express from 'express';          // importando a biblioteca express
 
-const server = createServer((req, res)=> {
-    let nome: string = "Luis Henrique S F";
-    let profissao: string = "FullStack";
-    res.end(`Me chamo ${nome} e sou um profissional ${profissao}`);
+const server = express();       // instaçiando a função express
+
+server.get('/', (req, res)=> {
+    let tecnologia: string = "Node.js";
+    let ano: number = 2024;
+    res.send(`Estou codificando ${tecnologia} no ano de ${ano}`);
 });
 
-server.listen(3000, ()=> {
-    console.log('Servidor rodando em http://localhost:3000');
+server.listen(3000, ()=> {      // definindo a porta de execução
+    console.log('Servidor rodando no link: http://localhost:3000/');
 });
