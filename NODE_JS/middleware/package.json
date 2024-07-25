@@ -1,0 +1,22 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file=.env --import=tsx --watch ./src/server.ts"
+  },
+  "author": "Luis Henrique S F",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.11",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "helmet": "^7.1.0" 
+  }
+}
