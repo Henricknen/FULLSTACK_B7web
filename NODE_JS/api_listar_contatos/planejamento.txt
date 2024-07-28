@@ -1,0 +1,11 @@
+API Listar Contatos:
+
+- Cria um novo contato
+- Lista os contatos
+- Exclui o contato
+
+Rotas:
+
+- POST / contato { name: "Luis Henrique S F"} - criar um contato novo
+- GET / contatos - lista os contatos
+- DELETE / contato?name = Luis Henrique S F
