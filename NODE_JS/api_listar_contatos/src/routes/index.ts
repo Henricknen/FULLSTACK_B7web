@@ -41,4 +41,26 @@ router.get('/contatos', async (req, res)=> {        // rota para 'ler' os contat
 
 });
 
+router.delete('/contato', async (req, res)=> {      // rota para deletar contatos
+    const { name } = req.query;     // pegando o nome mandado
+
+    if(!name) {     // verificação
+        return res.json({ error: 'Precisa de um nome para excluir...' });
+    }
+
+    let list: string[] = [];
+    try {
+        const data = await readFile(dataSource, {encoding: 'utf8'});
+        list = data.split('\n');
+    } catch(err) {
+    
+    }
+
+    list = list.filter(item=> item.toLowerCase() !== (name as string). toLowerCase());     // filtrando a lista para exclusão
+
+    await writeFile(dataSource, list.join('\n'));     // escrevendo a lista depois das exclusões
+
+    res.json({ contato:name });
+});
+
 export default router;
