@@ -1,8 +1,5 @@
 import express from 'express';
-import { writeFile } from 'fs/promises';
-import { readFile } from 'fs/promises';
-
-const dataSource = './data/list.txt';       // variável de 'fonte dos dados'
+import { createContact, deleteContact, getContacts } from '../services/contact';
 
 const router = express.Router();
 
@@ -13,29 +10,13 @@ router.post('/contato', async (req, res)=> {      // rota 'contato' que irá ins
         return res.json({ error: 'Nome precisa ter pelo menos 2 catacters.' });     // 'return' dá a resposta e faz parar a execução
     }
 
-    let list: string[] = [];        // variável 'list' armazenando um array de string
-    try {
-        const data = await readFile(dataSource, {encoding: 'utf8'});       // lendo o conteúdo do arquivo 'list.txt' que armazena os nomes
-        list = data.split('\n');        // o array será criado com um item em cada linha
-    } catch(err) {
-
-    }
-    
-    list.push(name);        // inserindo um novo nome
-    await writeFile(dataSource, list. join('\n'));
+    await createContact(name);      // utilizando função que cria contatos
     
     res.status(201). json({ contato: name });       // indicando que deu tudo certo
 });
 
 router.get('/contatos', async (req, res)=> {        // rota para 'ler' os contatos inseridos
-    
-    let list: string[] = [];
-    try {
-        const data = await readFile(dataSource, {encoding: 'utf8'});
-        list = data.split('\n');
-    } catch(err) {
-    
-    }
+    let list = await getContacts();
 
     res.json({ contatos:list });        // retorna a lista de contatos
 
@@ -48,17 +29,7 @@ router.delete('/contato', async (req, res)=> {      // rota para deletar contato
         return res.json({ error: 'Precisa de um nome para excluir...' });
     }
 
-    let list: string[] = [];
-    try {
-        const data = await readFile(dataSource, {encoding: 'utf8'});
-        list = data.split('\n');
-    } catch(err) {
-    
-    }
-
-    list = list.filter(item=> item.toLowerCase() !== (name as string). toLowerCase());     // filtrando a lista para exclusão
-
-    await writeFile(dataSource, list.join('\n'));     // escrevendo a lista depois das exclusões
+    await deleteContact(name as string); 
 
     res.json({ contato:name });
 });
