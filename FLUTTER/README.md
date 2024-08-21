@@ -14,6 +14,12 @@
 
 `flutter create --platforms android app_flutter`
 
+## se criar o projeto de com plataforma especifica é necessario adicionar o suporte as patlaformas web ou windows:
+
+entre no diretorio do projeto e digite 
+
+`flutter create .`
+
 ## rodar o projeto criado:
 
 entre na pasta do projeto o emulador tem que está aberto entre na pasta do projeto
