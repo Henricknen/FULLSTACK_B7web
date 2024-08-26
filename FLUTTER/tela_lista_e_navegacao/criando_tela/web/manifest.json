@@ -1,6 +1,6 @@
 {
-    "name": "criando_tela",
-    "short_name": "criando_tela",
+    "name": "adicionando_imagens_no_app",
+    "short_name": "adicionando_imagens_no_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

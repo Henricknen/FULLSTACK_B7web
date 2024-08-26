@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "criando_tela" "\0"
+            VALUE "FileDescription", "adicionando_imagens_no_app" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "criando_tela" "\0"
+            VALUE "InternalName", "adicionando_imagens_no_app" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "criando_tela.exe" "\0"
-            VALUE "ProductName", "criando_tela" "\0"
+            VALUE "OriginalFilename", "adicionando_imagens_no_app.exe" "\0"
+            VALUE "ProductName", "adicionando_imagens_no_app" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
