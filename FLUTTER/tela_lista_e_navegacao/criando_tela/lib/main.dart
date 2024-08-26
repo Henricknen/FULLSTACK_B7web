@@ -10,7 +10,7 @@ class MeuApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Adicionando Imagens'),
+          title: Text('Criando Tela'),
         ),
         body: Column(
           children: <Widget>[
@@ -43,6 +43,50 @@ class MeuApp extends StatelessWidget {
                     )
                   ]
                 )
+              ),
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Row(
+                  children:[
+                    Expanded(
+                      child: TextButton(     // criando botão
+                        onPressed: (){},
+                        child: Column(
+                          children: [
+                            Icon(Icons.call, color:Colors.blue),    // icone do botão
+                            Text('Ligar')     // texto do botão
+                          ],
+                        ),
+                ),
+                    ),
+                    Expanded(
+                      child: TextButton(     // segundo botão
+                        onPressed: (){},
+                        child: Column(
+                          children: [
+                            Icon(Icons.location_on, color:Colors.blue),    // icone
+                            Text('Mapa')     // texto
+                          ],
+                        ),
+                ),
+                    ),
+                    Expanded(
+                      child: TextButton(     // terçeiro botão
+                        onPressed: (){},
+                        child: Column(
+                          children: [
+                            Icon(Icons.share, color:Colors.blue),    // icone
+                            Text('Compartilhar')     // texto
+                          ],
+                        ),
+                ),
+                    ),
+                  ]
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(20),
+                child:Text('O Muro das Lamentações é sagrado para os judeus devido a ser o último pedaço do muro que rodeava o Templo pelos lados sul e leste. Alem disso, o Muro é o lugar mais próximo do sancta sanctorum ou lugar “sagrado entre os sagrados” (1 Reis 8:6-8).')
               )
           ],
         ),
