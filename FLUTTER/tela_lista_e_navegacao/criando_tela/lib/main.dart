@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() => runApp(MeuApp());
+
+callAction() {
+
+}
+
+mapAction() {
+
+}
+
+shareAction() {
+
+}
 
 class MeuApp extends StatelessWidget {
   const MeuApp({Key? key}) : super(key: key);
@@ -48,38 +61,20 @@ class MeuApp extends StatelessWidget {
                 padding: EdgeInsets.all(20),
                 child: Row(
                   children:[
-                    Expanded(
-                      child: TextButton(     // criando botão
-                        onPressed: (){},
-                        child: Column(
-                          children: [
-                            Icon(Icons.call, color:Colors.blue),    // icone do botão
-                            Text('Ligar')     // texto do botão
-                          ],
-                        ),
-                ),
+                    Botao(    // componente 'Botao' usando as propriedades definidas
+                      icon: Icons.call,
+                      text: 'Ligar',
+                      onPress: callAction,
                     ),
-                    Expanded(
-                      child: TextButton(     // segundo botão
-                        onPressed: (){},
-                        child: Column(
-                          children: [
-                            Icon(Icons.location_on, color:Colors.blue),    // icone
-                            Text('Mapa')     // texto
-                          ],
-                        ),
-                ),
+                    Botao(
+                      icon: Icons.location_on,
+                      text: 'Mapa',
+                      onPress: mapAction, 
                     ),
-                    Expanded(
-                      child: TextButton(     // terçeiro botão
-                        onPressed: (){},
-                        child: Column(
-                          children: [
-                            Icon(Icons.share, color:Colors.blue),    // icone
-                            Text('Compartilhar')     // texto
-                          ],
-                        ),
-                ),
+                    Botao(
+                      icon: Icons.share,
+                      text: 'Compartilhar',
+                      onPress: shareAction, 
                     ),
                   ]
                 ),
@@ -89,6 +84,34 @@ class MeuApp extends StatelessWidget {
                 child:Text('O Muro das Lamentações é sagrado para os judeus devido a ser o último pedaço do muro que rodeava o Templo pelos lados sul e leste. Alem disso, o Muro é o lugar mais próximo do sancta sanctorum ou lugar “sagrado entre os sagrados” (1 Reis 8:6-8).')
               )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class Botao extends StatelessWidget {     // componente 'Botão'
+  Botao({
+    this.onPress,   // propriedades dos botões
+    @required this.icon,
+    @required this.text
+  });
+
+  Function onPress;
+  IconData icon;
+  var text;
+   
+   @override
+   Widget build(BuildContext context) {
+    return Expanded(
+      child: TextButton(     // criando botão
+        onPressed: onPress,
+        child: Column(
+          children: [
+            Icon(icon, color:Colors.blue),    // icone do botão
+            Text(text)     // texto do botão
+          ]
         ),
       ),
     );
