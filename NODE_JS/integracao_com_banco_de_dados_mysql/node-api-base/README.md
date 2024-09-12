@@ -36,3 +36,13 @@ git remote remove origin
 git remote add origin <url>
 ```
 Sendo `<url>` o diretório do seu repositório remoto.
+
+### Intalar dependência de desenvolvimento 'prisma'
+```bash
+npm install -D prisma
+```
+
+### Inicializar o prisma
+```bash
+npx prisma init
+``` 
