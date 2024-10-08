@@ -1,0 +1,7 @@
+div {
+    background-color:#FF0000;
+}
+
+div span {      /* a formatação será aplicada no 'span' que estiver dentro da div */
+    background-color:#00FF00;
+}
