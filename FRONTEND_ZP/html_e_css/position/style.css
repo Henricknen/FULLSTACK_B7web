@@ -1,0 +1,28 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 5px;
+}
+
+.quadrado {
+    position: absolute;     /* valor 'absolute' faz o elemento flutuar, acompanhando a barra de rolagem  */
+    left: 300px;        /* fluta para esquerda */
+}
+
+.quadradoo {
+    position: fixed;        /* 'fixed' deixa o elemento fixo na tela */
+    left: 200px;
+}
+
+.quadradooo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.quadradoooo {
+    position: fixed;
+    right: 0;
+    top: 0;
+}
