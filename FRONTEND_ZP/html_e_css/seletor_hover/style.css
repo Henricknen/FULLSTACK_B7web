@@ -1,0 +1,21 @@
+a {
+    color: #000000;
+}
+
+a:hover {       /* seletor 'hover' altera a cor do link ao passar o mouse em cima do mesmo */
+    color: #0000FF;
+}
+
+div {
+    background-color: #FF0000;
+    width: 100px;
+    height: 100px;
+}
+
+div:hover {     /* também pode ser utilizado para substituir uma formatação existente */
+    background-color: #00FF00;
+}
+
+div span {
+    color: #FFFFFF;
+}
