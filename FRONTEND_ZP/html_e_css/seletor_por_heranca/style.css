@@ -1,0 +1,7 @@
+    div {
+    background-color:#FF0000;
+}
+
+.header > span {      /* '>' insere formatação no span que estiver dentro do elemento de class header 'diretamente' */
+    background-color:#00FF00;
+}
