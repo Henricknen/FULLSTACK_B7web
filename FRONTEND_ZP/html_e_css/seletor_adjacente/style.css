@@ -1,0 +1,9 @@
+.header + span {        /* o efeito será aplicado no span logo 'depois' do header */
+    background-color: #00FF00;
+    color: #FFF;
+    font-size: 30px;
+}
+
+p + span {
+    color: #FF0000;
+}
