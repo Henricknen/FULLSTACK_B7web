@@ -1,0 +1,19 @@
+div, span {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 5px;
+}
+
+div {
+    display: inline;        /* 'inline' deixa as 'div' em linha como se fossem 'span' */
+}
+
+.quadrado {
+    display: none;      /* 'none' retira o elemento da tela, muda a representação grafica de um elemento */
+    display: block;         /* 'block' diz que a dispozição do elemento é do tipo block */
+}
+
+span {
+    display: block;     /* setando 'span' para funcionar como block, como se fossem 'div' */
+}
