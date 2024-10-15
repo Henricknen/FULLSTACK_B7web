@@ -7,6 +7,9 @@ if(!empty($_POST['usuario']) && !empty($_POST['password'])) {       // se os dad
 
     if($usuario == "admin" && $senha == "admin") {      // se os dados estiverem corretos
         $_SESSION['usuario'] = $usuario;        // será gravada uma seção 'session' para o usuário
+        if(!empty($_POST['tema'])) {
+            setcookie('tema', htmlspecialchars($_POST['tema']));        // se tema 'não estiver vazio' receberá um 'setcokie' de tema
+        }
         header("Location: welcome.php");        // redireçiona o usuário para página 'welcome.php'
     } else {
         echo "Usuário ou senha inválidos...";
