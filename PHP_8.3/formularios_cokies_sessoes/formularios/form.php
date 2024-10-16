@@ -3,6 +3,26 @@ require 'functions.php';
 
 $erro = null;       // definindo variáveis nulas
 $sucesso = null;
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {      // reçebendo dados do formulário
+    $texto = $_POST['texto'];
+
+    $texto = htmlspecialchars($texto);      // 'tirando' caracteres que não interessa
+    $texto = trim($texto);      // 'remove' os espaços antes e depois da palavra
+
+    if(strpos($texto, '@') == false) {      // verificando se $texto tem um '@'
+        $erro = "O texto precisa ter um @";
+    } else if(empty($texto)) {     // 'validação' verificando se campo texto 'não está vazio'
+        $erro = "O campo texto é obrigatório";
+    } else if(strlen($texto) < 5) {
+        $erro = "O texto tem que ter pelo menos 5 caracteres...";
+    } else if(strlen($texto) > 10) {
+        $erro = "O erro tem que ter no maxima 10 caracteres...";
+    } else {
+        $sucesso = "Campo válidado com sucesso...";
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
