@@ -10,8 +10,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {      // reçebendo dados do formulár
     $texto = htmlspecialchars($texto);      // 'tirando' caracteres que não interessa
     $texto = trim($texto);      // 'remove' os espaços antes e depois da palavra
 
-    if(strpos($texto, '@') == false) {      // verificando se $texto tem um '@'
-        $erro = "O texto precisa ter um @";
+    if(filter_var($texto, FILTER_VALIDATE_EMAIL) == false) {        // 'FILTER_VALIDATE_EMAIL' verefica se o email é válido
+        $erro = "Email inválido";
     } else if(empty($texto)) {     // 'validação' verificando se campo texto 'não está vazio'
         $erro = "O campo texto é obrigatório";
     } else if(strlen($texto) < 5) {
