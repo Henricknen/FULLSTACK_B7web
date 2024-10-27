@@ -6,6 +6,7 @@ $tecnologias = ['HTML', 'CSS', 'PHP', 'JAVASCRIPT', 'SQL'];
 
 $erro = null;
 $sucesso = null;
+$tecnologia_selecionada = [];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {    
 
@@ -13,11 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $erro = 'Selecione uma Tecnologia';
     }
 
-    $tecnologia = $_POST['tecnologia'] ?? [];
+    $tecnologia_selecionada = $_POST['tecnologia'] ?? [];
     
-    if(count($tecnologia) != 1) {
+    if(count($tecnologia_selecionada) != 1) {
         $erro = 'Selecione apenas uma Tecnologia';
-    } else if ($tecnologia[0] != 'HTML') {
+    } else if ($tecnologia_selecionada[0] != 'HTML') {
         $erro = 'Você deve selecionar o HTML';
     } else {
         $sucesso = 'HTML Selecionado....';
@@ -25,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -46,15 +48,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </p>
         <?php endif; ?>
         <form method = "POST">
-            <?php foreach ($tecnologias as $tecnologia) : ?>
 
-                <label>
+        <select name = "tecnologia[]" multiple>
+            <?php foreach($tecnologias as $tecnologia) : ?>
+                <option value = "<?= $tecnologia; ?>">
+
+                <?php if(in_array($tecnologia, $tecnologia_selecionada)) {
+                    // echo 'selected';
+                }
+                    ?>
                     <?= $tecnologia; ?>
-                </label>
-                <input type = "checkbox" name = "tecnologia[]" value = "<?= $tecnologia; ?>">
-                <hr>
-
-                <?php endforeach; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+            
                 <input type="submit" value="Enviar">
         </form>
     </form>
