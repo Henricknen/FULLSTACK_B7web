@@ -14,3 +14,27 @@ em seguida insira o link da ferramenta 'babel' que compila o código react em um
 ```bash
 <script src = "https://unpkg.com/@babel/standalone/babel.min.js"></script>
 ```
+
+### Crianção de projeto React utilizando framework Next
+
+atualize o next com o comando abaixo pelo prompt de comando:
+```bash
+npm install -g create-next-app
+```
+para 'criar' o projeto dentro da pasta pelo prompt d comando onde se quer criar o projeto digitar o seguinte comando:
+```bash
+npx create-next-app
+```
+
+após dar esse comando será necessário inserir o nome do projeto e responder algumas perguntas como:
+- Would you like to use Typescript with this project?
+- Would you like to use ESLint with this project?
+- Would you like to use Tailwind CSS with this project?
+- Would you like to use 'src/' directory with this project?
+- Use App Router (recomended)?
+- Would you like to customize the default import alias?
+
+para rodar o projeto criado entre na pasta do projeto pelo terminal e digite:
+```bash
+npm run dev
+```
