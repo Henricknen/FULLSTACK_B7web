@@ -15,7 +15,7 @@ em seguida insira o link da ferramenta 'babel' que compila o código react em um
 <script src = "https://unpkg.com/@babel/standalone/babel.min.js"></script>
 ```
 
-### Crianção de projeto React utilizando framework Next
+### Criação de projeto React utilizando framework Next
 
 atualize o next com o comando abaixo pelo prompt de comando:
 ```bash
@@ -35,6 +35,20 @@ após dar esse comando será necessário inserir o nome do projeto e responder a
 - Would you like to customize the default import alias?
 
 para rodar o projeto criado entre na pasta do projeto pelo terminal e digite:
+```bash
+npm run dev
+```
+
+### Criação do projeto puro sem nenhum framework a biblioteca do 'Vitae'
+
+dentro da pasta do projeto pelo prompt de comando digitar:
+```bash
+npm create vite
+```
+após a criação é necessário instalar algumas depêndeçias, então digite o comando dentro da pasta do projeto criado:
+```bash`
+npm install
+```para rodar o projeto criado entre na pasta do projeto pelo terminal e digite:
 ```bash
 npm run dev
 ```
