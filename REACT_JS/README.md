@@ -28,12 +28,17 @@ npx create-next-app
 
 após dar esse comando será necessário inserir o nome do projeto e responder algumas perguntas como:
 - Would you like to use Typescript with this project?
+Yes
 - Would you like to use ESLint with this project?
+No
 - Would you like to use Tailwind CSS with this project?
+Yes
 - Would you like to use 'src/' directory with this project?
+Yes
 - Use App Router (recomended)?
+Yes
 - Would you like to customize the default import alias?
-
+No
 para rodar o projeto criado entre na pasta do projeto pelo terminal e digite:
 ```bash
 npm run dev

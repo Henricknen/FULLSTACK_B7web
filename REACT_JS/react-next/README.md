@@ -12,3 +12,4 @@
 2. **Rodando o projeto**:
    - Após a criação, a execução padrão do Next.js é `npm run dev`, que inicia o servidor de desenvolvimento.
    - Certifique-se de que o comando está atualizado e sendo executado sem erros antes de instruir os outros a rodarem a aplicação.
+   
