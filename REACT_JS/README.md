@@ -21,7 +21,7 @@ atualize o next com o comando abaixo pelo prompt de comando:
 ```bash
 npm install -g create-next-app
 ```
-para 'criar' o projeto dentro da pasta pelo prompt d comando onde se quer criar o projeto digitar o seguinte comando:
+para 'criar' o projeto dentro da pasta pelo prompt de comando onde se quer criar o projeto digitar o seguinte comando:
 ```bash
 npx create-next-app
 ```
