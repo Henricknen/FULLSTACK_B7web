@@ -7,6 +7,7 @@ const Page = () => {
 
   const handleBtnClick = () => {    // o state só será alterado quando a função chegar ao fim
     setCount(count + 2);    // após o click do botão será incrementado 2 no state 'count'
+    alert(count);   // o alert só mostrará o state alterado no proxímo clique do botão
   }
 
   return (
