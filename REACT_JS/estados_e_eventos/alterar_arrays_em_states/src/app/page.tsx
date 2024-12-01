@@ -10,26 +10,22 @@ const Page = () => {
   ]);
 
   const handleAddButton = () => {
-    if (itemInput.trim() === '') return;      // condição que evitar adiçionar algo em branco, se 'itemInput' estiver vazio encerra a execução do código
+    if (itemInput.trim() === '') return; // Condição que evita adicionar algo em branco
     setList([
       ...list,
       { label: itemInput, checked: false }
     ]);
-    setItemInput('');
+    setItemInput(''); // Limpa o campo de entrada após adicionar o item
   }
 
-  const deleteItem = (index: number) => {    // função 'deleteItem' fará a deleção do item
-    setList(
-      list.filter((item, key) => key !== index)     // 'filter' cria um novo array sem o item que será deletado
-      );
+  const deleteItem = (index: number) => {
+    setList(list.filter((item, key) => key !== index)); // Cria um novo array sem o item que será deletado
   }
 
   const toggleItem = (index: number) => {
-    let newList = [...list];
-        newList[index]. checked = !newList [index].checked;
-    }
-
-    setList(newList);
+    let newList = [...list]; // Clonando o array 'list'
+    newList[index].checked = !newList[index].checked; // Alterando a propriedade 'checked'
+    setList(newList); // Atualizando o estado com a nova lista
   }
 
   return (
@@ -53,8 +49,13 @@ const Page = () => {
       <ul className="w-full max-w-lg list-disc pt-5">
         {list.map((item, index) => (
           <li key={index}>
-            <input onClick = (( => toggleItem)) type = "checkbox" checked = {item.checked} className = "w-6 h-6 mr-3" />
-            {item.label} - <button onClick = {() => deleteItem(index)} className="hover:underline">[ deletar ]</button>     {/* utilizanado evento 'onClick' para executar a função 'deleteItem' */}
+            <input 
+              onClick={() => toggleItem(index)} 
+              type="checkbox" 
+              checked={item.checked} 
+              className="w-6 h-6 mr-3" 
+            />
+            {item.label} - <button onClick={() => deleteItem(index)} className="hover:underline">[ deletar ]</button>
           </li>
         ))}
       </ul>
