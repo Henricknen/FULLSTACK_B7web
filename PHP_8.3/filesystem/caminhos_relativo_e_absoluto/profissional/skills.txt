@@ -1,0 +1,7 @@
+PHP
+JavaScript
+Laravel
+VueJs
+Sql
+HTML
+CSS
